@@ -4,8 +4,8 @@
   "description": "Site of mine for social networking and stuff idk",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/styles.css -o ./build/output.css --minify",
-    "build-watch": "npx tailwindcss -i ./src/styles.css -o ./src/build/output.css --minify -w",
+    "build": "npx tailwindcss -i ./docs/styles.css -o ./docs/output.css --minify",
+    "build-watch": "npx tailwindcss -i ./docs/styles.css -o ./docs/output.css --minify -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
