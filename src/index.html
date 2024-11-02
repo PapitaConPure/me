@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<meta name="theme-color" content="#9c162d" />
+
+		<title>Papita con Puré</title>
+
+		<link rel="stylesheet" href="./build/output.css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Outfit:wght@100..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap"
+		/>
+
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		/>
+	</head>
+	<body class="body" onload="createNavAndFooter()">
+		<main>
+			<section class="my-12">
+				<h1
+					class="from-primary-400 to-accent-400 font-default-sans mx-auto mb-2 w-max bg-gradient-to-r bg-clip-text text-center text-6xl font-black text-transparent"
+				>
+					Bienvenido
+				</h1>
+				<p class="text-secondary-100 my-2 text-center font-light">
+					¡Hola! Soy Papita con Puré. Este sitio ofrece información actualizada sobre mí,
+					mis redes y mis proyectos. Además, para individuos, grupos u organizaciones con
+					consultas, dudas, quejas, sugerencias, etc., se ofrece información pública de
+					contacto
+					<a href="./contact.html" class="text-accent-400 hover:underline">aquí</a>.
+				</p>
+			</section>
+
+			<section class="my-8">
+				<h2
+					class="text-foreground font-default-sans mb-3 mt-6 text-center text-3xl font-bold"
+				>
+					Encuéntrame
+				</h2>
+
+				<div class="mx-auto w-full pr-2 sm:w-max sm:pr-0">
+					<a
+						tabindex="0"
+						href="https://www.youtube.com/channel/UCRXbJiF9G6D0nqq3mU38-gw"
+						class="social-button flex border-transparent bg-[#ff0000] sm:inline-flex"
+					>
+						<i class="fa fa-brands fa-youtube fa-lg pr-4"></i>
+						<span class="w-full text-center">YouTube</span>
+					</a>
+
+					<a
+						tabindex="0"
+						href="https://discord.com/users/423129757954211880"
+						class="social-button flex border-transparent bg-[#5865F2] sm:inline-flex"
+					>
+						<i class="fa fa-brands fa-discord fa-lg pr-4"></i>
+						<span class="w-full text-center">Discord</span>
+					</a>
+
+					<a
+						tabindex="0"
+						href="https://x.com/PapitaPure"
+						class="social-button border-secondary-900 flex bg-black sm:hidden md:inline-flex"
+					>
+						<i class="fa fa-brands fa-x-twitter fa-lg pr-4"></i>
+						<span class="w-full text-center">X (Twitter)</span>
+					</a>
+
+					<a
+						tabindex="0"
+						href="https://github.com/PapitaConPure"
+						class="social-button flex border-transparent bg-[#1e2327] sm:hidden md:inline-flex"
+					>
+						<i class="fa fa-brands fa-github fa-lg pr-4"></i>
+						<span class="w-full text-center">GitHub</span>
+					</a>
+				</div>
+
+				<div class="mx-auto hidden w-max sm:block md:hidden">
+					<a
+						tabindex="0"
+						href="https://x.com/PapitaPure"
+						class="social-button border-secondary-900 inline-flex bg-black"
+					>
+						<i class="fa fa-brands fa-x-twitter fa-lg pr-4"></i>
+						<span class="w-full text-center">X (Twitter)</span>
+					</a>
+
+					<a
+						tabindex="0"
+						href="https://github.com/PapitaConPure"
+						class="social-button inline-flex border-transparent bg-[#1e2327]"
+					>
+						<i class="fa fa-brands fa-github fa-lg pr-4"></i>
+						<span class="w-full text-center">GitHub</span>
+					</a>
+				</div>
+			</section>
+
+			<section class="my-8">
+				<div class="bg-primary-main mx-1 my-6 rounded-md px-2 py-1">
+					<h2
+						class="text-foreground font-default-sans mb-1 text-center text-3xl font-bold"
+					>
+						Aprende más sobre mí
+					</h2>
+
+					<a
+						tabindex="0"
+						href="./about"
+						class="std-button bg-foreground text-primary-main mx-auto my-4 block w-max font-semibold"
+					>
+						<span class="w-full text-center">Vamos allá</span>
+					</a>
+				</div>
+			</section>
+
+			<section class="my-8">
+				<h2 class="text-foreground font-default-sans mb-1 text-center text-3xl font-bold">
+					Mis Proyectos
+				</h2>
+
+				<p class="text-secondary-100 text-center font-light">
+					Ofrezco un recopilado de varios de mis proyectos destacados.
+				</p>
+
+				<a tabindex="0" href="/about" class="primary-button mx-auto my-4 block w-max">
+					<span class="w-full text-center">Veámoslo</span>
+				</a>
+			</section>
+		</main>
+
+		<script src="./scripts/utils.js"></script>
+		<script src="./scripts/nav.js"></script>
+	</body>
+</html>

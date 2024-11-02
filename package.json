@@ -1,0 +1,27 @@
+{
+  "name": "me",
+  "version": "1.0.0",
+  "description": "Site of mine for social networking and stuff idk",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/styles.css -o ./build/output.css --minify",
+    "build-watch": "npx tailwindcss -i ./src/styles.css -o ./src/build/output.css --minify -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "^3.4.14"
+  },
+  "prettier": {
+    "plugins": ["prettier-plugin-tailwindcss"],
+    "trailingComma": "all",
+    "useTabs": true,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "printWidth": 100
+  }
+}
