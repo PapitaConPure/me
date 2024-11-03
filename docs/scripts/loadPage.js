@@ -102,6 +102,24 @@ async function loadPage(page, x = null, y = null) {
 				await loadPage(page, x, y);
 			});
 		});
+
+		//Modificar URL y título
+		(async () => {
+			const isMainPage = page === 'main.html';
+			const url = `${isMainPage ? 'index.html' : page}`;
+			const newUrl = `./${isMainPage ? '' : url.slice(0, url.indexOf('.html'))}`;
+
+			const response = await fetch(url);
+			const data = await response.text();
+			const html = document.createElement('html');
+			html.innerHTML = data;
+
+			document.title = html.getElementsByTagName('title').item(0).textContent;
+			window.history.pushState({
+				html: response.html,
+				pageTitle: response.pageTitle,
+			}, '', newUrl);
+		})();
 	} catch(error) {
 		console.error(error);
 	}
