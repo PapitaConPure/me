@@ -44,7 +44,7 @@ const colors = {
 
 const inbetweenHoverKeyframes = {
 	'glow-nav-desktop-hover': {
-		'color': colors.secondary[500],
+		'color': colors.secondary[300],
 		'text-shadow': `0 0 4pt ${colors.secondary[700]}`,
 	},
 	'glow-primary-hover': {
@@ -61,7 +61,7 @@ const inbetweenHoverKeyframes = {
 const keyframes = {
 	'glow-nav-desktop-hover': {
 		from: {
-			'color': colors.secondary[600],
+			'color': colors.secondary[400],
 			'text-shadow': `0 0 0 ${colors.secondary.main}`,
 		},
 		to: inbetweenHoverKeyframes['glow-nav-desktop-hover'],
@@ -69,7 +69,7 @@ const keyframes = {
 	'glow-nav-desktop-active': {
 		from: inbetweenHoverKeyframes['glow-nav-desktop-hover'],
 		to: {
-			'color': colors.secondary[400],
+			'color': colors.secondary[200],
 			'text-shadow': `0 0 8pt ${colors.secondary[600]}`,
 		},
 	},
