@@ -52,9 +52,6 @@ async function loadPage(page, x = null, y = null) {
 		x ??= currentX;
 		y ??= currentY;
 
-		console.info('currentX', currentX, '\nx', x);
-		console.info('currentY', currentY, '\ny', y);
-
 		const calcTranslation = (from, to, step) => {
 			const diff = to - from;
 			const distance = Math.pow(diff, 2);
