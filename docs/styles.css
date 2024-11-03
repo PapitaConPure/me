@@ -61,7 +61,7 @@
 }
 
 .btn {
-	@apply select-none items-center justify-between rounded-lg px-8 py-2.5 sm:px-6 sm:py-2;
+	@apply select-none [&_*]:select-none items-center justify-between rounded-lg px-8 py-2.5 sm:px-6 sm:py-2;
 }
 
 .primary-btn {
