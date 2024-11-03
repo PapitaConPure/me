@@ -10,6 +10,10 @@ fetch('components/header.html')
 			const page = link.getAttribute('page');
 			const x = link.getAttribute('x') || null;
 			const y = link.getAttribute('y') || null;
+			const fromX = link.getAttribute('from-x') || null;
+			const fromY = link.getAttribute('from-y') || null;
+			currentX = fromX ? +fromX : currentX;
+			currentY = fromY ? +fromY : currentY;
 			await loadPage(page, x, y);
 		});
     });

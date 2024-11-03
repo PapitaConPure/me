@@ -1,29 +1,94 @@
 <header>
 	<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-		<div onclick="loadPage('main.html', 0)" class="cursor-pointer text-primary-50 text-2xl font-bold"><span class="select-none">Papita con Puré</span></div>
+		<div
+			onclick="loadPage('main.html', 0)"
+			class="cursor-pointer text-2xl font-bold text-primary-50"
+		>
+			<span class="select-none">Papita con Puré</span>
+		</div>
 		<nav class="hidden space-x-4 md:flex">
-			<button x="0" page="main.html" class="navbar-desktop-item">Inicio</button>
-			<button x="1" page="about.html" class="navbar-desktop-item">Acerca de</button>
-			<button x="2" page="projects.html" class="navbar-desktop-item">Proyectos</button>
-			<button x="3" page="contact.html" class="navbar-desktop-item">Contacto</button>
+			<button
+				x="0"
+				y="0"
+				page="main.html"
+				class="select-none px-0.5 text-secondary-600 hover:animate-glow-nav-desktop-hover active:animate-glow-nav-desktop-active lg:px-2 xl:px-3"
+			>
+				Inicio
+			</button>
+			<button
+				x="1"
+				y="0"
+				page="about.html"
+				class="select-none px-0.5 text-secondary-600 hover:animate-glow-nav-desktop-hover active:animate-glow-nav-desktop-active lg:px-2 xl:px-3"
+			>
+				Acerca de
+			</button>
+			<button
+				x="2"
+				y="0"
+				page="projects.html"
+				class="select-none px-0.5 text-secondary-600 hover:animate-glow-nav-desktop-hover active:animate-glow-nav-desktop-active lg:px-2 xl:px-3"
+			>
+				Proyectos
+			</button>
+			<button
+				x="3"
+				y="0"
+				page="contact.html"
+				class="select-none px-0.5 text-secondary-600 hover:animate-glow-nav-desktop-hover active:animate-glow-nav-desktop-active lg:px-2 xl:px-3"
+			>
+				Contacto
+			</button>
 		</nav>
 		<div class="md:hidden">
-			<button tabindex="1" id="menu-reveal" class="menu-icon menu-icon-reveal">
+			<button
+				tabindex="1"
+				id="menu-reveal"
+				class="h-6 w-6 text-primary-400 focus:text-primary-300 focus:outline-none active:text-primary-500"
+			>
 				<i class="fa fa-bars fa-lg"></i>
 			</button>
 			<button
 				tabindex="1"
 				id="menu-collapse"
-				class="menu-icon menu-icon-collapse hidden"
+				class="hidden h-6 w-6 text-primary-50 focus:text-white focus:outline-none active:text-primary-100"
 			>
 				<i class="fa fa-bars fa-lg"></i>
 			</button>
 		</div>
 	</div>
 	<nav id="mobile-menu" class="hidden md:hidden">
-		<button y="0" page="main.html" class="navbar-mobile-item">Inicio</button>
-		<button y="1" page="about.html" class="navbar-mobile-item">Acerca de</button>
-		<button y="2" page="projects.html" class="navbar-mobile-item">Proyectos</button>
-		<button y="3" page="contact.html" class="navbar-mobile-item">Contacto</button>
+		<button
+			x="0"
+			y="0"
+			page="main.html"
+			class="block w-full select-none bg-secondary-900 px-4 py-2 text-secondary-500 hover:bg-secondary-800 hover:text-secondary-200"
+		>
+			Inicio
+		</button>
+		<button
+			x="0"
+			y="1"
+			page="about.html"
+			class="block w-full select-none bg-secondary-900 px-4 py-2 text-secondary-500 hover:bg-secondary-800 hover:text-secondary-200"
+		>
+			Acerca de
+		</button>
+		<button
+			x="0"
+			y="2"
+			page="projects.html"
+			class="block w-full select-none bg-secondary-900 px-4 py-2 text-secondary-500 hover:bg-secondary-800 hover:text-secondary-200"
+		>
+			Proyectos
+		</button>
+		<button
+			x="0"
+			y="3"
+			page="contact.html"
+			class="block w-full select-none bg-secondary-900 px-4 py-2 text-secondary-500 hover:bg-secondary-800 hover:text-secondary-200"
+		>
+			Contacto
+		</button>
 	</nav>
 </header>
