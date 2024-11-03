@@ -42,6 +42,58 @@ const colors = {
 	},
 };
 
+const inbetweenHoverKeyframes = {
+	'glow-nav-desktop-hover': {
+		'color': colors.secondary[500],
+		'text-shadow': `0 0 4pt ${colors.secondary[700]}`,
+	},
+	'glow-primary-hover': {
+		'background-color': colors.primary[500],
+		'box-shadow': minimize(`
+			0 0pt 7pt ${colors.primary[500]},
+			0 0.5pt 16pt ${colors.primary[600]},
+			0 1pt 40pt ${colors.primary[700]},
+			0 1.5pt 65pt ${colors.primary[800]}
+		`),
+	},
+};
+
+const keyframes = {
+	'glow-nav-desktop-hover': {
+		from: {
+			'color': colors.secondary[600],
+			'text-shadow': `0 0 0 ${colors.secondary.main}`,
+		},
+		to: inbetweenHoverKeyframes['glow-nav-desktop-hover'],
+	},
+	'glow-nav-desktop-active': {
+		from: inbetweenHoverKeyframes['glow-nav-desktop-hover'],
+		to: {
+			'color': colors.secondary[400],
+			'text-shadow': `0 0 8pt ${colors.secondary[600]}`,
+		},
+	},
+	'glow-primary-hover': {
+		from: {
+			'background-color': colors.primary[600],
+			'box-shadow': `0 0 0 ${colors.primary.main}`,
+		},
+		to: inbetweenHoverKeyframes['glow-primary-hover'],
+	},
+	'glow-primary-active': {
+		from: inbetweenHoverKeyframes['glow-primary-hover'],
+		to: {
+			'background-color': colors.primary[400],
+			'box-shadow': minimize(`
+				0 0pt 5pt ${colors.primary[400]},
+				0 0.5pt 24pt ${colors.primary[500]},
+				0 1pt 56pt ${colors.primary[600]},
+				0 1.5pt 80pt ${colors.primary[700]}
+			`),
+		},
+	},
+};
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ["./docs/**/*.{html,js}"],
@@ -54,25 +106,17 @@ module.exports = {
 				//'mono': 'ui-monospace, SFMono-Regular',
 			},
 			animation: {
-				'glow-primary': 'glow-primary 0.5s ease-out forwards',
+				'glow-nav-desktop-hover': 'glow-nav-desktop-hover 0.15s ease-out forwards',
+				'glow-nav-desktop-active': 'glow-nav-desktop-active 0.4s cubic-bezier(0.23, 1, 0.320, 1) forwards',
+				'glow-primary-hover': 'glow-primary-hover 0.4s ease-out forwards',
+				'glow-primary-active': 'glow-primary-active 0.6s cubic-bezier(0.23, 1, 0.320, 1) forwards',
 			},
-			keyframes: {
-				'glow-primary': {
-					from: {
-						'box-shadow': `0 0 0 ${colors.primary.main}`,
-					},
-					to: {
-						'box-shadow': `
-							0 0pt 7pt ${colors.primary['500']},
-							0 0.5pt 16pt ${colors.primary['600']},
-							0 1pt 40pt ${colors.primary.main},
-							0 1.5pt 65pt ${colors.primary.main}
-						`,
-					},
-				},
-			},
+			keyframes,
 		},
 	},
 	plugins: [],
 }
 
+function minimize(css) {
+	return css.replace(/\s+/g, ' ');
+}
