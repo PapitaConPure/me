@@ -1,6 +1,6 @@
 :root {
 	--page-transition-from-x: 0;
-	--page-transition-from-y: 0;
+	--page-transition-from-y: 64px;
 }
 
 @tailwind base;
@@ -39,7 +39,7 @@
 
 main.active {
 	opacity: 1;
-	transform: translateX(0px);
+	transform: translate(0px, 0px);
 }
 
 .navbar-desktop-item {

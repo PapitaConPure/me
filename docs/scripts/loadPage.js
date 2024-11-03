@@ -1,5 +1,6 @@
 let currentPage;
 let currentX = 0;
+let currentY = -1;
 
 (() => {
 	let main = document.getElementById('content') || document.getElementsByTagName('main').item(0);
@@ -14,8 +15,7 @@ let currentX = 0;
  * @param {string} page 
  * @param {number} x 
  */
-async function loadPage(page, x = 0) {
-	console.info('currentX', currentX, '\nx', x);
+async function loadPage(page, x = null, y = null) {
 	try {
 		const main = document.getElementById('content');
 		if(!main)
@@ -49,44 +49,35 @@ async function loadPage(page, x = 0) {
 		main.remove();
 
 		//Transición
-		const r = document.querySelector(':root');
-		const rs = r.style;
-		if(currentX === x) {
-			rs.setProperty('--page-transition-from-x', 0);
-			rs.setProperty('--page-transition-from-y', '32px');
-		} else {
-			const step = 24;
-			const diff = x - currentX;
+		x ??= currentX;
+		y ??= currentY;
+
+		console.info('currentX', currentX, '\nx', x);
+		console.info('currentY', currentY, '\ny', y);
+
+		const calcTranslation = (from, to, step) => {
+			const diff = to - from;
 			const distance = Math.pow(diff, 2);
 			const orientation = Math.sign(diff);
-			const translation = step * distance * orientation;
-			rs.setProperty('--page-transition-from-x', `${translation}px`);
-			rs.setProperty('--page-transition-from-y', 0);
-		}
+			return step * distance * orientation;
+		};
+
+		const translationX = calcTranslation(currentX, x, 24);
+		const translationY = calcTranslation(currentY, y, 18);
+
+		const r = document.querySelector(':root');
+		const rs = r.style;
+		rs.setProperty('--page-transition-from-x', `${translationX}px`);
+		rs.setProperty('--page-transition-from-y', `${translationY}px`);
 
 		currentX = x;
+		currentY = y;
 
-		setTimeout(() => newMain.classList.add('active'), 20);
-
-		globalThis.scrollTo({ top: 0, left: 0, behavior: 'smooth', speed });
+		setTimeout(() => {
+			newMain.classList.add('active');
+			globalThis.scrollTo({ top: 0, behavior: 'smooth' });
+		}, 20);
 	} catch(error) {
 		console.error(error);
-	}
-}
-
-function swapPages() {
-	page1.classList.toggle('active');
-	page2.classList.toggle('active');
-	
-	if (page1.classList.contains('active')) {
-		page2.classList.add('inactive');
-		setTimeout(() => {
-			page2.classList.remove('inactive');
-		}, 500); // Wait for the fade out to finish
-	} else {
-		page1.classList.add('inactive');
-		setTimeout(() => {
-			page1.classList.remove('inactive');
-		}, 500);
 	}
 }

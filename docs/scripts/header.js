@@ -8,8 +8,9 @@ fetch('components/header.html')
 	document.querySelectorAll('button[page]').forEach(link => {
 		link.addEventListener('click', async event => {
 			const page = link.getAttribute('page');
-			const x = link.getAttribute('x') || currentX;
-			await loadPage(page, x);
+			const x = link.getAttribute('x') || null;
+			const y = link.getAttribute('y') || null;
+			await loadPage(page, x, y);
 		});
     });
 
