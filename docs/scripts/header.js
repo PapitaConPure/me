@@ -3,7 +3,7 @@ fetch('components/header.html')
 .then(header => {
 	const template = document.createElement('template');
 	template.innerHTML = header.trim();
-	document.body.insertBefore(template.content, document.body.firstChild);
+	document.body.insertBefore(template.content, document.getElementById('content') || document.body.firstChild);
 
 	document.querySelectorAll('button[page]').forEach(link => {
 		link.addEventListener('click', async event => {

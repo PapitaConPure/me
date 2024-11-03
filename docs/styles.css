@@ -16,7 +16,7 @@
 	}
 
 	section {
-		@apply my-8;
+		@apply mb-8 mt-12;
 	}
 
 	footer {
@@ -29,7 +29,7 @@
 }
 
 .navbar-mobile-item {
-	@apply block bg-secondary-900 px-4 py-2 text-secondary-500 hover:bg-secondary-800 hover:text-secondary-200;
+	@apply block w-full bg-secondary-900 px-4 py-2 text-secondary-500 hover:bg-secondary-800 hover:text-secondary-200;
 }
 
 .menu-icon {
@@ -46,6 +46,14 @@
 
 .footer-strip-link {
 	@apply inline-block px-1 hover:underline;
+}
+
+section.hero {
+	@apply my-16;
+}
+
+section.header {
+	@apply mt-8;
 }
 
 .title {
