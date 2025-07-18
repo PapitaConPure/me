@@ -1,13 +1,10 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === 'production';
-const repo = 'me';
-
 const nextConfig: NextConfig = {
-  output: isProd ? 'export' : 'standalone',
-  basePath: isProd ? `/${repo}` : '',
-  assetPrefix: isProd ? `/${repo}/` : '',
+  output: 'export',
+  distDir: 'dist',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',

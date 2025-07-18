@@ -406,7 +406,7 @@ const items: MusicItem[] = [
 		id: 'track1',
 		kind: 'single',
 		artists: ['Papita con Puré'],
-		title: 'Super Tetas Gordas',
+		title: 'TEST TEST TEST',
 		date: new Date('2024-01-01'),
 		categories: ['original', 'piano'],
 		coverUrl: 'https://pbs.twimg.com/media/GwBLbK7WMAATt07?format=jpg',
