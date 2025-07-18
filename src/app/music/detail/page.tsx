@@ -34,13 +34,13 @@ function formatDateUTC(date: Date, sep = '.'): string {
 }
 
 interface MusicDetailProps {
-	searchParams: {
+	searchParams?: Promise<{
 		id?: string;
-	};
+	}>;
 }
 
 const MusicDetail = async ({ searchParams }: MusicDetailProps) => {
-	const { id = '' } = await searchParams;
+	const { id = '' } = (await searchParams) || {};
 	const item = items.find((i) => i.id === id);
 
 	if (item == undefined) {
