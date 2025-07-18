@@ -5,12 +5,13 @@ const withMDX = createMDX({
   extension: /\.mdx?$/,
 });
 
+const isProd = process.env.NODE_ENV === 'production';
 const repoName = 'me';
 
 const nextConfig: NextConfig = {
   output: 'export',
-  assetPrefix: process.env.NODE_ENV === 'production' ? `/${repoName}/` : '',
-  basePath: process.env.NODE_ENV === 'production' ? `/${repoName}` : '',
+  assetPrefix: isProd ? `/${repoName}/` : '',
+  basePath: isProd ? `/${repoName}` : '',
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   images: {
     unoptimized: true,

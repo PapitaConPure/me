@@ -182,7 +182,7 @@ const items: MusicItem[] = [
 		title: 'The Concealed Four Seasons',
 		date: new Date('2020-04-05'),
 		categories: ['arrangement', 'touhou'],
-		coverUrl: '../potato.webp',
+		coverUrl: '/potato.webp',
 		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=wql8JViepME',
 		externalLinks: [
