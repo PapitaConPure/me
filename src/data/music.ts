@@ -558,11 +558,11 @@ const items: MusicItem[] = [
 		children: [
 			{
 				kind: 'id',
-				data: 'track1',
+				data: 'test',
 			},
 			{
 				kind: 'id',
-				data: 'track3',
+				data: 'pateka-57',
 			},
 			{
 				kind: 'name',
@@ -570,7 +570,7 @@ const items: MusicItem[] = [
 			},
 			{
 				kind: 'id',
-				data: 'track4',
+				data: 'bazubi-bazab',
 			},
 		],
 		coverUrl: 'https://pbs.twimg.com/media/Gv0nMuOXEAAcJfd?format=jpg',
