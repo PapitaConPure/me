@@ -1,3 +1,5 @@
+'use client';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import items, { itemsById } from '@/data/music';
 import Image from 'next/image';
@@ -33,14 +35,9 @@ function formatDateUTC(date: Date, sep = '.'): string {
 	return `${year}${sep}${month}${sep}${day}`;
 }
 
-interface MusicDetailProps {
-	searchParams?: Promise<{
-		id?: string;
-	}>;
-}
-
-const MusicDetail = async ({ searchParams }: MusicDetailProps) => {
-	const { id = '' } = (await searchParams) || {};
+const MusicDetail = () => {
+	const searchParams = useSearchParams();
+	const id = searchParams.get('id');
 	const item = items.find((i) => i.id === id);
 
 	if (item == undefined) {
@@ -74,13 +71,11 @@ const MusicDetail = async ({ searchParams }: MusicDetailProps) => {
 						</h1>
 						<div className='mb-3 flex flex-wrap space-x-2 text-xs font-light text-foreground text-opacity-80'>
 							{item.categories.map((cat, index) => (
-								<>
-									<div
-										key={index}
-										className='mb-2 rounded-full border border-primary-500 px-2 py-0.5 text-primary-500'>
-										{cat.toUpperCase()}
-									</div>
-								</>
+								<div
+									key={index}
+									className='mb-2 rounded-full border border-primary-500 px-2 py-0.5 text-primary-500'>
+									{cat.toUpperCase()}
+								</div>
 							))}
 						</div>
 
