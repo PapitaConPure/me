@@ -182,8 +182,8 @@ const items: MusicItem[] = [
 		title: 'The Concealed Four Seasons',
 		date: new Date('2020-04-05'),
 		categories: ['arrangement', 'touhou'],
-		coverUrl: './potato.webp',
-		thumbnailUrl: './potato.webp',
+		coverUrl: '../potato.webp',
+		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=wql8JViepME',
 		externalLinks: [
 			{
@@ -206,8 +206,8 @@ const items: MusicItem[] = [
 		title: 'Will not to Vanish in Fragments',
 		date: new Date('2020-04-06'),
 		categories: ['original'],
-		coverUrl: './potato.webp',
-		thumbnailUrl: './potato.webp',
+		coverUrl: '/potato.webp',
+		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=pC9NJpZaBSQ',
 		externalLinks: [
 			{
@@ -227,8 +227,8 @@ const items: MusicItem[] = [
 		title: 'Café Terrace Memories',
 		date: new Date('2020-04-14'),
 		categories: ['arrangement', 'piano', 'touhou'],
-		coverUrl: './potato.webp',
-		thumbnailUrl: './potato.webp',
+		coverUrl: '/potato.webp',
+		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=bVmKeNlKcww',
 		externalLinks: [
 			{
@@ -246,8 +246,8 @@ const items: MusicItem[] = [
 		title: 'Popular Emotion',
 		date: new Date('2020-07-12'),
 		categories: ['original', 'piano'],
-		coverUrl: './potato.webp',
-		thumbnailUrl: './potato.webp',
+		coverUrl: '/potato.webp',
+		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=1cQETTxVr54',
 		externalLinks: [
 			{
@@ -265,8 +265,8 @@ const items: MusicItem[] = [
 		title: 'The Shrine that Worships a Dead God',
 		date: new Date('2020-10-07'),
 		categories: ['original', 'touhou'],
-		coverUrl: './potato.webp',
-		thumbnailUrl: './potato.webp',
+		coverUrl: '/potato.webp',
+		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=i6mr_mJn7bw',
 		externalLinks: [
 			{
@@ -284,8 +284,8 @@ const items: MusicItem[] = [
 		title: 'NEKOPARA Vol.4『SWEET×SWEET』',
 		date: new Date('2020-10-07'),
 		categories: ['arrangement', 'piano'],
-		coverUrl: './potato.webp',
-		thumbnailUrl: './potato.webp',
+		coverUrl: '/potato.webp',
+		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=hi6XAS9oVME',
 		externalLinks: [
 			{
@@ -305,8 +305,8 @@ const items: MusicItem[] = [
 		title: 'Last Remote',
 		date: new Date('2020-12-19'),
 		categories: ['arrangement', 'piano'],
-		coverUrl: './potato.webp',
-		thumbnailUrl: './potato.webp',
+		coverUrl: '/potato.webp',
+		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=J8RcKwhwtwU',
 		externalLinks: [
 			{
@@ -324,8 +324,8 @@ const items: MusicItem[] = [
 		title: 'Former Hell Showdown',
 		date: new Date('2020-12-22'),
 		categories: ['original', 'touhou'],
-		coverUrl: './images/music/oni-showdown/onishowdown.webp',
-		thumbnailUrl: './images/music/oni-showdown/onishowdown.webp',
+		coverUrl: '/images/music/oni-showdown/onishowdown.webp',
+		thumbnailUrl: '/images/music/oni-showdown/onishowdown.webp',
 		thumbIllustrators: [
 			{
 				name: '村上４時',
@@ -353,8 +353,8 @@ const items: MusicItem[] = [
 		title: 'Night of a Tredecillion Tears',
 		date: new Date('2020-12-29'),
 		categories: ['original', 'touhou'],
-		coverUrl: './images/music/tredecillion-tears/cover.png',
-		thumbnailUrl: './images/music/tredecillion-tears/sadnight.webp',
+		coverUrl: '/images/music/tredecillion-tears/cover.png',
+		thumbnailUrl: '/images/music/tredecillion-tears/sadnight.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=eMV6GF3DqOE',
 		externalLinks: [
 			{
@@ -369,35 +369,35 @@ const items: MusicItem[] = [
 				format: 'mp3',
 				label: 'Pista de audio (320kbps)',
 				size: '16.7 MB',
-				url: './audio/music/tredecillion-tears/Night of a Tredecillion Tears.mp3',
+				url: '/audio/music/tredecillion-tears/Night of a Tredecillion Tears.mp3',
 			},
 			{
 				kind: 'image',
 				format: 'png',
 				label: 'Portada (356x356)',
 				size: '171 KB',
-				url: './images/music/tredecillion-tears/cover.png',
+				url: '/images/music/tredecillion-tears/cover.png',
 			},
 			{
 				kind: 'image',
 				format: 'jpg',
 				label: 'Portada (200x200)',
 				size: '24.8 KB',
-				url: './images/music/tredecillion-tears/folder.jpg',
+				url: '/images/music/tredecillion-tears/folder.jpg',
 			},
 			{
 				kind: 'image',
 				format: 'png',
 				label: 'Miniatura (720p)',
 				size: '1.31 MB',
-				url: './images/music/tredecillion-tears/sadnight.png',
+				url: '/images/music/tredecillion-tears/sadnight.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
 				label: 'Miniatura (720p)',
 				size: '84.6 KB',
-				url: './images/music/tredecillion-tears/sadnight.webp',
+				url: '/images/music/tredecillion-tears/sadnight.webp',
 			},
 		],
 		tags: ['gensofest', 'legacy of lunatic kingdom', 'touhou style'],
