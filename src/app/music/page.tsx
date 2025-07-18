@@ -8,7 +8,7 @@ interface MusicCardProps {
 	href: Url;
 	imgSrc: string;
 	title: string;
-	author: string;
+	author: React.ReactNode;
 	categories: string[];
 	date: Date;
 }
@@ -81,9 +81,18 @@ const Music = () => {
 							key={item.id}
 							href={`/music/detail?id=${item.id}`}
 							title={item.title}
-							author={
-								item.displayArtist ? item.displayArtist : item.artists.join(' & ')
-							}
+							author={item.displayArtist || (item.artists.map((artist, index, arr) => (
+								<span key={index + 1}>
+									{typeof artist === 'string' ? (
+										<span>{artist}</span>
+									) : (
+										<span>{artist.name}</span>
+									)}
+									{index < arr.length - 1 && (
+										<span className='mx-1 text-sm text-secondary-500'>&</span>
+									)}
+								</span>
+							)))}
 							categories={item.categories}
 							date={item.date}
 							imgSrc={item.thumbnailUrl}

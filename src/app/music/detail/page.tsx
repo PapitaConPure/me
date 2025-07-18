@@ -1,7 +1,7 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { Suspense } from 'react'
+import { Suspense } from 'react';
 import Link from 'next/link';
 import items, { itemsById } from '@/data/music';
 import Image from 'next/image';
@@ -67,7 +67,24 @@ const MusicDetailInner = () => {
 					</div>
 					<div className='flex-grow'>
 						<h2 className='mb-1 text-xl text-foreground text-opacity-90'>
-							{item.artists.join('&')}
+							{item.artists.map((artist, index, arr) => (
+								<span key={index + 1}>
+									{typeof artist === 'string' ? (
+										<span>{artist}</span>
+									) : (
+										<a
+											href={artist.url}
+											target='_blank'
+											rel='noopener noreferrer'
+											className='text-accent-500 hover:text-accent-600 hover:underline'>
+											{artist.name}
+										</a>
+									)}
+									{index < arr.length - 1 && (
+										<span className='mx-2 text-base text-secondary-500'>&</span>
+									)}
+								</span>
+							))}
 						</h2>
 						<h1 className='mb-2.5 font-default-sans text-3xl font-extrabold text-foreground'>
 							{item.title}
@@ -108,7 +125,7 @@ const MusicDetailInner = () => {
 								<h3 className='section-h3 mb-2'>Lista de Pistas</h3>
 								<ChildrenList>
 									{item.children.map((child, index) => {
-										if(child.kind === 'name')
+										if (child.kind === 'name')
 											return (
 												<li
 													key={index}
@@ -145,7 +162,7 @@ const MusicDetailInner = () => {
 							</>
 						)}
 
-						{(item.kind === 'compilation') && (
+						{item.kind === 'compilation' && (
 							<>
 								<SmallSeparator />
 								<h3 className='section-h3 mb-2'>Lista de Pistas</h3>

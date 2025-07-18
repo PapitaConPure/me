@@ -55,6 +55,7 @@ export type ExtendedMusicItemMetadata = {
 	composers?: CreditsField;
 	arrangers?: CreditsField;
 	mixers?: CreditsField;
+	videoIllustrators?: CreditsField;
 	thumbIllustrators?: CreditsField;
 	coverIllustrators?: CreditsField;
 	videoUrl?: string;
@@ -87,6 +88,16 @@ export type CompilationMusicItem = {
 export type MusicItem = BaseMusicItem &
 	ExtendedMusicItemMetadata &
 	(SingleMusicItem | AlbumMusicItem | CompilationMusicItem);
+
+const tewaCredit: FullArtistCredit = {
+	name: 'Tewa',
+	url: 'https://www.youtube.com/channel/UCEq9JPjn7HY9fH-zIcw4Qbg',
+};
+
+const karlCredit: FullArtistCredit = {
+	name: 'Karl Zuñiga',
+	url: 'https://www.youtube.com/channel/UCjVTRDb1tX-lDf2pvlj75Gw',
+};
 
 const items: MusicItem[] = [
 	{
@@ -401,6 +412,67 @@ const items: MusicItem[] = [
 			},
 		],
 		tags: ['gensofest', 'legacy of lunatic kingdom', 'touhou style'],
+	},
+	{
+		id: 'pateka-1',
+		kind: 'single',
+		displayArtist: 'PaTeKa',
+		artists: ['Papita con Puré', tewaCredit, karlCredit],
+		videoIllustrators: [
+			{
+				name: 'MerlimAmbrosuis',
+				url: 'https://www.pixiv.net/artworks/80453394',
+			},
+		],
+		title: 'Rabbit of the Bar ~ Red and White Tubercle',
+		date: new Date('2021-01-07'),
+		categories: ['original', 'touhou'],
+		coverUrl: '/images/music/pateka-1/cover.png',
+		thumbnailUrl: '/images/music/pateka-1/pateka.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=uH7cO2KRkuU',
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube (por Papita con Puré)',
+				url: 'https://www.youtube.com/watch?v=uH7cO2KRkuU',
+			},
+			{
+				source: 'youtube',
+				label: 'YouTube (por Karl Zuñiga)',
+				url: 'https://www.youtube.com/watch?v=453ZQbXvCXA',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: 'Pista de audio (320kbps)',
+				size: '15.2 MB',
+				url: '/audio/music/pateka-1/PaTeKa1.mp3',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Portada (5000x5000)',
+				size: '14.7 MB',
+				url: '/images/music/pateka-1/cover.png',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Miniatura (720p)',
+				size: '1.42 MB',
+				url: '/images/music/pateka-1/pateka.png',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: 'Miniatura (720p)',
+				size: '62.5 KB',
+				url: '/images/music/pateka-1/pateka.webp',
+			},
+		],
+		tags: ['windows era 1 style', 'touhou style', 'collab'],
 	},
 	{
 		id: 'track1',
