@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
+const repo = 'me';
+
 const nextConfig: NextConfig = {
-  /* config options here */
-  distDir: 'docs2',
+  output: 'export',
+  basePath: `/${repo}`,
+  assetPrefix: `/${repo}/`,
   images: {
     remotePatterns: [
       {
