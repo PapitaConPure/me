@@ -383,7 +383,7 @@ const items: MusicItem[] = [
 				format: 'jpg',
 				label: 'Portada (200x200)',
 				size: '24.8 KB',
-				url: '/images/music/tredecillion-tears/folder.jpg',
+				url: '/images/music/tredecillion-tears/Folder.jpg',
 			},
 			{
 				kind: 'image',
