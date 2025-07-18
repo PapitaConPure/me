@@ -475,7 +475,7 @@ const items: MusicItem[] = [
 		tags: ['windows era 1 style', 'touhou style', 'collab'],
 	},
 	{
-		id: 'track1',
+		id: 'test',
 		kind: 'single',
 		artists: ['Papita con Puré'],
 		title: 'TEST TEST TEST',
@@ -537,7 +537,7 @@ const items: MusicItem[] = [
 		tags: ['original', 'piano', 'touhou'],
 	},
 	{
-		id: 'track2',
+		id: 'masivo',
 		kind: 'album',
 		artists: ['Papita con Puré'],
 		title: 'MASIVO',
@@ -577,7 +577,7 @@ const items: MusicItem[] = [
 		thumbnailUrl: 'https://pbs.twimg.com/media/Gv0nMuOXEAAcJfd?format=jpg',
 	},
 	{
-		id: 'track3',
+		id: 'pateka-57',
 		kind: 'single',
 		displayArtist: 'PaTeKa',
 		artists: ['Papita con Puré', 'Karl Zuñiga', 'Tewa'],
@@ -588,7 +588,7 @@ const items: MusicItem[] = [
 		thumbnailUrl: 'https://pbs.twimg.com/media/Gv-IfGPWIAAtOkU?format=jpg',
 	},
 	{
-		id: 'track4',
+		id: 'bazubi-bazab',
 		kind: 'single',
 		artists: ['Tokoyami Towa'],
 		title: 'BAZUBI BAZAB',
@@ -598,7 +598,7 @@ const items: MusicItem[] = [
 		thumbnailUrl: 'https://hololive.hololivepro.com/wp-content/uploads/2025/06/BAZUBIBAZAB.png',
 	},
 	{
-		id: 'track5',
+		id: 'banzai',
 		kind: 'single',
 		artists: ['Bancho'],
 		title: 'BANZAI',
