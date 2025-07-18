@@ -9,7 +9,8 @@
 		"start": "next start",
 		"lint": "next lint",
 		"build-watch": "npx tailwindcss -i ./docs/styles.css -o ./docs/output.css --minify -w",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"deploy": "next build && gh-pages -d out"
 	},
 	"keywords": [],
 	"author": "",

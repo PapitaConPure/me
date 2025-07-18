@@ -1,3 +1,5 @@
+import ROOT from "@/lib/preroot";
+
 export type ExternalLink = {
 	source: 'youtube' | 'soundcloud' | 'spotify' | 'other';
 	label: string;
@@ -180,8 +182,8 @@ const items: MusicItem[] = [
 		title: 'The Concealed Four Seasons',
 		date: new Date('2020-04-05'),
 		categories: ['arrangement', 'touhou'],
-		coverUrl: '/potato.webp',
-		thumbnailUrl: '/potato.webp',
+		coverUrl: `${ROOT}/potato.webp`,
+		thumbnailUrl: `${ROOT}/potato.webp`,
         videoUrl: 'https://www.youtube.com/watch?v=wql8JViepME',
 		externalLinks: [
 			{
@@ -204,8 +206,8 @@ const items: MusicItem[] = [
 		title: 'Will not to Vanish in Fragments',
 		date: new Date('2020-04-06'),
 		categories: ['original'],
-		coverUrl: '/potato.webp',
-		thumbnailUrl: '/potato.webp',
+		coverUrl: `${ROOT}/potato.webp`,
+		thumbnailUrl: `${ROOT}/potato.webp`,
         videoUrl: 'https://www.youtube.com/watch?v=pC9NJpZaBSQ',
 		externalLinks: [
 			{
@@ -225,8 +227,8 @@ const items: MusicItem[] = [
 		title: 'Café Terrace Memories',
 		date: new Date('2020-04-14'),
 		categories: ['arrangement', 'piano', 'touhou'],
-		coverUrl: '/potato.webp',
-		thumbnailUrl: '/potato.webp',
+		coverUrl: `${ROOT}/potato.webp`,
+		thumbnailUrl: `${ROOT}/potato.webp`,
 		videoUrl: 'https://www.youtube.com/watch?v=bVmKeNlKcww',
 		externalLinks: [
 			{
@@ -244,8 +246,8 @@ const items: MusicItem[] = [
 		title: 'Popular Emotion',
 		date: new Date('2020-07-12'),
 		categories: ['original', 'piano'],
-		coverUrl: '/potato.webp',
-		thumbnailUrl: '/potato.webp',
+		coverUrl: `${ROOT}/potato.webp`,
+		thumbnailUrl: `${ROOT}/potato.webp`,
 		videoUrl: 'https://www.youtube.com/watch?v=1cQETTxVr54',
 		externalLinks: [
 			{
@@ -263,8 +265,8 @@ const items: MusicItem[] = [
 		title: 'The Shrine that Worships a Dead God',
 		date: new Date('2020-10-07'),
 		categories: ['original', 'touhou'],
-		coverUrl: '/potato.webp',
-		thumbnailUrl: '/potato.webp',
+		coverUrl: `${ROOT}/potato.webp`,
+		thumbnailUrl: `${ROOT}/potato.webp`,
 		videoUrl: 'https://www.youtube.com/watch?v=i6mr_mJn7bw',
 		externalLinks: [
 			{
@@ -282,8 +284,8 @@ const items: MusicItem[] = [
 		title: 'NEKOPARA Vol.4『SWEET×SWEET』',
 		date: new Date('2020-10-07'),
 		categories: ['arrangement', 'piano'],
-		coverUrl: '/potato.webp',
-		thumbnailUrl: '/potato.webp',
+		coverUrl: `${ROOT}/potato.webp`,
+		thumbnailUrl: `${ROOT}/potato.webp`,
 		videoUrl: 'https://www.youtube.com/watch?v=hi6XAS9oVME',
 		externalLinks: [
 			{
@@ -303,8 +305,8 @@ const items: MusicItem[] = [
 		title: 'Last Remote',
 		date: new Date('2020-12-19'),
 		categories: ['arrangement', 'piano'],
-		coverUrl: '/potato.webp',
-		thumbnailUrl: '/potato.webp',
+		coverUrl: `${ROOT}/potato.webp`,
+		thumbnailUrl: `${ROOT}/potato.webp`,
 		videoUrl: 'https://www.youtube.com/watch?v=J8RcKwhwtwU',
 		externalLinks: [
 			{
@@ -322,8 +324,8 @@ const items: MusicItem[] = [
 		title: 'Former Hell Showdown',
 		date: new Date('2020-12-22'),
 		categories: ['original', 'touhou'],
-		coverUrl: '/images/music/oni-showdown/onishowdown.webp',
-		thumbnailUrl: '/images/music/oni-showdown/onishowdown.webp',
+		coverUrl: `${ROOT}/images/music/oni-showdown/onishowdown.webp`,
+		thumbnailUrl: `${ROOT}/images/music/oni-showdown/onishowdown.webp`,
 		thumbIllustrators: [
 			{
 				name: '村上４時',
@@ -351,8 +353,8 @@ const items: MusicItem[] = [
 		title: 'Night of a Tredecillion Tears',
 		date: new Date('2020-12-29'),
 		categories: ['original', 'touhou'],
-		coverUrl: '/images/music/tredecillion-tears/cover.png',
-		thumbnailUrl: '/images/music/tredecillion-tears/sadnight.webp',
+		coverUrl: `${ROOT}/images/music/tredecillion-tears/cover.png`,
+		thumbnailUrl: `${ROOT}/images/music/tredecillion-tears/sadnight.webp`,
 		videoUrl: 'https://www.youtube.com/watch?v=eMV6GF3DqOE',
 		externalLinks: [
 			{
@@ -367,38 +369,181 @@ const items: MusicItem[] = [
 				format: 'mp3',
 				label: 'Pista de audio (320kbps)',
 				size: '16.7 MB',
-				url: '/audio/music/tredecillion-tears/Night of a Tredecillion Tears.mp3',
+				url: `${ROOT}/audio/music/tredecillion-tears/Night of a Tredecillion Tears.mp3`,
 			},
 			{
 				kind: 'image',
 				format: 'png',
 				label: 'Portada (356x356)',
 				size: '171 KB',
-				url: '/images/music/tredecillion-tears/cover.png',
+				url: `${ROOT}/images/music/tredecillion-tears/cover.png`,
 			},
 			{
 				kind: 'image',
 				format: 'jpg',
 				label: 'Portada (200x200)',
 				size: '24.8 KB',
-				url: '/images/music/tredecillion-tears/folder.jpg',
+				url: `${ROOT}/images/music/tredecillion-tears/folder.jpg`,
 			},
 			{
 				kind: 'image',
 				format: 'png',
 				label: 'Miniatura (720p)',
 				size: '1.31 MB',
-				url: '/images/music/tredecillion-tears/sadnight.png',
+				url: `${ROOT}/images/music/tredecillion-tears/sadnight.png`,
 			},
 			{
 				kind: 'image',
 				format: 'webp',
 				label: 'Miniatura (720p)',
 				size: '84.6 KB',
-				url: '/images/music/tredecillion-tears/sadnight.webp',
+				url: `${ROOT}/images/music/tredecillion-tears/sadnight.webp`,
 			},
 		],
 		tags: ['gensofest', 'legacy of lunatic kingdom', 'touhou style'],
+	},
+	{
+		id: 'track1',
+		kind: 'single',
+		artists: ['Papita con Puré'],
+		title: 'Super Tetas Gordas',
+		date: new Date('2024-01-01'),
+		categories: ['original', 'piano'],
+		coverUrl: 'https://pbs.twimg.com/media/GwBLbK7WMAATt07?format=jpg',
+		thumbnailUrl: 'https://pbs.twimg.com/media/GwBLbK7WMAATt07?format=jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=UDjJdx0bxG8',
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=UDjJdx0bxG8',
+			},
+			{
+				source: 'soundcloud',
+				label: 'SoundCloud',
+				url: 'https://soundcloud.com/papitaconpure/touhou-piano-medley-1',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				url: 'https://example.com/download/super-tetas-gordas.mp3',
+				size: '5 MB',
+				label: 'Pista completa (320 Kbps)',
+			},
+			{
+				kind: 'audio',
+				format: 'flac',
+				url: 'https://example.com/download/super-tetas-gordas.flac',
+				size: '15 MB',
+				label: 'Pista completa (24-bit)',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				url: 'https://example.com/download/super-tetas-gordas.webp',
+				size: '3 MB',
+				label: 'Miniatura',
+			},
+			{
+				kind: 'video',
+				format: 'mov',
+				url: 'https://example.com/download/super-tetas-gordas.mov',
+				size: '95 MB',
+				label: 'Escena 1 - Bucle (DNxHR HQ)',
+			},
+			{
+				kind: 'file',
+				format: 'zip',
+				url: 'https://example.com/download/super-tetas-gordas.zip',
+				size: '118 MB',
+				label: 'Todos los recursos',
+				external: true,
+			},
+		],
+		tags: ['original', 'piano', 'touhou'],
+	},
+	{
+		id: 'track2',
+		kind: 'album',
+		artists: ['Papita con Puré'],
+		title: 'MASIVO',
+		date: new Date('2024-01-02'),
+		categories: ['original', 'piano'],
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=UDjJdx0bxG8',
+			},
+			{
+				source: 'soundcloud',
+				label: 'SoundCloud',
+				url: 'https://soundcloud.com/papitaconpure/touhou-piano-medley-1',
+			},
+		],
+		children: [
+			{
+				kind: 'id',
+				data: 'track1',
+			},
+			{
+				kind: 'id',
+				data: 'track3',
+			},
+			{
+				kind: 'name',
+				data: 'Machu Picchu Serre siete',
+			},
+			{
+				kind: 'id',
+				data: 'track4',
+			},
+		],
+		coverUrl: 'https://pbs.twimg.com/media/Gv0nMuOXEAAcJfd?format=jpg',
+		thumbnailUrl: 'https://pbs.twimg.com/media/Gv0nMuOXEAAcJfd?format=jpg',
+	},
+	{
+		id: 'track3',
+		kind: 'single',
+		displayArtist: 'PaTeKa',
+		artists: ['Papita con Puré', 'Karl Zuñiga', 'Tewa'],
+		title: 'PaTeKa 57',
+		date: new Date('2024-01-02'),
+		categories: ['original', 'piano'],
+		coverUrl: 'https://pbs.twimg.com/media/Gv-IfGPWIAAtOkU?format=jpg',
+		thumbnailUrl: 'https://pbs.twimg.com/media/Gv-IfGPWIAAtOkU?format=jpg',
+	},
+	{
+		id: 'track4',
+		kind: 'single',
+		artists: ['Papita con Puré'],
+		title: 'Ese momento en el que viajás de EEUU a Japón para hacer un stream de chill',
+		date: new Date('2024-01-02'),
+		categories: ['original', 'piano'],
+		coverUrl: 'https://pbs.twimg.com/media/Gv3pEuiXMAA_saT?format=jpg',
+		thumbnailUrl: 'https://pbs.twimg.com/media/Gv3pEuiXMAA_saT?format=jpg',
+	},
+	{
+		id: 'track5',
+		kind: 'single',
+		artists: ['Enterami Toda'],
+		title: 'BAZUBI BAZAB',
+		date: new Date('2024-01-02'),
+		categories: ['original', 'piano'],
+		coverUrl: 'https://hololive.hololivepro.com/wp-content/uploads/2025/06/BAZUBIBAZAB.png',
+		thumbnailUrl: 'https://hololive.hololivepro.com/wp-content/uploads/2025/06/BAZUBIBAZAB.png',
+	},
+	{
+		id: 'track6',
+		kind: 'single',
+		artists: ['Bancho'],
+		title: 'BANZAI',
+		date: new Date('2024-01-02'),
+		categories: ['original'],
+		coverUrl: 'https://hololive.hololivepro.com/wp-content/uploads/2025/06/BANZAI.png',
+		thumbnailUrl: 'https://hololive.hololivepro.com/wp-content/uploads/2025/06/BANZAI.png',
 	},
 ];
 
