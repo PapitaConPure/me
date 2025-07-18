@@ -2,6 +2,7 @@ import { Url } from 'next/dist/shared/lib/router/router';
 import Image from 'next/image';
 import Link from 'next/link';
 import items from '@/data/music';
+import getRoot from '@/lib/getroot';
 
 interface MusicCardProps {
 	href: Url;
@@ -31,7 +32,7 @@ const MusicCard = ({ href, imgSrc, title, author, categories, date }: MusicCardP
 					</div>
 				</div>
 				<Image
-					src={imgSrc}
+					src={getRoot(imgSrc)}
 					alt='Thumbnail Backdrop'
 					fill
                     sizes={'(max-width: 768px) 50vw, 33vw'}
@@ -39,7 +40,7 @@ const MusicCard = ({ href, imgSrc, title, author, categories, date }: MusicCardP
 				/>
 				<div className='absolute inset-0 mx-auto my-auto h-full w-full transition-all duration-500 md:group-hover:scale-150 md:group-hover:blur-sm'>
 					<Image
-                        src={imgSrc}
+                        src={getRoot(imgSrc)}
                         alt='Thumbnail'
                         fill
                         sizes={'(max-width: 768px) 50vw, 33vw'}
