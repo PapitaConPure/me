@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build && next export -o docs",
+		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
 		"build-watch": "npx tailwindcss -i ./docs/styles.css -o ./docs/output.css --minify -w",
