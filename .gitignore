@@ -137,3 +137,5 @@ next-env.d.ts
 
 # vercel
 .vercel
+
+docs2/
