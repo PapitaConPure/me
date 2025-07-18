@@ -1,5 +1,7 @@
 'use client';
+
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react'
 import Link from 'next/link';
 import items, { itemsById } from '@/data/music';
 import Image from 'next/image';
@@ -35,7 +37,7 @@ function formatDateUTC(date: Date, sep = '.'): string {
 	return `${year}${sep}${month}${sep}${day}`;
 }
 
-const MusicDetail = () => {
+const MusicDetailInner = () => {
 	const searchParams = useSearchParams();
 	const id = searchParams.get('id');
 	const item = items.find((i) => i.id === id);
@@ -274,6 +276,14 @@ const MusicDetail = () => {
 			)}
 			<BackSection />
 		</main>
+	);
+};
+
+const MusicDetail = () => {
+	return (
+		<Suspense>
+			<MusicDetailInner />
+		</Suspense>
 	);
 };
 
