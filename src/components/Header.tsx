@@ -22,7 +22,7 @@ export default function Header() {
 					aria-label='Página Principal'
 				>
 					<Image
-						src={`./potato.webp`}
+						src='./potato.webp'
 						alt='Logo de Papita con Puré'
 						width={64}
 						height={64}
