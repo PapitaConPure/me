@@ -1,5 +1,3 @@
-'use client';
-
 import Link from "next/link";
 
 const Home = () => {
@@ -27,13 +25,6 @@ const Home = () => {
 
 			<section>
 				<h2 className="section-h2 mb-3 mt-6 text-center">Encuéntrame</h2>
-
-				<button
-					className="bg-red-500 text-white"
-					onClick={() => alert(`${process.env.PAGES_BASE_PATH} - ${process.env.NODE_ENV}`)}
-				>
-					AYUDA POR DIOS - {process.env.PAGES_BASE_PATH} - {process.env.NODE_ENV}
-				</button>
 
 				<div className="mx-auto w-full pr-2 sm:w-max sm:pr-0">
 					<a

@@ -1,5 +1,3 @@
-'use client';
-
 function FooterSeparator() {
 	return <span className='px-1'>•</span>;
 }
@@ -25,7 +23,7 @@ export default function Footer() {
 			<a
 				href='https://github.com/PapitaConPure'
 				target='_blank'
-				className={`${process.env.NODE_ENV === 'production' ? 'bg-green-500' : ''} hover:underline`}
+				className='hover:underline'
 				aria-label='Visitar el perfil de GitHub de Papita con Puré'>
 				Papita con Puré
 			</a>

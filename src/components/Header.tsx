@@ -1,5 +1,6 @@
 'use client';
 
+import getRoot from '@/lib/getroot';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -22,7 +23,7 @@ export default function Header() {
 					aria-label='Página Principal'
 				>
 					<Image
-						src={`${process.env.NODE_ENV === 'production' ? 'me' : ''}/potato.webp`}
+						src={getRoot('/potato.webp')}
 						alt='Logo de Papita con Puré'
 						width={64}
 						height={64}
