@@ -37,6 +37,8 @@ function formatDateUTC(date: Date, sep = '.'): string {
 	return `${year}${sep}${month}${sep}${day}`;
 }
 
+const repairUrlInProd = (url: string): string => url.replace('./', process.env.NODE_ENV === 'production' ? 'me/' : '/')
+
 const MusicDetailInner = () => {
 	const searchParams = useSearchParams();
 	const id = searchParams.get('id');
@@ -57,7 +59,7 @@ const MusicDetailInner = () => {
 				<div className='flex flex-col items-start justify-start sm:flex-row sm:space-x-8'>
 					<div className='mx-auto mb-8 w-[90%] max-w-[30rem] flex-shrink-0 sm:mx-0 sm:mb-0 sm:w-80 md:w-96'>
 						<Image
-							src={item.coverUrl || item.thumbnailUrl}
+							src={repairUrlInProd(item.coverUrl || item.thumbnailUrl)}
 							alt='Cover Art'
 							width={500}
 							height={500}
@@ -198,13 +200,13 @@ const MusicDetailInner = () => {
 									{download.kind === 'image' && (
 										<div className='absolute inset-0 opacity-25'>
 											<Image
-												src={download.url}
+												src={repairUrlInProd(download.url)}
 												alt=' '
 												fill
 												className='absolute inset-0 rounded-md object-fill blur-md'
 											/>
 											<Image
-												src={download.url}
+												src={repairUrlInProd(download.url)}
 												alt=' '
 												fill
 												className='absolute inset-0 rounded-md object-contain'
@@ -236,14 +238,14 @@ const MusicDetailInner = () => {
 										controlsList='nodownload noremoteplayback nofullscreen'
 										className='h-13 mb-2 w-full rounded-md bg-white sm:h-12 md:h-9'>
 										<source
-											src={download.url}
+											src={repairUrlInProd(download.url)}
 											type={`audio/${download.format}`}
 										/>
 										Your browser does not support the audio element.
 									</audio>
 								)}
 								<a
-									href={download.url}
+									href={repairUrlInProd(download.url)}
 									target='_blank'
 									rel='noopener noreferrer'
 									className='flex w-full flex-shrink-0 items-center justify-center rounded-md bg-primary-main px-8 py-4 text-white transition-colors duration-200 hover:bg-primary-700 sm:py-3 md:px-4 md:py-2'>
