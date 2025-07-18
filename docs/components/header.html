@@ -1,0 +1,103 @@
+<header class="fixed top-0 z-50 w-full border-b border-b-secondary-900 bg-background">
+	<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+		<div
+			onclick="loadPage('main.html', 0)"
+			class="cursor-pointer text-2xl font-bold text-primary-50"
+			aria-label="Página Principal"
+		>
+			<span class="select-none">Papita con Puré</span>
+		</div>
+		<nav class="hidden space-x-4 md:flex">
+			<button
+				x="0"
+				y="0"
+				page="main.html"
+				class="select-none px-0.5 text-secondary-400 hover:animate-glow-nav-desktop-hover active:animate-glow-nav-desktop-active lg:px-2 xl:px-3"
+				aria-label="Inicio"
+			>
+				Inicio
+			</button>
+			<button
+				x="1"
+				y="0"
+				page="about.html"
+				class="select-none px-0.5 text-secondary-400 hover:animate-glow-nav-desktop-hover active:animate-glow-nav-desktop-active lg:px-2 xl:px-3"
+				aria-label="Acerca de"
+			>
+				Acerca de
+			</button>
+			<button
+				x="2"
+				y="0"
+				page="projects.html"
+				class="select-none px-0.5 text-secondary-400 hover:animate-glow-nav-desktop-hover active:animate-glow-nav-desktop-active lg:px-2 xl:px-3"
+				aria-label="Proyectos"
+			>
+				Proyectos
+			</button>
+			<button
+				x="3"
+				y="0"
+				page="contact.html"
+				class="select-none px-0.5 text-secondary-400 hover:animate-glow-nav-desktop-hover active:animate-glow-nav-desktop-active lg:px-2 xl:px-3"
+				aria-label="Contacto"
+			>
+				Contacto
+			</button>
+		</nav>
+		<div class="md:hidden">
+			<button
+				id="menu-reveal"
+				class="h-6 w-6 text-primary-400 focus:text-primary-300 focus:outline-none active:text-primary-500"
+				aria-label="Desplegar menú de navegación"
+			>
+				<i class="fa fa-bars fa-lg"></i>
+			</button>
+			<button
+				id="menu-collapse"
+				class="hidden h-6 w-6 text-primary-50 focus:text-white focus:outline-none active:text-primary-100"
+				aria-label="Ocultar menú de navegación"
+			>
+				<i class="fa fa-bars fa-lg"></i>
+			</button>
+		</div>
+	</div>
+	<nav id="mobile-menu" class="hidden md:hidden">
+		<button
+			x="0"
+			y="0"
+			page="main.html"
+			class="block w-full select-none bg-secondary-900 px-4 py-2 text-secondary-500 hover:bg-secondary-800 hover:text-secondary-200"
+			aria-label="Inicio"
+		>
+			Inicio
+		</button>
+		<button
+			x="0"
+			y="1"
+			page="about.html"
+			class="block w-full select-none bg-secondary-900 px-4 py-2 text-secondary-500 hover:bg-secondary-800 hover:text-secondary-200"
+			aria-label="Acerca de"
+		>
+			Acerca de
+		</button>
+		<button
+			x="0"
+			y="2"
+			page="projects.html"
+			class="block w-full select-none bg-secondary-900 px-4 py-2 text-secondary-500 hover:bg-secondary-800 hover:text-secondary-200"
+			aria-label="Proyectos"
+		>
+			Proyectos
+		</button>
+		<button
+			x="0"
+			y="3"
+			page="contact.html"
+			class="block w-full select-none bg-secondary-900 px-4 py-2 text-secondary-500 hover:bg-secondary-800 hover:text-secondary-200"
+			aria-label="Contacto"
+		>
+			Contacto
+		</button>
+	</nav>
+</header>

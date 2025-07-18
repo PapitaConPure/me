@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	main {
+		@apply mx-auto my-6 max-w-6xl px-4 sm:px-8 md:px-16 lg:px-24;
+	}
+
+	section {
+		@apply mb-8 mt-12;
+	}
+}
+
+.title {
+	@apply mb-0 text-center font-default-sans text-4xl font-black text-foreground;
+}
+
+.subtitle {
+	@apply text-center text-secondary-200;
+}
+
+.section-h2 {
+	@apply font-default-sans text-3xl font-bold text-foreground;
+}
+
+.section-h3 {
+	@apply font-default-sans text-2xl font-semibold text-foreground;
+}
+
+.section-h4 {
+	@apply font-default-sans text-xl font-light text-secondary-300;
+}
+
+.btn {
+	@apply select-none items-center justify-between rounded-lg px-8 py-2.5 sm:px-6 sm:py-2 [&_*]:select-none;
+}
+
+.primary-btn {
+	@apply btn bg-primary-main text-white hover:animate-glow-primary-hover active:animate-glow-primary-active;
+}
+
+.social-btn {
+	@apply btn mx-0.5 my-1 w-full border text-white sm:w-64 md:w-36 md:px-4 lg:mx-1 lg:w-44 lg:px-8;
+}
