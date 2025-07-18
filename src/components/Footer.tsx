@@ -25,7 +25,7 @@ export default function Footer() {
 			<a
 				href='https://github.com/PapitaConPure'
 				target='_blank'
-				className='hover:underline'
+				className={`${process.env.NODE_ENV === 'production' ? 'bg-green-500' : ''} hover:underline`}
 				aria-label='Visitar el perfil de GitHub de Papita con Puré'>
 				Papita con Puré
 			</a>
