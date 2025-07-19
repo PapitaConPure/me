@@ -7,22 +7,7 @@ import { Video } from '@/components/Video';
 import { OlHTMLAttributes } from 'react';
 import getRoot from '@/lib/getroot';
 import { FullArtistCredit } from '@/types/music';
-
-const BackSection = () => {
-	return (
-		<section className='flex items-center justify-center'>
-			<Link
-				href='/music'
-				className='group flex w-full items-center rounded-md bg-foreground px-6 py-3 text-background transition-all duration-300 hover:pl-3 hover:pr-12 hover:opacity-80 sm:w-3/4 md:w-96'
-				aria-label='Volver a la lista de música'>
-				<i className='fa fa-angle-left flex-shrink-0 transition-all duration-700 group-hover:mr-4 group-hover:animate-pulse'></i>
-				<div className='flex-grow text-center transition-all duration-300 group-hover:flex-grow-0'>
-					Volver a <span className='font-semibold'>Música</span>
-				</div>
-			</Link>
-		</section>
-	);
-};
+import BackSection from '@/components/BackSection';
 
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
 
@@ -82,8 +67,19 @@ export const MusicDetail = ({ id }: MusicDetailProps) => {
 	if (item == undefined) {
 		return (
 			<main>
-				<section>La ID de Música especificada no existe.</section>
-				<BackSection />
+				<section>
+					<div className='flex justify-center'>
+						<div className='flex flex-col items-center space-y-8'>
+							<div className='text-9xl'>🥔</div>
+							<p>
+								La ID de Música especificada no existe.
+							</p>
+						</div>
+					</div>
+				</section>
+				<BackSection>
+					Volver a <span className='font-semibold'>Música</span>
+				</BackSection>
 			</main>
 		);
 	}
@@ -447,7 +443,9 @@ export const MusicDetail = ({ id }: MusicDetailProps) => {
 					</div>
 				</section>
 			)}
-			<BackSection />
+			<BackSection>
+				Volver a <span className='font-semibold'>Música</span>
+			</BackSection>
 		</main>
 	);
 };
