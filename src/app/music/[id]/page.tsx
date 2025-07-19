@@ -78,6 +78,8 @@ export async function generateMetadata({ params }: MusicDetailProps): Promise<Me
 
 	if (!item) return { title: 'Not Found' };
 
+	const bigImageUrl = item.thumbnailUrl || item.coverUrl;
+
 	return {
 		title: item.title,
 		description:
@@ -87,7 +89,11 @@ export async function generateMetadata({ params }: MusicDetailProps): Promise<Me
 			title: item.title,
 			description: item.description || '',
 			url: `https://papitaconpure.github.io/me/music/${item.id}`,
-			images: [`https://papitaconpure.github.io/me/images/music/${item.id}/thumbnail.webp`],
+			images: [
+				bigImageUrl.startsWith('http')
+					? bigImageUrl
+					: `https://papitaconpure.github.io/me/${bigImageUrl}`,
+			],
 			type: item.kind === 'single' ? 'music.song' : 'music.album',
 			siteName: 'Papita con Puré',
 		},
@@ -97,7 +103,11 @@ export async function generateMetadata({ params }: MusicDetailProps): Promise<Me
 			description: item.description || 'No description provided for this item.',
 			creator: item.displayArtist || item.artists.join(' & '),
 			site: 'https://papitaconpure.github.io/me',
-			images: [`https://papitaconpure.github.io/me/images/music/${item.id}/thumbnail.webp`],
+			images: [
+				bigImageUrl.startsWith('http')
+					? bigImageUrl
+					: `https://papitaconpure.github.io/me/${bigImageUrl}`,
+			],
 		},
 	};
 }
