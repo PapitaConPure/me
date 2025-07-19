@@ -138,7 +138,7 @@ const Home = () => {
 					Sagume (稀神サグメ) de Touhou 15.
 				</Answer>
 				<Question>¿Juegos favoritos?</Question>
-				<Answer>Risk of Rain 2 y Conker's Bad Fur Day.</Answer>
+				<Answer>Risk of Rain 2 y Conker&apos;s Bad Fur Day.</Answer>
 				<Question>¿Realmente te han hecho estas preguntas?</Question>
 				<Answer>No.</Answer>
 				<Question>¿Entonces por qué &quot;Preguntas Frecuentes&quot;?</Question>
