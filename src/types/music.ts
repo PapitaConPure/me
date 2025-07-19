@@ -35,7 +35,8 @@ export type CategoryKey = 'original' | 'arrangement' | 'collab' | 'touhou' | 'pi
 
 export type FullArtistCredit = {
 	name: string;
-	url: string;
+	clarification?: string;
+	url?: string;
 };
 
 export type CreditsField = (string | FullArtistCredit)[];

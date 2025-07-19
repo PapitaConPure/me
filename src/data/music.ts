@@ -1,7 +1,14 @@
-import { FullArtistCredit, MusicItem } from "@/types/music";
+import { FullArtistCredit, MusicItem } from '@/types/music';
+
+const zunCredit: FullArtistCredit = {
+	name: 'ZUN',
+	clarification: '太田 順也',
+	url: 'https://x.com/korindo',
+};
 
 const tewaCredit: FullArtistCredit = {
-	name: 'Tewa',
+	name: 'Aidan',
+	clarification: 'Tewa',
 	url: 'https://www.youtube.com/channel/UCEq9JPjn7HY9fH-zIcw4Qbg',
 };
 
@@ -14,10 +21,10 @@ const items: MusicItem[] = [
 	{
 		id: 'th-piano-medley-6-17',
 		kind: 'compilation',
-		artists: ['ZUN', 'Papita con Puré'],
+		artists: [zunCredit, 'Papita con Puré'],
 		credits: {
 			music: {
-				composers: ['ZUN'],
+				composers: [zunCredit],
 				arrangers: ['Papita con Puré'],
 			},
 		},
@@ -102,7 +109,7 @@ const items: MusicItem[] = [
 	{
 		id: 'okina-piano-drums',
 		kind: 'single',
-		artists: ['ZUN', 'Papita con Puré'],
+		artists: [zunCredit, 'Papita con Puré'],
 		title: 'The Concealed Four Seasons',
 		date: new Date('2020-04-05'),
 		categories: ['arrangement', 'touhou'],
@@ -111,7 +118,7 @@ const items: MusicItem[] = [
 		videoUrl: 'https://www.youtube.com/watch?v=wql8JViepME',
 		credits: {
 			music: {
-				composers: ['ZUN'],
+				composers: [zunCredit],
 				arrangers: ['Papita con Puré'],
 			},
 		},
@@ -151,7 +158,7 @@ const items: MusicItem[] = [
 	{
 		id: 'cafe-terrace-memories',
 		kind: 'single',
-		artists: ['ZUN', 'Papita con Puré'],
+		artists: [zunCredit, 'Papita con Puré'],
 		title: 'Café Terrace Memories',
 		date: new Date('2020-04-14'),
 		categories: ['arrangement', 'piano', 'touhou'],
@@ -160,7 +167,7 @@ const items: MusicItem[] = [
 		videoUrl: 'https://www.youtube.com/watch?v=bVmKeNlKcww',
 		credits: {
 			music: {
-				composers: ['ZUN'],
+				composers: [zunCredit],
 				arrangers: ['Papita con Puré'],
 			},
 		},
@@ -233,16 +240,16 @@ const items: MusicItem[] = [
 	{
 		id: 'last-remote-piano',
 		kind: 'single',
-		artists: ['ZUN', 'Papita con Puré'],
+		artists: [zunCredit, 'Papita con Puré'],
 		title: 'Last Remote',
 		date: new Date('2020-12-19'),
 		categories: ['arrangement', 'piano'],
 		coverUrl: '/potato.webp',
 		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=J8RcKwhwtwU',
-		credits:{
+		credits: {
 			music: {
-				composers: ['ZUN'],
+				composers: [zunCredit],
 				arrangers: ['Papita con Puré'],
 			},
 		},
@@ -266,7 +273,34 @@ const items: MusicItem[] = [
 		thumbnailUrl: '/images/music/oni-showdown/onishowdown.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=y0hiITwc4M4',
 		credits: {
+			music: {
+				composers: ['Papita con Puré'],
+			},
 			visuals: {
+				background: [
+					{
+						name: '🔞 RAT_Huang',
+						clarification: 'nsfw',
+						url: 'https://x.com/rat_huang_nsfw5',
+					},
+					{
+						name: 'へるにゃー',
+						clarification: 'hellnyaa',
+						url: 'https://www.pixiv.net/artworks/83338488',
+					},
+					{
+						name: '燗汰朗',
+						url: 'https://www.pixiv.net/artworks/43615428',
+					},
+					{
+						name: '光粒子 お仕事募集中',
+						url: 'https://www.pixiv.net/artworks/58204203',
+					},
+					{
+						name: 'ARUGERI',
+						url: 'https://www.pixiv.net/artworks/42765222',
+					},
+				],
 				thumbnail: [
 					{
 						name: '村上４時',
@@ -350,7 +384,8 @@ const items: MusicItem[] = [
 		displayArtist: 'PaTeKa',
 		artists: ['Papita con Puré', tewaCredit, karlCredit],
 		title: 'Rabbit of the Bar ~ Red and White Tubercle',
-		description: 'Composition:\n• Papita con Puré (I. Z.) [Piano; Acoustic Guitar]\n• Karl Zuñiga [Drums; Strings; Bass]\n• Tewi [Violin; RTp]\nMixing: Karl Zuñiga',
+		description:
+			'Composition:\n• Papita con Puré (I. Z.) [Piano; Acoustic Guitar]\n• Karl Zuñiga [Drums; Strings; Bass]\n• Tewi [Violin; RTp]\nMixing: Karl Zuñiga',
 		date: new Date('2021-01-07'),
 		categories: ['collab', 'original', 'touhou'],
 		coverUrl: '/images/music/pateka-1/cover.png',
@@ -406,7 +441,7 @@ const items: MusicItem[] = [
 						url: 'https://www.vhv.rs/viewpic/hxiwRhm_beer-barrel-png-beer-clipart-barrel-transparent-png/',
 					},
 				],
-			}
+			},
 		},
 		externalLinks: [
 			{
@@ -455,7 +490,7 @@ const items: MusicItem[] = [
 	{
 		id: 'komakusa-piano',
 		kind: 'single',
-		artists: ['ZUN', 'Papita con Puré'],
+		artists: [zunCredit, 'Papita con Puré'],
 		title: 'The Perpetual Snow of Komakusa Blossoms',
 		date: new Date('2021-03-25'),
 		categories: ['arrangement', 'piano'],
@@ -464,7 +499,7 @@ const items: MusicItem[] = [
 		videoUrl: 'https://www.youtube.com/watch?v=BUNgOKm5Z8U',
 		credits: {
 			music: {
-				composers: ['ZUN'],
+				composers: [zunCredit],
 				arrangers: ['Papita con Puré'],
 			},
 			visuals: {
@@ -489,7 +524,7 @@ const items: MusicItem[] = [
 	{
 		id: 'sannyo-piano',
 		kind: 'single',
-		artists: ['ZUN', 'Papita con Puré'],
+		artists: [zunCredit, 'Papita con Puré'],
 		title: 'Smoking Dragon',
 		date: new Date('2021-03-27'),
 		categories: ['arrangement', 'piano'],
@@ -498,7 +533,7 @@ const items: MusicItem[] = [
 		videoUrl: 'https://www.youtube.com/watch?v=SeORE1zUuv8',
 		credits: {
 			music: {
-				composers: ['ZUN'],
+				composers: [zunCredit],
 				arrangers: ['Papita con Puré'],
 			},
 			visuals: {
@@ -523,7 +558,7 @@ const items: MusicItem[] = [
 	{
 		id: 'deep-green-cliff-piano',
 		kind: 'single',
-		artists: ['ZUN', 'Papita con Puré'],
+		artists: [zunCredit, 'Papita con Puré'],
 		title: 'The Cliff Hidden in Deep Green',
 		date: new Date('2021-03-31'),
 		categories: ['arrangement', 'piano'],
@@ -532,7 +567,7 @@ const items: MusicItem[] = [
 		videoUrl: 'https://www.youtube.com/watch?v=QLxJPqjB-kc',
 		credits: {
 			music: {
-				composers: ['ZUN'],
+				composers: [zunCredit],
 				arrangers: ['Papita con Puré'],
 			},
 			visuals: {
