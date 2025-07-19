@@ -5,46 +5,72 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const toggleMenu = () => {
+	const header = document.getElementById('header');
 	const menu = document.getElementById('mobile-menu');
 	if (menu) {
-		menu.classList.toggle('hidden');
+		menu.classList.toggle('h-screen');
+
 		document.getElementById('menu-reveal')?.classList.toggle('hidden');
 		document.getElementById('menu-collapse')?.classList.toggle('hidden');
+
+		if (header) {
+			header.classList.toggle('backdrop-blur-md');
+			header.classList.toggle('backdrop-blur-lg');
+			header.classList.toggle('bg-opacity-60');
+			header.classList.toggle('bg-opacity-80');
+		}
 	}
 };
 
 export default function Header() {
 	return (
-		<header className='fixed top-0 z-50 w-full border-b border-b-secondary-800 bg-background bg-opacity-60 border-opacity-60 backdrop-blur-md'>
+		<header
+			id='header'
+			className='fixed top-0 z-50 w-full border-b border-b-secondary-800 border-opacity-60 bg-background bg-opacity-60 backdrop-blur-md transition-all'>
 			<div className='mx-auto flex max-w-7xl items-center justify-between px-4 py-4'>
 				<Link
 					href='/'
-					className='flex space-x-4 cursor-pointer text-2xl font-bold text-primary-50'
-					aria-label='Página Principal'
-				>
+					className='flex cursor-pointer space-x-4 text-2xl font-bold text-primary-50'
+					aria-label='Página Principal'>
 					<Image
 						src={getRoot('/potato.webp')}
 						alt='Logo de Papita con Puré'
 						width={64}
 						height={64}
-						className='h-8 w-auto font-light text-sm'/>
+						className='h-8 w-auto text-sm font-light'
+					/>
 					<span className='select-none'>Papita con Puré</span>
 				</Link>
 
-				<nav className='hidden space-x-6 md:flex'>
-					<Link href='/' aria-label='Inicio'>
+				<nav className='hidden space-x-1 md:flex'>
+					<Link
+						className='rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
+						href='/'
+						aria-label='Inicio'>
 						Inicio
 					</Link>
-					<Link href='/about' aria-label='Acerca de'>
+					<Link
+						className='rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
+						href='/about'
+						aria-label='Acerca de'>
 						Acerca de
 					</Link>
-					<Link href='/projects' aria-label='Proyectos'>
+					<Link
+						className='rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
+						href='/projects'
+						aria-label='Proyectos'>
 						Proyectos
 					</Link>
-					<Link href='/music' aria-label='Proyectos'>
+					<Link
+						className='rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
+						href='/music'
+						aria-label='Proyectos'>
 						Música
 					</Link>
-					<Link href='/contact' aria-label='Contacto'>
+					<Link
+						className='rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
+						href='/contact'
+						aria-label='Contacto'>
 						Contacto
 					</Link>
 				</nav>
@@ -66,34 +92,37 @@ export default function Header() {
 				</div>
 			</div>
 
-			<nav id='mobile-menu' className='hidden md:hidden'>
+			<nav
+				id='mobile-menu'
+				className='[&_h-max] flex h-0 flex-col overflow-hidden rounded-b-md transition-all md:hidden'
+				onClick={toggleMenu}>
 				<Link
 					href='/'
-					className='block w-full select-none bg-secondary-900 px-4 py-2 text-secondary-500 hover:bg-secondary-800 hover:text-secondary-200'
+					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-4 py-2 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label='Inicio'>
 					Inicio
 				</Link>
 				<Link
 					href='/about'
-					className='block w-full select-none bg-secondary-900 px-4 py-2 text-secondary-500 hover:bg-secondary-800 hover:text-secondary-200'
+					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-4 py-2 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label='Acerca de'>
 					Acerca de
 				</Link>
 				<Link
 					href='/projects'
-					className='block w-full select-none bg-secondary-900 px-4 py-2 text-secondary-500 hover:bg-secondary-800 hover:text-secondary-200'
+					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-4 py-2 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label='Proyectos'>
 					Proyectos
 				</Link>
 				<Link
 					href='/music'
-					className='block w-full select-none bg-secondary-900 px-4 py-2 text-secondary-500 hover:bg-secondary-800 hover:text-secondary-200'
+					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-4 py-2 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label='Música'>
 					Música
 				</Link>
 				<Link
 					href='/contact'
-					className='block w-full select-none bg-secondary-900 px-4 py-2 text-secondary-500 hover:bg-secondary-800 hover:text-secondary-200'
+					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-4 py-2 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label='Contacto'>
 					Contacto
 				</Link>
