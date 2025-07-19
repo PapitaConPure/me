@@ -1,14 +1,32 @@
+import { faDiscord, faGithub, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFeather, faQuestion } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
+import { PropsWithChildren } from 'react';
+
+const Question = ({ children }: PropsWithChildren) => (
+	<div className='-mb-1 ml-2 mt-6 flex w-3/4 items-center font-default-serif text-lg text-secondary-300 sm:text-xl'>
+		<FontAwesomeIcon icon={faQuestion} className='ml-2 mr-6 text-accent-main' />
+		<h3 className='w-full'>{children}</h3>
+	</div>
+);
+
+const Answer = ({ children }: PropsWithChildren) => (
+	<div className='mb-12 ml-auto mr-2 mt-6 flex w-3/4 items-center text-right font-default-serif text-secondary-200 sm:text-lg'>
+		<p className='w-full'>{children}</p>
+		<FontAwesomeIcon icon={faFeather} className='ml-6 mr-2 text-accent-main' />
+	</div>
+);
 
 const Home = () => {
 	return (
-		<main className='page-active'>
-			<section className='my-16'>
+		<main>
+			<section className='my-20'>
 				<div className='relative'>
 					<h1 className='absolute inset-x-0 mx-auto mb-2 w-max bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-center font-default-sans text-6xl font-black text-transparent transition-transform'>
 						Bienvenido
 					</h1>
-					<h1 className='mx-auto mb-2 w-max animate-ping opacity-10 bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-center font-default-sans text-6xl font-black text-transparent transition-transform'>
+					<h1 className='mx-auto mb-2 w-max animate-ping bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-center font-default-sans text-6xl font-black text-transparent opacity-10 transition-transform'>
 						Bienvenido
 					</h1>
 				</div>
@@ -30,24 +48,24 @@ const Home = () => {
 			<section>
 				<h2 className='section-h2 mb-3 mt-6 text-center'>Encuéntrame</h2>
 
-				<div className='mx-auto w-full pr-2 sm:w-max sm:pr-0'>
+				<div className='mx-auto grid w-full grid-cols-1 sm:w-max sm:grid-cols-2 sm:pr-0 md:grid-cols-4'>
 					<a
 						tabIndex={0}
 						href='https://www.youtube.com/channel/UCRXbJiF9G6D0nqq3mU38-gw'
 						target='_blank'
-						className='social-btn flex border-transparent bg-[#ff0000] hover:bg-[#d70000] active:bg-[#bc0000] sm:inline-flex transition-colors duration-75'
+						className='social-btn flex border-transparent bg-[#ff0000] transition-colors duration-75 hover:bg-[#d70000] active:bg-[#bc0000] sm:w-64 md:w-36 md:px-4 lg:mx-1 lg:w-44'
 						aria-label='YouTube'>
-						<i className='fa fa-brands fa-youtube fa-lg pr-4'></i>
-						<span className='w-full text-center'>YouTube</span>
+						<FontAwesomeIcon icon={faYoutube} fontSize={24} />
+						<div className='w-full flex-grow text-center'>YouTube</div>
 					</a>
 
 					<a
 						tabIndex={0}
 						href='https://discord.com/users/423129757954211880'
 						target='_blank'
-						className='social-btn flex border-transparent bg-[#5865f2] hover:bg-[#4752c4] active:bg-[#3c45a5] sm:inline-flex transition-colors duration-75'
+						className='social-btn flex border-transparent bg-[#5865f2] transition-colors duration-75 hover:bg-[#4752c4] active:bg-[#3c45a5] sm:w-64 md:w-36 md:px-4 lg:mx-1 lg:w-44'
 						aria-label='Discord'>
-						<i className='fa fa-brands fa-discord fa-lg pr-4'></i>
+						<FontAwesomeIcon icon={faDiscord} fontSize={24} />
 						<span className='w-full text-center'>Discord</span>
 					</a>
 
@@ -55,9 +73,9 @@ const Home = () => {
 						tabIndex={0}
 						href='https://x.com/PapitaPure'
 						target='_blank'
-						className='social-btn flex border-secondary-900 bg-black hover:bg-[#181919] active:bg-[#2e2f2f] sm:hidden md:inline-flex transition-colors duration-75'
+						className='social-btn flex border-secondary-900 bg-black transition-colors duration-75 hover:bg-[#181919] active:bg-[#2e2f2f] sm:w-64 md:w-36 md:px-4 lg:mx-1 lg:w-44'
 						aria-label='X (Twitter)'>
-						<i className='fa fa-brands fa-x-twitter fa-lg pr-4'></i>
+						<FontAwesomeIcon icon={faXTwitter} fontSize={24} />
 						<span className='w-full text-center'>X (Twitter)</span>
 					</a>
 
@@ -65,31 +83,9 @@ const Home = () => {
 						tabIndex={0}
 						href='https://github.com/PapitaConPure'
 						target='_blank'
-						className='social-btn flex border-transparent bg-[#1e2327] hover:bg-[#252c34] active:bg-[#292f38] sm:hidden md:inline-flex transition-colors duration-75'
+						className='social-btn flex border-transparent bg-[#1e2327] transition-colors duration-75 hover:bg-[#252c34] active:bg-[#292f38] sm:w-64 md:w-36 md:px-4 lg:mx-1 lg:w-44'
 						aria-label='GitHub'>
-						<i className='fa fa-brands fa-github fa-lg pr-4'></i>
-						<span className='w-full text-center'>GitHub</span>
-					</a>
-				</div>
-
-				<div className='mx-auto hidden w-max sm:block md:hidden'>
-					<a
-						tabIndex={0}
-						href='https://x.com/PapitaPure'
-						target='_blank'
-						className='social-btn inline-flex border-secondary-900 bg-black hover:bg-[#181919] active:bg-[#2e2f2f] transition-colors duration-75'
-						aria-label='X (Twitter)'>
-						<i className='fa fa-brands fa-x-twitter fa-lg pr-4'></i>
-						<span className='w-full text-center'>X (Twitter)</span>
-					</a>
-
-					<a
-						tabIndex={0}
-						href='https://github.com/PapitaConPure'
-						target='_blank'
-						className='social-btn inline-flex border-transparent bg-[#1e2327] hover:bg-[#252c34] active:bg-[#292f38] transition-colors duration-75'
-						aria-label='GitHub'>
-						<i className='fa fa-brands fa-github fa-lg pr-4'></i>
+						<FontAwesomeIcon icon={faGithub} fontSize={24} />
 						<span className='w-full text-center'>GitHub</span>
 					</a>
 				</div>
@@ -97,25 +93,53 @@ const Home = () => {
 
 			<section>
 				<h2 className='section-h2'>Preguntas Frecuentes</h2>
-				<div className='mb-3 ml-2 mt-6 flex w-2/3 items-center font-default-serif text-lg text-secondary-300 sm:text-xl'>
-					<i className='fa fa-question ml-2 mr-6 text-accent-main'></i>
-					<h3 className='w-full'>¿Lorem Ipsum dolor sit amet?</h3>
-				</div>
-				<div className='mb-3 ml-auto mr-2 mt-6 flex w-2/3 items-center text-right font-default-serif text-secondary-300 sm:text-lg'>
-					<p className='w-full'>Lorem Ipsum dolor sit amet.</p>
-					<i className='fa fa-feather ml-6 mr-2 text-accent-main'></i>
-				</div>
+				<Question>¿Por qué te haces llamar "Papita con Puré"?</Question>
+				<Answer>
+					En una madrugada hace muchos años, cerca de las 3, estaba creándome una cuenta
+					para jugar algo con unos amigos. Lo que pasa es que tenía muchísima hambre, un
+					poco de sueño y además ya estaba pensando reemplazar mi antiguo apodo. Así es
+					como se me ocurrió.
+					<br /> <br />
+					"Papita con Puré" no tiene sentido como tal. Son solo 2 comidas que realmente no
+					quedarían bien combinadas. Sin embargo, es un apodo gracioso, y para la gente
+					que no sabe español, "Papita" no suena mal.
+				</Answer>
+				<Question>¿Has pensado subir tus futuros juegos a Steam?</Question>
+				<Answer>
+					Subir un juego a Steam cuesta 100 dólares inicialmente. Es algo que deseo
+					fuertemente, pero tener una página ahí va a tener que esperar.
+				</Answer>
+				<Question>¿Has pensado subir tu música a Spotify o SoundCloud?</Question>
+				<Answer>
+					Ahora mismo no tengo intenciones de hacer eso. Manejando solamente un canal de
+					YouTube me siento bastante cómodo, de momento.
+					<br /> <br />
+					Sin embargo, un amigo cada tanto sube mi música a SoundCloud con mi permiso.
+				</Answer>
+				<Question>¿Personajes favoritos?</Question>
+				<Answer>Megumin (めぐみん) de KonoSuba, Minato Aqua (湊あくあ) de Hololive y Kishin Sagume (稀神サグメ) de Touhou 15.</Answer>
+				<Question>¿Juegos favoritos?</Question>
+				<Answer>Risk of Rain 2 y Conker's Bad Fur Day.</Answer>
+				<Question>¿Realmente te han hecho estas preguntas?</Question>
+				<Answer>No.</Answer>
+				<Question>¿Entonces por qué "Preguntas Frecuentes"?</Question>
+				<Answer>Podrían serlo algún día 👍</Answer>
 			</section>
 
 			<section>
-				<div className='mx-1 my-6 rounded-md bg-primary-main px-2 py-1'>
-					<h2 className='mb-1 text-center font-default-sans text-3xl font-bold text-foreground'>
+				<div className='mx-1 my-6 flex flex-col items-center rounded-md bg-primary-main px-2 py-1'>
+					<h2 className='my-1 text-center font-default-sans text-3xl font-bold text-foreground'>
 						Aprende más sobre mí
 					</h2>
 
+					<p className='mb-1 text-center'>
+						Soy otro grano de arena en el desierto de la vida. Sin embargo, puedo tener
+						un par de cosas que sean de tu interés.
+					</p>
+
 					<Link
 						href='/about'
-						className='btn mx-auto my-4 block w-max bg-foreground font-semibold text-primary-main hover:bg-white active:bg-primary-100 transition-colors duration-75'
+						className='btn my-4 block w-max bg-foreground font-semibold text-primary-main transition-colors duration-75 hover:bg-white active:bg-primary-100'
 						aria-label='Acerca de Papita con Puré'>
 						<span className='w-full select-none text-center'>Vamos allá</span>
 					</Link>
@@ -127,7 +151,7 @@ const Home = () => {
 					Mis Proyectos
 				</h2>
 
-				<p className='text-center font-light text-secondary-100'>
+				<p className='mb-1 text-center font-light text-secondary-100'>
 					Ofrezco un recopilado de varios de mis proyectos destacados.
 				</p>
 
