@@ -10,45 +10,6 @@ import AudioPreview from '@/components/AudioPreview';
 import VideoPreview from '@/components/VideoPreview';
 import { Metadata } from 'next';
 
-export async function generateStaticParams() {
-	return items.map((item) => ({ id: item.id }));
-}
-
-
-interface MusicDetailMetadataProps {
-	params: {
-		id: string;
-	};
-}
-
-export async function generateMetadata({ params }: MusicDetailMetadataProps): Promise<Metadata> {
-	const item = itemsById[params.id];
-
-	if (!item) return { title: 'Not Found' };
-
-	return {
-		title: item.title,
-		description:
-			item.description || `Track by ${item.displayArtist || item.artists.join(' & ')}`,
-		openGraph: {
-			title: item.title,
-			description: item.description || '',
-			url: `https://papitaconpure.github.io/me/music/${item.id}`,
-			/*images: [getRoot(`/music/images/${item.id}.png`)],*/
-			type: item.kind === 'single' ? 'music.song' : 'music.album',
-			siteName: 'Papita con Puré',
-		},
-		twitter: {
-			card: 'summary_large_image',
-			title: item.title,
-			description: item.description || 'No description provided for this item.',
-			creator: item.displayArtist || item.artists.join(' & '),
-			site: 'https://papitaconpure.github.io/me',
-			/*images: [getRoot(`/music/images/${item.id}.png`)],*/
-		},
-	};
-}
-
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
 
 const ChildrenList = ({ children }: OlHTMLAttributes<HTMLDataListElement>) => (
@@ -101,6 +62,39 @@ interface MusicDetailProps {
 	params: Promise<{
 		id: string;
 	}>;
+}
+
+export async function generateStaticParams() {
+	return items.map((item) => ({ id: item.id }));
+}
+
+export async function generateMetadata({ params }: MusicDetailProps): Promise<Metadata> {
+	const { id = undefined } = await params;
+	const item = id ? itemsById[id] : undefined;
+
+	if (!item) return { title: 'Not Found' };
+
+	return {
+		title: item.title,
+		description:
+			item.description || `Track by ${item.displayArtist || item.artists.join(' & ')}`,
+		openGraph: {
+			title: item.title,
+			description: item.description || '',
+			url: `https://papitaconpure.github.io/me/music/${item.id}`,
+			/*images: [getRoot(`/music/images/${item.id}.png`)],*/
+			type: item.kind === 'single' ? 'music.song' : 'music.album',
+			siteName: 'Papita con Puré',
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title: item.title,
+			description: item.description || 'No description provided for this item.',
+			creator: item.displayArtist || item.artists.join(' & '),
+			site: 'https://papitaconpure.github.io/me',
+			/*images: [getRoot(`/music/images/${item.id}.png`)],*/
+		},
+	};
 }
 
 const MusicDetail = async ({ params }: MusicDetailProps) => {
