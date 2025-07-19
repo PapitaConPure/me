@@ -1,5 +1,10 @@
 import { FullArtistCredit, MusicItem } from '@/types/music';
 
+const papitaCredit: FullArtistCredit = {
+	name: 'Papita con Puré',
+	clarification: 'I. Z.',
+};
+
 const zunCredit: FullArtistCredit = {
 	name: 'ZUN',
 	clarification: '太田 順也',
@@ -21,16 +26,16 @@ const items: MusicItem[] = [
 	{
 		id: 'th-piano-medley-6-17',
 		kind: 'compilation',
-		artists: [zunCredit, 'Papita con Puré'],
+		artists: [zunCredit, papitaCredit],
 		credits: {
 			music: {
 				composers: [zunCredit],
-				arrangers: ['Papita con Puré'],
+				arrangers: [papitaCredit],
 			},
 		},
 		title: 'Touhou Piano Medley 6~17 7.5~16.5',
 		date: new Date('2020-10-02'),
-		categories: ['arrangement', 'piano', 'touhou'],
+		categories: ['arrangement', 'piano', 'touhou', 'medley'],
 		coverUrl: 'https://i.imgur.com/Br77B9v.png',
 		thumbnailUrl: 'https://i.imgur.com/Br77B9v.png',
 		videoUrl: 'https://www.youtube.com/watch?v=4FoF9akYFCc',
@@ -109,7 +114,7 @@ const items: MusicItem[] = [
 	{
 		id: 'okina-piano-drums',
 		kind: 'single',
-		artists: [zunCredit, 'Papita con Puré'],
+		artists: [zunCredit, papitaCredit],
 		title: 'The Concealed Four Seasons',
 		date: new Date('2020-04-05'),
 		categories: ['arrangement', 'touhou'],
@@ -119,7 +124,7 @@ const items: MusicItem[] = [
 		credits: {
 			music: {
 				composers: [zunCredit],
-				arrangers: ['Papita con Puré'],
+				arrangers: [papitaCredit],
 			},
 		},
 		externalLinks: [
@@ -139,7 +144,7 @@ const items: MusicItem[] = [
 	{
 		id: 'will-not-to-vanish-in-fragments',
 		kind: 'single',
-		artists: ['Papita con Puré'],
+		artists: [papitaCredit],
 		title: 'Will not to Vanish in Fragments',
 		date: new Date('2020-04-06'),
 		categories: ['original'],
@@ -158,7 +163,7 @@ const items: MusicItem[] = [
 	{
 		id: 'cafe-terrace-memories',
 		kind: 'single',
-		artists: [zunCredit, 'Papita con Puré'],
+		artists: [zunCredit, papitaCredit],
 		title: 'Café Terrace Memories',
 		date: new Date('2020-04-14'),
 		categories: ['arrangement', 'piano', 'touhou'],
@@ -168,7 +173,7 @@ const items: MusicItem[] = [
 		credits: {
 			music: {
 				composers: [zunCredit],
-				arrangers: ['Papita con Puré'],
+				arrangers: [papitaCredit],
 			},
 		},
 		externalLinks: [
@@ -183,7 +188,7 @@ const items: MusicItem[] = [
 	{
 		id: 'popular-emotion',
 		kind: 'single',
-		artists: ['Papita con Puré'],
+		artists: [papitaCredit],
 		title: 'Popular Emotion',
 		date: new Date('2020-07-12'),
 		categories: ['original', 'piano'],
@@ -202,7 +207,7 @@ const items: MusicItem[] = [
 	{
 		id: 'reimu-dead-god',
 		kind: 'single',
-		artists: ['Papita con Puré'],
+		artists: [papitaCredit],
 		title: 'The Shrine that Worships a Dead God',
 		date: new Date('2020-10-07'),
 		categories: ['original', 'touhou'],
@@ -221,7 +226,7 @@ const items: MusicItem[] = [
 	{
 		id: 'neko-4-op-piano',
 		kind: 'single',
-		artists: ['Papita con Puré'],
+		artists: [papitaCredit],
 		title: 'NEKOPARA Vol.4『SWEET×SWEET』',
 		date: new Date('2020-10-07'),
 		categories: ['arrangement', 'piano'],
@@ -240,17 +245,17 @@ const items: MusicItem[] = [
 	{
 		id: 'last-remote-piano',
 		kind: 'single',
-		artists: [zunCredit, 'Papita con Puré'],
+		artists: [zunCredit, papitaCredit],
 		title: 'Last Remote',
 		date: new Date('2020-12-19'),
-		categories: ['arrangement', 'piano'],
+		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/potato.webp',
 		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=J8RcKwhwtwU',
 		credits: {
 			music: {
 				composers: [zunCredit],
-				arrangers: ['Papita con Puré'],
+				arrangers: [papitaCredit],
 			},
 		},
 		externalLinks: [
@@ -265,7 +270,7 @@ const items: MusicItem[] = [
 	{
 		id: 'former-hell-showdown',
 		kind: 'single',
-		artists: ['Papita con Puré'],
+		artists: [papitaCredit],
 		title: 'Former Hell Showdown',
 		date: new Date('2020-12-22'),
 		categories: ['original', 'touhou'],
@@ -274,7 +279,7 @@ const items: MusicItem[] = [
 		videoUrl: 'https://www.youtube.com/watch?v=y0hiITwc4M4',
 		credits: {
 			music: {
-				composers: ['Papita con Puré'],
+				composers: [papitaCredit],
 			},
 			visuals: {
 				background: [
@@ -325,7 +330,7 @@ const items: MusicItem[] = [
 	{
 		id: 'tredecillion-tears',
 		kind: 'single',
-		artists: ['Papita con Puré'],
+		artists: [papitaCredit],
 		title: 'Night of a Tredecillion Tears',
 		date: new Date('2020-12-29'),
 		categories: ['original', 'touhou'],
@@ -343,7 +348,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista de audio (320kbps)',
+				label: 'Pista completa (320kbps)',
 				size: '16.7 MB',
 				url: '/audio/music/tredecillion-tears/Night of a Tredecillion Tears.mp3',
 			},
@@ -382,10 +387,10 @@ const items: MusicItem[] = [
 		id: 'pateka-1',
 		kind: 'single',
 		displayArtist: 'PaTeKa',
-		artists: ['Papita con Puré', tewaCredit, karlCredit],
+		artists: [papitaCredit, tewaCredit, karlCredit],
 		title: 'Rabbit of the Bar ~ Red and White Tubercle',
 		description:
-		'Composition:\n• Papita con Puré (I. Z.) [Piano; Acoustic Guitar]\n• Karl Zuñiga [Drums; Strings; Bass]\n• Tewi [Violin; RTp]\nMixing: Karl Zuñiga',
+			'Composition:\n• Papita con Puré (I. Z.) [Piano; Acoustic Guitar]\n• Karl Zuñiga [Drums; Strings; Bass]\n• Tewi [Violin; RTp]\nMixing: Karl Zuñiga',
 		date: new Date('2021-01-07'),
 		categories: ['collab', 'original', 'touhou'],
 		coverUrl: '/images/music/pateka-1/cover.png',
@@ -393,7 +398,7 @@ const items: MusicItem[] = [
 		videoUrl: 'https://www.youtube.com/watch?v=uH7cO2KRkuU',
 		credits: {
 			music: {
-				composers: ['Papita con Puré', tewaCredit, karlCredit],
+				composers: [papitaCredit, tewaCredit, karlCredit],
 				mixers: [karlCredit],
 			},
 			visuals: {
@@ -459,7 +464,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista de audio (320kbps)',
+				label: 'Pista completa (320kbps)',
 				size: '15.2 MB',
 				url: '/audio/music/pateka-1/PaTeKa1.mp3',
 			},
@@ -490,20 +495,20 @@ const items: MusicItem[] = [
 	{
 		id: 'komakusa-piano',
 		kind: 'single',
-		artists: [zunCredit, 'Papita con Puré'],
+		artists: [zunCredit, papitaCredit],
 		title: 'The Perpetual Snow of Komakusa Blossoms',
 		date: new Date('2021-03-25'),
-		categories: ['arrangement', 'piano'],
+		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/potato.webp',
 		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=BUNgOKm5Z8U',
 		credits: {
 			music: {
 				composers: [zunCredit],
-				arrangers: ['Papita con Puré'],
+				arrangers: [papitaCredit],
 			},
 			visuals: {
-				background: ['Papita con Puré'],
+				background: [papitaCredit],
 				thumbnail: [
 					{
 						name: 'speckticuls',
@@ -524,20 +529,20 @@ const items: MusicItem[] = [
 	{
 		id: 'sannyo-piano',
 		kind: 'single',
-		artists: [zunCredit, 'Papita con Puré'],
+		artists: [zunCredit, papitaCredit],
 		title: 'Smoking Dragon',
 		date: new Date('2021-03-27'),
-		categories: ['arrangement', 'piano'],
+		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/potato.webp',
 		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=SeORE1zUuv8',
 		credits: {
 			music: {
 				composers: [zunCredit],
-				arrangers: ['Papita con Puré'],
+				arrangers: [papitaCredit],
 			},
 			visuals: {
-				background: ['Papita con Puré'],
+				background: [papitaCredit],
 				thumbnail: [
 					{
 						name: 'ラプトル7',
@@ -558,20 +563,20 @@ const items: MusicItem[] = [
 	{
 		id: 'deep-green-cliff-piano',
 		kind: 'single',
-		artists: [zunCredit, 'Papita con Puré'],
+		artists: [zunCredit, papitaCredit],
 		title: 'The Cliff Hidden in Deep Green',
 		date: new Date('2021-03-31'),
-		categories: ['arrangement', 'piano'],
+		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/potato.webp',
 		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=QLxJPqjB-kc',
 		credits: {
 			music: {
 				composers: [zunCredit],
-				arrangers: ['Papita con Puré'],
+				arrangers: [papitaCredit],
 			},
 			visuals: {
-				background: ['Papita con Puré'],
+				background: [papitaCredit],
 				thumbnail: [
 					{
 						name: 'mefomefo',
@@ -592,7 +597,7 @@ const items: MusicItem[] = [
 	{
 		id: 'take-and-forsake',
 		kind: 'single',
-		artists: ['Papita con Puré'],
+		artists: [papitaCredit],
 		title: 'Take and Forsake',
 		date: new Date('2021-04-05'),
 		categories: ['original'],
@@ -619,22 +624,308 @@ const items: MusicItem[] = [
 				format: 'png',
 				url: '/images/music/eurotest-1/eurotest2.png',
 				size: '1.16 MB',
-				label: 'Miniatura',
+				label: 'Miniatura (720p)',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
 				url: '/images/music/eurotest-1/eurotest2.webp',
 				size: '95.2 KB',
-				label: 'Miniatura',
+				label: 'Miniatura (720p)',
 			},
 		],
 		tags: ['electronic', 'eurobeat'],
 	},
 	{
+		id: 'cfteb',
+		kind: 'single',
+		artists: [papitaCredit],
+		title: 'Claim from the Empire Below',
+		date: new Date('2021-04-24'),
+		categories: ['original', 'touhou'],
+		coverUrl: '/images/music/empire-below/cfteb.webp',
+		thumbnailUrl: '/images/music/empire-below/cfteb.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=ESBQ5SPCnvc',
+		credits: {
+			music: {
+				composers: [papitaCredit],
+			},
+			visuals: {
+				background: [papitaCredit],
+				thumbnail: [
+					{
+						name: 'かわやばぐ',
+						url: 'https://www.pixiv.net/artworks/88899968',
+					},
+				],
+			},
+		},
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=ESBQ5SPCnvc',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: 'Pista completa (320kbps)',
+				size: '16.7 MB',
+				url: '/audio/music/empire-below/Claim from the Empire Below.mp3',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Miniatura (720p)',
+				size: '1.40 MB',
+				url: '/images/music/empire-below/cfteb.png',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: 'Miniatura (720p)',
+				size: '114 KB',
+				url: '/images/music/empire-below/cfteb.webp',
+			},
+		],
+		tags: ['wily beast and weakest creature', 'touhou style'],
+	},
+	{
+		id: 'touhou-18-piano-medley',
+		kind: 'compilation',
+		artists: [zunCredit, papitaCredit],
+		title: 'Unconnected Marketeers Piano Medley',
+		date: new Date('2021-05-07'),
+		categories: ['arrangement', 'piano', 'touhou', 'medley'],
+		coverUrl: '/images/music/th18-piano/cover.png',
+		thumbnailUrl: '/images/music/th18-piano/thumbnail.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=6xcmR72KTMk',
+		credits: {
+			music: {
+				composers: [zunCredit],
+				arrangers: [papitaCredit],
+			},
+			visuals: {
+				foreground: ['Specktikulz'],
+				background: [papitaCredit],
+				thumbnail: [
+					{
+						name: 'Rizzych',
+						url: 'https://x.com/OrdinaryRizzych/status/1390359356156358662',
+					},
+					papitaCredit,
+				],
+			},
+		},
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=6xcmR72KTMk',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: 'Pista completa (320kbps)',
+				size: '43.6 MB',
+				url: '/audio/music/th18-piano/Unconnected Marketeers Piano Medley.mp3',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Portada (724x724)',
+				size: '840 KB',
+				url: '/images/music/th18-piano/cover.png',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Miniatura (720p)',
+				size: '1.32 MB',
+				url: '/images/music/th18-piano/thumbnail.png',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: 'Miniatura (720p)',
+				size: '107 KB',
+				url: '/images/music/th18-piano/thumbnail.webp',
+			},
+			{
+				kind: 'file',
+				format: 'zip',
+				label: 'Paquete completo',
+				size: '107 KB',
+				url: 'https://www.mediafire.com/file/helfrbn2dxukidt/Touhou_18_Piano_Medley.zip/file',
+				external: true,
+			},
+		],
+		childrenTitles: [
+			'A Rainbow Spanning Gensokyo',
+			'A Shower of Strange Occurrences',
+			'Fortunate Kitten',
+			'The Cliff Hidden in Deep Green',
+			'Banditry Technology',
+			'The Perpetual Snow of Komakusa Blossoms',
+			'Smoking Dragon',
+			'The Obsolescent Industrial Ruins',
+			'Ore from the Age of the Gods',
+			'The Long-Awaited Oumagatoki',
+			'Starry Mountain of Tenma',
+			'Lunar Rainbow',
+			'Where is that Bustling Marketplace now ~ Immemorial Marketeers',
+			'The Sunday after the Storm',
+			'The Great Fantastic Underground Railway Network',
+			'The Princess Who Slays Dragon Kings',
+			'A Rainbow-Colored World',
+		],
+		tags: ['piano medley'],
+	},
+	{
+		id: 'unused-film-strip',
+		kind: 'single',
+		artists: [papitaCredit],
+		title: 'Unused Film Strip',
+		description:
+			'Character profile:' +
+			'\nEishoku Hakuro' +
+			'\n映色　白黒' +
+			'\n(えいしょく　はくろ)' +
+			'\n' +
+			'\nShe was once a film strip from the outside world that was thrown away by the author because of a failure during its recording. A hundred years had passed when the strip surpassed reality and reached Gensokyo, becoming a tsukumogami.' +
+			"\nShe's a surprisingly calm youkai, but if she finds something interesting in you she'll try to add you to her film. She doesn't know her strip got damaged, which could explain why she's trying to dump people into it." +
+			'\nHer film starts with an old, black and white Kabuki performance and then distorts into incomprehensible frames.' +
+			'\nAbility: Video Manipulation. This also allows her to add and remove people into and from her video.',
+		date: new Date('2021-07-02'),
+		categories: ['original', 'touhou'],
+		coverUrl: '/images/music/film-youkai/cover.png',
+		thumbnailUrl: '/images/music/film-youkai/miniatura.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=tvu7C00Acdc',
+		credits: {
+			music: {
+				composers: [papitaCredit],
+			},
+			visuals: {
+				foreground: [
+					'Pastel_Maddie',
+				],
+				background: [papitaCredit],
+				thumbnail: [
+					'Pastel_Maddie',
+					papitaCredit,
+				],
+			},
+		},
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=tvu7C00Acdc',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: 'Pista completa (320kbps)',
+				size: '8.64 MB',
+				url: '/audio/music/film-youkai/Unused Film Strip.mp3',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Retrato de Hakuro (2246x3109)',
+				size: '1.34 MB',
+				url: '/images/music/film-youkai/hakuro.png',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Portada (1080p)',
+				size: '1.14 MB',
+				url: '/images/music/film-youkai/cover.png',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Miniatura (720p)',
+				size: '1.95 MB',
+				url: '/images/music/film-youkai/miniatura.png',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: 'Miniatura (720p)',
+				size: '155 KB',
+				url: '/images/music/film-youkai/miniatura.webp',
+			},
+		],
+		tags: ['touhou style', 'original character'],
+	},
+	{
+		id: 'mind-yet-not-heart',
+		kind: 'single',
+		artists: [papitaCredit],
+		title: 'Mind, Yet Not Heart',
+		date: new Date('2021-11-25'),
+		categories: ['original', 'piano'],
+		coverUrl: '/images/music/heart-cup/cover.jpg',
+		thumbnailUrl: '/images/music/heart-cup/cover.jpg',
+		videoUrl: 'https://www.youtube.com/watch?v=RZeM2LkFyd0',
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=RZeM2LkFyd0',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: 'Pista completa (320kbps)',
+				size: '9.26 MB',
+				url: '/audio/music/heart-cup/Mind Yet Not Heart.mp3',
+			},
+			{
+				kind: 'image',
+				format: 'jpg',
+				label: 'Portada (966x966)',
+				size: '117 KB',
+				url: '/images/music/heart-cup/cover.jpg',
+			},
+			{
+				kind: 'video',
+				format: 'mp4',
+				label: 'Animación (MPEG-4 / 1080p)',
+				size: '6.17 MB',
+				url: '/video/music/heart-cup/mynh.mp4',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Miniatura (720p)',
+				size: '1.13 MB',
+				url: '/images/music/heart-cup/thumbnail.png',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: 'Miniatura (720p)',
+				size: '43.3 KB',
+				url: '/images/music/heart-cup/thumbnail.webp',
+			},
+		],
+		tags: ['emotional', 'piano original'],
+	},
+	{
 		id: 'test',
 		kind: 'single',
-		artists: ['Papita con Puré'],
+		artists: [papitaCredit],
 		title: 'TEST TEST TEST',
 		date: new Date('2024-01-01'),
 		categories: ['original', 'piano'],
@@ -673,7 +964,7 @@ const items: MusicItem[] = [
 				format: 'webp',
 				url: 'https://example.com/download/super-tetas-gordas.webp',
 				size: '3 MB',
-				label: 'Miniatura',
+				label: 'Miniatura (720p)',
 			},
 			{
 				kind: 'video',
@@ -687,82 +978,11 @@ const items: MusicItem[] = [
 				format: 'zip',
 				url: 'https://example.com/download/super-tetas-gordas.zip',
 				size: '118 MB',
-				label: 'Todos los recursos',
+				label: 'Paquete completo',
 				external: true,
 			},
 		],
 		tags: ['original', 'piano', 'touhou'],
-	},
-	{
-		id: 'masivo',
-		kind: 'album',
-		artists: ['Papita con Puré'],
-		title: 'MASIVO',
-		date: new Date('2024-01-02'),
-		categories: ['original', 'piano'],
-		externalLinks: [
-			{
-				source: 'youtube',
-				label: 'YouTube',
-				url: 'https://www.youtube.com/watch?v=UDjJdx0bxG8',
-			},
-			{
-				source: 'soundcloud',
-				label: 'SoundCloud',
-				url: 'https://soundcloud.com/papitaconpure/touhou-piano-medley-1',
-			},
-		],
-		children: [
-			{
-				kind: 'id',
-				data: 'test',
-			},
-			{
-				kind: 'id',
-				data: 'pateka-57',
-			},
-			{
-				kind: 'name',
-				data: 'Machu Picchu Serre siete',
-			},
-			{
-				kind: 'id',
-				data: 'bazubi-bazab',
-			},
-		],
-		coverUrl: 'https://pbs.twimg.com/media/Gv0nMuOXEAAcJfd?format=jpg',
-		thumbnailUrl: 'https://pbs.twimg.com/media/Gv0nMuOXEAAcJfd?format=jpg',
-	},
-	{
-		id: 'pateka-57',
-		kind: 'single',
-		displayArtist: 'PaTeKa',
-		artists: ['Papita con Puré', 'Karl Zuñiga', 'Tewa'],
-		title: 'PaTeKa 57',
-		date: new Date('2027-01-02'),
-		categories: ['original'],
-		coverUrl: 'https://pbs.twimg.com/media/Gv-IfGPWIAAtOkU?format=jpg',
-		thumbnailUrl: 'https://pbs.twimg.com/media/Gv-IfGPWIAAtOkU?format=jpg',
-	},
-	{
-		id: 'bazubi-bazab',
-		kind: 'single',
-		artists: ['Tokoyami Towa'],
-		title: 'BAZUBI BAZAB',
-		date: new Date('2024-01-02'),
-		categories: ['original'],
-		coverUrl: 'https://hololive.hololivepro.com/wp-content/uploads/2025/06/BAZUBIBAZAB.png',
-		thumbnailUrl: 'https://hololive.hololivepro.com/wp-content/uploads/2025/06/BAZUBIBAZAB.png',
-	},
-	{
-		id: 'banzai',
-		kind: 'single',
-		artists: ['Bancho'],
-		title: 'BANZAI',
-		date: new Date('2024-01-02'),
-		categories: ['original'],
-		coverUrl: 'https://hololive.hololivepro.com/wp-content/uploads/2025/06/BANZAI.png',
-		thumbnailUrl: 'https://hololive.hololivepro.com/wp-content/uploads/2025/06/BANZAI.png',
 	},
 ];
 
