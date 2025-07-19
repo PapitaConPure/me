@@ -1466,7 +1466,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'midi',
-				label: 'MIDI completo',
+				label: 'MIDI completo (MediaFire)',
 				size: '89.24 KB',
 				url: 'https://www.mediafire.com/file/z5qi4t53qli1yc1/TWMAW_Piano_by_PapitaPur%25C3%25A9.zip/file',
 				external: true,
