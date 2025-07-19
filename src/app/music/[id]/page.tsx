@@ -8,7 +8,7 @@ import { FullArtistCredit } from '@/types/music';
 import BackSection from '@/components/BackSection';
 import AudioPreview from '@/components/AudioPreview';
 import VideoPreview from '@/components/VideoPreview';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
 
@@ -63,6 +63,10 @@ interface MusicDetailProps {
 		id: string;
 	}>;
 }
+
+export const viewport: Viewport = {
+	themeColor: '#c97f72',
+};
 
 export async function generateStaticParams() {
 	return items.map((item) => ({ id: item.id }));
