@@ -71,9 +71,7 @@ export const MusicDetail = ({ id }: MusicDetailProps) => {
 					<div className='flex justify-center'>
 						<div className='flex flex-col items-center space-y-8'>
 							<div className='text-9xl'>🥔</div>
-							<p>
-								La ID de Música especificada no existe.
-							</p>
+							<p>La ID de Música especificada no existe.</p>
 						</div>
 					</div>
 				</section>
@@ -252,16 +250,30 @@ export const MusicDetail = ({ id }: MusicDetailProps) => {
 										<div className='absolute inset-0 opacity-25'>
 											<Image
 												src={getRoot(download.url)}
-												alt=' '
+												alt='Preview Backdrop'
 												fill
 												className='absolute inset-0 rounded-md object-fill blur-md'
 											/>
 											<Image
 												src={getRoot(download.url)}
-												alt=' '
+												alt='Preview'
 												fill
 												className='absolute inset-0 rounded-md object-contain'
 											/>
+										</div>
+									)}
+									{download.kind === 'video' && (
+										<div className='absolute inset-0 opacity-25'>
+											<video
+												autoPlay
+												loop
+												className='absolute inset-0 my-auto rounded-md'>
+												<source
+													src={getRoot(download.url)}
+													type={`video/${download.format}`}
+												/>
+												Your browser does not support the «video» element.
+											</video>
 										</div>
 									)}
 									<div className='absolute flex w-full flex-col items-center space-y-1'>
@@ -292,7 +304,7 @@ export const MusicDetail = ({ id }: MusicDetailProps) => {
 											src={getRoot(download.url)}
 											type={`audio/${download.format}`}
 										/>
-										Your browser does not support the audio element.
+										Your browser does not support the «audio» element.
 									</audio>
 								)}
 								<a
