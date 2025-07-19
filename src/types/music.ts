@@ -7,7 +7,7 @@ export interface ExternalLink {
 export type AudioAssetFormat = 'mp3' | 'flac' | 'wav' | 'other';
 export type ImageAssetFormat = 'jpg' | 'png' | 'gif' | 'webp' | 'other';
 export type VideoAssetFormat = 'mp4' | 'mov' | 'webm' | 'other';
-export type OtherAssetFormat = 'zip' | 'rar' | 'midi' | 'other';
+export type OtherAssetFormat = 'zip' | 'rar' | 'midi' | 'pdf' | 'mscz' | 'other';
 
 export type AssetFormat =
 	| AudioAssetFormat
