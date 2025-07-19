@@ -625,7 +625,7 @@ const items: MusicItem[] = [
 				kind: 'image',
 				format: 'webp',
 				url: '/images/music/eurotest-1/eurotest2.webp',
-				size: '3 MB',
+				size: '95.2 KB',
 				label: 'Miniatura',
 			},
 		],
