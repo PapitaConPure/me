@@ -97,16 +97,16 @@ const Home = () => {
 
 			<section>
 				<h2 className='section-h2'>Preguntas Frecuentes</h2>
-				<Question>¿Por qué te haces llamar "Papita con Puré"?</Question>
+				<Question>¿Por qué te haces llamar &quot;Papita con Puré&quot;?</Question>
 				<Answer>
 					En una madrugada hace muchos años, cerca de las 3, estaba creándome una cuenta
 					para jugar algo con unos amigos. Lo que pasa es que tenía muchísima hambre, un
 					poco de sueño y además ya estaba pensando reemplazar mi antiguo apodo. Así es
 					como se me ocurrió.
 					<br /> <br />
-					"Papita con Puré" no tiene sentido como tal. Son solo 2 comidas que realmente no
+					&quot;Papita con Puré&quot; no tiene sentido como tal. Son solo 2 comidas que realmente no
 					quedarían bien combinadas. Sin embargo, es un apodo gracioso, y para la gente
-					que no sabe español, "Papita" no suena mal.
+					que no sabe español, &quot;Papita&quot; no suena mal.
 				</Answer>
 				<Question>¿Has pensado subir tus futuros juegos a Steam?</Question>
 				<Answer>
@@ -141,7 +141,7 @@ const Home = () => {
 				<Answer>Risk of Rain 2 y Conker's Bad Fur Day.</Answer>
 				<Question>¿Realmente te han hecho estas preguntas?</Question>
 				<Answer>No.</Answer>
-				<Question>¿Entonces por qué "Preguntas Frecuentes"?</Question>
+				<Question>¿Entonces por qué &quot;Preguntas Frecuentes&quot;?</Question>
 				<Answer>Podrían serlo algún día 👍</Answer>
 			</section>
 
