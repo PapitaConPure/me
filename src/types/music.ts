@@ -6,7 +6,7 @@ export type ExternalLink = {
 
 export type DownloadData = {
 	url: string;
-	size: string;
+	size: `${number} ${'K' | 'M' | 'G' | ''}${'B' | 'b' | 'iB'}`;
 	label: string;
 	external?: boolean;
 };
@@ -73,7 +73,7 @@ export type ExtendedMusicItemCredits = {
 		thumbnail?: CreditsField;
 		cover?: CreditsField;
 	};
-}
+};
 
 export type SingleMusicItem = {
 	kind: 'single';
