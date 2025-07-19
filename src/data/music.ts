@@ -874,7 +874,7 @@ const items: MusicItem[] = [
 		date: new Date('2021-11-25'),
 		categories: ['original', 'piano'],
 		coverUrl: '/images/music/heart-cup/cover.jpg',
-		thumbnailUrl: '/images/music/heart-cup/cover.jpg',
+		thumbnailUrl: '/images/music/heart-cup/thumbnail.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=RZeM2LkFyd0',
 		externalLinks: [
 			{
