@@ -1,13 +1,8 @@
-'use client';
-
-import { Suspense } from 'react';
 import { Url } from 'next/dist/shared/lib/router/router';
 import Image from 'next/image';
 import Link from 'next/link';
 import items from '@/data/music';
 import getRoot from '@/lib/getroot';
-import { useSearchParams } from 'next/navigation';
-import { MusicDetail } from './(detail)/musicdetail';
 import { FullArtistCredit } from '@/types/music';
 
 interface AuthorBriefCreditProps {
@@ -94,7 +89,7 @@ const MusicList = () => {
 					{items.map((item) => (
 						<MusicCard
 							key={item.id}
-							href={`/music?q=${item.id}`}
+							href={`/music/${item.id}`}
 							title={item.title}
 							author={item.displayArtist || (item.artists.map((artist, index, arr) => (
 								<span key={index + 1}>
@@ -115,16 +110,4 @@ const MusicList = () => {
 	);
 }
 
-const Music = () => {
-	const searchParams = useSearchParams();
-	const id = searchParams.get('q');
-	return id ? <MusicDetail id={id} /> : <MusicList />;
-};
-
-const MusicBoundary = () => {
-	return <Suspense>
-		<Music />
-	</Suspense>;
-}
-
-export default MusicBoundary;
+export default MusicList;
