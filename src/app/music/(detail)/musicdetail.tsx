@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import items, { itemsById } from '@/data/music';
 import Image from 'next/image';
-import { Video } from '@/components/Video';
+import { Video } from '@/components/YouTubeVideo';
 import { OlHTMLAttributes } from 'react';
 import getRoot from '@/lib/getroot';
 import { FullArtistCredit } from '@/types/music';
