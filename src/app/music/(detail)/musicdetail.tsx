@@ -207,6 +207,17 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 					</div>
 				</section>
 			)}
+			{item.description && (
+				<section>
+					<h2 className='section-h2'>Descripción</h2>
+					<p>{item.description.split('\n').map((line, index, arr) => (
+						<span key={index}>
+							{line}
+							{index < arr.length - 1 && <br />}
+						</span>
+					))}</p>
+				</section>
+			)}
 			{item.downloadUrls && item.downloadUrls.length > 0 && (
 				<section>
 					<h2 className='section-h2'>Descargas</h2>
@@ -283,7 +294,7 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 			)}
 			{item.tags && item.tags.length > 0 && (
 				<section>
-					<h2 className='section-h2'>Descriptores de Contenido Secundarios</h2>
+					<h2 className='section-h2'>Descriptores de Contenido</h2>
 					<div className='mt-2 flex flex-wrap space-x-2'>
 						{item.tags.map((tag, index) => (
 							<span

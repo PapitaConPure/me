@@ -31,7 +31,7 @@ export type AssetSpecification =
 
 export type DownloadUrl = DownloadData & AssetSpecification;
 
-export type CategoryKey = 'original' | 'arrangement' | 'touhou' | 'piano' | 'medley';
+export type CategoryKey = 'original' | 'arrangement' | 'collab' | 'touhou' | 'piano' | 'medley';
 
 export type FullArtistCredit = {
 	name: string;
@@ -51,13 +51,15 @@ export type BaseMusicItem = {
 };
 
 export type ExtendedMusicItemMetadata = {
+	description?: string;
 	displayArtist?: string;
 	composers?: CreditsField;
 	arrangers?: CreditsField;
 	mixers?: CreditsField;
-	videoIllustrators?: CreditsField;
-	thumbIllustrators?: CreditsField;
-	coverIllustrators?: CreditsField;
+	backgroundVisualArtists?: CreditsField;
+	foregroundVisualArtists?: CreditsField;
+	thumbnailVisualArtists?: CreditsField;
+	coverVisualArtists?: CreditsField;
 	videoUrl?: string;
 	externalLinks?: ExternalLink[];
 	downloadUrls?: DownloadUrl[];
@@ -337,7 +339,7 @@ const items: MusicItem[] = [
 		categories: ['original', 'touhou'],
 		coverUrl: '/images/music/oni-showdown/onishowdown.webp',
 		thumbnailUrl: '/images/music/oni-showdown/onishowdown.webp',
-		thumbIllustrators: [
+		thumbnailVisualArtists: [
 			{
 				name: '村上４時',
 				url: 'https://www.pixiv.net/artworks/27717558',
@@ -418,15 +420,38 @@ const items: MusicItem[] = [
 		kind: 'single',
 		displayArtist: 'PaTeKa',
 		artists: ['Papita con Puré', tewaCredit, karlCredit],
-		videoIllustrators: [
+		backgroundVisualArtists: [
+			{
+				name: 'MerlimAmbrosuis',
+				url: 'https://www.pixiv.net/artworks/80453394',
+			},
+			{
+				name: 'いと',
+				url: 'https://www.pixiv.net/artworks/65190966',
+			},
+			{
+				name: '«? (Potato)»',
+				url: 'https://ar.pinterest.com/yomnaibrahim543/',
+			},
+			{
+				name: '«? (Mashed potatoes)»',
+				url: 'https://www.pixiv.net/artworks/65190966',
+			},
+			{
+				name: '«? (Beer barrel)»',
+				url: 'https://www.vhv.rs/viewpic/hxiwRhm_beer-barrel-png-beer-clipart-barrel-transparent-png/',
+			},
+		],
+		thumbnailVisualArtists: [
 			{
 				name: 'MerlimAmbrosuis',
 				url: 'https://www.pixiv.net/artworks/80453394',
 			},
 		],
 		title: 'Rabbit of the Bar ~ Red and White Tubercle',
+		description: 'Composition:\n• Papita con Puré (I. Z.) [Piano; Acoustic Guitar]\n• Karl Zuñiga [Drums; Strings; Bass]\n• Tewi [Violin; RTp]\nMixing: Karl Zuñiga',
 		date: new Date('2021-01-07'),
-		categories: ['original', 'touhou'],
+		categories: ['collab', 'original', 'touhou'],
 		coverUrl: '/images/music/pateka-1/cover.png',
 		thumbnailUrl: '/images/music/pateka-1/pateka.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=uH7cO2KRkuU',
@@ -472,7 +497,55 @@ const items: MusicItem[] = [
 				url: '/images/music/pateka-1/pateka.webp',
 			},
 		],
-		tags: ['windows era 1 style', 'touhou style', 'collab'],
+		tags: ['windows era 1 style', 'touhou style'],
+	},
+	{
+		id: 'komakusa-piano',
+		kind: 'single',
+		artists: ['ZUN', 'Papita con Puré'],
+		thumbnailVisualArtists: [
+			{
+				name: 'speckticuls',
+				url: 'https://www.pixiv.net/artworks/88612985',
+			},
+		],
+		composers: ['ZUN'],
+		arrangers: ['Papita con Puré'],
+		title: 'The Perpetual Snow of Komakusa Blossoms',
+		date: new Date('2021-03-25'),
+		categories: ['arrangement', 'piano'],
+		coverUrl: '/potato.webp',
+		thumbnailUrl: '/potato.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=BUNgOKm5Z8U',
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=BUNgOKm5Z8U',
+			},
+		],
+		tags: ['piano arrangement', 'low quality'],
+	},
+	{
+		id: 'komakusa-piano',
+		kind: 'single',
+		artists: ['ZUN', 'Papita con Puré'],
+		composers: ['ZUN'],
+		arrangers: ['Papita con Puré'],
+		title: 'The Perpetual Snow of Komakusa Blossoms',
+		date: new Date('2021-03-25'),
+		categories: ['arrangement', 'piano'],
+		coverUrl: '/potato.webp',
+		thumbnailUrl: '/potato.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=BUNgOKm5Z8U',
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=BUNgOKm5Z8U',
+			},
+		],
+		tags: ['piano arrangement', 'low quality'],
 	},
 	{
 		id: 'test',
@@ -582,8 +655,8 @@ const items: MusicItem[] = [
 		displayArtist: 'PaTeKa',
 		artists: ['Papita con Puré', 'Karl Zuñiga', 'Tewa'],
 		title: 'PaTeKa 57',
-		date: new Date('2024-01-02'),
-		categories: ['original', 'piano'],
+		date: new Date('2027-01-02'),
+		categories: ['original'],
 		coverUrl: 'https://pbs.twimg.com/media/Gv-IfGPWIAAtOkU?format=jpg',
 		thumbnailUrl: 'https://pbs.twimg.com/media/Gv-IfGPWIAAtOkU?format=jpg',
 	},
