@@ -2,11 +2,12 @@
 
 import { Suspense } from 'react';
 import Link from 'next/link';
-import items, { FullArtistCredit, itemsById, MusicItem } from '@/data/music';
+import items, { itemsById } from '@/data/music';
 import Image from 'next/image';
 import { Video } from '@/components/Video';
 import { OlHTMLAttributes } from 'react';
 import getRoot from '@/lib/getroot';
+import { FullArtistCredit } from '@/types/music';
 
 const BackSection = () => {
 	return (
@@ -55,23 +56,6 @@ function formatDateUTC(date: Date, sep = '.'): string {
 	const month = `${date.getUTCMonth() + 1}`.padStart(2, '0');
 	const day = `${date.getUTCDate()}`.padStart(2, '0');
 	return `${year}${sep}${month}${sep}${day}`;
-}
-
-function hasExtendedMusicCredits(item: MusicItem) {
-	return !!(item.composers || item.arrangers || item.mixers);
-}
-
-function hasExtendedVisualsCredits(item: MusicItem) {
-	return !!(
-		item.foregroundVisualArtists ||
-		item.backgroundVisualArtists ||
-		item.coverVisualArtists ||
-		item.thumbnailVisualArtists
-	);
-}
-
-function hasExtendedCredits(item: MusicItem) {
-	return hasExtendedMusicCredits(item) || hasExtendedVisualsCredits(item);
 }
 
 interface MusicDetailProps {
@@ -319,19 +303,19 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 					</div>
 				</section>
 			)}
-			{hasExtendedCredits(item) && (
+			{item.credits && (
 				<section>
 					<h2 className='section-h2'>Créditos Extendidos</h2>
 					<div className='mt-2 grid grid-cols-1 gap-x-4 gap-y-8 rounded-md border border-secondary-800 px-4 pb-4 pt-3 text-left sm:grid-cols-2 sm:text-center'>
-						{hasExtendedMusicCredits(item) && (
+						{item.credits.music && (
 							<div>
 								<h3 className='section-h3'>Música</h3>
 								<div className='mt-3 grid grid-cols-1 gap-x-2 gap-y-5 lg:grid-cols-2'>
-									{item.composers && (
+									{item.credits.music.composers && (
 										<div>
 											<h4 className='section-h4 mb-1'>Compositores</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
-												{item.composers.map((artist, index) => (
+												{item.credits.music.composers.map((artist, index) => (
 													<li key={index}>
 														{<CredittedArtist artist={artist} />}
 													</li>
@@ -339,11 +323,11 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 											</ul>
 										</div>
 									)}
-									{item.arrangers && (
+									{item.credits.music.arrangers && (
 										<div>
 											<h4 className='section-h4 mb-1'>Arreglistas</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
-												{item.arrangers.map((artist, index) => (
+												{item.credits.music.arrangers.map((artist, index) => (
 													<li key={index}>
 														{<CredittedArtist artist={artist} />}
 													</li>
@@ -351,11 +335,11 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 											</ul>
 										</div>
 									)}
-									{item.mixers && (
+									{item.credits.music.mixers && (
 										<div>
 											<h4 className='section-h4 mb-1'>Mixers</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
-												{item.mixers.map((artist, index) => (
+												{item.credits.music.mixers.map((artist, index) => (
 													<li key={index}>
 														{<CredittedArtist artist={artist} />}
 													</li>
@@ -366,15 +350,15 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 								</div>
 							</div>
 						)}
-						{hasExtendedVisualsCredits(item) && (
+						{item.credits.visuals && (
 							<div>
 								<h3 className='section-h3'>Visuales</h3>
 								<div className='mt-3 grid grid-cols-1 gap-x-2 gap-y-5 lg:grid-cols-2'>
-									{item.foregroundVisualArtists && (
+									{item.credits.visuals.foreground && (
 										<div>
 											<h4 className='section-h4 mb-1'>Primer Plano</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
-												{item.foregroundVisualArtists.map((artist, index) => (
+												{item.credits.visuals.foreground.map((artist, index) => (
 													<li key={index}>
 														{<CredittedArtist artist={artist} />}
 													</li>
@@ -382,11 +366,11 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 											</ul>
 										</div>
 									)}
-									{item.backgroundVisualArtists && (
+									{item.credits.visuals.background && (
 										<div>
 											<h4 className='section-h4 mb-1'>Fondo</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
-												{item.backgroundVisualArtists.map((artist, index) => (
+												{item.credits.visuals.background.map((artist, index) => (
 													<li key={index}>
 														{<CredittedArtist artist={artist} />}
 													</li>
@@ -394,11 +378,11 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 											</ul>
 										</div>
 									)}
-									{item.coverVisualArtists && (
+									{item.credits.visuals.cover && (
 										<div>
 											<h4 className='section-h4 mb-1'>Portada</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
-												{item.coverVisualArtists.map((artist, index) => (
+												{item.credits.visuals.cover.map((artist, index) => (
 													<li key={index}>
 														{<CredittedArtist artist={artist} />}
 													</li>
@@ -406,11 +390,11 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 											</ul>
 										</div>
 									)}
-									{item.thumbnailVisualArtists && (
+									{item.credits.visuals.thumbnail && (
 										<div>
 											<h4 className='section-h4 mb-1'>Miniatura</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
-												{item.thumbnailVisualArtists.map((artist, index) => (
+												{item.credits.visuals.thumbnail.map((artist, index) => (
 													<li key={index}>
 														{<CredittedArtist artist={artist} />}
 													</li>

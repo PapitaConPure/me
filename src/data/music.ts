@@ -1,95 +1,4 @@
-export type ExternalLink = {
-	source: 'youtube' | 'soundcloud' | 'spotify' | 'other';
-	label: string;
-	url: string;
-};
-
-export type DownloadData = {
-	url: string;
-	size: string;
-	label: string;
-	external?: boolean;
-};
-
-export type AssetSpecification =
-	| {
-			kind: 'audio';
-			format: 'mp3' | 'flac' | 'wav' | 'other';
-	  }
-	| {
-			kind: 'image';
-			format: 'jpg' | 'png' | 'gif' | 'webp' | 'other';
-	  }
-	| {
-			kind: 'video';
-			format: 'mp4' | 'mov' | 'webm' | 'other';
-	  }
-	| {
-			kind: 'file';
-			format: 'zip' | 'rar' | 'other';
-	  };
-
-export type DownloadUrl = DownloadData & AssetSpecification;
-
-export type CategoryKey = 'original' | 'arrangement' | 'collab' | 'touhou' | 'piano' | 'medley';
-
-export type FullArtistCredit = {
-	name: string;
-	url: string;
-};
-
-export type CreditsField = (string | FullArtistCredit)[];
-
-export type BaseMusicItem = {
-	id: string;
-	artists: CreditsField;
-	title: string;
-	date: Date;
-	categories: CategoryKey[];
-	coverUrl: string;
-	thumbnailUrl: string;
-};
-
-export type ExtendedMusicItemMetadata = {
-	description?: string;
-	displayArtist?: string;
-	composers?: CreditsField;
-	arrangers?: CreditsField;
-	mixers?: CreditsField;
-	backgroundVisualArtists?: CreditsField;
-	foregroundVisualArtists?: CreditsField;
-	thumbnailVisualArtists?: CreditsField;
-	coverVisualArtists?: CreditsField;
-	videoUrl?: string;
-	externalLinks?: ExternalLink[];
-	downloadUrls?: DownloadUrl[];
-	tags?: string[];
-};
-
-export type SingleMusicItem = {
-	kind: 'single';
-	parentId?: string;
-};
-
-export type ChildMusicItemData = {
-	kind: 'id' | 'name';
-	data: string;
-};
-
-export type AlbumMusicItem = {
-	kind: 'album' | 'ep';
-	children: ChildMusicItemData[];
-};
-
-export type CompilationMusicItem = {
-	kind: 'compilation';
-	parentId?: string;
-	childrenTitles: string[];
-};
-
-export type MusicItem = BaseMusicItem &
-	ExtendedMusicItemMetadata &
-	(SingleMusicItem | AlbumMusicItem | CompilationMusicItem);
+import { FullArtistCredit, MusicItem } from "@/types/music";
 
 const tewaCredit: FullArtistCredit = {
 	name: 'Tewa',
@@ -106,8 +15,12 @@ const items: MusicItem[] = [
 		id: 'th-piano-medley-6-17',
 		kind: 'compilation',
 		artists: ['ZUN', 'Papita con Puré'],
-		composers: ['ZUN'],
-		arrangers: ['Papita con Puré'],
+		credits: {
+			music: {
+				composers: ['ZUN'],
+				arrangers: ['Papita con Puré'],
+			},
+		},
 		title: 'Touhou Piano Medley 6~17 7.5~16.5',
 		date: new Date('2020-10-02'),
 		categories: ['arrangement', 'piano', 'touhou'],
@@ -190,14 +103,18 @@ const items: MusicItem[] = [
 		id: 'okina-piano-drums',
 		kind: 'single',
 		artists: ['ZUN', 'Papita con Puré'],
-		composers: ['ZUN'],
-		arrangers: ['Papita con Puré'],
 		title: 'The Concealed Four Seasons',
 		date: new Date('2020-04-05'),
 		categories: ['arrangement', 'touhou'],
 		coverUrl: '/potato.webp',
 		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=wql8JViepME',
+		credits: {
+			music: {
+				composers: ['ZUN'],
+				arrangers: ['Papita con Puré'],
+			},
+		},
 		externalLinks: [
 			{
 				source: 'youtube',
@@ -235,14 +152,18 @@ const items: MusicItem[] = [
 		id: 'cafe-terrace-memories',
 		kind: 'single',
 		artists: ['ZUN', 'Papita con Puré'],
-		composers: ['ZUN'],
-		arrangers: ['Papita con Puré'],
 		title: 'Café Terrace Memories',
 		date: new Date('2020-04-14'),
 		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/potato.webp',
 		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=bVmKeNlKcww',
+		credits: {
+			music: {
+				composers: ['ZUN'],
+				arrangers: ['Papita con Puré'],
+			},
+		},
 		externalLinks: [
 			{
 				source: 'youtube',
@@ -313,14 +234,18 @@ const items: MusicItem[] = [
 		id: 'last-remote-piano',
 		kind: 'single',
 		artists: ['ZUN', 'Papita con Puré'],
-		composers: ['ZUN'],
-		arrangers: ['Papita con Puré'],
 		title: 'Last Remote',
 		date: new Date('2020-12-19'),
 		categories: ['arrangement', 'piano'],
 		coverUrl: '/potato.webp',
 		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=J8RcKwhwtwU',
+		credits:{
+			music: {
+				composers: ['ZUN'],
+				arrangers: ['Papita con Puré'],
+			},
+		},
 		externalLinks: [
 			{
 				source: 'youtube',
@@ -339,17 +264,21 @@ const items: MusicItem[] = [
 		categories: ['original', 'touhou'],
 		coverUrl: '/images/music/oni-showdown/onishowdown.webp',
 		thumbnailUrl: '/images/music/oni-showdown/onishowdown.webp',
-		thumbnailVisualArtists: [
-			{
-				name: '村上４時',
-				url: 'https://www.pixiv.net/artworks/27717558',
-			},
-			{
-				name: 'サニーサイドアップ🍳',
-				url: 'https://www.pixiv.net/artworks/79775495',
-			},
-		],
 		videoUrl: 'https://www.youtube.com/watch?v=y0hiITwc4M4',
+		credits: {
+			visuals: {
+				thumbnail: [
+					{
+						name: '村上４時',
+						url: 'https://www.pixiv.net/artworks/27717558',
+					},
+					{
+						name: 'サニーサイドアップ🍳',
+						url: 'https://www.pixiv.net/artworks/79775495',
+					},
+				],
+			},
+		},
 		externalLinks: [
 			{
 				source: 'youtube',
@@ -420,52 +349,6 @@ const items: MusicItem[] = [
 		kind: 'single',
 		displayArtist: 'PaTeKa',
 		artists: ['Papita con Puré', tewaCredit, karlCredit],
-		composers: ['Papita con Puré', tewaCredit, karlCredit],
-		mixers: [karlCredit],
-		backgroundVisualArtists: [
-			{
-				name: 'MerlimAmbrosuis',
-				url: 'https://www.pixiv.net/artworks/80453394',
-			},
-			{
-				name: 'いと',
-				url: 'https://www.pixiv.net/artworks/65190966',
-			},
-			{
-				name: '«? (Potato)»',
-				url: 'https://ar.pinterest.com/yomnaibrahim543/',
-			},
-			{
-				name: '«? (Mashed potatoes)»',
-				url: 'https://www.pixiv.net/artworks/65190966',
-			},
-			{
-				name: '«? (Beer barrel)»',
-				url: 'https://www.vhv.rs/viewpic/hxiwRhm_beer-barrel-png-beer-clipart-barrel-transparent-png/',
-			},
-		],
-		thumbnailVisualArtists: [
-			{
-				name: 'MerlimAmbrosuis',
-				url: 'https://www.pixiv.net/artworks/80453394',
-			},
-			{
-				name: 'いと',
-				url: 'https://www.pixiv.net/artworks/65190966',
-			},
-			{
-				name: '«? (Potato)»',
-				url: 'https://ar.pinterest.com/yomnaibrahim543/',
-			},
-			{
-				name: '«? (Mashed potatoes)»',
-				url: 'https://www.pixiv.net/artworks/65190966',
-			},
-			{
-				name: '«? (Beer barrel)»',
-				url: 'https://www.vhv.rs/viewpic/hxiwRhm_beer-barrel-png-beer-clipart-barrel-transparent-png/',
-			},
-		],
 		title: 'Rabbit of the Bar ~ Red and White Tubercle',
 		description: 'Composition:\n• Papita con Puré (I. Z.) [Piano; Acoustic Guitar]\n• Karl Zuñiga [Drums; Strings; Bass]\n• Tewi [Violin; RTp]\nMixing: Karl Zuñiga',
 		date: new Date('2021-01-07'),
@@ -473,6 +356,58 @@ const items: MusicItem[] = [
 		coverUrl: '/images/music/pateka-1/cover.png',
 		thumbnailUrl: '/images/music/pateka-1/pateka.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=uH7cO2KRkuU',
+		credits: {
+			music: {
+				composers: ['Papita con Puré', tewaCredit, karlCredit],
+				mixers: [karlCredit],
+			},
+			visuals: {
+				background: [
+					{
+						name: 'MerlimAmbrosuis',
+						url: 'https://www.pixiv.net/artworks/80453394',
+					},
+					{
+						name: 'いと',
+						url: 'https://www.pixiv.net/artworks/65190966',
+					},
+					{
+						name: '«? (Potato)»',
+						url: 'https://ar.pinterest.com/yomnaibrahim543/',
+					},
+					{
+						name: '«? (Mashed potatoes)»',
+						url: 'https://www.pixiv.net/artworks/65190966',
+					},
+					{
+						name: '«? (Beer barrel)»',
+						url: 'https://www.vhv.rs/viewpic/hxiwRhm_beer-barrel-png-beer-clipart-barrel-transparent-png/',
+					},
+				],
+				thumbnail: [
+					{
+						name: 'MerlimAmbrosuis',
+						url: 'https://www.pixiv.net/artworks/80453394',
+					},
+					{
+						name: 'いと',
+						url: 'https://www.pixiv.net/artworks/65190966',
+					},
+					{
+						name: '«? (Potato)»',
+						url: 'https://ar.pinterest.com/yomnaibrahim543/',
+					},
+					{
+						name: '«? (Mashed potatoes)»',
+						url: 'https://www.pixiv.net/artworks/65190966',
+					},
+					{
+						name: '«? (Beer barrel)»',
+						url: 'https://www.vhv.rs/viewpic/hxiwRhm_beer-barrel-png-beer-clipart-barrel-transparent-png/',
+					},
+				],
+			}
+		},
 		externalLinks: [
 			{
 				source: 'youtube',
@@ -521,21 +456,27 @@ const items: MusicItem[] = [
 		id: 'komakusa-piano',
 		kind: 'single',
 		artists: ['ZUN', 'Papita con Puré'],
-		backgroundVisualArtists: ['Papita con Puré'],
-		thumbnailVisualArtists: [
-			{
-				name: 'speckticuls',
-				url: 'https://www.pixiv.net/artworks/88612985',
-			},
-		],
-		composers: ['ZUN'],
-		arrangers: ['Papita con Puré'],
 		title: 'The Perpetual Snow of Komakusa Blossoms',
 		date: new Date('2021-03-25'),
 		categories: ['arrangement', 'piano'],
 		coverUrl: '/potato.webp',
 		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=BUNgOKm5Z8U',
+		credits: {
+			music: {
+				composers: ['ZUN'],
+				arrangers: ['Papita con Puré'],
+			},
+			visuals: {
+				background: ['Papita con Puré'],
+				thumbnail: [
+					{
+						name: 'speckticuls',
+						url: 'https://www.pixiv.net/artworks/88612985',
+					},
+				],
+			},
+		},
 		externalLinks: [
 			{
 				source: 'youtube',
@@ -549,21 +490,27 @@ const items: MusicItem[] = [
 		id: 'sannyo-piano',
 		kind: 'single',
 		artists: ['ZUN', 'Papita con Puré'],
-		backgroundVisualArtists: ['Papita con Puré'],
-		thumbnailVisualArtists: [
-			{
-				name: 'ラプトル7',
-				url: 'https://x.com/raputoru7/status/1375758441818419205',
-			},
-		],
-		composers: ['ZUN'],
-		arrangers: ['Papita con Puré'],
 		title: 'Smoking Dragon',
 		date: new Date('2021-03-27'),
 		categories: ['arrangement', 'piano'],
 		coverUrl: '/potato.webp',
 		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=SeORE1zUuv8',
+		credits: {
+			music: {
+				composers: ['ZUN'],
+				arrangers: ['Papita con Puré'],
+			},
+			visuals: {
+				background: ['Papita con Puré'],
+				thumbnail: [
+					{
+						name: 'ラプトル7',
+						url: 'https://x.com/raputoru7/status/1375758441818419205',
+					},
+				],
+			},
+		},
 		externalLinks: [
 			{
 				source: 'youtube',
@@ -577,21 +524,27 @@ const items: MusicItem[] = [
 		id: 'deep-green-cliff-piano',
 		kind: 'single',
 		artists: ['ZUN', 'Papita con Puré'],
-		backgroundVisualArtists: ['Papita con Puré'],
-		thumbnailVisualArtists: [
-			{
-				name: 'mefomefo',
-				url: 'https://x.com/mefomefomefo/status/1373824227971858435',
-			},
-		],
-		composers: ['ZUN'],
-		arrangers: ['Papita con Puré'],
 		title: 'The Cliff Hidden in Deep Green',
 		date: new Date('2021-03-31'),
 		categories: ['arrangement', 'piano'],
 		coverUrl: '/potato.webp',
 		thumbnailUrl: '/potato.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=QLxJPqjB-kc',
+		credits: {
+			music: {
+				composers: ['ZUN'],
+				arrangers: ['Papita con Puré'],
+			},
+			visuals: {
+				background: ['Papita con Puré'],
+				thumbnail: [
+					{
+						name: 'mefomefo',
+						url: 'https://x.com/mefomefomefo/status/1373824227971858435',
+					},
+				],
+			},
+		},
 		externalLinks: [
 			{
 				source: 'youtube',
