@@ -14,7 +14,14 @@ export async function generateStaticParams() {
 	return items.map((item) => ({ id: item.id }));
 }
 
-export async function generateMetadata({ params }: MusicDetailProps): Promise<Metadata> {
+
+interface MusicDetailMetadataProps {
+	params: {
+		id: string;
+	};
+}
+
+export async function generateMetadata({ params }: MusicDetailMetadataProps): Promise<Metadata> {
 	const item = itemsById[params.id];
 
 	if (!item) return { title: 'Not Found' };
@@ -91,13 +98,13 @@ function formatDateUTC(date: Date, sep = '.'): string {
 }
 
 interface MusicDetailProps {
-	params: {
+	params: Promise<{
 		id: string;
-	};
+	}>;
 }
 
-const MusicDetail = ({ params }: MusicDetailProps) => {
-	const { id = undefined } = params;
+const MusicDetail = async ({ params }: MusicDetailProps) => {
+	const { id = undefined } = await params;
 	const item = id ? itemsById[id] : undefined;
 
 	if (item == undefined) {
