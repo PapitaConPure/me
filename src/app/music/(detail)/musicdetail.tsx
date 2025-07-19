@@ -232,7 +232,7 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 			{item.description && (
 				<section>
 					<h2 className='section-h2'>Descripción</h2>
-					<p>
+					<p className='mt-2'>
 						{item.description.split('\n').map((line, index, arr) => (
 							<span key={index}>
 								{line}
@@ -319,7 +319,7 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 			{item.credits && (
 				<section>
 					<h2 className='section-h2'>Créditos Extendidos</h2>
-					<div className='mt-2 grid grid-cols-1 gap-x-4 gap-y-8 rounded-md border border-secondary-800 px-4 pb-4 pt-3 text-left sm:grid-cols-2 sm:text-center'>
+					<div className='mt-4 grid grid-cols-1 gap-x-4 gap-y-8 rounded-md border border-secondary-800 px-4 pb-4 pt-3 text-left sm:grid-cols-2 sm:text-center'>
 						{item.credits.music && (
 							<div>
 								<h3 className='section-h3'>Música</h3>
