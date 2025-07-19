@@ -11,13 +11,13 @@ import getRoot from '@/lib/getroot';
 
 const BackSection = () => {
 	return (
-		<section>
+		<section className='flex items-center'>
 			<Link
 				href='/music'
-				className='text-accent-500 hover:text-accent-600'
+				className='flex w-full items-center rounded-md bg-foreground px-6 py-3 text-background hover:opacity-80 sm:w-1/2 md:w-80'
 				aria-label='Volver a la lista de música'>
-				<i className='fa fa-arrow-left mr-2'></i>
-				Volver a la lista de música
+				<i className='fa fa-angle-left mr-4 flex-shrink-0'></i>
+				<span className='flex-grow text-center'>Volver a Música</span>
 			</Link>
 		</section>
 	);
@@ -280,12 +280,12 @@ const MusicDetailInner = () => {
 			)}
 			{item.tags && item.tags.length > 0 && (
 				<section>
-					<h2 className='section-h2'>Etiquetas de Contenido</h2>
-					<div className='mt-4 flex flex-wrap space-x-2'>
+					<h2 className='section-h2'>Descriptores de Contenido Secundarios</h2>
+					<div className='mt-2 flex flex-wrap space-x-2'>
 						{item.tags.map((tag, index) => (
 							<span
 								key={index}
-								className='rounded-md bg-secondary-800 px-3 py-1 text-sm text-secondary-300'>
+								className='my-2 rounded-md bg-secondary-800 px-3 py-1 text-sm text-secondary-300'>
 								{tag.toUpperCase()}
 							</span>
 						))}
