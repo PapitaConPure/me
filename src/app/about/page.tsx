@@ -104,6 +104,13 @@ const About = () => {
 			</section>
 
 			<section>
+				<h2 className='section-h2'>Descripción Breve</h2>
+				<p className='mt-2'>
+					Soy un programador profesional. Por hobby, desarrollo videojuegos; hago composiciones y arreglos musicales; diseño, modelo y renderizo en 3D; dibujo pixelart y hago diseño gráfico.
+				</p>
+			</section>
+
+			<section>
 				<h2 className='section-h2'>Historia</h2>
 				<p className='mb-8 mt-2 font-default-serif text-secondary-100 sm:text-lg'>
 					Desde muy pequeño me interesa todo el proceso creativo del desarrollo de
