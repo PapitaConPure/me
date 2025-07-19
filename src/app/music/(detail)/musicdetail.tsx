@@ -38,15 +38,28 @@ interface CredittedArtistProps {
 }
 
 const CredittedArtist = ({ artist }: CredittedArtistProps) => {
-	return typeof artist === 'string' ? (
-		<span>{artist}</span>
-	) : (
+	if (typeof artist === 'string') return <span>{artist}</span>;
+
+	if (!artist.url)
+		return (
+			<span>
+				{artist.name}{' '}
+				{artist.clarification && (
+					<span className='text-sm text-secondary-300'>({artist.clarification})</span>
+				)}
+			</span>
+		);
+
+	return (
 		<a
 			href={artist.url}
 			target='_blank'
 			rel='noopener noreferrer'
-			className='text-accent-500 hover:text-accent-600 hover:underline'>
-			{artist.name}
+			className='group text-accent-500 hover:text-accent-600 hover:underline'>
+			{artist.name}{' '}
+			{artist.clarification && (
+				<span className='text-xs text-accent-600 group-hover:text-accent-700'>({artist.clarification})</span>
+			)}
 		</a>
 	);
 };
@@ -315,11 +328,13 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 										<div>
 											<h4 className='section-h4 mb-1'>Compositores</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
-												{item.credits.music.composers.map((artist, index) => (
-													<li key={index}>
-														{<CredittedArtist artist={artist} />}
-													</li>
-												))}
+												{item.credits.music.composers.map(
+													(artist, index) => (
+														<li key={index}>
+															{<CredittedArtist artist={artist} />}
+														</li>
+													),
+												)}
 											</ul>
 										</div>
 									)}
@@ -327,11 +342,13 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 										<div>
 											<h4 className='section-h4 mb-1'>Arreglistas</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
-												{item.credits.music.arrangers.map((artist, index) => (
-													<li key={index}>
-														{<CredittedArtist artist={artist} />}
-													</li>
-												))}
+												{item.credits.music.arrangers.map(
+													(artist, index) => (
+														<li key={index}>
+															{<CredittedArtist artist={artist} />}
+														</li>
+													),
+												)}
 											</ul>
 										</div>
 									)}
@@ -358,11 +375,13 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 										<div>
 											<h4 className='section-h4 mb-1'>Primer Plano</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
-												{item.credits.visuals.foreground.map((artist, index) => (
-													<li key={index}>
-														{<CredittedArtist artist={artist} />}
-													</li>
-												))}
+												{item.credits.visuals.foreground.map(
+													(artist, index) => (
+														<li key={index}>
+															{<CredittedArtist artist={artist} />}
+														</li>
+													),
+												)}
 											</ul>
 										</div>
 									)}
@@ -370,11 +389,13 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 										<div>
 											<h4 className='section-h4 mb-1'>Fondo</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
-												{item.credits.visuals.background.map((artist, index) => (
-													<li key={index}>
-														{<CredittedArtist artist={artist} />}
-													</li>
-												))}
+												{item.credits.visuals.background.map(
+													(artist, index) => (
+														<li key={index}>
+															{<CredittedArtist artist={artist} />}
+														</li>
+													),
+												)}
 											</ul>
 										</div>
 									)}
@@ -394,11 +415,13 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 										<div>
 											<h4 className='section-h4 mb-1'>Miniatura</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
-												{item.credits.visuals.thumbnail.map((artist, index) => (
-													<li key={index}>
-														{<CredittedArtist artist={artist} />}
-													</li>
-												))}
+												{item.credits.visuals.thumbnail.map(
+													(artist, index) => (
+														<li key={index}>
+															{<CredittedArtist artist={artist} />}
+														</li>
+													),
+												)}
 											</ul>
 										</div>
 									)}
