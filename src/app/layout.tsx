@@ -4,6 +4,10 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import './globals.css';
 
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
 const outfit = Outfit({
 	subsets: ['latin', 'latin-ext'],
 	display: 'swap',
