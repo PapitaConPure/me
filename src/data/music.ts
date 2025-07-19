@@ -1546,9 +1546,10 @@ const items: MusicItem[] = [
 				kind: 'video',
 				format: 'mov',
 				label: 'Animación (Bucle) (DNxHR 12-bit / 1080p@30fps) (archive.org)',
-				size: '300 MB',
-				url: 'https://archive.org/details/loop1-by-papitapure',
-				previewUrl: '/videos/music/aswotts/preview.webp',
+				size: '350 MB',
+				url: 'https://archive.org/download/aswotts-loop1-by-papitapure/loop1.mov',
+				previewUrl: '/video/music/aswotts/preview.webm',
+				previewFormat: 'webm',
 				external: true,
 			},
 			{
