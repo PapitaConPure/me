@@ -26,7 +26,7 @@ export type AssetSpecification =
 	  }
 	| {
 			kind: 'file';
-			format: 'zip' | 'rar' | 'other';
+			format: 'zip' | 'rar' | 'midi' | 'other';
 	  };
 
 export type DownloadUrl = DownloadData & AssetSpecification;
