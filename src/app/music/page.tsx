@@ -4,6 +4,31 @@ import Link from 'next/link';
 import items from '@/data/music';
 import getRoot from '@/lib/getroot';
 import { FullArtistCredit } from '@/types/music';
+import { Metadata, Viewport } from 'next';
+
+export const viewport: Viewport = {
+	themeColor: '#c97f72',
+};
+
+export const metadata: Metadata = {
+	title: 'Música',
+	description: 'Piezas en las que he trabajado',
+	openGraph: {
+		title: 'Música',
+		description: 'Piezas en las que he trabajado',
+		images: [getRoot(`/potato.webp`)],
+		type: 'website',
+		siteName: 'Papita con Puré Site',
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Música',
+		description: 'Piezas en las que he trabajado',
+		creator: 'Papita con Puré',
+		site: 'https://papitaconpure.github.io/me',
+		images: [getRoot(`/potato.webp`)],
+	},
+};
 
 interface AuthorBriefCreditProps {
 	artist: string | FullArtistCredit;
