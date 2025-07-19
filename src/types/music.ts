@@ -1,48 +1,56 @@
-export type ExternalLink = {
+export interface ExternalLink {
 	source: 'youtube' | 'soundcloud' | 'spotify' | 'other';
 	label: string;
 	url: string;
-};
+}
 
-export type DownloadData = {
-	url: string;
+export type AudioAssetFormat = 'mp3' | 'flac' | 'wav' | 'other';
+export type ImageAssetFormat = 'jpg' | 'png' | 'gif' | 'webp' | 'other';
+export type VideoAssetFormat = 'mp4' | 'mov' | 'webm' | 'other';
+export type OtherAssetFormat = 'zip' | 'rar' | 'midi' | 'other';
+
+export type AssetFormat =
+	| AudioAssetFormat
+	| ImageAssetFormat
+	| VideoAssetFormat
+	| OtherAssetFormat;
+
+interface AssetSpecificationTemplate<TKind extends string, TFormat extends AssetFormat> {
+	kind: TKind;
+	format: TFormat;
+}
+
+export type AssetSpecification =
+	| AssetSpecificationTemplate<'audio', AudioAssetFormat>
+	| AssetSpecificationTemplate<'image', ImageAssetFormat>
+	| AssetSpecificationTemplate<'video', VideoAssetFormat>
+	| AssetSpecificationTemplate<'file', OtherAssetFormat>;
+
+export interface AssetPreviewData {
 	previewUrl?: string;
+	previewFormat?: AssetFormat;
+}
+
+export interface DownloadData {
+	url: string;
 	size: `${number} ${'K' | 'M' | 'G' | ''}${'B' | 'b'}`;
 	label: string;
 	external?: boolean;
-};
+}
 
-export type AssetSpecification =
-	| {
-			kind: 'audio';
-			format: 'mp3' | 'flac' | 'wav' | 'other';
-	  }
-	| {
-			kind: 'image';
-			format: 'jpg' | 'png' | 'gif' | 'webp' | 'other';
-	  }
-	| {
-			kind: 'video';
-			format: 'mp4' | 'mov' | 'webm' | 'other';
-	  }
-	| {
-			kind: 'file';
-			format: 'zip' | 'rar' | 'midi' | 'other';
-	  };
-
-export type DownloadUrl = DownloadData & AssetSpecification;
+export type DownloadUrl = AssetSpecification & AssetPreviewData & DownloadData;
 
 export type CategoryKey = 'original' | 'arrangement' | 'collab' | 'touhou' | 'piano' | 'medley';
 
-export type FullArtistCredit = {
+export interface FullArtistCredit {
 	name: string;
 	clarification?: string;
 	url?: string;
-};
+}
 
 export type CreditsField = (string | FullArtistCredit)[];
 
-export type BaseMusicItem = {
+export interface BaseMusicItem {
 	id: string;
 	artists: CreditsField;
 	title: string;
@@ -50,9 +58,9 @@ export type BaseMusicItem = {
 	categories: CategoryKey[];
 	coverUrl: string;
 	thumbnailUrl: string;
-};
+}
 
-export type ExtendedMusicItemMetadata = {
+export interface ExtendedMusicItemMetadata {
 	description?: string;
 	displayArtist?: string;
 	videoUrl?: string;
@@ -60,7 +68,7 @@ export type ExtendedMusicItemMetadata = {
 	externalLinks?: ExternalLink[];
 	downloadUrls?: DownloadUrl[];
 	tags?: string[];
-};
+}
 
 export type ExtendedMusicItemCredits = {
 	music?: {
@@ -81,10 +89,10 @@ export type SingleMusicItem = {
 	parentId?: string;
 };
 
-export type ChildMusicItemData = {
+export interface ChildMusicItemData {
 	kind: 'id' | 'name';
 	data: string;
-};
+}
 
 export type AlbumMusicItem = {
 	kind: 'album' | 'ep';
