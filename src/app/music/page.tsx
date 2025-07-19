@@ -8,6 +8,16 @@ import items from '@/data/music';
 import getRoot from '@/lib/getroot';
 import { useSearchParams } from 'next/navigation';
 import { MusicDetail } from './(detail)/musicdetail';
+import { FullArtistCredit } from '@/types/music';
+
+interface AuthorBriefCreditProps {
+	artist: string | FullArtistCredit;
+}
+
+const AuthorBriefCredit = ({ artist }: AuthorBriefCreditProps) => 
+	typeof artist === 'string'
+		? <span>{artist}</span>
+		: <span>{artist.name}</span>;
 
 interface MusicCardProps {
 	href: Url;
@@ -61,8 +71,8 @@ const MusicCard = ({ href, imgSrc, title, author, categories, date }: MusicCardP
 
 			<div className='m-4'>
 				<h2 className='text-lg font-semibold text-foreground'>{title}</h2>
-				<p className='text-secondary-200'>{author}</p>
-				<div className='mt-4 flex space-x-4 items-end justify-between text-secondary-400'>
+				<p className='text-secondary-100'>{author}</p>
+				<div className='mt-4 flex space-x-4 items-end justify-between text-secondary-300'>
 					<p className='text-sm flex-shrink-0'>{date.getFullYear()}</p>
 					<p className='text-xs text-right flex-grow font-light'>{categories.join(', ')}</p>
 				</div>
@@ -88,11 +98,7 @@ const MusicList = () => {
 							title={item.title}
 							author={item.displayArtist || (item.artists.map((artist, index, arr) => (
 								<span key={index + 1}>
-									{typeof artist === 'string' ? (
-										<span>{artist}</span>
-									) : (
-										<span>{artist.name}</span>
-									)}
+									<AuthorBriefCredit artist={artist} />
 									{index < arr.length - 1 && (
 										<span className='mx-1 text-sm text-secondary-500'>&</span>
 									)}
