@@ -266,10 +266,18 @@ export const MusicDetail = ({ id }: MusicDetailProps) => {
 									)}
 									{download.kind === 'video' && (
 										<div className='absolute inset-0 opacity-25'>
-											<VideoPreview
-												{...download}
-												className='absolute inset-0 my-auto rounded-md'
-											/>
+											{download.previewUrl ? (
+												<VideoPreview
+													url={download.previewUrl}
+													format={download.previewFormat || download.format}
+													className='absolute inset-0 my-auto rounded-md'
+												/>
+											) : (
+												<VideoPreview
+													{...download}
+													className='absolute inset-0 my-auto rounded-md'
+												/>
+											)}
 										</div>
 									)}
 									<div className='absolute flex w-full flex-col items-center space-y-1'>
