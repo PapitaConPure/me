@@ -923,6 +923,97 @@ const items: MusicItem[] = [
 		tags: ['emotional', 'piano original'],
 	},
 	{
+		id: 'kaisou-ressha-piano',
+		kind: 'single',
+		artists: [
+			{
+				name: '湊あくあ',
+				clarification: 'Minato Aqua',
+				url: 'https://www.youtube.com/channel/UC1opHUrw8rvnsadT-iGp7Cg',
+			},
+			papitaCredit,
+		],
+		title: '海想列車',
+		description: 'Piano arrangament to celebrate former Hololive member Minato Aqua\'s 2021 birthday.',
+		date: new Date('2021-12-01'),
+		categories: ['arrangement', 'piano'],
+		coverUrl: '/images/music/kaisouressha/cover.png',
+		thumbnailUrl: '/images/music/kaisouressha/thumbnail.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=fOB5qKXhjqA',
+		credits: {
+			music: {
+				composers: [
+					{
+						name: '40mp',
+						url: 'https://www.40mp-official.com',
+					},
+				],
+				arrangers: [papitaCredit],
+			},
+			visuals: {
+				background: [papitaCredit],
+				thumbnail: [papitaCredit],
+			},
+		},
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'Arreglo (YouTube)',
+				url: 'https://www.youtube.com/watch?v=fOB5qKXhjqA',
+			},
+			{
+				source: 'youtube',
+				label: 'Tema original (YouTube)',
+				url: 'https://www.youtube.com/watch?v=tuWw5EQPGlc',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: 'Pista completa (320kbps)',
+				size: '9.60 MB',
+				url: '/audio/music/kaisouressha/kaisouressha.mp3',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Portada «?» (1920x1080)',
+				size: '2.30 MB',
+				url: '/images/music/kaisouressha/cover.png',
+			},
+			{
+				kind: 'video',
+				format: 'mp4',
+				label: 'Animación (Entrada) (MPEG-4 / 1080p)',
+				size: '12.3 MB',
+				url: '/video/music/kaisouressha/ksrs_intro.mp4',
+			},
+			{
+				kind: 'video',
+				format: 'mp4',
+				label: 'Animación (Bucle) (MPEG-4 / 1080p)',
+				size: '12.2 MB',
+				url: '/video/music/kaisouressha/ksrs_loop.mp4',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Miniatura (720p)',
+				size: '1.24 MB',
+				url: '/images/music/kaisouressha/thumbnail.png',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: 'Miniatura (720p)',
+				size: '33.9 KB',
+				url: '/images/music/kaisouressha/thumbnail.webp',
+			},
+		],
+		tags: ['piano arrangement'],
+	},
+	{
 		id: 'test',
 		kind: 'single',
 		artists: [papitaCredit],
