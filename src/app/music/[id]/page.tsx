@@ -77,12 +77,13 @@ export async function generateMetadata({ params }: MusicDetailProps): Promise<Me
 	return {
 		title: item.title,
 		description:
-			item.description || `Track by ${item.displayArtist || item.artists.join(' & ')}`,
+			item.description ||
+			`Track by ${item.displayArtist || item.artists.map((artist) => (typeof artist === 'string' ? artist : artist.name)).join(' & ')}`,
 		openGraph: {
 			title: item.title,
 			description: item.description || '',
 			url: `https://papitaconpure.github.io/me/music/${item.id}`,
-			/*images: [getRoot(`/music/images/${item.id}.png`)],*/
+			images: [getRoot(`/music/images/${item.id}.png`)],
 			type: item.kind === 'single' ? 'music.song' : 'music.album',
 			siteName: 'Papita con Puré',
 		},
@@ -92,7 +93,7 @@ export async function generateMetadata({ params }: MusicDetailProps): Promise<Me
 			description: item.description || 'No description provided for this item.',
 			creator: item.displayArtist || item.artists.join(' & '),
 			site: 'https://papitaconpure.github.io/me',
-			/*images: [getRoot(`/music/images/${item.id}.png`)],*/
+			images: [getRoot(`/music/images/${item.id}.png`)],
 		},
 	};
 }
