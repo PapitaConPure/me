@@ -413,7 +413,7 @@ const items: MusicItem[] = [
 		artists: [papitaCredit, tewaCredit, karlCredit],
 		title: 'Rabbit of the Bar ~ Red and White Tubercle',
 		description:
-			'Composition:\n• Papita con Puré (I. Z.) [Piano; Acoustic Guitar]\n• Karl Zuñiga [Drums; Strings; Bass]\n• Tewi [Violin; RTp]\nMixing: Karl Zuñiga',
+			'Composition:\n• Papita con Puré (I. Z.) [Piano; Acoustic Guitar]\n• Karl Zuñiga [Drums; Strings; Bass]\n• Tewi [Violin; RTp]\n\nMix: Karl Zuñiga',
 		date: new Date('2021-01-07'),
 		categories: ['collab', 'original', 'touhou'],
 		coverUrl: '/images/music/pateka-1/cover.png',
@@ -447,6 +447,7 @@ const items: MusicItem[] = [
 						url: 'https://www.vhv.rs/viewpic/hxiwRhm_beer-barrel-png-beer-clipart-barrel-transparent-png/',
 					},
 				],
+				cover: [karlCredit],
 				thumbnail: [
 					{
 						name: 'MerlimAmbrosuis',
@@ -833,14 +834,9 @@ const items: MusicItem[] = [
 				composers: [papitaCredit],
 			},
 			visuals: {
-				foreground: [
-					'Pastel_Maddie',
-				],
+				foreground: ['Pastel_Maddie'],
 				background: [papitaCredit],
-				thumbnail: [
-					'Pastel_Maddie',
-					papitaCredit,
-				],
+				thumbnail: ['Pastel_Maddie', papitaCredit],
 			},
 		},
 		externalLinks: [
@@ -973,7 +969,8 @@ const items: MusicItem[] = [
 			papitaCredit,
 		],
 		title: '海想列車',
-		description: 'Piano arrangament to celebrate former Hololive member Minato Aqua\'s 2021 birthday.',
+		description:
+			"Piano arrangament to celebrate former Hololive member Minato Aqua's 2021 birthday.",
 		date: new Date('2021-12-01'),
 		categories: ['arrangement', 'piano'],
 		coverUrl: '/images/music/kaisouressha/cover.png',
@@ -1059,6 +1056,229 @@ const items: MusicItem[] = [
 			},
 		],
 		tags: ['piano arrangement'],
+	},
+	{
+		id: 'izanagi-bloom-phenomenon',
+		kind: 'single',
+		artists: [papitaCredit],
+		title: 'Izanagi Bloom Phenomenon',
+		date: new Date('2021-12-30'),
+		categories: ['original', 'touhou'],
+		coverUrl: '/images/music/izanagi-bloom/cover.png',
+		thumbnailUrl: '/images/music/izanagi-bloom/thumbnail.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=_t8o-IcD_ro',
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=_t8o-IcD_ro',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: 'Pista completa (320kbps)',
+				size: '9.20 MB',
+				url: '/audio/music/izanagi-bloom/Izanagi Bloom Phenomenon.mp3',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Portada (1080p)',
+				size: '1.50 MB',
+				url: '/images/music/izanagi-bloom/cover.png',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: 'Miniatura (720p)',
+				size: '146 KB',
+				url: '/images/music/izanagi-bloom/thumbnail.webp',
+			},
+			{
+				kind: 'file',
+				format: 'zip',
+				label: 'Paquete completo (MediaFire)',
+				size: '21.50 MB',
+				url: 'https://www.mediafire.com/file/dk3ifbdn7kexvnq/Izanagi_Bloom_Phenomenon.rar/file',
+				external: true,
+			},
+		],
+		tags: ['touhou fighter style', 'touhou style'],
+	},
+	{
+		id: 'pateka-2',
+		kind: 'single',
+		displayArtist: 'PaTeKa',
+		artists: [papitaCredit, tewaCredit, karlCredit],
+		title: 'Good Omens ~ Inhospitable Crossing',
+		description:
+			'Composition:\n• Tewi [Piano; acoustic guitar; leads]\n• Karl Zuñiga [Drums; bass; details]\n• Papita con Puré [Piano; violin; details]\n\nMix: Karl Zuñiga',
+		date: new Date('2022-01-29'),
+		categories: ['collab', 'original', 'touhou'],
+		coverUrl: '/images/music/pateka-2/cover.webp',
+		thumbnailUrl: '/images/music/pateka-2/cover.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=CbWBfKSn34o',
+		credits: {
+			music: {
+				composers: [papitaCredit, tewaCredit, karlCredit],
+				mixers: [karlCredit],
+			},
+			visuals: {
+				cover: [karlCredit, tewaCredit],
+				thumbnail: [karlCredit, tewaCredit],
+			},
+		},
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube (por Karl Zuñiga)',
+				url: 'https://www.youtube.com/watch?v=CbWBfKSn34o',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: 'Pista completa (320kbps)',
+				size: '5.83 MB',
+				url: '/audio/music/pateka-2/Buen Presagio ~ Travesía Inhóspita.mp3',
+			},
+			{
+				kind: 'image',
+				format: 'jpg',
+				label: 'Portada (3000x3000)',
+				size: '559 KB',
+				url: '/images/music/pateka-2/cover.jpg',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: 'Miniatura (3000x3000)',
+				size: '139 KB',
+				url: '/images/music/pateka-2/cover.webp',
+			},
+		],
+		tags: ['touhou style'],
+	},
+	{
+		id: 'kanako-sb-piano',
+		kind: 'single',
+		artists: [zunCredit, papitaCredit],
+		title: 'Cemetery of Onbashira ~ Suwa Foughten Field',
+		description:
+			"Mountain of Faith Stage 6 Theme and Yasaka Kanako's Theme mixed into one as a piano arrangement.",
+		date: new Date('2022-12-02'),
+		categories: ['arrangement', 'piano', 'touhou'],
+		coverUrl: '/images/music/kanako-sb-piano/thumbnail.webp',
+		thumbnailUrl: '/images/music/kanako-sb-piano/thumbnail.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=idO4GMelduM',
+		credits: {
+			music: {
+				composers: [zunCredit],
+				arrangers: [papitaCredit],
+			},
+			visuals: {
+				background: [papitaCredit],
+				thumbnail: [
+					{
+						name: 'Mudimudi Mitama',
+						clarification: '三玉 むぢむぢ',
+						url: 'https://www.pixiv.net/users/3572241',
+					},
+				],
+			},
+		},
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=idO4GMelduM',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: 'Pista completa (320kbps)',
+				size: '12.4 MB',
+				url: '/audio/music/kanako-sb-piano/kanako.mp3',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: 'Miniatura (720p)',
+				size: '79.3 KB',
+				url: '/images/music/kanako-sb-piano/thumbnail.webp',
+			},
+			{
+				kind: 'file',
+				format: 'zip',
+				label: 'Paquete completo (MediaFire)',
+				size: '133.96 MB',
+				url: 'https://www.mediafire.com/file/d2q5tpim7f3dlmr/COOSFF_by_PapitaPur%25C3%25A9.zip/file',
+				external: true,
+			},
+		],
+		tags: ['mountain of faith', 'piano arrangement'],
+	},
+	{
+		id: 'spols',
+		kind: 'single',
+		artists: [papitaCredit],
+		title: 'Stellar Passage of Lunatic Starway',
+		date: new Date('2022-12-16'),
+		categories: ['original', 'touhou'],
+		coverUrl: '/images/music/spols/cover.png',
+		thumbnailUrl: '/images/music/spols/spols.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=eMV6GF3DqOE',
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=eMV6GF3DqOE',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: 'Pista completa (320kbps)',
+				size: '11.3 MB',
+				url: '/audio/music/spols/Stellar Passage of Lunatic Starway.mp3',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Portada (1080p)',
+				size: '1.20 MB',
+				url: '/images/music/spols/cover.png',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Miniatura (1080p)',
+				size: '2.03 MB',
+				url: '/images/music/spols/spols.png',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: 'Miniatura (1080p)',
+				size: '114 KB',
+				url: '/images/music/spols/spols.webp',
+			},
+			{
+				kind: 'file',
+				format: 'zip',
+				label: 'Paquete completo (MediaFire)',
+				size: '28.69 MB',
+				url: 'https://www.mediafire.com/file/ymztpu5l95ckw8r/SPoLS_by_PapitaPur%25C3%25A9.zip/file',
+				external: true,
+			},
+		],
+		tags: ['legacy of lunatic kingdom', 'touhou style'],
 	},
 ];
 
