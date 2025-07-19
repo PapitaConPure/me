@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react';
 import Link from 'next/link';
-import items, { itemsById } from '@/data/music';
+import items, { FullArtistCredit, itemsById, MusicItem } from '@/data/music';
 import Image from 'next/image';
 import { Video } from '@/components/Video';
 import { OlHTMLAttributes } from 'react';
@@ -32,11 +32,46 @@ const ChildrenList = ({ children }: OlHTMLAttributes<HTMLDataListElement>) => (
 	</ol>
 );
 
+interface CredittedArtistProps {
+	artist: string | FullArtistCredit;
+}
+
+const CredittedArtist = ({ artist }: CredittedArtistProps) => {
+	return typeof artist === 'string' ? (
+		<span>{artist}</span>
+	) : (
+		<a
+			href={artist.url}
+			target='_blank'
+			rel='noopener noreferrer'
+			className='text-accent-500 hover:text-accent-600 hover:underline'>
+			{artist.name}
+		</a>
+	);
+};
+
 function formatDateUTC(date: Date, sep = '.'): string {
 	const year = `${date.getUTCFullYear()}`.padStart(4, '0');
 	const month = `${date.getUTCMonth() + 1}`.padStart(2, '0');
 	const day = `${date.getUTCDate()}`.padStart(2, '0');
 	return `${year}${sep}${month}${sep}${day}`;
+}
+
+function hasExtendedMusicCredits(item: MusicItem) {
+	return !!(item.composers || item.arrangers || item.mixers);
+}
+
+function hasExtendedVisualsCredits(item: MusicItem) {
+	return !!(
+		item.foregroundVisualArtists ||
+		item.backgroundVisualArtists ||
+		item.coverVisualArtists ||
+		item.thumbnailVisualArtists
+	);
+}
+
+function hasExtendedCredits(item: MusicItem) {
+	return hasExtendedMusicCredits(item) || hasExtendedVisualsCredits(item);
 }
 
 interface MusicDetailProps {
@@ -72,17 +107,7 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 						<h2 className='mb-1 text-xl text-foreground text-opacity-90'>
 							{item.artists.map((artist, index, arr) => (
 								<span key={index + 1}>
-									{typeof artist === 'string' ? (
-										<span>{artist}</span>
-									) : (
-										<a
-											href={artist.url}
-											target='_blank'
-											rel='noopener noreferrer'
-											className='text-accent-500 hover:text-accent-600 hover:underline'>
-											{artist.name}
-										</a>
-									)}
+									<CredittedArtist artist={artist} />
 									{index < arr.length - 1 && (
 										<span className='mx-2 text-base text-secondary-500'>&</span>
 									)}
@@ -210,12 +235,14 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 			{item.description && (
 				<section>
 					<h2 className='section-h2'>Descripción</h2>
-					<p>{item.description.split('\n').map((line, index, arr) => (
-						<span key={index}>
-							{line}
-							{index < arr.length - 1 && <br />}
-						</span>
-					))}</p>
+					<p>
+						{item.description.split('\n').map((line, index, arr) => (
+							<span key={index}>
+								{line}
+								{index < arr.length - 1 && <br />}
+							</span>
+						))}
+					</p>
 				</section>
 			)}
 			{item.downloadUrls && item.downloadUrls.length > 0 && (
@@ -289,6 +316,111 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 								</a>
 							</div>
 						))}
+					</div>
+				</section>
+			)}
+			{hasExtendedCredits(item) && (
+				<section>
+					<h2 className='section-h2'>Créditos Extendidos</h2>
+					<div className='mt-2 grid grid-cols-1 gap-x-4 gap-y-8 rounded-md border border-secondary-800 px-4 pb-4 pt-3 text-left sm:grid-cols-2 sm:text-center'>
+						{hasExtendedMusicCredits(item) && (
+							<div>
+								<h3 className='section-h3'>Música</h3>
+								<div className='mt-3 grid grid-cols-1 gap-x-2 gap-y-5 lg:grid-cols-2'>
+									{item.composers && (
+										<div>
+											<h4 className='section-h4 mb-1'>Compositores</h4>
+											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
+												{item.composers.map((artist, index) => (
+													<li key={index}>
+														{<CredittedArtist artist={artist} />}
+													</li>
+												))}
+											</ul>
+										</div>
+									)}
+									{item.arrangers && (
+										<div>
+											<h4 className='section-h4 mb-1'>Arreglistas</h4>
+											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
+												{item.arrangers.map((artist, index) => (
+													<li key={index}>
+														{<CredittedArtist artist={artist} />}
+													</li>
+												))}
+											</ul>
+										</div>
+									)}
+									{item.mixers && (
+										<div>
+											<h4 className='section-h4 mb-1'>Mixers</h4>
+											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
+												{item.mixers.map((artist, index) => (
+													<li key={index}>
+														{<CredittedArtist artist={artist} />}
+													</li>
+												))}
+											</ul>
+										</div>
+									)}
+								</div>
+							</div>
+						)}
+						{hasExtendedVisualsCredits(item) && (
+							<div>
+								<h3 className='section-h3'>Visuales</h3>
+								<div className='mt-3 grid grid-cols-1 gap-x-2 gap-y-5 lg:grid-cols-2'>
+									{item.foregroundVisualArtists && (
+										<div>
+											<h4 className='section-h4 mb-1'>Primer Plano</h4>
+											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
+												{item.foregroundVisualArtists.map((artist, index) => (
+													<li key={index}>
+														{<CredittedArtist artist={artist} />}
+													</li>
+												))}
+											</ul>
+										</div>
+									)}
+									{item.backgroundVisualArtists && (
+										<div>
+											<h4 className='section-h4 mb-1'>Fondo</h4>
+											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
+												{item.backgroundVisualArtists.map((artist, index) => (
+													<li key={index}>
+														{<CredittedArtist artist={artist} />}
+													</li>
+												))}
+											</ul>
+										</div>
+									)}
+									{item.coverVisualArtists && (
+										<div>
+											<h4 className='section-h4 mb-1'>Portada</h4>
+											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
+												{item.coverVisualArtists.map((artist, index) => (
+													<li key={index}>
+														{<CredittedArtist artist={artist} />}
+													</li>
+												))}
+											</ul>
+										</div>
+									)}
+									{item.thumbnailVisualArtists && (
+										<div>
+											<h4 className='section-h4 mb-1'>Miniatura</h4>
+											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
+												{item.thumbnailVisualArtists.map((artist, index) => (
+													<li key={index}>
+														{<CredittedArtist artist={artist} />}
+													</li>
+												))}
+											</ul>
+										</div>
+									)}
+								</div>
+							</div>
+						)}
 					</div>
 				</section>
 			)}
