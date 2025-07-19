@@ -8,6 +8,8 @@ import { OlHTMLAttributes } from 'react';
 import getRoot from '@/lib/getroot';
 import { FullArtistCredit } from '@/types/music';
 import BackSection from '@/components/BackSection';
+import AudioPreview from '@/components/AudioPreview';
+import VideoPreview from '@/components/VideoPreview';
 
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
 
@@ -264,16 +266,10 @@ export const MusicDetail = ({ id }: MusicDetailProps) => {
 									)}
 									{download.kind === 'video' && (
 										<div className='absolute inset-0 opacity-25'>
-											<video
-												autoPlay
-												loop
-												className='absolute inset-0 my-auto rounded-md'>
-												<source
-													src={getRoot(download.url)}
-													type={`video/${download.format}`}
-												/>
-												Your browser does not support the «video» element.
-											</video>
+											<VideoPreview
+												{...download}
+												className='absolute inset-0 my-auto rounded-md'
+											/>
 										</div>
 									)}
 									<div className='absolute flex w-full flex-col items-center space-y-1'>
@@ -296,16 +292,10 @@ export const MusicDetail = ({ id }: MusicDetailProps) => {
 								</div>
 								<h2 className='mb-4 flex-grow'>{download.label}</h2>
 								{download.kind === 'audio' && (
-									<audio
-										controls
-										controlsList='nodownload noremoteplayback nofullscreen'
-										className='h-13 mb-2 w-full rounded-md bg-white sm:h-12 md:h-9'>
-										<source
-											src={getRoot(download.url)}
-											type={`audio/${download.format}`}
-										/>
-										Your browser does not support the «audio» element.
-									</audio>
+									<AudioPreview
+										{...download}
+										className='h-13 mb-2 w-full rounded-md bg-white sm:h-12 md:h-9'
+									/>
 								)}
 								<a
 									href={getRoot(download.url)}
