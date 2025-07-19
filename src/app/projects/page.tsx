@@ -1,4 +1,3 @@
-import getRoot from '@/lib/getroot';
 import { Metadata, Viewport } from 'next';
 
 export const viewport: Viewport = {

@@ -3,7 +3,6 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { Metadata, Viewport } from 'next';
-import getRoot from '@/lib/getroot';
 
 export const viewport: Viewport = {
 	themeColor: '#c97f72',
