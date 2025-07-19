@@ -420,6 +420,8 @@ const items: MusicItem[] = [
 		kind: 'single',
 		displayArtist: 'PaTeKa',
 		artists: ['Papita con Puré', tewaCredit, karlCredit],
+		composers: ['Papita con Puré', tewaCredit, karlCredit],
+		mixers: [karlCredit],
 		backgroundVisualArtists: [
 			{
 				name: 'MerlimAmbrosuis',
@@ -446,6 +448,22 @@ const items: MusicItem[] = [
 			{
 				name: 'MerlimAmbrosuis',
 				url: 'https://www.pixiv.net/artworks/80453394',
+			},
+			{
+				name: 'いと',
+				url: 'https://www.pixiv.net/artworks/65190966',
+			},
+			{
+				name: '«? (Potato)»',
+				url: 'https://ar.pinterest.com/yomnaibrahim543/',
+			},
+			{
+				name: '«? (Mashed potatoes)»',
+				url: 'https://www.pixiv.net/artworks/65190966',
+			},
+			{
+				name: '«? (Beer barrel)»',
+				url: 'https://www.vhv.rs/viewpic/hxiwRhm_beer-barrel-png-beer-clipart-barrel-transparent-png/',
 			},
 		],
 		title: 'Rabbit of the Bar ~ Red and White Tubercle',
@@ -503,6 +521,7 @@ const items: MusicItem[] = [
 		id: 'komakusa-piano',
 		kind: 'single',
 		artists: ['ZUN', 'Papita con Puré'],
+		backgroundVisualArtists: ['Papita con Puré'],
 		thumbnailVisualArtists: [
 			{
 				name: 'speckticuls',
@@ -524,28 +543,63 @@ const items: MusicItem[] = [
 				url: 'https://www.youtube.com/watch?v=BUNgOKm5Z8U',
 			},
 		],
-		tags: ['piano arrangement', 'low quality'],
+		tags: ['piano arrangement'],
 	},
 	{
-		id: 'komakusa-piano',
+		id: 'sannyo-piano',
 		kind: 'single',
 		artists: ['ZUN', 'Papita con Puré'],
+		backgroundVisualArtists: ['Papita con Puré'],
+		thumbnailVisualArtists: [
+			{
+				name: 'ラプトル7',
+				url: 'https://x.com/raputoru7/status/1375758441818419205',
+			},
+		],
 		composers: ['ZUN'],
 		arrangers: ['Papita con Puré'],
-		title: 'The Perpetual Snow of Komakusa Blossoms',
-		date: new Date('2021-03-25'),
+		title: 'Smoking Dragon',
+		date: new Date('2021-03-27'),
 		categories: ['arrangement', 'piano'],
 		coverUrl: '/potato.webp',
 		thumbnailUrl: '/potato.webp',
-		videoUrl: 'https://www.youtube.com/watch?v=BUNgOKm5Z8U',
+		videoUrl: 'https://www.youtube.com/watch?v=SeORE1zUuv8',
 		externalLinks: [
 			{
 				source: 'youtube',
 				label: 'YouTube',
-				url: 'https://www.youtube.com/watch?v=BUNgOKm5Z8U',
+				url: 'https://www.youtube.com/watch?v=SeORE1zUuv8',
 			},
 		],
-		tags: ['piano arrangement', 'low quality'],
+		tags: ['piano arrangement'],
+	},
+	{
+		id: 'deep-green-cliff-piano',
+		kind: 'single',
+		artists: ['ZUN', 'Papita con Puré'],
+		backgroundVisualArtists: ['Papita con Puré'],
+		thumbnailVisualArtists: [
+			{
+				name: 'mefomefo',
+				url: 'https://x.com/mefomefomefo/status/1373824227971858435',
+			},
+		],
+		composers: ['ZUN'],
+		arrangers: ['Papita con Puré'],
+		title: 'The Cliff Hidden in Deep Green',
+		date: new Date('2021-03-31'),
+		categories: ['arrangement', 'piano'],
+		coverUrl: '/potato.webp',
+		thumbnailUrl: '/potato.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=QLxJPqjB-kc',
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=QLxJPqjB-kc',
+			},
+		],
+		tags: ['piano arrangement'],
 	},
 	{
 		id: 'test',
