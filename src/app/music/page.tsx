@@ -1,5 +1,6 @@
 'use client';
 
+import { Suspense } from 'react';
 import { Url } from 'next/dist/shared/lib/router/router';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -114,4 +115,10 @@ const Music = () => {
 	return id ? <MusicDetail id={id} /> : <MusicList />;
 };
 
-export default Music;
+const MusicBoundary = () => {
+	return <Suspense>
+		<Music />
+	</Suspense>;
+}
+
+export default MusicBoundary;

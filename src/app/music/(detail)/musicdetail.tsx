@@ -1,6 +1,5 @@
 'use client';
 
-import { Suspense } from 'react';
 import Link from 'next/link';
 import items, { itemsById } from '@/data/music';
 import Image from 'next/image';
@@ -75,7 +74,7 @@ interface MusicDetailProps {
 	id: string;
 }
 
-const MusicDetailInner = ({ id }: MusicDetailProps) => {
+export const MusicDetail = ({ id }: MusicDetailProps) => {
 	const item = items.find((i) => i.id === id);
 
 	if (item == undefined) {
@@ -447,13 +446,5 @@ const MusicDetailInner = ({ id }: MusicDetailProps) => {
 			)}
 			<BackSection />
 		</main>
-	);
-};
-
-export const MusicDetail = ({ id }: MusicDetailProps) => {
-	return (
-		<Suspense>
-			<MusicDetailInner id={id} />
-		</Suspense>
 	);
 };
