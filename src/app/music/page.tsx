@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 		description: 'Piezas en las que he trabajado',
 		images: [getRoot(`/potato.webp`)],
 		type: 'website',
-		siteName: 'Papita con Puré Site',
+		siteName: 'Papita con Puré',
 	},
 	twitter: {
 		card: 'summary_large_image',

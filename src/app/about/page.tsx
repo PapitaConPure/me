@@ -1,3 +1,30 @@
+import getRoot from '@/lib/getroot';
+import { Metadata, Viewport } from 'next';
+
+export const viewport: Viewport = {
+	themeColor: '#c97f72',
+};
+
+export const metadata: Metadata = {
+	title: 'Sobre Mí',
+	description: 'Un vistazo general de mi persona',
+	openGraph: {
+		title: 'Sobre Mí',
+		description: 'Un vistazo general de mi persona',
+		images: [getRoot(`/potato.webp`)],
+		type: 'website',
+		siteName: 'Papita con Puré',
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Sobre Mí',
+		description: 'Un vistazo general de mi persona',
+		creator: 'Papita con Puré',
+		site: 'https://papitaconpure.github.io/me',
+		images: [getRoot(`/potato.webp`)],
+	},
+};
+
 const About = () => {
 	return (
 		<main>

@@ -1,8 +1,34 @@
+import getRoot from '@/lib/getroot';
 import { faDiscord, faGithub, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faFeather, faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import { PropsWithChildren } from 'react';
+
+export const viewport: Viewport = {
+	themeColor: '#c97f72',
+};
+
+export const metadata: Metadata = {
+	title: 'Inicio',
+	description: 'Sitio personal para Papita con Puré',
+	openGraph: {
+		title: 'Inicio',
+		description: 'Sitio personal para Papita con Puré',
+		images: [getRoot(`/potato.webp`)],
+		type: 'website',
+		siteName: 'Papita con Puré',
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Inicio',
+		description: 'Sitio personal para Papita con Puré',
+		creator: 'Papita con Puré',
+		site: 'https://papitaconpure.github.io/me',
+		images: [getRoot(`/potato.webp`)],
+	},
+};
 
 const Question = ({ children }: PropsWithChildren) => (
 	<div className='-mb-1 ml-2 mt-6 flex w-3/4 items-center font-default-serif text-lg text-secondary-300 sm:text-xl'>
@@ -104,9 +130,9 @@ const Home = () => {
 					poco de sueño y además ya estaba pensando reemplazar mi antiguo apodo. Así es
 					como se me ocurrió.
 					<br /> <br />
-					&quot;Papita con Puré&quot; no tiene sentido como tal. Son solo 2 comidas que realmente no
-					quedarían bien combinadas. Sin embargo, es un apodo gracioso, y para la gente
-					que no sabe español, &quot;Papita&quot; no suena mal.
+					&quot;Papita con Puré&quot; no tiene sentido como tal. Son solo 2 comidas que
+					realmente no quedarían bien combinadas. Sin embargo, es un apodo gracioso, y
+					para la gente que no sabe español, &quot;Papita&quot; no suena mal.
 				</Answer>
 				<Question>¿Has pensado subir tus futuros juegos a Steam?</Question>
 				<Answer>

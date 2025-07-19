@@ -2,6 +2,32 @@ import { faDiscord, faGithub, faXTwitter } from '@fortawesome/free-brands-svg-ic
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
+import { Metadata, Viewport } from 'next';
+import getRoot from '@/lib/getroot';
+
+export const viewport: Viewport = {
+	themeColor: '#c97f72',
+};
+
+export const metadata: Metadata = {
+	title: 'Contacto',
+	description: 'Información para contactarme',
+	openGraph: {
+		title: 'Contacto',
+		description: 'Información para contactarme',
+		images: [getRoot(`/potato.webp`)],
+		type: 'website',
+		siteName: 'Papita con Puré',
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Contacto',
+		description: 'Información para contactarme',
+		creator: 'Papita con Puré',
+		site: 'https://papitaconpure.github.io/me',
+		images: [getRoot(`/potato.webp`)],
+	},
+};
 
 const Contact = () => {
 	return (
@@ -13,11 +39,10 @@ const Contact = () => {
 
 			<section>
 				<div className='rounded-md border border-secondary-800 px-6 py-2'>
-					<h3 className='mb-1 section-h3'>Profesional y Negocios</h3>
+					<h3 className='section-h3 mb-1'>Profesional y Negocios</h3>
 					<Link
 						href='mailto:papitapurecontact@gmail.com'
-						className='w-full overflow-hidden text-accent-400 hover:underline'
-					>
+						className='w-full overflow-hidden text-accent-400 hover:underline'>
 						papitapurecontact@gmail.com
 					</Link>
 
@@ -46,8 +71,11 @@ const Contact = () => {
 
 			<section>
 				<div className='rounded-md border border-secondary-800 px-6 py-2'>
-					<h3 className='mb-1 section-h3'>Social y Otros</h3>
-					<p className='font-sm'>Puedes hablarme en la mayoría de mis redes sin problemas, pero en estas puede que responda más rápido.</p>
+					<h3 className='section-h3 mb-1'>Social y Otros</h3>
+					<p className='font-sm'>
+						Puedes hablarme en la mayoría de mis redes sin problemas, pero en estas
+						puede que responda más rápido.
+					</p>
 					<div className='mt-4 grid w-full grid-cols-1 sm:w-max sm:grid-cols-2 sm:pr-0 md:grid-cols-4'>
 						<a
 							tabIndex={0}

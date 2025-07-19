@@ -1,3 +1,30 @@
+import getRoot from '@/lib/getroot';
+import { Metadata, Viewport } from 'next';
+
+export const viewport: Viewport = {
+	themeColor: '#c97f72',
+};
+
+export const metadata: Metadata = {
+	title: 'Proyectos',
+	description: 'Cosas curiosas que he hecho',
+	openGraph: {
+		title: 'Proyectos',
+		description: 'Cosas curiosas que he hecho',
+		images: [getRoot(`/potato.webp`)],
+		type: 'website',
+		siteName: 'Papita con Puré',
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Proyectos',
+		description: 'Cosas curiosas que he hecho',
+		creator: 'Papita con Puré',
+		site: 'https://papitaconpure.github.io/me',
+		images: [getRoot(`/potato.webp`)],
+	},
+};
+
 const Projects = () => {
 	return (
 		<main>
@@ -9,14 +36,12 @@ const Projects = () => {
 				<div className='flex justify-center'>
 					<div className='flex flex-col items-center space-y-8'>
 						<div className='text-9xl'>🥔</div>
-						<p className='italic'>
-							En construcción...
-						</p>
+						<p className='italic'>En construcción...</p>
 					</div>
 				</div>
 			</section>
 		</main>
 	);
-}
+};
 
 export default Projects;
