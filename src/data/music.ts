@@ -385,7 +385,7 @@ const items: MusicItem[] = [
 		artists: ['Papita con Puré', tewaCredit, karlCredit],
 		title: 'Rabbit of the Bar ~ Red and White Tubercle',
 		description:
-			'Composition:\n• Papita con Puré (I. Z.) [Piano; Acoustic Guitar]\n• Karl Zuñiga [Drums; Strings; Bass]\n• Tewi [Violin; RTp]\nMixing: Karl Zuñiga',
+		'Composition:\n• Papita con Puré (I. Z.) [Piano; Acoustic Guitar]\n• Karl Zuñiga [Drums; Strings; Bass]\n• Tewi [Violin; RTp]\nMixing: Karl Zuñiga',
 		date: new Date('2021-01-07'),
 		categories: ['collab', 'original', 'touhou'],
 		coverUrl: '/images/music/pateka-1/cover.png',
@@ -588,6 +588,48 @@ const items: MusicItem[] = [
 			},
 		],
 		tags: ['piano arrangement'],
+	},
+	{
+		id: 'take-and-forsake',
+		kind: 'single',
+		artists: ['Papita con Puré'],
+		title: 'Take and Forsake',
+		date: new Date('2021-04-05'),
+		categories: ['original'],
+		coverUrl: '/images/music/eurotest-1/eurotest2.webp',
+		thumbnailUrl: '/images/music/eurotest-1/eurotest2.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=tU2d7bvUaKM',
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=tU2d7bvUaKM',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				url: '/audio/music/eurotest-1/Take and Forsake.mp3',
+				size: '9.16 MB',
+				label: 'Pista completa (320 Kbps)',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				url: '/images/music/eurotest-1/eurotest2.png',
+				size: '1.16 MB',
+				label: 'Miniatura',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				url: '/images/music/eurotest-1/eurotest2.webp',
+				size: '3 MB',
+				label: 'Miniatura',
+			},
+		],
+		tags: ['electronic', 'eurobeat'],
 	},
 	{
 		id: 'test',
