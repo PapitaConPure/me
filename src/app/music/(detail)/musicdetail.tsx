@@ -1,6 +1,5 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import Link from 'next/link';
 import items, { itemsById } from '@/data/music';
@@ -11,13 +10,15 @@ import getRoot from '@/lib/getroot';
 
 const BackSection = () => {
 	return (
-		<section className='flex items-center'>
+		<section className='flex items-center justify-center'>
 			<Link
 				href='/music'
-				className='flex w-full items-center rounded-md bg-foreground px-6 py-3 text-background hover:opacity-80 sm:w-1/2 md:w-80'
+				className='group flex w-full items-center rounded-md bg-foreground px-6 py-3 text-background transition-all duration-300 hover:pl-3 hover:pr-12 hover:opacity-80 sm:w-3/4 md:w-96'
 				aria-label='Volver a la lista de música'>
-				<i className='fa fa-angle-left mr-4 flex-shrink-0'></i>
-				<span className='flex-grow text-center'>Volver a Música</span>
+				<i className='fa fa-angle-left flex-shrink-0 transition-all duration-700 group-hover:mr-4 group-hover:animate-pulse'></i>
+				<div className='flex-grow text-center transition-all duration-300 group-hover:flex-grow-0'>
+					Volver a <span className='font-semibold'>Música</span>
+				</div>
 			</Link>
 		</section>
 	);
@@ -38,9 +39,11 @@ function formatDateUTC(date: Date, sep = '.'): string {
 	return `${year}${sep}${month}${sep}${day}`;
 }
 
-const MusicDetailInner = () => {
-	const searchParams = useSearchParams();
-	const id = searchParams.get('id');
+interface MusicDetailProps {
+	id: string;
+}
+
+const MusicDetailInner = ({ id }: MusicDetailProps) => {
 	const item = items.find((i) => i.id === id);
 
 	if (item == undefined) {
@@ -297,12 +300,10 @@ const MusicDetailInner = () => {
 	);
 };
 
-const MusicDetail = () => {
+export const MusicDetail = ({ id }: MusicDetailProps) => {
 	return (
 		<Suspense>
-			<MusicDetailInner />
+			<MusicDetailInner id={id} />
 		</Suspense>
 	);
 };
-
-export default MusicDetail;

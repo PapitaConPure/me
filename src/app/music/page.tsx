@@ -1,8 +1,12 @@
+'use client';
+
 import { Url } from 'next/dist/shared/lib/router/router';
 import Image from 'next/image';
 import Link from 'next/link';
 import items from '@/data/music';
 import getRoot from '@/lib/getroot';
+import { useSearchParams } from 'next/navigation';
+import { MusicDetail } from './(detail)/musicdetail';
 
 interface MusicCardProps {
 	href: Url;
@@ -66,7 +70,7 @@ const MusicCard = ({ href, imgSrc, title, author, categories, date }: MusicCardP
 	);
 };
 
-const Music = () => {
+const MusicList = () => {
 	return (
 		<main>
 			<section className='header'>
@@ -79,7 +83,7 @@ const Music = () => {
 					{items.map((item) => (
 						<MusicCard
 							key={item.id}
-							href={`/music/detail?id=${item.id}`}
+							href={`/music?q=${item.id}`}
 							title={item.title}
 							author={item.displayArtist || (item.artists.map((artist, index, arr) => (
 								<span key={index + 1}>
@@ -102,6 +106,12 @@ const Music = () => {
 			</section>
 		</main>
 	);
+}
+
+const Music = () => {
+	const searchParams = useSearchParams();
+	const id = searchParams.get('q');
+	return id ? <MusicDetail id={id} /> : <MusicList />;
 };
 
 export default Music;
