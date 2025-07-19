@@ -1280,6 +1280,229 @@ const items: MusicItem[] = [
 		],
 		tags: ['legacy of lunatic kingdom', 'touhou style'],
 	},
+	{
+		id: 'gyptos',
+		kind: 'single',
+		artists: [papitaCredit, karlCredit],
+		title: 'Gyptos ~ Symphony of Opposing Forces',
+		description:
+			'Base and general composition: Papita con Puré\n\nArrangement and extended composition: Karl Zuñiga\n\nBase mix: Papita con Puré\n\nFinal mix and mastering: Karl Zuñiga',
+		date: new Date('2023-02-24'),
+		categories: ['collab', 'original'],
+		coverUrl: '/images/music/gyptos/cover.png',
+		thumbnailUrl: '/images/music/gyptos/gyptos.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=5l5MZEWaps0',
+		credits: {
+			music: {
+				composers: [papitaCredit],
+				arrangers: [karlCredit],
+				mixers: [karlCredit],
+			},
+			visuals: {
+				background: [papitaCredit],
+				cover: [papitaCredit],
+				thumbnail: [papitaCredit],
+			},
+		},
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=5l5MZEWaps0',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: 'Pista completa (320kbps)',
+				size: '8.40 MB',
+				url: '/audio/music/gyptos/gyptos.mp3',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Portada (984x984)',
+				size: '668 KB',
+				url: '/images/music/gyptos/cover.png',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Miniatura (1080p)',
+				size: '2.21 MB',
+				url: '/images/music/gyptos/gyptos.png',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: 'Miniatura (1080p)',
+				size: '124 KB',
+				url: '/images/music/gyptos/gyptos.webp',
+			},
+			{
+				kind: 'file',
+				format: 'zip',
+				label: 'Paquete completo (MediaFire)',
+				size: '120.71 MB',
+				url: 'https://www.mediafire.com/file/b4b24wi5ktopx21/Gyptos_by_PapitaPur%25C3%25A9_%2526_KarlZu%25C3%25B1iga.zip/file',
+				external: true,
+			},
+		],
+		tags: ['exotic', 'metal'],
+	},
+	{
+		id: 'th19-title-piano',
+		kind: 'single',
+		artists: [zunCredit, papitaCredit],
+		title: 'Intelligence of Beast',
+		date: new Date('2023-07-28'),
+		categories: ['arrangement', 'piano', 'touhou'],
+		coverUrl: '/images/music/th19-title-piano/cover.png',
+		thumbnailUrl: '/images/music/th19-title-piano/thumbnail.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=subk3bDvELI',
+		credits: {
+			music: {
+				composers: [zunCredit],
+				arrangers: [papitaCredit],
+			},
+			visuals: {
+				background: [papitaCredit],
+				thumbnail: [
+					{
+						name: 'かめぱすた',
+						url: 'https://www.pixiv.net/artworks/107306080',
+					},
+				],
+			},
+		},
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=subk3bDvELI',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: 'Pista completa (320kbps)',
+				size: '11.5 MB',
+				url: '/audio/music/th19-title-piano/th19_01.mp3',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Portada (1080p)',
+				size: '1.72 MB',
+				url: '/images/music/th19-title-piano/cover.png',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: 'Miniatura (720p)',
+				size: '187 KB',
+				url: '/images/music/th19-title-piano/thumbnail.webp',
+			},
+			{
+				kind: 'video',
+				format: 'mp4',
+				label: 'Animación (Bucle) (MPEG-4 / 1080p)',
+				size: '41.1 MB',
+				url: '/video/music/th19-title-piano/loop0.mp4',
+			},
+			{
+				kind: 'file',
+				format: 'zip',
+				label: 'Paquete completo (MediaFire)',
+				size: '54.27 MB',
+				url: 'https://www.mediafire.com/file/7aj6dsy7azfox34/Intelligence_of_Beast_by_PapitaPur%25C3%25A9.zip/file',
+				external: true,
+			},
+		],
+		tags: ['piano arrangement'],
+	},
+	{
+		id: 'th19-cute-world-piano',
+		kind: 'single',
+		artists: [zunCredit, papitaCredit],
+		title: 'The World is Made in an Adorable Way',
+		date: new Date('2023-08-04'),
+		categories: ['arrangement', 'piano', 'touhou'],
+		coverUrl: '/images/music/th19-cute-world-piano/thumbnail.webp',
+		thumbnailUrl: '/images/music/th19-cute-world-piano/thumbnail.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=Z_tmPN7w6vQ',
+		credits: {
+			music: {
+				composers: [zunCredit],
+				arrangers: [papitaCredit],
+			},
+			visuals: {
+				background: [papitaCredit],
+				thumbnail: [
+					{
+						name: 'ぴよ吉',
+						url: 'https://www.pixiv.net/artworks/94839064',
+					},
+				],
+			},
+		},
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=Z_tmPN7w6vQ',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: 'Pista completa (320kbps)',
+				size: '14.01 MB',
+				url: '/audio/music/th19-cute-world-piano/The World is Made From Cuteness.mp3',
+			},
+			{
+				kind: 'file',
+				format: 'midi',
+				label: 'MIDI completo',
+				size: '89.24 KB',
+				url: 'https://www.mediafire.com/file/z5qi4t53qli1yc1/TWMAW_Piano_by_PapitaPur%25C3%25A9.zip/file',
+				external: true,
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: 'Miniatura (960x540)',
+				size: '0.98 MB',
+				url: '/images/music/th19-cute-world-piano/thumbnail.png',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: 'Miniatura (960x540)',
+				size: '91.7 KB',
+				url: '/images/music/th19-cute-world-piano/thumbnail.webp',
+			},
+			{
+				kind: 'video',
+				format: 'mp4',
+				label: 'Animación (Bucle) (MPEG-4 / 1080p)',
+				size: '9.07 MB',
+				url: '/video/music/th19-cute-world-piano/01_battle1_loop.mp4',
+			},
+			{
+				kind: 'file',
+				format: 'zip',
+				label: 'Paquete completo (MediaFire)',
+				size: '22.95 MB',
+				url: 'https://www.mediafire.com/file/z5qi4t53qli1yc1/TWMAW_Piano_by_PapitaPur%25C3%25A9.zip/file',
+				external: true,
+			},
+		],
+		tags: ['piano arrangement'],
+	},
 ];
 
 const itemsById: Record<string, MusicItem> = {};
