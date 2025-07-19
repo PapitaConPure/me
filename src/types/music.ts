@@ -6,6 +6,7 @@ export type ExternalLink = {
 
 export type DownloadData = {
 	url: string;
+	previewUrl?: string;
 	size: `${number} ${'K' | 'M' | 'G' | ''}${'B' | 'b'}`;
 	label: string;
 	external?: boolean;
