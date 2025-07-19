@@ -52,6 +52,7 @@ const Home = () => {
 					<a
 						tabIndex={0}
 						href='https://www.youtube.com/channel/UCRXbJiF9G6D0nqq3mU38-gw'
+						rel='noopener noreferrer'
 						target='_blank'
 						className='social-btn flex border-transparent bg-[#ff0000] transition-colors duration-75 hover:bg-[#d70000] active:bg-[#bc0000] sm:w-64 md:w-36 md:px-4 lg:mx-1 lg:w-44'
 						aria-label='YouTube'>
@@ -62,6 +63,7 @@ const Home = () => {
 					<a
 						tabIndex={0}
 						href='https://discord.com/users/423129757954211880'
+						rel='noopener noreferrer'
 						target='_blank'
 						className='social-btn flex border-transparent bg-[#5865f2] transition-colors duration-75 hover:bg-[#4752c4] active:bg-[#3c45a5] sm:w-64 md:w-36 md:px-4 lg:mx-1 lg:w-44'
 						aria-label='Discord'>
@@ -72,6 +74,7 @@ const Home = () => {
 					<a
 						tabIndex={0}
 						href='https://x.com/PapitaPure'
+						rel='noopener noreferrer'
 						target='_blank'
 						className='social-btn flex border-secondary-900 bg-black transition-colors duration-75 hover:bg-[#181919] active:bg-[#2e2f2f] sm:w-64 md:w-36 md:px-4 lg:mx-1 lg:w-44'
 						aria-label='X (Twitter)'>
@@ -82,6 +85,7 @@ const Home = () => {
 					<a
 						tabIndex={0}
 						href='https://github.com/PapitaConPure'
+						rel='noopener noreferrer'
 						target='_blank'
 						className='social-btn flex border-transparent bg-[#1e2327] transition-colors duration-75 hover:bg-[#252c34] active:bg-[#292f38] sm:w-64 md:w-36 md:px-4 lg:mx-1 lg:w-44'
 						aria-label='GitHub'>
@@ -114,10 +118,25 @@ const Home = () => {
 					Ahora mismo no tengo intenciones de hacer eso. Manejando solamente un canal de
 					YouTube me siento bastante cómodo, de momento.
 					<br /> <br />
-					Sin embargo, un amigo cada tanto sube mi música a SoundCloud con mi permiso.
+					Sin embargo,{' '}
+					<a
+						target='_blank'
+						rel='noopener noreferrer'
+						href='https://soundcloud.com/user-158678041'
+						className='text-accent-main hover:text-accent-500 hover:underline'>
+						ZFF
+					</a>{' '}
+					cada tanto sube mi música a SoundCloud con mi permiso.
+					<br /> <br />
+					Además, si participo en collabs y otra persona sube la música, hay una
+					posibilidad de que sea en SoundCloud/Spotify/otro, ya que yo no me hago problema
+					por eso.
 				</Answer>
 				<Question>¿Personajes favoritos?</Question>
-				<Answer>Megumin (めぐみん) de KonoSuba, Minato Aqua (湊あくあ) de Hololive y Kishin Sagume (稀神サグメ) de Touhou 15.</Answer>
+				<Answer>
+					Megumin (めぐみん) de KonoSuba, Minato Aqua (湊あくあ) de Hololive y Kishin
+					Sagume (稀神サグメ) de Touhou 15.
+				</Answer>
 				<Question>¿Juegos favoritos?</Question>
 				<Answer>Risk of Rain 2 y Conker's Bad Fur Day.</Answer>
 				<Question>¿Realmente te han hecho estas preguntas?</Question>
@@ -139,6 +158,7 @@ const Home = () => {
 
 					<Link
 						href='/about'
+						rel='noopener noreferrer'
 						className='btn my-4 block w-max bg-foreground font-semibold text-primary-main transition-colors duration-75 hover:bg-white active:bg-primary-100'
 						aria-label='Acerca de Papita con Puré'>
 						<span className='w-full select-none text-center'>Vamos allá</span>

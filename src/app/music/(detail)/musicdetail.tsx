@@ -57,7 +57,9 @@ const CredittedArtist = ({ artist }: CredittedArtistProps) => {
 			className='group text-accent-500 hover:text-accent-600 hover:underline'>
 			{artist.name}{' '}
 			{artist.clarification && (
-				<span className='text-xs text-accent-600 group-hover:text-accent-700'>({artist.clarification})</span>
+				<span className='text-xs text-accent-600 group-hover:text-accent-700'>
+					({artist.clarification})
+				</span>
 			)}
 		</a>
 	);
@@ -299,7 +301,8 @@ export const MusicDetail = ({ id }: MusicDetailProps) => {
 								)}
 								<a
 									href={getRoot(download.url)}
-									target='_blank'
+									download={!download.external}
+									target={download.external ? '_blank' : '_self'}
 									rel='noopener noreferrer'
 									className='flex w-full flex-shrink-0 items-center justify-center rounded-md bg-primary-main px-8 py-4 text-white transition-colors duration-200 hover:bg-primary-700 sm:py-3 md:px-4 md:py-2'>
 									<i className='fa fa-solid fa-download mr-2'></i>
