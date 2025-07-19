@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: 'Contacto',
 		description: 'Información para contactarme',
-		images: [getRoot(`/potato.webp`)],
+		images: ['https://papitaconpure.github.io/me/potato.webp'],
 		type: 'website',
 		siteName: 'Papita con Puré',
 	},
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 		description: 'Información para contactarme',
 		creator: 'Papita con Puré',
 		site: 'https://papitaconpure.github.io/me',
-		images: [getRoot(`/potato.webp`)],
+		images: ['https://papitaconpure.github.io/me/potato.webp'],
 	},
 };
 

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: 'Proyectos',
 		description: 'Cosas curiosas que he hecho',
-		images: [getRoot(`/potato.webp`)],
+		images: ['https://papitaconpure.github.io/me/potato.webp'],
 		type: 'website',
 		siteName: 'Papita con Puré',
 	},
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 		description: 'Cosas curiosas que he hecho',
 		creator: 'Papita con Puré',
 		site: 'https://papitaconpure.github.io/me',
-		images: [getRoot(`/potato.webp`)],
+		images: ['https://papitaconpure.github.io/me/potato.webp'],
 	},
 };
 

@@ -970,7 +970,7 @@ const items: MusicItem[] = [
 		],
 		title: '海想列車',
 		description:
-			"Piano arrangament to celebrate former Hololive member Minato Aqua's 2021 birthday.",
+			"Piano arrangement to celebrate former Hololive member Minato Aqua's 2021 birthday.",
 		date: new Date('2021-12-01'),
 		categories: ['arrangement', 'piano'],
 		coverUrl: '/images/music/kaisouressha/cover.png',
