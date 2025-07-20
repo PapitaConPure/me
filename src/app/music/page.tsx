@@ -94,9 +94,7 @@ const MusicCard = ({ href, imgSrc, title, author, categories, date }: MusicCardP
 					<p className='flex-shrink-0 text-sm'>{date.getFullYear()}</p>
 					<p className='flex flex-grow flex-wrap-reverse items-end justify-end space-x-2 text-xs font-light'>
 						{categories.map((category, index) => (
-							<div key={index}>
-								{category}
-							</div>
+							<div key={index}>{category}</div>
 						))}
 					</p>
 				</div>
