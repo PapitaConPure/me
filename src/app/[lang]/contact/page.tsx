@@ -1,7 +1,6 @@
 import { faDiscord, faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from 'next/link';
 import { Metadata, Viewport } from 'next';
 
 export const viewport: Viewport = {
@@ -39,11 +38,12 @@ const Contact = () => {
 			<section>
 				<div className='rounded-md border border-secondary-800 px-6 py-2'>
 					<h3 className='section-h3 mb-1'>Profesional y Negocios</h3>
-					<Link
+					<a
 						href='mailto:papitapurecontact@gmail.com'
+						aria-label='Enviar correo a Papita con Puré'
 						className='w-full overflow-hidden text-accent-400 hover:underline'>
 						papitapurecontact@gmail.com
-					</Link>
+					</a>
 
 					<div className='mt-4 grid w-full grid-cols-1 sm:w-max sm:grid-cols-2 sm:pr-0 md:grid-cols-4'>
 						<a
@@ -51,7 +51,7 @@ const Contact = () => {
 							href='mailto:papitapurecontact@gmail.com'
 							target='_blank'
 							className='social-btn flex border-transparent bg-primary-main transition-colors hover:bg-primary-700 sm:w-64 md:w-36 md:px-4 lg:mx-1 lg:w-44'
-							aria-label='GitHub'>
+							aria-label='Enviar correo a Papita con Puré'>
 							<FontAwesomeIcon icon={faEnvelope} fontSize={24} />
 							<span className='w-full text-center'>Enviar Correo</span>
 						</a>
