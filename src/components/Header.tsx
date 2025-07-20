@@ -7,18 +7,19 @@ import Link from 'next/link';
 const toggleMenu = () => {
 	const header = document.getElementById('header');
 	const menu = document.getElementById('mobile-menu');
-	if (menu) {
-		menu.classList.toggle('h-screen');
 
-		document.getElementById('menu-reveal')?.classList.toggle('hidden');
-		document.getElementById('menu-collapse')?.classList.toggle('hidden');
+	if(!menu) return;
 
-		if (header) {
-			header.classList.toggle('backdrop-blur-md');
-			header.classList.toggle('backdrop-blur-lg');
-			header.classList.toggle('bg-opacity-60');
-			header.classList.toggle('bg-opacity-80');
-		}
+	menu.classList.toggle('h-screen');
+
+	document.getElementById('menu-reveal')?.classList.toggle('hidden');
+	document.getElementById('menu-collapse')?.classList.toggle('hidden');
+
+	if(header) {
+		header.classList.toggle('backdrop-blur-md');
+		header.classList.toggle('backdrop-blur-lg');
+		header.classList.toggle('bg-opacity-60');
+		header.classList.toggle('bg-opacity-80');
 	}
 };
 
@@ -94,7 +95,7 @@ export default function Header() {
 
 			<nav
 				id='mobile-menu'
-				className='[&_h-max] flex h-0 flex-col overflow-hidden rounded-b-md transition-all md:hidden'
+				className='flex h-0 flex-col overflow-hidden rounded-b-md transition-all md:hidden duration-300 ease-[cubic-bezier(0.77,0,0.175,1)]'
 				onClick={toggleMenu}>
 				<Link
 					href='/'
