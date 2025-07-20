@@ -11,6 +11,7 @@ import VideoPreview from '@/components/VideoPreview';
 import { Metadata, Viewport } from 'next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faEye } from '@fortawesome/free-solid-svg-icons';
+import { notFound } from 'next/navigation';
 
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
 
@@ -63,6 +64,7 @@ function formatDateUTC(date: Date, sep = '.'): string {
 interface MusicDetailProps {
 	params: Promise<{
 		id: string;
+		lang: string;
 	}>;
 }
 
@@ -115,8 +117,10 @@ export async function generateMetadata({ params }: MusicDetailProps): Promise<Me
 }
 
 const MusicDetail = async ({ params }: MusicDetailProps) => {
-	const { id = undefined } = await params;
+	const { id = undefined, lang = undefined } = await params;
 	const item = id ? itemsById[id] : undefined;
+
+	if (!lang || !isValidLocale(lang)) return notFound();
 
 	if (item == undefined) {
 		return (
@@ -129,7 +133,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 						</div>
 					</div>
 				</section>
-				<BackSection href='/music'>
+				<BackSection href={`/${lang}/music`}>
 					Volver a <span className='font-semibold'>Música</span>
 				</BackSection>
 			</main>
@@ -225,7 +229,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 													{`${index + 1}`.padStart(2, '0')}.
 												</span>
 												<Link
-													href={`/music/detail?id=${childItem.id}`}
+													href={`${lang}/music/detail?id=${childItem.id}`}
 													className='flex-grow text-accent-500 hover:text-accent-400'>
 													{childItem.title}
 												</Link>
@@ -533,7 +537,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 					</div>
 				</section>
 			)}
-			<BackSection href='/music'>
+			<BackSection href={`/${lang}/music`}>
 				Volver a <span className='font-semibold'>Música</span>
 			</BackSection>
 		</main>

@@ -5,6 +5,8 @@ import items from '@/data/music';
 import getRoot from '@/lib/getroot';
 import { FullArtistCredit, MusicItemSummary } from '@/types/music';
 import { Metadata, Viewport } from 'next';
+import { isValidLocale } from '@/lib/i18n';
+import { notFound } from 'next/navigation';
 
 export const viewport: Viewport = {
 	themeColor: '#c97f72',
@@ -103,7 +105,15 @@ const MusicCard = ({ href, imgSrc, title, author, categories, date }: MusicCardP
 	);
 };
 
-const MusicList = () => {
+interface MusicListProps {
+	params: Promise<{ lang: string }>;
+}
+
+const MusicList = async ({ params }: MusicListProps) => {
+	const { lang } = await params;
+
+	if (!lang || !isValidLocale(lang)) return notFound();
+
 	const summary = items.map(
 		(item): MusicItemSummary => ({
 			id: item.id,
@@ -127,7 +137,7 @@ const MusicList = () => {
 					{summary.map((item) => (
 						<MusicCard
 							key={item.id}
-							href={`/music/${item.id}`}
+							href={`/${lang}/music/${item.id}`}
 							title={item.title}
 							author={
 								typeof item.artists === 'string'
