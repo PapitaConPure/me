@@ -2517,7 +2517,7 @@ const items: MusicItem[] = [
 				kind: 'video',
 				format: 'mov',
 				label: 'Animación (Salida S3) (DNxHR HQ / 4k@60fps) (archive.org)',
-				size: '1.56 MB',
+				size: '1.56 GB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMOV%20-%20DNxHR%20HQ%204k%4060%2F3_s3a_out.mov',
 				previewUrl: '/video/music/th20-prester-john-piano/3_s3a_out.webm',
 				previewFormat: 'webm',
