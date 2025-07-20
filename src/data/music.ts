@@ -2397,8 +2397,8 @@ const items: MusicItem[] = [
 				background: [papitaCredit],
 				thumbnail: [
 					{
-						name: '',
-						url: 'https://www.pixiv.net/',
+						name: 'イシム',
+						url: 'https://x.com/1shimu/status/1925537080974958856',
 					},
 				],
 			},
@@ -2605,8 +2605,8 @@ const items: MusicItem[] = [
 				background: [papitaCredit],
 				thumbnail: [
 					{
-						name: '',
-						url: 'https://www.pixiv.net/',
+						name: 'がらすの',
+						url: 'https://www.pixiv.net/artworks/130591161',
 					},
 				],
 			},
@@ -2757,8 +2757,8 @@ const items: MusicItem[] = [
 				background: [papitaCredit],
 				thumbnail: [
 					{
-						name: '',
-						url: 'https://www.pixiv.net/',
+						name: '白昼桃草子',
+						url: 'https://www.pixiv.net/en/artworks/130985089',
 					},
 				],
 			},
