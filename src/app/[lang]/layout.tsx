@@ -50,7 +50,9 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
 	if (!isValidLocale(lang)) return notFound();
 
 	return (
-		<html lang={lang}>
+		<html
+			lang={lang}
+			className={`${outfit.className} ${mPlus2.className} ${vollkorn.className} ${notoSerifJp.className}`}>
 			<head>
 				<meta charSet='UTF-8' />
 				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
@@ -60,8 +62,7 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
 					crossOrigin='anonymous'
 				/>
 			</head>
-			<body
-				className={`w-full bg-background pt-[60px] font-default-sans text-foreground ${outfit.className} ${mPlus2.className} ${vollkorn.className} ${notoSerifJp.className} antialiased`}>
+			<body className='w-full bg-background pt-[60px] font-default-sans text-foreground antialiased'>
 				<Header lang={lang} />
 				{children}
 				<Footer />
