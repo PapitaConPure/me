@@ -1,0 +1,11 @@
+{
+    "MainPage": {
+        "welcome": "Bienvenido",
+        "loading": "Cargando...",
+        "noMusic": "No hay música disponible",
+        "errorLoadingMusic": "Error al cargar la música"
+    },
+    "Dunno": {
+        "something": "something"
+    }
+}
