@@ -380,7 +380,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									</a>
 									{download.kind === 'file' && download.format === 'pdf' && (
 										<Link
-											href={getRoot(download.url)}
+											href={download.url}
 											rel='noopener noreferrer'
 											target='_blank'
 											className='flex flex-shrink-0 items-center justify-center rounded-md bg-secondary-700 px-5 py-4 text-white transition-colors duration-100 hover:bg-secondary-600 sm:px-4 sm:py-3 md:px-3 md:py-2'>
