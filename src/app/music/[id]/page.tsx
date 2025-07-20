@@ -357,6 +357,21 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 										className='h-13 mb-2 w-full rounded-md bg-white sm:h-12 md:h-9'
 									/>
 								)}
+								{/*Perhaps add a download.allowsRawPreview later*/}
+								{download.kind === 'file' && download.format === 'pdf' && (
+									<Link
+										href={getRoot(download.url)}
+										rel='noopener noreferrer'
+										target='_blank'
+										className='mb-2 flex w-full flex-shrink-0 items-center justify-center rounded-md bg-secondary-main px-8 py-4 text-white transition-colors duration-75 hover:bg-secondary-500 sm:py-3 md:px-4 md:py-2'>
+										<span className='text-base font-semibold sm:text-lg md:text-sm'>
+											Vista previa
+										</span>
+										{download.external ? (
+											<i className='fa fa-external-link-alt mb-0.5 ml-2 text-xs opacity-80'></i>
+										) : null}
+									</Link>
+								)}
 								<a
 									href={getRoot(download.url)}
 									download={!download.external}
