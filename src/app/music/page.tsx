@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import items from '@/data/music';
 import getRoot from '@/lib/getroot';
-import { FullArtistCredit } from '@/types/music';
+import { FullArtistCredit, MusicItemSummary } from '@/types/music';
 import { Metadata, Viewport } from 'next';
 
 export const viewport: Viewport = {
@@ -104,6 +104,17 @@ const MusicCard = ({ href, imgSrc, title, author, categories, date }: MusicCardP
 };
 
 const MusicList = () => {
+	const summary = items.map(
+		(item): MusicItemSummary => ({
+			id: item.id,
+			artists: item.displayArtist || item.artists,
+			title: item.title,
+			date: item.date,
+			categories: item.categories,
+			thumbnailUrl: item.thumbnailUrl || item.coverUrl || 'potato.webp',
+		}),
+	);
+
 	return (
 		<main>
 			<section className='header'>
@@ -113,23 +124,24 @@ const MusicList = () => {
 
 			<section>
 				<div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
-					{items.map((item) => (
+					{summary.map((item) => (
 						<MusicCard
 							key={item.id}
 							href={`/music/${item.id}`}
 							title={item.title}
 							author={
-								item.displayArtist ||
-								item.artists.map((artist, index, arr) => (
-									<span key={index + 1}>
-										<AuthorBriefCredit artist={artist} />
-										{index < arr.length - 1 && (
-											<span className='mx-1 text-sm text-secondary-500'>
-												&
+								typeof item.artists === 'string'
+									? item.artists
+									: item.artists.map((artist, index, arr) => (
+											<span key={index + 1}>
+												<AuthorBriefCredit artist={artist} />
+												{index < arr.length - 1 && (
+													<span className='mx-1 text-sm text-secondary-500'>
+														&
+													</span>
+												)}
 											</span>
-										)}
-									</span>
-								))
+										))
 							}
 							categories={item.categories}
 							date={item.date}

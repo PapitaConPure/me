@@ -9,11 +9,7 @@ export type ImageAssetFormat = 'jpg' | 'png' | 'gif' | 'webp' | 'other';
 export type VideoAssetFormat = 'mp4' | 'mov' | 'webm' | 'other';
 export type OtherAssetFormat = 'zip' | 'rar' | 'midi' | 'pdf' | 'mscz' | 'other';
 
-export type AssetFormat =
-	| AudioAssetFormat
-	| ImageAssetFormat
-	| VideoAssetFormat
-	| OtherAssetFormat;
+export type AssetFormat = AudioAssetFormat | ImageAssetFormat | VideoAssetFormat | OtherAssetFormat;
 
 interface AssetSpecificationTemplate<TKind extends string, TFormat extends AssetFormat> {
 	kind: TKind;
@@ -44,7 +40,7 @@ export type ExternalDownloadData = {
 
 export type InternalDownloadData = {
 	external?: false;
-}
+};
 
 export type DownloadData = BaseDownloadData & (ExternalDownloadData | InternalDownloadData);
 
@@ -115,6 +111,15 @@ export type CompilationMusicItem = {
 	childrenTitles: string[];
 };
 
-export type MusicItem = BaseMusicItem &
-	ExtendedMusicItemMetadata &
-	(SingleMusicItem | AlbumMusicItem | CompilationMusicItem);
+export type AnyMusicItem = SingleMusicItem | AlbumMusicItem | CompilationMusicItem;
+
+export type MusicItem = BaseMusicItem & ExtendedMusicItemMetadata & AnyMusicItem;
+
+export interface MusicItemSummary {
+	id: string;
+	artists: string | CreditsField;
+	title: string;
+	date: Date;
+	categories: CategoryKey[];
+	thumbnailUrl: string;
+}
