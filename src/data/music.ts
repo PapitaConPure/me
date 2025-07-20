@@ -2108,7 +2108,6 @@ const items: MusicItem[] = [
 						url: 'https://www.pixiv.net/en/artworks/124705185',
 					},
 					karlCredit,
-					tewaCredit,
 				],
 				thumbnail: [
 					{
@@ -2116,7 +2115,6 @@ const items: MusicItem[] = [
 						url: 'https://www.pixiv.net/en/artworks/124705185',
 					},
 					karlCredit,
-					tewaCredit,
 				],
 			},
 		},
