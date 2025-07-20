@@ -9,6 +9,8 @@ import BackSection from '@/components/BackSection';
 import AudioPreview from '@/components/AudioPreview';
 import VideoPreview from '@/components/VideoPreview';
 import { Metadata, Viewport } from 'next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload, faEye } from '@fortawesome/free-solid-svg-icons';
 
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
 
@@ -358,34 +360,40 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									/>
 								)}
 								{/*Perhaps add a download.allowsRawPreview later*/}
-								{download.kind === 'file' && download.format === 'pdf' && (
-									<Link
+								<div className='flex w-full flex-shrink-0 space-x-2'>
+									<a
 										href={getRoot(download.url)}
+										download={!download.external}
+										target={download.external ? '_blank' : '_self'}
 										rel='noopener noreferrer'
-										target='_blank'
-										className='mb-2 flex w-full flex-shrink-0 items-center justify-center rounded-md bg-secondary-main px-8 py-4 text-white transition-colors duration-75 hover:bg-secondary-500 sm:py-3 md:px-4 md:py-2'>
-										<span className='text-base font-semibold sm:text-lg md:text-sm'>
-											Vista previa
-										</span>
+										className='flex flex-grow items-center justify-center rounded-md bg-primary-main px-5 py-4 text-white transition-colors duration-200 hover:bg-primary-700 sm:px-4 sm:py-3 md:py-2'>
+										<FontAwesomeIcon
+											icon={faDownload}
+											className='mr-2 text-xl md:text-base'
+										/>
+										<div className='text-center text-xl font-semibold sm:text-lg md:text-sm'>
+											{download.size}
+										</div>
 										{download.external ? (
 											<i className='fa fa-external-link-alt mb-0.5 ml-2 text-xs opacity-80'></i>
 										) : null}
-									</Link>
-								)}
-								<a
-									href={getRoot(download.url)}
-									download={!download.external}
-									target={download.external ? '_blank' : '_self'}
-									rel='noopener noreferrer'
-									className='flex w-full flex-shrink-0 items-center justify-center rounded-md bg-primary-main px-8 py-4 text-white transition-colors duration-200 hover:bg-primary-700 sm:py-3 md:px-4 md:py-2'>
-									<i className='fa fa-solid fa-download mr-2'></i>
-									<span className='text-base font-semibold sm:text-lg md:text-sm'>
-										{download.size}
-									</span>
-									{download.external ? (
-										<i className='fa fa-external-link-alt mb-0.5 ml-2 text-xs opacity-80'></i>
-									) : null}
-								</a>
+									</a>
+									{download.kind === 'file' && download.format === 'pdf' && (
+										<Link
+											href={getRoot(download.url)}
+											rel='noopener noreferrer'
+											target='_blank'
+											className='flex flex-shrink-0 items-center justify-center rounded-md bg-secondary-700 px-5 py-4 text-white transition-colors duration-100 hover:bg-secondary-600 sm:px-4 sm:py-3 md:px-3 md:py-2'>
+											<FontAwesomeIcon
+												icon={faEye}
+												className='text-xl md:text-base'
+											/>
+											{download.external ? (
+												<i className='fa fa-external-link-alt mb-0.5 ml-2 text-xs opacity-80'></i>
+											) : null}
+										</Link>
+									)}
+								</div>
 							</div>
 						))}
 					</div>
