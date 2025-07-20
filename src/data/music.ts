@@ -2595,7 +2595,7 @@ const items: MusicItem[] = [
 		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/images/music/th20-nareko-piano/thumbnail.webp',
 		thumbnailUrl: '/images/music/th20-nareko-piano/thumbnail.webp',
-		videoUrl: 'https://www.youtube.com/watch?v=67InEuZUqEs',
+		videoUrl: 'https://www.youtube.com/watch?v=UDjJdx0bxG8',
 		credits: {
 			music: {
 				composers: [zunCredit],
@@ -2615,7 +2615,7 @@ const items: MusicItem[] = [
 			{
 				source: 'youtube',
 				label: 'YouTube',
-				url: 'https://www.youtube.com/watch?v=67InEuZUqEs',
+				url: 'https://www.youtube.com/watch?v=UDjJdx0bxG8',
 			},
 		],
 		downloadUrls: [
@@ -2747,7 +2747,7 @@ const items: MusicItem[] = [
 		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/images/music/th20-title-piano/thumbnail.webp',
 		thumbnailUrl: '/images/music/th20-title-piano/thumbnail.webp',
-		videoUrl: 'https://www.youtube.com/watch?v=67InEuZUqEs',
+		videoUrl: 'https://www.youtube.com/watch?v=-zVIfDTc1gQ',
 		credits: {
 			music: {
 				composers: [zunCredit],
@@ -2767,7 +2767,7 @@ const items: MusicItem[] = [
 			{
 				source: 'youtube',
 				label: 'YouTube',
-				url: 'https://www.youtube.com/watch?v=67InEuZUqEs',
+				url: 'https://www.youtube.com/watch?v=-zVIfDTc1gQ',
 			},
 		],
 		downloadUrls: [
