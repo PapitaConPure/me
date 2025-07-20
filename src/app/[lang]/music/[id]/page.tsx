@@ -11,7 +11,7 @@ import VideoPreview from '@/components/VideoPreview';
 import { Metadata, Viewport } from 'next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faEye } from '@fortawesome/free-solid-svg-icons';
-import { isValidLocale } from '@/lib/i18n';
+import { isValidLocale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
 
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
@@ -74,7 +74,15 @@ export const viewport: Viewport = {
 };
 
 export async function generateStaticParams() {
-	return items.map((item) => ({ id: item.id }));
+	const params = [];
+
+	for (const locale of locales) {
+		for (const item of items) {
+			params.push({ lang: locale, id: item.id });
+		}
+	}
+
+	return params;
 }
 
 export async function generateMetadata({ params }: MusicDetailProps): Promise<Metadata> {
