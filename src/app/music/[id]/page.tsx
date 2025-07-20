@@ -274,7 +274,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 						<YouTubeVideo
 							src={item.videoUrl}
 							thumbnailUrl={item.thumbnailUrl || undefined}
-							className='aspect-video w-full overflow-hidden rounded-md border border-secondary-main object-cover'
+							className='aspect-video w-full overflow-hidden rounded-md object-cover'
 						/>
 					</div>
 				</section>

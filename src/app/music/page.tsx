@@ -50,7 +50,7 @@ const MusicCard = ({ href, imgSrc, title, author, categories, date }: MusicCardP
 	return (
 		<Link
 			href={href}
-			className='group flex flex-col justify-between overflow-clip rounded-lg border border-secondary-main bg-secondary-800 transition-all hover:bg-secondary-700 sm:hover:scale-105'>
+			className='group flex flex-col justify-between rounded-lg border border-secondary-main bg-secondary-800 transition-all hover:bg-secondary-700 sm:hover:scale-105'>
 			<div className='relative aspect-video w-full overflow-hidden rounded-md bg-secondary-900'>
 				<div className='absolute h-full w-full flex-shrink-0 animate-pulse rounded-sm'>
 					<div className='flex h-full w-full items-center justify-center'>

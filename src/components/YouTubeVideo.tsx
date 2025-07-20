@@ -42,7 +42,8 @@ export function YouTubeVideo({
 				</div>
 			)}
 			{loading && (
-				<div className='absolute flex h-full w-full animate-pulse items-center justify-center rounded-md'>
+				<div
+					className={`absolute flex h-full w-full animate-pulse items-center justify-center rounded-md ${thumbnailUrl ? '' : 'border'} border-secondary-main`}>
 					<FontAwesomeIcon icon={faYoutube} size='4x' className='text-secondary-700' />
 				</div>
 			)}
