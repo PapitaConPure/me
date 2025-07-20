@@ -2293,7 +2293,7 @@ const items: MusicItem[] = [
 		description:
 			'Composition:\n• Karl Zuñiga\n• Tewi [Sax; details]\n• Papita con Puré\n\nMix: Karl Zuñiga',
 		date: new Date('2025-01-09'),
-		categories: ['collab', 'original', 'touhou'],
+		categories: ['collab', 'original'],
 		coverUrl: '/images/music/pateka-3/cover.webp',
 		thumbnailUrl: '/images/music/pateka-3/cover.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=yjuLQ-HOpsY',
