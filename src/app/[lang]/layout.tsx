@@ -4,9 +4,10 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import '../globals.css';
 
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-import { locales } from '@/lib/i18n';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { isValidLocale, locales } from '@/lib/i18n';
+import { notFound } from 'next/navigation';
 config.autoAddCss = false;
 
 const outfit = Outfit({
@@ -45,6 +46,8 @@ export async function generateStaticParams() {
 
 export default async function RootLayout({ children, params }: Readonly<Props>) {
 	const lang = (await params).lang;
+
+	if (!isValidLocale(lang)) return notFound();
 
 	return (
 		<html lang={lang}>
