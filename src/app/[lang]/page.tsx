@@ -79,7 +79,7 @@ const Home = async ({ params }: HomeProps) => {
 					consultas, dudas, quejas, sugerencias, etc., se ofrece información pública de
 					contacto&nbsp;
 					<Link
-						href='./contact'
+						href={`${lang}/contact`}
 						className='text-accent-400 hover:underline'
 						aria-label='Información de contacto de Papita con Puré'>
 						aquí
@@ -200,7 +200,7 @@ const Home = async ({ params }: HomeProps) => {
 					</p>
 
 					<Link
-						href='/about'
+						href={`${lang}/about`}
 						rel='noopener noreferrer'
 						className='btn my-4 block w-max bg-foreground font-semibold text-primary-main transition-colors duration-75 hover:bg-white active:bg-primary-100'
 						aria-label='Acerca de Papita con Puré'>
@@ -219,7 +219,7 @@ const Home = async ({ params }: HomeProps) => {
 				</p>
 
 				<Link
-					href={'/projects'}
+					href={`${lang}/projects`}
 					className='primary-btn mx-auto my-4 block w-max'
 					aria-label='Ver Proyectos'>
 					<span className='w-full select-none text-center'>Veámoslos</span>
