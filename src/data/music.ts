@@ -2819,7 +2819,7 @@ const items: MusicItem[] = [
 				kind: 'video',
 				format: 'mov',
 				label: 'Animación (Bucle) (DNxHR HQ / 4k@60fps) (archive.org)',
-				size: '1.69 MB',
+				size: '1.69 GB',
 				url: 'https://archive.org/download/th-20-title-animation-by-papita-pure/TH20%20Title%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20Title%20Animation%20by%20PapitaPur%C3%A9%2FMOV%20-%20DNxHR%20HQ%204k%4060%2F0_title_loop.mov',
 				previewUrl: '/video/music/th20-title-piano/0_title_loop.webm',
 				previewFormat: 'webm',
