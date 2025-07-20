@@ -129,7 +129,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 						</div>
 					</div>
 				</section>
-				<BackSection>
+				<BackSection href='/music'>
 					Volver a <span className='font-semibold'>Música</span>
 				</BackSection>
 			</main>
@@ -533,7 +533,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 					</div>
 				</section>
 			)}
-			<BackSection>
+			<BackSection href='/music'>
 				Volver a <span className='font-semibold'>Música</span>
 			</BackSection>
 		</main>

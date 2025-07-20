@@ -12,7 +12,7 @@ const NotFound = () => (
                 </div>
             </div>
         </section>
-        <BackSection>
+        <BackSection href='/'>
             Volver a <span className='font-semibold'>Inicio</span>
         </BackSection>
     </main>
