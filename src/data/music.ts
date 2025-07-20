@@ -1238,12 +1238,12 @@ const items: MusicItem[] = [
 		categories: ['original', 'touhou'],
 		coverUrl: '/images/music/spols/cover.png',
 		thumbnailUrl: '/images/music/spols/spols.webp',
-		videoUrl: 'https://www.youtube.com/watch?v=eMV6GF3DqOE',
+		videoUrl: 'https://www.youtube.com/watch?v=cuf1dibuSJc',
 		externalLinks: [
 			{
 				source: 'youtube',
 				label: 'YouTube',
-				url: 'https://www.youtube.com/watch?v=eMV6GF3DqOE',
+				url: 'https://www.youtube.com/watch?v=cuf1dibuSJc',
 			},
 		],
 		downloadUrls: [

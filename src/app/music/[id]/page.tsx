@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import items, { itemsById } from '@/data/music';
 import Image from 'next/image';
-import { Video } from '@/components/YouTubeVideo';
+import { YouTubeVideo } from '@/components/YouTubeVideo';
 import { OlHTMLAttributes } from 'react';
 import getRoot from '@/lib/getroot';
 import { FullArtistCredit } from '@/types/music';
@@ -271,9 +271,10 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 				<section>
 					<h2 className='section-h2'>Video</h2>
 					<div className='mt-4 w-full'>
-						<Video
+						<YouTubeVideo
 							src={item.videoUrl}
-							className='aspect-video w-full rounded-md object-cover'
+							thumbnailUrl={item.thumbnailUrl || undefined}
+							className='aspect-video w-full overflow-hidden rounded-md border border-secondary-main object-cover'
 						/>
 					</div>
 				</section>
@@ -364,7 +365,11 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									<a
 										href={getRoot(download.url)}
 										download={!download.external || !download.openNewTab}
-										target={download.external && download.openNewTab ? '_blank' : '_self'}
+										target={
+											download.external && download.openNewTab
+												? '_blank'
+												: '_self'
+										}
 										rel='noopener noreferrer'
 										className='flex flex-grow items-center justify-center rounded-md bg-primary-main px-5 py-4 text-white transition-colors duration-200 hover:bg-primary-700 sm:px-4 sm:py-3 md:py-2'>
 										<FontAwesomeIcon
