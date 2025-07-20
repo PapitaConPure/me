@@ -31,12 +31,22 @@ export interface AssetPreviewData {
 	previewFormat?: AssetFormat;
 }
 
-export interface DownloadData {
+export interface BaseDownloadData {
 	url: string;
 	size: `${number} ${'K' | 'M' | 'G' | ''}${'B' | 'b'}`;
 	label: string;
-	external?: boolean;
 }
+
+export type ExternalDownloadData = {
+	external: true;
+	openNewTab?: boolean;
+};
+
+export type InternalDownloadData = {
+	external?: false;
+}
+
+export type DownloadData = BaseDownloadData & (ExternalDownloadData | InternalDownloadData);
 
 export type DownloadUrl = AssetSpecification & AssetPreviewData & DownloadData;
 
