@@ -43,7 +43,7 @@ export function YouTubeVideo({
 			)}
 			{loading && (
 				<div className='absolute flex h-full w-full animate-pulse items-center justify-center rounded-md'>
-					<FontAwesomeIcon icon={faYoutube} size='5x' className='text-secondary-700' />
+					<FontAwesomeIcon icon={faYoutube} size='4x' className='text-secondary-700' />
 				</div>
 			)}
 			<iframe
