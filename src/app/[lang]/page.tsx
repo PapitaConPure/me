@@ -1,8 +1,10 @@
+import { getMessages, isValidLocale, locales } from '@/lib/i18n';
 import { faDiscord, faGithub, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faFeather, faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Metadata, Viewport } from 'next';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { PropsWithChildren } from 'react';
 
 export const viewport: Viewport = {
@@ -43,16 +45,32 @@ const Answer = ({ children }: PropsWithChildren) => (
 	</div>
 );
 
-const Home = () => {
+export async function generateStaticParams() {
+	return locales.map((lang) => ({ lang }));
+}
+
+interface HomeProps {
+	params: Promise<{ lang: string }>;
+}
+
+const Home = async ({ params }: HomeProps) => {
+	const lang = (await params).lang;
+
+	if (!isValidLocale(lang)) return notFound();
+
+	const messages = await getMessages(lang);
+	if(!messages) return notFound();
+	const t = messages.MainPage;
+
 	return (
 		<main>
 			<section className='my-20'>
 				<div className='relative'>
 					<h1 className='absolute inset-x-0 mx-auto mb-2 w-max bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-center font-default-sans text-6xl font-black text-transparent transition-transform'>
-						Bienvenido
+						{t.welcome}
 					</h1>
 					<h1 className='mx-auto mb-2 w-max animate-ping bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-center font-default-sans text-6xl font-black text-transparent opacity-10 transition-transform'>
-						Bienvenido
+						{t.welcome}
 					</h1>
 				</div>
 				<p className='my-2 text-center font-light text-secondary-100'>

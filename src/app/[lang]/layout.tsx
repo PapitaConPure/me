@@ -2,10 +2,11 @@ import type { Metadata } from 'next';
 import { Outfit, M_PLUS_2, Vollkorn, Noto_Serif_JP } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import './globals.css';
+import '../globals.css';
 
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import { locales } from '@/lib/i18n';
 config.autoAddCss = false;
 
 const outfit = Outfit({
@@ -35,11 +36,18 @@ export const metadata: Metadata = {
 
 interface Props {
 	children: React.ReactNode;
+	params: Promise<{ lang: string }>;
 }
 
-export default function RootLayout({ children }: Readonly<Props>) {
+export async function generateStaticParams() {
+	return locales.map((lang) => ({ lang }));
+}
+
+export default async function RootLayout({ children, params }: Readonly<Props>) {
+	const lang = (await params).lang;
+
 	return (
-		<html lang='es'>
+		<html lang={lang}>
 			<head>
 				<meta charSet='UTF-8' />
 				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
@@ -51,7 +59,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
 			</head>
 			<body
 				className={`w-full bg-background pt-[60px] font-default-sans text-foreground ${outfit.className} ${mPlus2.className} ${vollkorn.className} ${notoSerifJp.className} antialiased`}>
-				<Header />
+				<Header lang={lang} />
 				{children}
 				<Footer />
 			</body>

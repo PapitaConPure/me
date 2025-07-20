@@ -23,14 +23,18 @@ const toggleMenu = () => {
 	}
 };
 
-export default function Header() {
+interface HeaderProps {
+	lang: string;
+}
+
+export default function Header({ lang }: HeaderProps) {
 	return (
 		<header
 			id='header'
 			className='fixed top-0 z-50 w-full border-b border-b-secondary-800 border-opacity-60 bg-background bg-opacity-60 backdrop-blur-md transition-all'>
 			<div className='mx-auto flex max-w-7xl items-center justify-between px-4 py-4'>
 				<Link
-					href='/'
+					href={`/${lang}`}
 					className='flex cursor-pointer space-x-4 text-2xl font-bold text-primary-50'
 					aria-label='Página Principal'>
 					<Image
@@ -45,32 +49,32 @@ export default function Header() {
 
 				<nav className='hidden space-x-1 md:flex'>
 					<Link
+						href={`/${lang}`}
 						className='rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
-						href='/'
 						aria-label='Inicio'>
 						Inicio
 					</Link>
 					<Link
 						className='rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
-						href='/about'
+						href={`/${lang}/about`}
 						aria-label='Acerca de'>
 						Acerca de
 					</Link>
 					<Link
 						className='rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
-						href='/projects'
+						href={`/${lang}/projects`}
 						aria-label='Proyectos'>
 						Proyectos
 					</Link>
 					<Link
 						className='rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
-						href='/music'
+						href={`/${lang}/music`}
 						aria-label='Proyectos'>
 						Música
 					</Link>
 					<Link
 						className='rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
-						href='/contact'
+						href={`/${lang}/contact`}
 						aria-label='Contacto'>
 						Contacto
 					</Link>
@@ -98,31 +102,31 @@ export default function Header() {
 				className='flex h-0 flex-col overflow-hidden rounded-b-md transition-all md:hidden duration-300 ease-[cubic-bezier(0.77,0,0.175,1)]'
 				onClick={toggleMenu}>
 				<Link
-					href='/'
+						href={`/${lang}`}
 					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-4 py-2 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label='Inicio'>
 					Inicio
 				</Link>
 				<Link
-					href='/about'
+					href={`/${lang}/about`}
 					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-4 py-2 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label='Acerca de'>
 					Acerca de
 				</Link>
 				<Link
-					href='/projects'
+					href={`/${lang}/projects`}
 					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-4 py-2 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label='Proyectos'>
 					Proyectos
 				</Link>
 				<Link
-					href='/music'
+					href={`/${lang}/music`}
 					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-4 py-2 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label='Música'>
 					Música
 				</Link>
 				<Link
-					href='/contact'
+					href={`/${lang}/contact`}
 					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-4 py-2 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label='Contacto'>
 					Contacto
