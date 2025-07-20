@@ -2385,7 +2385,7 @@ const items: MusicItem[] = [
 		title: 'Golden Land of Prester John',
 		date: new Date('2025-06-05'),
 		categories: ['arrangement', 'piano', 'touhou'],
-		coverUrl: '/images/music/th20-prester-john-piano/thumbnail.webp',
+		coverUrl: '/images/music/th20-prester-john-piano/cover.png',
 		thumbnailUrl: '/images/music/th20-prester-john-piano/thumbnail.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=67InEuZUqEs',
 		credits: {
