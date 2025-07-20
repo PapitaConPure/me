@@ -34,10 +34,8 @@ interface AuthorBriefCreditProps {
 	artist: string | FullArtistCredit;
 }
 
-const AuthorBriefCredit = ({ artist }: AuthorBriefCreditProps) => 
-	typeof artist === 'string'
-		? <span>{artist}</span>
-		: <span>{artist.name}</span>;
+const AuthorBriefCredit = ({ artist }: AuthorBriefCreditProps) =>
+	typeof artist === 'string' ? <span>{artist}</span> : <span>{artist.name}</span>;
 
 interface MusicCardProps {
 	href: Url;
@@ -52,9 +50,9 @@ const MusicCard = ({ href, imgSrc, title, author, categories, date }: MusicCardP
 	return (
 		<Link
 			href={href}
-			className='group block overflow-clip rounded-lg border border-secondary-main bg-secondary-800 transition-all hover:bg-secondary-700 sm:hover:scale-105'>
+			className='group flex flex-col justify-between overflow-clip rounded-lg border border-secondary-main bg-secondary-800 transition-all hover:bg-secondary-700 sm:hover:scale-105'>
 			<div className='relative aspect-video w-full overflow-hidden rounded-md bg-secondary-900'>
-				<div className='absolute h-full w-full animate-pulse rounded-sm'>
+				<div className='absolute h-full w-full flex-shrink-0 animate-pulse rounded-sm'>
 					<div className='flex h-full w-full items-center justify-center'>
 						<svg
 							className='h-10 w-10 text-secondary-700 sm:h-16 sm:w-16 md:h-20 md:w-20'
@@ -70,17 +68,17 @@ const MusicCard = ({ href, imgSrc, title, author, categories, date }: MusicCardP
 					src={getRoot(imgSrc)}
 					alt='Thumbnail Backdrop'
 					fill
-                    sizes={'(max-width: 768px) 50vw, 33vw'}
+					sizes={'(max-width: 768px) 50vw, 33vw'}
 					className='mx-auto my-auto h-full w-full object-cover blur-md transition-all md:group-hover:blur-lg'
 				/>
 				<div className='absolute inset-0 mx-auto my-auto h-full w-full transition-all duration-500 md:group-hover:scale-150 md:group-hover:blur-sm'>
 					<Image
-                        src={getRoot(imgSrc)}
-                        alt='Thumbnail'
-                        fill
-                        sizes={'(max-width: 768px) 50vw, 33vw'}
-                        className='object-contain'
-                        />
+						src={getRoot(imgSrc)}
+						alt='Thumbnail'
+						fill
+						sizes={'(max-width: 768px) 50vw, 33vw'}
+						className='object-contain'
+					/>
 				</div>
 				<div className='absolute inset-1 flex items-center justify-center rounded-md bg-black bg-opacity-60 opacity-0 transition-opacity duration-500 md:group-hover:opacity-100'>
 					<span className='text-md font-semibold text-white'>
@@ -89,12 +87,18 @@ const MusicCard = ({ href, imgSrc, title, author, categories, date }: MusicCardP
 				</div>
 			</div>
 
-			<div className='m-4'>
-				<h2 className='text-lg font-semibold text-foreground'>{title}</h2>
-				<p className='text-secondary-100'>{author}</p>
-				<div className='mt-4 flex space-x-4 items-end justify-between text-secondary-300'>
-					<p className='text-sm flex-shrink-0'>{date.getFullYear()}</p>
-					<p className='text-xs text-right flex-grow font-light'>{categories.join(', ')}</p>
+			<div className='m-4 flex flex-grow flex-col justify-between'>
+				<h2 className='flex-shrink-0 text-lg font-semibold text-foreground'>{title}</h2>
+				<p className='flex-shrink-0 text-secondary-100'>{author}</p>
+				<div className='mt-4 flex flex-grow items-end justify-between space-x-4 text-secondary-300'>
+					<p className='flex-shrink-0 text-sm'>{date.getFullYear()}</p>
+					<p className='flex flex-grow flex-wrap-reverse items-end justify-end space-x-2 text-xs font-light'>
+						{categories.map((category, index, arr) => (
+							<div key={index}>
+								{category}
+							</div>
+						))}
+					</p>
 				</div>
 			</div>
 		</Link>
@@ -116,14 +120,19 @@ const MusicList = () => {
 							key={item.id}
 							href={`/music/${item.id}`}
 							title={item.title}
-							author={item.displayArtist || (item.artists.map((artist, index, arr) => (
-								<span key={index + 1}>
-									<AuthorBriefCredit artist={artist} />
-									{index < arr.length - 1 && (
-										<span className='mx-1 text-sm text-secondary-500'>&</span>
-									)}
-								</span>
-							)))}
+							author={
+								item.displayArtist ||
+								item.artists.map((artist, index, arr) => (
+									<span key={index + 1}>
+										<AuthorBriefCredit artist={artist} />
+										{index < arr.length - 1 && (
+											<span className='mx-1 text-sm text-secondary-500'>
+												&
+											</span>
+										)}
+									</span>
+								))
+							}
 							categories={item.categories}
 							date={item.date}
 							imgSrc={item.thumbnailUrl}
@@ -133,6 +142,6 @@ const MusicList = () => {
 			</section>
 		</main>
 	);
-}
+};
 
 export default MusicList;
