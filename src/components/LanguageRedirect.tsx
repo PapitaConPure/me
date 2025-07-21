@@ -9,6 +9,7 @@ interface LanguageRedirectProps {
 }
 
 function LanguageRedirect({ targetPath }: LanguageRedirectProps) {
+    //Try to detect browser language or use default locale
 	useEffect(() => {
 		const userLang = navigator.language?.slice(0, 2) ?? defaultLocale;
 		const lang = isValidLocale(userLang) ? userLang : defaultLocale;
