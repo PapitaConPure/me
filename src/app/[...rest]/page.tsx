@@ -20,5 +20,5 @@ export default async function Page({ params }: PageProps) {
 
 	if (!rest) return <LanguageRedirect targetPath='/' />;
 
-	return <LanguageRedirect targetPath={rest || '/'} />;
+	return <LanguageRedirect targetPath={`/${rest || ''}`} />;
 }

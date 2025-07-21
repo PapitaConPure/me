@@ -5,14 +5,17 @@ import { redirect } from 'next/navigation';
 import { defaultLocale, isValidLocale } from '@/lib/i18n';
 
 interface LanguageRedirectProps {
-	targetPath: string;
+	targetPath?: string;
 }
 
 function LanguageRedirect({ targetPath }: LanguageRedirectProps) {
 	useEffect(() => {
 		const userLang = navigator.language?.slice(0, 2) ?? defaultLocale;
 		const lang = isValidLocale(userLang) ? userLang : defaultLocale;
-        const normalizedPath = targetPath?.startsWith('/') ? targetPath : `/${targetPath || ''}`;
+        
+        if(!targetPath || typeof targetPath !== 'string') return redirect(`/${lang}`);
+
+        const normalizedPath = targetPath.startsWith('/') ? targetPath : `/${targetPath || ''}`;
 
 		return redirect(`/${lang}${normalizedPath}`);
 	}, [targetPath]);
