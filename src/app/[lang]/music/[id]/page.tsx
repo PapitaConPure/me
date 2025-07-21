@@ -74,15 +74,12 @@ export const viewport: Viewport = {
 };
 
 export async function generateStaticParams() {
-	const params = [];
-
-	for (const locale of locales) {
-		for (const item of items) {
-			params.push({ lang: locale, id: item.id });
-		}
-	}
-
-	return params;
+	return locales.flatMap((lang) =>
+		items.map((item) => ({
+			lang,
+			id: item.id,
+		})),
+	);
 }
 
 export async function generateMetadata({ params }: MusicDetailProps): Promise<Metadata> {

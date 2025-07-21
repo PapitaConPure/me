@@ -30,7 +30,7 @@ const notoSerifJp = Noto_Serif_JP({
 });
 
 export default async function NotFound({ params }: NotFoundProps) {
-	const lang = (await params).lang;
+	const lang = params ? (await params)?.lang : undefined;
 
 	if (!lang || !isValidLocale(lang)) {
 		return (
