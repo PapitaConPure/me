@@ -12,7 +12,7 @@ function LanguageRedirect({ targetPath }: LanguageRedirectProps) {
 	useEffect(() => {
 		const userLang = navigator.language?.slice(0, 2) ?? defaultLocale;
 		const lang = isValidLocale(userLang) ? userLang : defaultLocale;
-        const normalizedPath = targetPath.startsWith('/') ? targetPath : `/${targetPath}`;
+        const normalizedPath = targetPath?.startsWith('/') ? targetPath : `/${targetPath || ''}`;
 
 		return redirect(`/${lang}${normalizedPath}`);
 	}, [targetPath]);

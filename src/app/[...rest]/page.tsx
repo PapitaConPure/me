@@ -4,11 +4,11 @@ import LanguageRedirect from '@/components/LanguageRedirect';
 export async function generateStaticParams() {
 	//Generate at least for the routes within /app/[lang]/ so that the redirect works
 	return [
-        { rest: ['about'] },
-        { rest: ['projects'] },
-        { rest: ['music'] },
-        { rest: ['contact'] },
-    ];
+		{ rest: ['about'] },
+		{ rest: ['projects'] },
+		{ rest: ['music'] },
+		{ rest: ['contact'] },
+	];
 }
 
 interface PageProps {
@@ -20,5 +20,5 @@ export default async function Page({ params }: PageProps) {
 
 	if (!rest) return <LanguageRedirect targetPath='/' />;
 
-	return <LanguageRedirect targetPath={rest} />;
+	return <LanguageRedirect targetPath={rest || '/'} />;
 }
