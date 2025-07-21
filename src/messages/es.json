@@ -1,11 +1,57 @@
 {
+    "Layout": {
+        "headerName": "Papita con Puré",
+        "navHome": "Inicio",
+        "navAbout": "Acerca de",
+        "navProjects": "Proyectos",
+        "navMusic": "Música",
+        "navContact": "Contacto"
+    },
+    "General": {
+        "loading": "Cargando..."
+    },
     "MainPage": {
         "welcome": "Bienvenido",
-        "loading": "Cargando...",
-        "noMusic": "No hay música disponible",
-        "errorLoadingMusic": "Error al cargar la música"
+        "welcomeMessage": "¡Hola! Soy Papita con Puré. Este sitio ofrece información actualizada sobre mí, mis redes y mis proyectos. Además, para individuos, grupos u organizaciones con consultas, dudas, quejas, sugerencias, etc., se ofrece información pública de contacto <1>aquí</1>.",
+        "welcomeMessageAriaLabel": "Información de contacto de Papita con Puré",
+        "findMe": "Encuéntrame",
+        "qnaTitle": "Preguntas Frecuentes",
+        "qnaQ1": "¿Por qué te haces llamar \"Papita con Puré\"?",
+        "qnaA1": "En una madrugada hace muchos años, cerca de las 3, estaba creándome una cuenta para jugar algo con unos amigos. Lo que pasa es que tenía muchísima hambre, un poco de sueño y además ya estaba pensando reemplazar mi antiguo apodo. Así es como se me ocurrió.\n\n\"Papita con Puré\" no tiene sentido como tal. Son solo 2 comidas que realmente no quedarían bien combinadas. Sin embargo, es un apodo gracioso, y para la gente que no sabe español, \"Papita\" no suena mal.",
+        "qnaQ2": "¿Has pensado subir tus futuros juegos a Steam?",
+        "qnaA2": "Subir un juego a Steam cuesta 100 dólares inicialmente. Es algo que deseo fuertemente, pero tener una página ahí va a tener que esperar.",
+        "qnaQ3": "¿Has pensado subir tu música a Spotify o SoundCloud?",
+        "qnaA3": "Ahora mismo no tengo intenciones de hacer eso. Manejando solamente un canal de YouTube me siento bastante cómodo, de momento.\n\nSin embargo, ZFF cada tanto sube mi música a SoundCloud con mi permiso.\n\nAdemás, si participo en collabs y otra persona sube la música, hay una posibilidad de que sea en SoundCloud/Spotify/otro, ya que yo no me hago problema por eso.",
+        "qnaQ4": "¿Personajes favoritos?",
+        "qnaA4": "Megumin (めぐみん) de KonoSuba, Minato Aqua (湊あくあ) de Hololive y Kishin Sagume (稀神サグメ) de Touhou 15.",
+        "qnaQ5": "¿Juegos favoritos?",
+        "qnaA5": "Risk of Rain 2 y Conker's Bad Fur Day.",
+        "qnaQ6": "¿Realmente te han hecho estas preguntas?",
+        "qnaA6": "No.",
+        "qnaQ7": "¿Entonces por qué \"Preguntas Frecuentes\"?",
+        "qnaA7": "Podrían serlo algún día. 👍",
+        "learnMoreTitle": "Aprende más sobre mí",
+        "learnMore": "Soy otro grano de arena en el desierto de la vida. Sin embargo, puedo tener un par de cosas que sean de tu interés.",
+        "learnMoreCTA": "Vamos allá",
+        "myProjectsTitle": "Mis proyectos",
+        "myProjects": "Ofrezco un recopilado de varios de mis proyectos destacados.",
+        "myProjectsCTA": "Veámoslos"
     },
-    "Dunno": {
-        "something": "something"
+    "About": {
+        "title": "Sobre mí",
+        "subtitle": "Un vistazo general de mi persona"
+    },
+    "Projects": {
+        "title": "Proyectos",
+        "subtitle": "Cosas curiosas que he hecho"
+    },
+    "Music": {
+        "title": "Música",
+        "subtitle": "Piezas en la que he trabajado",
+        "errorLoading": "Error al cargar la música"
+    },
+    "Contact": {
+        "title": "Contacto",
+        "subtitle": "Información para contactarme"
     }
 }

@@ -1,11 +1,57 @@
 {
+    "Layout": {
+        "headerName": "Papita con Pure",
+        "navHome": "Home",
+        "navAbout": "About",
+        "navProjects": "Projects",
+        "navMusic": "Music",
+        "navContact": "Contact"
+    },
+    "General": {
+        "loading": "Loading..."
+    },
     "MainPage": {
         "welcome": "Welcome",
-        "loading": "Loading...",
-        "noMusic": "No music available",
-        "errorLoadingMusic": "Error loading music"
+        "welcomeMessage": "Hi! I'm Papita con Pure. This sife offers updated information about me, my networks and projects. Also, for individuals, groups, or organizations with inquiries, doubts, complaints, suggestions, etc., I offer some public contact information <1>here</1>.",
+        "welcomeMessageAriaLabel": "Papita con Pure's contact information",
+        "findMe": "Find me",
+        "qnaTitle": "Q&A",
+        "qnaQ1": "Why do you call yourself \"Papita con Pure\"?",
+        "qnaA1": "It's a name written in Spanish, meaning \"Lil Potato with Mashed Potatoes\". One morning many years ago, aroud 3AM, I was making an account on some game to play with friends. Thing is, I was hungry as heck, a bit sleepy, and was also already thinking of replacing my older nickname. That's how it came to exist.\n\n\"Papita con Puré\" doesn't really make sense, even in Spanish. It's just a combo of two foods you can't really combine. However, it's still funny, and people that don't speak Spanish can call me \"Papita\" and it doesn't sound half bad.",
+        "qnaQ2": "Ever thought of uploading your games to Steam?",
+        "qnaA2": "Getting your game on Steam costs an upfront of US$100. It's something I strongly desire, but having a page there will have to wait.",
+        "qnaQ3": "Ever thought of uploading your music to Spotify or SoundCloud?",
+        "qnaA3": "I have no intentions of doing that right now. With just a YouTube channel I feel pretty comfortable, for now.\n\nHowever, <1>ZFF</1> uploads my music to SoundCloud every once in a while.\n\nAlso, if I participate in collabs and another person uploads the music, there's a chance it may be on SoundCloud/Spotify/other, as I have no issues with that.",
+        "qnaQ4": "Favorite characters?",
+        "qnaA4": "Megumin (めぐみん) from KonoSuba, Minato Aqua (湊あくあ) from Hololive, and Kishin Sagume (稀神サグメ) from Touhou 15.",
+        "qnaQ5": "Favorite games?",
+        "qnaA5": "Risk of Rain 2 and Conker's Bad Fur Day.",
+        "qnaQ6": "Have people actually asked these questions to you?",
+        "qnaA6": "No.",
+        "qnaQ7": "Then why \"Q&A\"?",
+        "qnaA7": "These could be real questions one day. 👍",
+        "learnMoreTitle": "Learn More About Me",
+        "learnMore": "I'm but another grain of sand in the desert of life. However, one thing or two about me might pick your interest.",
+        "learnMoreCTA": "Let's go",
+        "myProjectsTitle": "My Projects",
+        "myProjects": "I offer a compilation of various highlighted works of mine.",
+        "myProjectsCTA": "Let's see them"
     },
-    "Dunno": {
-        "something": "something"
+    "About": {
+        "title": "About me",
+        "subtitle": "An overview of myself"
+    },
+    "Projects": {
+        "title": "Projects",
+        "subtitle": "Curious things I've done"
+    },
+    "Music": {
+        "title": "Music",
+        "subtitle": "Pieces I've worked on",
+        "errorLoading": "Error loading music"
+    },
+    "Contact": {
+        "title": "Contact",
+        "subtitle": "Contact information"
     }
 }

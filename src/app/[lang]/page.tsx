@@ -1,4 +1,5 @@
 import { getMessages, isValidLocale, locales } from '@/lib/i18n';
+import Tr from '@/lib/i18n/Tr';
 import { faDiscord, faGithub, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faFeather, faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -59,7 +60,7 @@ const Home = async ({ params }: HomeProps) => {
 	if (!isValidLocale(lang)) return notFound();
 
 	const messages = await getMessages(lang);
-	if(!messages) return notFound();
+	if (!messages) return notFound();
 	const t = messages.MainPage;
 
 	return (
@@ -74,22 +75,23 @@ const Home = async ({ params }: HomeProps) => {
 					</h1>
 				</div>
 				<p className='my-2 text-center font-light text-secondary-100'>
-					¡Hola! Soy Papita con Puré. Este sitio ofrece información actualizada sobre mí,
-					mis redes y mis proyectos. Además, para individuos, grupos u organizaciones con
-					consultas, dudas, quejas, sugerencias, etc., se ofrece información pública de
-					contacto&nbsp;
-					<Link
-						href={`${lang}/contact`}
-						className='text-accent-400 hover:underline'
-						aria-label='Información de contacto de Papita con Puré'>
-						aquí
-					</Link>
-					.
+					<Tr
+						t={t.welcomeMessage}
+						components={{
+							1: (
+								<Link
+									href={`${lang}/contact`}
+									className='text-accent-400 hover:underline'
+									aria-label={t.welcomeMessageAriaLabel}
+								/>
+							),
+						}}
+					/>
 				</p>
 			</section>
 
 			<section>
-				<h2 className='section-h2 mb-3 mt-6 text-center'>Encuéntrame</h2>
+				<h2 className='section-h2 mb-3 mt-6 text-center'>{t.findMe}</h2>
 
 				<div className='mx-auto grid w-full grid-cols-1 sm:w-max sm:grid-cols-2 sm:pr-0 md:grid-cols-4'>
 					<a
@@ -139,64 +141,45 @@ const Home = async ({ params }: HomeProps) => {
 			</section>
 
 			<section>
-				<h2 className='section-h2'>Preguntas Frecuentes</h2>
-				<Question>¿Por qué te haces llamar &quot;Papita con Puré&quot;?</Question>
+				<h2 className='section-h2'>{t.qnaTitle}</h2>
+				<Question>{t.qnaQ1}</Question>
+				<Answer>{t.qnaA1}</Answer>
+				<Question>{t.qnaQ2}</Question>
+				<Answer>{t.qnaA2}</Answer>
+				<Question>{t.qnaQ3}</Question>
 				<Answer>
-					En una madrugada hace muchos años, cerca de las 3, estaba creándome una cuenta
-					para jugar algo con unos amigos. Lo que pasa es que tenía muchísima hambre, un
-					poco de sueño y además ya estaba pensando reemplazar mi antiguo apodo. Así es
-					como se me ocurrió.
-					<br /> <br />
-					&quot;Papita con Puré&quot; no tiene sentido como tal. Son solo 2 comidas que
-					realmente no quedarían bien combinadas. Sin embargo, es un apodo gracioso, y
-					para la gente que no sabe español, &quot;Papita&quot; no suena mal.
+					<Tr
+						t={t.qnaA3}
+						components={{
+							1: (
+								<a
+									target='_blank'
+									rel='noopener noreferrer'
+									href='https://soundcloud.com/user-158678041'
+									className='text-accent-main hover:text-accent-500 hover:underline'
+								/>
+							),
+						}}
+					/>
 				</Answer>
-				<Question>¿Has pensado subir tus futuros juegos a Steam?</Question>
-				<Answer>
-					Subir un juego a Steam cuesta 100 dólares inicialmente. Es algo que deseo
-					fuertemente, pero tener una página ahí va a tener que esperar.
-				</Answer>
-				<Question>¿Has pensado subir tu música a Spotify o SoundCloud?</Question>
-				<Answer>
-					Ahora mismo no tengo intenciones de hacer eso. Manejando solamente un canal de
-					YouTube me siento bastante cómodo, de momento.
-					<br /> <br />
-					Sin embargo,{' '}
-					<a
-						target='_blank'
-						rel='noopener noreferrer'
-						href='https://soundcloud.com/user-158678041'
-						className='text-accent-main hover:text-accent-500 hover:underline'>
-						ZFF
-					</a>{' '}
-					cada tanto sube mi música a SoundCloud con mi permiso.
-					<br /> <br />
-					Además, si participo en collabs y otra persona sube la música, hay una
-					posibilidad de que sea en SoundCloud/Spotify/otro, ya que yo no me hago problema
-					por eso.
-				</Answer>
-				<Question>¿Personajes favoritos?</Question>
-				<Answer>
-					Megumin (めぐみん) de KonoSuba, Minato Aqua (湊あくあ) de Hololive y Kishin
-					Sagume (稀神サグメ) de Touhou 15.
-				</Answer>
-				<Question>¿Juegos favoritos?</Question>
-				<Answer>Risk of Rain 2 y Conker&apos;s Bad Fur Day.</Answer>
-				<Question>¿Realmente te han hecho estas preguntas?</Question>
-				<Answer>No.</Answer>
-				<Question>¿Entonces por qué &quot;Preguntas Frecuentes&quot;?</Question>
-				<Answer>Podrían serlo algún día 👍</Answer>
+				<Question>{t.qnaQ4}</Question>
+				<Answer>{t.qnaA4}</Answer>
+				<Question>{t.qnaQ5}</Question>
+				<Answer>{t.qnaA5}</Answer>
+				<Question>{t.qnaQ6}</Question>
+				<Answer>{t.qnaA6}</Answer>
+				<Question>{t.qnaQ7}</Question>
+				<Answer>{t.qnaA7}</Answer>
 			</section>
 
 			<section>
 				<div className='mx-1 my-6 flex flex-col items-center rounded-md bg-primary-main px-2 py-1'>
 					<h2 className='my-1 text-center font-default-sans text-3xl font-bold text-foreground'>
-						Aprende más sobre mí
+						{t.learnMoreTitle}
 					</h2>
 
 					<p className='mb-1 text-center'>
-						Soy otro grano de arena en el desierto de la vida. Sin embargo, puedo tener
-						un par de cosas que sean de tu interés.
+						{t.learnMore}
 					</p>
 
 					<Link
@@ -204,25 +187,25 @@ const Home = async ({ params }: HomeProps) => {
 						rel='noopener noreferrer'
 						className='btn my-4 block w-max bg-foreground font-semibold text-primary-main transition-colors duration-75 hover:bg-white active:bg-primary-100'
 						aria-label='Acerca de Papita con Puré'>
-						<span className='w-full select-none text-center'>Vamos allá</span>
+						<span className='w-full select-none text-center'>{t.learnMoreCTA}</span>
 					</Link>
 				</div>
 			</section>
 
 			<section>
 				<h2 className='mb-1 text-center font-default-sans text-3xl font-bold text-foreground'>
-					Mis Proyectos
+					{t.myProjectsTitle}
 				</h2>
 
 				<p className='mb-1 text-center font-light text-secondary-100'>
-					Ofrezco un recopilado de varios de mis proyectos destacados.
+					{t.myProjects}
 				</p>
 
 				<Link
 					href={`${lang}/projects`}
 					className='primary-btn mx-auto my-4 block w-max'
 					aria-label='Ver Proyectos'>
-					<span className='w-full select-none text-center'>Veámoslos</span>
+					<span className='w-full select-none text-center'>{t.myProjectsCTA}</span>
 				</Link>
 			</section>
 		</main>

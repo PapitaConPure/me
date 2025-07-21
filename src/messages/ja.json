@@ -1,11 +1,57 @@
 {
+    "Layout": {
+        "headerName": "パピタ・コン・プレ",
+        "navHome": "Home",
+        "navAbout": "About",
+        "navProjects": "Project",
+        "navMusic": "Music",
+        "navContact": "Contact"
+    },
+    "General": {
+        "loading": "読み込み中..."
+    },
     "MainPage": {
         "welcome": "ようこそ",
-        "loading": "読み込み中...",
-        "noMusic": "利用可能な音楽がありません",
-        "errorLoadingMusic": "音楽の読み込み中にエラーが発生しました"
+        "welcomeMessage": "Hi! I'm Papita con Pure. This sife offers updated information about me, my networks and projects. Also, for individuals, groups, or organizations with inquiries, doubts, complaints, suggestions, etc., I offer some public contact information <1>here</1>.",
+        "welcomeMessageAriaLabel": "Papitaの連絡先情報",
+        "findMe": "私を見つけて",
+        "qnaTitle": "よくある質問",
+        "qnaQ1": "なぜ「Papita / パピタ・コン・プレ」と名乗るのですか?",
+        "qnaA1": "It's a name written in Spanish, meaning \"Lil Potato with Mashed Potatoes\". One morning many years ago, aroud 3AM, I was making an account on some game to play with friends. Thing is, I was hungry as heck, a bit sleepy, and was also already thinking of replacing my older nickname. That's how it came to exist.\n\n\"Papita con Puré\" doesn't really make sense, even in Spanish. It's just a combo of two foods you can't really combine. However, it's still funny, and people that don't speak Spanish can call me \"Papita\" and it doesn't sound half bad.",
+        "qnaQ2": "ゲームをSteamにアップロードすることを考えたことはありますか?",
+        "qnaA2": "Getting your game on Steam costs an upfront of US$100. It's something I strongly desire, but having a page there will have to wait.",
+        "qnaQ3": "自分の音楽をSpotifyやSoundCloudにアップロードすることを考えたことはありますか?",
+        "qnaA3": "I have no intentions of doing that right now. With just a YouTube channel I feel pretty comfortable, for now.\n\nHowever, <1>ZFF</1> uploads my music to SoundCloud every once in a while.\n\nAlso, if I participate in collabs and another person uploads the music, there's a chance it may be on SoundCloud/Spotify/other, as I have no issues with that.",
+        "qnaQ4": "好きなキャラクター？",
+        "qnaA4": "めぐみん（このすば）、湊あくあ（ホロライブ）、稀神サグメ（東方紺珠伝）。",
+        "qnaQ5": "好きなゲーム？",
+        "qnaA5": "「Risk of Rain 2」と「Conker's Bad Fur Day」。",
+        "qnaQ6": "Have people actually asked these questions to you?",
+        "qnaA6": "いいえ。",
+        "qnaQ7": "Then why \"Q&A\"?",
+        "qnaA7": "These could be real questions one day. 👍",
+        "learnMoreTitle": "私についてもっと知る",
+        "learnMore": "I'm but another grain of sand in the desert of life. However, one thing or two about me might pick your interest.",
+        "learnMoreCTA": "行きましょう",
+        "myProjectsTitle": "私のプロジェクト",
+        "myProjects": "I offer a compilation of various highlighted works of mine.",
+        "myProjectsCTA": "見てみましょう"
     },
-    "Dunno": {
-        "something": "something"
+    "About": {
+        "title": "Sobre mí",
+        "subtitle": "An overview of myself"
+    },
+    "Projects": {
+        "title": "プロジェクト",
+        "subtitle": "Curious things I've done"
+    },
+    "Music": {
+        "title": "Music",
+        "subtitle": "Pieces I've worked on",
+        "errorLoading": "音楽の読み込み中にエラーが発生しました"
+    },
+    "Contact": {
+        "title": "Contact",
+        "subtitle": "Contact information"
     }
 }
