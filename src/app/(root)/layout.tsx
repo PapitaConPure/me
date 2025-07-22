@@ -54,7 +54,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
 			<body className='w-full bg-background pt-[60px] font-default-sans text-foreground antialiased'>
 				<Header lang='es' />
 				{children}
-				<Footer />
+				<Footer lang='es' />
 			</body>
 		</html>
 	);
