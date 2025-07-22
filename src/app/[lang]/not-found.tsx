@@ -17,22 +17,24 @@ const NotFound = async ({ params }: NotfoundProps) => {
 	if (!messages)
 		throw ReferenceError("Couldn't find proper internationalization messages in index");
 
-	<main>
-		<section>
-			<div className='flex justify-center'>
-				<div className='flex flex-col items-center space-y-8'>
-					<div className='text-9xl'>🥔</div>
-					<p>{messages.NotFound.notice}</p>
+	return (
+		<main>
+			<section>
+				<div className='flex justify-center'>
+					<div className='flex flex-col items-center space-y-8'>
+						<div className='text-9xl'>🥔</div>
+						<p>{messages.NotFound.notice}</p>
+					</div>
 				</div>
-			</div>
-		</section>
-		<BackSection href='/'>
-			<Tr
-				t={messages.General.backSectionButton}
-				components={{ 1: <span className='font-semibold' /> }}
-			/>
-		</BackSection>
-	</main>;
+			</section>
+			<BackSection href='/'>
+				<Tr
+					t={messages.General.backSectionButton}
+					components={{ 1: <span className='font-semibold' /> }}
+				/>
+			</BackSection>
+		</main>
+	);
 };
 
 export default NotFound;
