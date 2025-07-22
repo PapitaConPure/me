@@ -6,6 +6,8 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { defaultLocale, isValidLocale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 config.autoAddCss = false;
 
 const outfit = Outfit({
@@ -61,7 +63,9 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
 				/>
 			</head>
 			<body className='w-full bg-background pt-[60px] font-default-sans text-foreground antialiased'>
+				<Header lang={lang} />
 				{children}
+				<Footer lang={lang} />
 			</body>
 		</html>
 	);
