@@ -108,7 +108,7 @@ export async function generateMetadata({ params }: MusicDetailProps): Promise<Me
 		title: resolveLocalizableField(item.title, lang),
 		description:
 			resolveLocalizableField(item.description, lang) ||
-			`${item.displayArtist || item.artists.map((artist) => (typeof artist === 'string' ? artist : artist.name)).join(' & ')}`,
+			`${item.displayArtist || item.artists.map((artist) => (typeof artist === 'string' ? artist : resolveLocalizableField(artist.name, lang))).join(' & ')}`,
 		openGraph: {
 			title: resolveLocalizableField(item.title, lang),
 			description: resolveLocalizableField(item.description, lang),
@@ -119,7 +119,7 @@ export async function generateMetadata({ params }: MusicDetailProps): Promise<Me
 					: `https://papitaconpure.github.io/me/${bigImageUrl}`,
 			],
 			type: item.kind === 'single' ? 'music.song' : 'music.album',
-			siteName: 'Papita con Puré',
+			siteName: messages.General.metaSiteName,
 		},
 		twitter: {
 			card: 'summary_large_image',
@@ -127,7 +127,15 @@ export async function generateMetadata({ params }: MusicDetailProps): Promise<Me
 			description:
 				resolveLocalizableField(item.description, lang) ||
 				'No description provided for this item.',
-			creator: item.displayArtist || item.artists.join(' & '),
+			creator:
+				item.displayArtist ||
+				item.artists
+					.map((artist) =>
+						typeof artist === 'string'
+							? artist
+							: resolveLocalizableField(artist.name, lang),
+					)
+					.join(' & '),
 			site: 'https://papitaconpure.github.io/me',
 			images: [
 				bigImageUrl.startsWith('http')
@@ -183,7 +191,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 							className='w-full rounded-lg'></Image>
 					</div>
 					<div className='flex-grow'>
-						<h2 className='mt-[0.0625rem] mb-1.5 flex flex-wrap text-xl text-foreground text-opacity-90'>
+						<h2 className='mb-1.5 mt-[0.0625rem] flex flex-wrap text-xl text-foreground text-opacity-90'>
 							{item.artists.map((artist, index, arr) => (
 								<span key={index + 1} className='flex'>
 									<CredittedArtist artist={artist} lang={lang} />

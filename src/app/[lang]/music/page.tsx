@@ -5,33 +5,13 @@ import items from '@/data/music';
 import getRoot from '@/lib/getroot';
 import { FullArtistCredit, MusicItemSummary } from '@/types/music';
 import { Metadata, Viewport } from 'next';
-import { getMessages, isValidLocale, Locale, locales } from '@/lib/i18n';
+import { defaultLocale, getMessages, isValidLocale, Locale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
 import Translated from '@/lib/i18n/Translated';
 import { resolveLocalizableField } from '@/lib/music';
 
 export const viewport: Viewport = {
 	themeColor: '#c97f72',
-};
-
-export const metadata: Metadata = {
-	title: 'Música',
-	description: 'Piezas en las que he trabajado',
-	openGraph: {
-		title: 'Música',
-		description: 'Piezas en las que he trabajado',
-		images: ['https://papitaconpure.github.io/me/potato.webp'],
-		type: 'website',
-		siteName: 'Papita con Puré',
-	},
-	twitter: {
-		card: 'summary_large_image',
-		title: 'Música',
-		description: 'Piezas en las que he trabajado',
-		creator: 'Papita con Puré',
-		site: 'https://papitaconpure.github.io/me',
-		images: ['https://papitaconpure.github.io/me/potato.webp'],
-	},
 };
 
 interface AuthorBriefCreditProps {
@@ -115,12 +95,42 @@ const MusicCard = ({ lang, href, imgSrc, title, author, categories, date }: Musi
 	);
 };
 
-export async function generateStaticParams() {
-	return locales.map((lang) => ({ lang }));
-}
-
 interface MusicListProps {
 	params: Promise<{ lang: string }>;
+}
+
+export async function generateMetadata({ params }: MusicListProps): Promise<Metadata> {
+	const lang = params ? (await params)?.lang : defaultLocale;
+
+	if (!lang || !isValidLocale(lang)) return { title: 'Not Found' };
+
+	const messages = await getMessages(lang);
+	if (!messages) return { title: 'Not Found' };
+	const t = messages.Music;
+
+	return {
+		title: t.title,
+		description: t.subtitle,
+		openGraph: {
+			title: t.title,
+			description: t.subtitle,
+			images: ['https://papitaconpure.github.io/me/potato.webp'],
+			type: 'website',
+			siteName: messages.General.metaSiteName,
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title: t.title,
+			description: t.subtitle,
+			creator: messages.General.papitaName,
+			site: 'https://papitaconpure.github.io/me',
+			images: ['https://papitaconpure.github.io/me/potato.webp'],
+		},
+	};
+}
+
+export async function generateStaticParams() {
+	return locales.map((lang) => ({ lang }));
 }
 
 const MusicList = async ({ params }: MusicListProps) => {

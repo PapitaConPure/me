@@ -1,4 +1,4 @@
-import { getMessages, isValidLocale, locales } from '@/lib/i18n';
+import { defaultLocale, getMessages, isValidLocale, locales } from '@/lib/i18n';
 import { faDiscord, faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,32 +9,42 @@ export const viewport: Viewport = {
 	themeColor: '#c97f72',
 };
 
-export const metadata: Metadata = {
-	title: 'Contacto',
-	description: 'Información para contactarme',
-	openGraph: {
-		title: 'Contacto',
-		description: 'Información para contactarme',
-		images: ['https://papitaconpure.github.io/me/potato.webp'],
-		type: 'website',
-		siteName: 'Papita con Puré',
-	},
-	twitter: {
-		card: 'summary_large_image',
-		title: 'Contacto',
-		description: 'Información para contactarme',
-		creator: 'Papita con Puré',
-		site: 'https://papitaconpure.github.io/me',
-		images: ['https://papitaconpure.github.io/me/potato.webp'],
-	},
-};
+interface ContactProps {
+	params: Promise<{ lang: string }>;
+}
+
+export async function generateMetadata({ params }: ContactProps): Promise<Metadata> {
+	const lang = params ? (await params)?.lang : defaultLocale;
+
+	if (!lang || !isValidLocale(lang)) return { title: 'Not Found' };
+
+	const messages = await getMessages(lang);
+	if (!messages) return { title: 'Not Found' };
+	const t = messages.Contact;
+
+	return {
+		title: t.title,
+		description: t.subtitle,
+		openGraph: {
+			title: t.title,
+			description: t.subtitle,
+			images: ['https://papitaconpure.github.io/me/potato.webp'],
+			type: 'website',
+			siteName: messages.General.metaSiteName,
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title: t.title,
+			description: t.subtitle,
+			creator: messages.General.papitaName,
+			site: 'https://papitaconpure.github.io/me',
+			images: ['https://papitaconpure.github.io/me/potato.webp'],
+		},
+	};
+}
 
 export async function generateStaticParams() {
 	return locales.map((lang) => ({ lang }));
-}
-
-interface ContactProps {
-	params: Promise<{ lang: string }>;
 }
 
 const Contact = async ({ params }: ContactProps) => {
