@@ -10,7 +10,7 @@ import AudioPreview from '@/components/AudioPreview';
 import VideoPreview from '@/components/VideoPreview';
 import { Metadata, Viewport } from 'next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faEye } from '@fortawesome/free-solid-svg-icons';
+import { faDownload, faExternalLinkAlt, faEye } from '@fortawesome/free-solid-svg-icons';
 import { getMessages, isValidLocale, Locale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
 import Tr from '@/lib/i18n/Tr';
@@ -418,16 +418,20 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 												: '_self'
 										}
 										rel='noopener noreferrer'
-										className='flex flex-grow items-center justify-center rounded-md bg-primary-main px-5 py-4 text-white transition-colors duration-200 hover:bg-primary-700 sm:px-4 sm:py-3 md:py-2'>
+										className='flex flex-grow cursor-pointer items-center justify-center rounded-md bg-primary-main px-5 py-4 text-white transition-colors duration-200 hover:bg-primary-700 sm:px-4 sm:py-3 md:py-2'>
 										<FontAwesomeIcon
 											icon={faDownload}
-											className='mr-2 text-xl md:text-base'
+											className='mr-2 cursor-pointer text-xl md:text-base'
 										/>
-										<div className='text-center text-xl font-semibold sm:text-lg md:text-sm'>
+										<div className='cursor-pointer select-none text-center text-xl font-semibold sm:text-lg md:text-sm'>
 											{download.size}
 										</div>
 										{download.external ? (
-											<i className='fa fa-external-link-alt mb-0.5 ml-2 text-xs opacity-80'></i>
+											<FontAwesomeIcon
+												icon={faExternalLinkAlt}
+												size='xs'
+												className='mb-0.5 ml-2 cursor-pointer opacity-80'
+											/>
 										) : null}
 									</a>
 									{download.kind === 'file' && download.format === 'pdf' && (
@@ -454,7 +458,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 			{item.credits && (
 				<section>
 					<h2 className='section-h2'>{t.detailCreditsTitle}</h2>
-					<div className='mt-4 grid grid-cols-1 gap-x-4 gap-y-8 rounded-md border border-secondary-800 px-4 pb-4 pt-3 text-left sm:grid-cols-2 sm:text-center'>
+					<div className='mt-4 grid grid-cols-1 gap-x-6 lg:gap-x-8 gap-y-8 rounded-md border border-secondary-800 px-4 pb-4 pt-3 text-left sm:grid-cols-2 sm:text-center'>
 						{item.credits.music && (
 							<div>
 								<h3 className='section-h3'>{t.detailCreditsMusic}</h3>
