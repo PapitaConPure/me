@@ -10,11 +10,18 @@ import AudioPreview from '@/components/AudioPreview';
 import VideoPreview from '@/components/VideoPreview';
 import { Metadata, Viewport } from 'next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faExternalLinkAlt, faEye } from '@fortawesome/free-solid-svg-icons';
+import {
+	faCheck,
+	faDownload,
+	faExternalLinkAlt,
+	faEye,
+	faSpinner,
+} from '@fortawesome/free-solid-svg-icons';
 import { getMessages, isValidLocale, Locale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
 import Tr from '@/lib/i18n/Tr';
 import { resolveLocalizableField } from '@/lib/music';
+import DirectDownloadButton from '@/components/DirectDownloadButton';
 
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
 
@@ -409,7 +416,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 								)}
 								{/*Perhaps add a download.allowsRawPreview later*/}
 								<div className='flex w-full flex-shrink-0 space-x-2'>
-									<a
+									<DirectDownloadButton
 										href={getRoot(download.url)}
 										download={!download.external || !download.openNewTab}
 										target={
@@ -418,7 +425,23 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 												: '_self'
 										}
 										rel='noopener noreferrer'
-										className='flex flex-grow cursor-pointer items-center justify-center rounded-md bg-primary-main px-5 py-4 text-white transition-colors duration-200 hover:bg-primary-700 sm:px-4 sm:py-3 md:py-2'>
+										className='flex flex-grow cursor-pointer items-center justify-center rounded-md bg-primary-main px-5 py-4 text-white transition-colors duration-200 hover:bg-primary-700 sm:px-4 sm:py-3 md:py-2'
+										downloadStageChildren={
+											<>
+												<FontAwesomeIcon
+													icon={faCheck}
+													className='mr-2 cursor-not-allowed text-xl md:text-base'
+												/>
+												<div className='cursor-not-allowed select-none text-center text-xl font-semibold sm:text-lg md:text-sm'>
+													{download.size}
+												</div>
+												<FontAwesomeIcon
+													icon={faSpinner}
+													size='xs'
+													className='ml-2 animate-spin opacity-80'
+												/>
+											</>
+										}>
 										<FontAwesomeIcon
 											icon={faDownload}
 											className='mr-2 cursor-pointer text-xl md:text-base'
@@ -433,7 +456,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 												className='mb-0.5 ml-2 cursor-pointer opacity-80'
 											/>
 										) : null}
-									</a>
+									</DirectDownloadButton>
 									{download.kind === 'file' && download.format === 'pdf' && (
 										<Link
 											href={download.url}
