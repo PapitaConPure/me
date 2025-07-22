@@ -65,7 +65,7 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
 			<body className='w-full bg-background pt-[60px] font-default-sans text-foreground antialiased'>
 				<Header lang={lang} />
 				{children}
-				<Footer />
+				<Footer lang={lang} />
 			</body>
 		</html>
 	);

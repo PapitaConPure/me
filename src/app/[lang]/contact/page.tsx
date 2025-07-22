@@ -1,7 +1,9 @@
+import { getMessages, isValidLocale, locales } from '@/lib/i18n';
 import { faDiscord, faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Metadata, Viewport } from 'next';
+import { notFound } from 'next/navigation';
 
 export const viewport: Viewport = {
 	themeColor: '#c97f72',
@@ -27,23 +29,34 @@ export const metadata: Metadata = {
 	},
 };
 
-const Contact = () => {
+export async function generateStaticParams() {
+	return locales.map((lang) => ({ lang }));
+}
+
+interface ContactProps {
+	params: Promise<{ lang: string }>;
+}
+
+const Contact = async ({ params }: ContactProps) => {
+	const lang = (await params).lang;
+
+	if (!isValidLocale(lang)) return notFound();
+
+	const messages = await getMessages(lang);
+	if (!messages) return notFound();
+	const t = messages.Contact;
+
 	return (
 		<main>
 			<section className='header'>
-				<h1 className='title'>Contacto</h1>
-				<p className='subtitle'>Información para contactarme</p>
+				<h1 className='title'>{t.title}</h1>
+				<p className='subtitle'>{t.subtitle}</p>
 			</section>
 
 			<section>
 				<div className='rounded-md border border-secondary-800 px-6 py-2'>
-					<h3 className='section-h3 mb-1'>Profesional y Negocios</h3>
-					<a
-						href='mailto:papitapurecontact@gmail.com'
-						aria-label='Enviar correo a Papita con Puré'
-						className='w-full overflow-hidden text-accent-400 hover:underline'>
-						papitapurecontact@gmail.com
-					</a>
+					<h3 className='section-h3 mb-1'>{t.businessCardTitle}</h3>
+					<p className='font-sm'>{t.businessCard}</p>
 
 					<div className='mt-4 grid w-full grid-cols-1 sm:w-max sm:grid-cols-2 sm:pr-0 md:grid-cols-4'>
 						<a
@@ -70,11 +83,8 @@ const Contact = () => {
 
 			<section>
 				<div className='rounded-md border border-secondary-800 px-6 py-2'>
-					<h3 className='section-h3 mb-1'>Social y Otros</h3>
-					<p className='font-sm'>
-						Puedes hablarme en la mayoría de mis redes sin problemas, pero en estas
-						puede que responda más rápido.
-					</p>
+					<h3 className='section-h3 mb-1'>{t.socialCardTitle}</h3>
+					<p className='font-sm'>{t.socialCard}</p>
 					<div className='mt-4 grid w-full grid-cols-1 sm:w-max sm:grid-cols-2 sm:pr-0 md:grid-cols-4'>
 						<a
 							tabIndex={0}

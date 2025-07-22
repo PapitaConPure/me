@@ -2164,7 +2164,7 @@ const items: MusicItem[] = [
 		title: 'Blade of Warmness',
 		date: new Date('2025-05-01'),
 		categories: ['original'],
-		coverUrl: '/images/music/blade-of-warmness/thumbnail.webp',
+		coverUrl: '/images/music/blade-of-warmness/cover.png',
 		thumbnailUrl: '/images/music/blade-of-warmness/thumbnail.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=G8NjlKAXBvw',
 		externalLinks: [

@@ -1,21 +1,38 @@
-import BackSection from "@/components/BackSection";
+import BackSection from '@/components/BackSection';
+import { defaultLocale, getMessages, isValidLocale, locales } from '@/lib/i18n';
+import Tr from '@/lib/i18n/Tr';
 
-const NotFound = () => (
-    <main>
-        <section>
-            <div className='flex justify-center'>
-                <div className='flex flex-col items-center space-y-8'>
-                    <div className='text-9xl'>🥔</div>
-                    <p>
-                        La dirección especificada no existe.
-                    </p>
-                </div>
-            </div>
-        </section>
-        <BackSection href='/'>
-            Volver a <span className='font-semibold'>Inicio</span>
-        </BackSection>
-    </main>
-);
+interface NotfoundProps {
+	params: Promise<{ lang: string }>;
+}
+
+export async function generateStaticParams() {
+	return locales.map((lang) => ({ lang }));
+}
+
+const NotFound = async ({ params }: NotfoundProps) => {
+	const lang = (await params).lang;
+	const normalizedLang = isValidLocale(lang) ? lang : defaultLocale;
+	const messages = await getMessages(normalizedLang);
+	if (!messages)
+		throw ReferenceError("Couldn't find proper internationalization messages in index");
+
+	<main>
+		<section>
+			<div className='flex justify-center'>
+				<div className='flex flex-col items-center space-y-8'>
+					<div className='text-9xl'>🥔</div>
+					<p>{messages.NotFound.notice}</p>
+				</div>
+			</div>
+		</section>
+		<BackSection href='/'>
+			<Tr
+				t={messages.General.backSectionButton}
+				components={{ 1: <span className='font-semibold' /> }}
+			/>
+		</BackSection>
+	</main>;
+};
 
 export default NotFound;

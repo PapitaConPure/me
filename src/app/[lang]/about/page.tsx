@@ -1,4 +1,6 @@
+import { getMessages, isValidLocale, locales } from '@/lib/i18n';
 import { Metadata, Viewport } from 'next';
+import { notFound } from 'next/navigation';
 
 export const viewport: Viewport = {
 	themeColor: '#c97f72',
@@ -24,12 +26,28 @@ export const metadata: Metadata = {
 	},
 };
 
-const About = () => {
+export async function generateStaticParams() {
+	return locales.map((lang) => ({ lang }));
+}
+
+interface AboutProps {
+	params: Promise<{ lang: string }>;
+}
+
+const About = async ({ params }: AboutProps) => {
+	const lang = (await params).lang;
+
+	if (!isValidLocale(lang)) return notFound();
+
+	const messages = await getMessages(lang);
+	if (!messages) return notFound();
+	const t = messages.About;
+
 	return (
 		<main>
 			<section className='header'>
-				<h1 className='title'>Sobre Mí</h1>
-				<p className='subtitle'>Un vistazo general de mi persona</p>
+				<h1 className='title'>{t.title}</h1>
+				<p className='subtitle'>{t.subtitle}</p>
 			</section>
 
 			<section>
@@ -132,7 +150,9 @@ const About = () => {
 			<section>
 				<h2 className='section-h2'>Descripción Breve</h2>
 				<p className='mt-2'>
-					Soy un programador profesional. Por hobby, desarrollo videojuegos; hago composiciones y arreglos musicales; diseño, modelo y renderizo en 3D; dibujo pixelart y hago diseño gráfico.
+					Soy un programador profesional. Por hobby, desarrollo videojuegos; hago
+					composiciones y arreglos musicales; diseño, modelo y renderizo en 3D; dibujo
+					pixelart y hago diseño gráfico.
 				</p>
 			</section>
 
@@ -217,8 +237,6 @@ const About = () => {
 			</section>
 		</main>
 	);
-}
-
-About.position = { x: 1, y: 0 };
+};
 
 export default About;

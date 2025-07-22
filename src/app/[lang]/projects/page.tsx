@@ -1,4 +1,6 @@
+import { getMessages, isValidLocale, locales } from '@/lib/i18n';
 import { Metadata, Viewport } from 'next';
+import { notFound } from 'next/navigation';
 
 export const viewport: Viewport = {
 	themeColor: '#c97f72',
@@ -24,18 +26,35 @@ export const metadata: Metadata = {
 	},
 };
 
-const Projects = () => {
+export async function generateStaticParams() {
+	return locales.map((lang) => ({ lang }));
+}
+
+interface ProjectsProps {
+	params: Promise<{ lang: string }>;
+}
+
+const Projects = async ({ params }: ProjectsProps) => {
+	const lang = (await params).lang;
+
+	if (!isValidLocale(lang)) return notFound();
+
+	const messages = await getMessages(lang);
+	if (!messages) return notFound();
+	const t = messages.Projects;
+
 	return (
 		<main>
 			<section className='header'>
-				<h1 className='title'>Proyectos</h1>
-				<p className='subtitle'>Cosas curiosas que he hecho</p>
+				<h1 className='title'>{t.title}</h1>
+				<p className='subtitle'>{t.subtitle}</p>
 			</section>
+
 			<section>
 				<div className='flex justify-center'>
 					<div className='flex flex-col items-center space-y-8'>
 						<div className='text-9xl'>🥔</div>
-						<p className='italic'>En construcción...</p>
+						<p className='italic'>{t.notice}</p>
 					</div>
 				</div>
 			</section>

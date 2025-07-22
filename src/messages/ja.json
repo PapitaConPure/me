@@ -1,14 +1,28 @@
 {
     "Layout": {
         "headerName": "パピタ・コン・プレ",
+        "headerAria": "Home",
         "navHome": "Home",
+        "navHomeAria": "移動先: Home",
         "navAbout": "About",
+        "navAboutAria": "移動先: About",
         "navProjects": "Project",
+        "navProjectsAria": "移動先: Project",
         "navMusic": "Music",
-        "navContact": "Contact"
+        "navMusicAria": "移動先: Music",
+        "navContact": "Contact",
+        "navContactAria": "移動先: Contact",
+        "mobileNavShowAria": "ナビゲーションメニューを表示",
+        "mobileNavHideAria": "ナビゲーションメニューを非表示",
+        "footerGitHubRepoAria": "Visit this page's GitHub repository",
+        "footerGitHubUserAria": "Visit Papita con Pure's GitHub profile"
     },
     "General": {
-        "loading": "読み込み中..."
+        "loading": "読み込み中...",
+        "backSectionButton": "<1>Home</1>に戻る"
+    },
+    "NotFound": {
+        "notice": "Supplied path does not exist."
     },
     "MainPage": {
         "welcome": "ようこそ",
@@ -19,39 +33,62 @@
         "qnaQ1": "なぜ「Papita / パピタ・コン・プレ」と名乗るのですか?",
         "qnaA1": "It's a name written in Spanish, meaning \"Lil Potato with Mashed Potatoes\". One morning many years ago, aroud 3AM, I was making an account on some game to play with friends. Thing is, I was hungry as heck, a bit sleepy, and was also already thinking of replacing my older nickname. That's how it came to exist.\n\n\"Papita con Puré\" doesn't really make sense, even in Spanish. It's just a combo of two foods you can't really combine. However, it's still funny, and people that don't speak Spanish can call me \"Papita\" and it doesn't sound half bad.",
         "qnaQ2": "ゲームをSteamにアップロードすることを考えたことはありますか?",
-        "qnaA2": "Getting your game on Steam costs an upfront of US$100. It's something I strongly desire, but having a page there will have to wait.",
+        "qnaA2": "Steamでゲームを公開するには、100ドルの初期費用がかかります。私も強く望んでいるのですが、Steamにページを公開するのはまだ先になりそうです。",
         "qnaQ3": "自分の音楽をSpotifyやSoundCloudにアップロードすることを考えたことはありますか?",
         "qnaA3": "I have no intentions of doing that right now. With just a YouTube channel I feel pretty comfortable, for now.\n\nHowever, <1>ZFF</1> uploads my music to SoundCloud every once in a while.\n\nAlso, if I participate in collabs and another person uploads the music, there's a chance it may be on SoundCloud/Spotify/other, as I have no issues with that.",
         "qnaQ4": "好きなキャラクター？",
         "qnaA4": "めぐみん（このすば）、湊あくあ（ホロライブ）、稀神サグメ（東方紺珠伝）。",
         "qnaQ5": "好きなゲーム？",
         "qnaA5": "「Risk of Rain 2」と「Conker's Bad Fur Day」。",
-        "qnaQ6": "Have people actually asked these questions to you?",
+        "qnaQ6": "実際にこれらの質問をされたことはありますか?",
         "qnaA6": "いいえ。",
-        "qnaQ7": "Then why \"Q&A\"?",
-        "qnaA7": "These could be real questions one day. 👍",
+        "qnaQ7": "では、なぜ「よくある質問」と呼ぶのでしょうか?",
+        "qnaA7": "これらはいつか本当の疑問になるかもしれません。🥺",
         "learnMoreTitle": "私についてもっと知る",
-        "learnMore": "I'm but another grain of sand in the desert of life. However, one thing or two about me might pick your interest.",
+        "learnMore": "私は人生という砂漠の中の一粒の砂にすぎない。しかし、私について1つか2つのことが、あなたの興味を引くかもしれない。",
         "learnMoreCTA": "行きましょう",
         "myProjectsTitle": "私のプロジェクト",
-        "myProjects": "I offer a compilation of various highlighted works of mine.",
+        "myProjects": "私の様々な注目作品をまとめてご紹介します。",
         "myProjectsCTA": "見てみましょう"
     },
     "About": {
-        "title": "Sobre mí",
-        "subtitle": "An overview of myself"
+        "title": "About",
+        "subtitle": "私自身の概要"
     },
     "Projects": {
-        "title": "プロジェクト",
-        "subtitle": "Curious things I've done"
+        "title": "Project",
+        "subtitle": "私が行った興味深いプロジェクト",
+        "notice": "工事中..."
     },
     "Music": {
         "title": "Music",
-        "subtitle": "Pieces I've worked on",
-        "errorLoading": "音楽の読み込み中にエラーが発生しました"
+        "subtitle": "私が手がけた楽曲",
+        "errorLoading": "音楽の読み込み中にエラーが発生しました",
+        "musicCardCTA": "ついてはクリックして...",
+        "detailLinksTitle": "Link",
+        "detailTracklistTitle": "Tracklist",
+        "detailVideoTitle": "Video",
+        "detailDescriptionTitle": "説明",
+        "detailDownloadsTitle": "Download",
+        "detailCreditsTitle": "拡張クレジット",
+        "detailCreditsMusic": "Music",
+        "detailCreditsMusicComposers": "作曲家",
+        "detailCreditsMusicArrangers": "アレンジャー",
+        "detailCreditsMusicMixers": "ミキサー",
+        "detailCreditsVisuals": "Visual",
+        "detailCreditsVisualsForeground": "前景",
+        "detailCreditsVisualsBackground": "背景",
+        "detailCreditsVisualsCover": "表紙",
+        "detailCreditsVisualsThumbnail": "サムネイル",
+        "detailTagsTitle": "Tag",
+        "backSectionButton": "<1>Music</1>に戻る"
     },
     "Contact": {
         "title": "Contact",
-        "subtitle": "Contact information"
+        "subtitle": "連絡先情報",
+        "businessCardTitle": "Business",
+        "businessCard": "スペイン語と英語のみ。",
+        "socialCardTitle": "Social",
+        "socialCard": "ほとんどのソーシャルメディアで私に話しかけることができますが、これらのアカウントの方が早く返信できるかもしれません。"
     }
 }

@@ -11,8 +11,9 @@ import VideoPreview from '@/components/VideoPreview';
 import { Metadata, Viewport } from 'next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faEye } from '@fortawesome/free-solid-svg-icons';
-import { isValidLocale, locales } from '@/lib/i18n';
+import { getMessages, isValidLocale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
+import Tr from '@/lib/i18n/Tr';
 
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
 
@@ -128,6 +129,10 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 
 	if (!lang || !isValidLocale(lang)) return notFound();
 
+	const messages = await getMessages(lang);
+	if (!messages) return notFound();
+	const t = messages.Music;
+
 	if (item == undefined) {
 		return (
 			<main>
@@ -140,7 +145,10 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 					</div>
 				</section>
 				<BackSection href={`/${lang}/music`}>
-					Volver a <span className='font-semibold'>Música</span>
+					<Tr
+						t={t.backSectionButton}
+						components={{ 1: <span className='font-semibold' /> }}
+					/>
 				</BackSection>
 			</main>
 		);
@@ -186,7 +194,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 						{item.externalLinks && item.externalLinks.length > 0 && (
 							<>
 								<SmallSeparator />
-								<h3 className='section-h3 mb-2'>Enlaces</h3>
+								<h3 className='section-h3 mb-2'>{t.detailLinksTitle}</h3>
 								<ul className='list-disc pl-6'>
 									{item.externalLinks.map((link, index) => (
 										<li key={index}>
@@ -206,7 +214,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 						{(item.kind === 'album' || item.kind === 'ep') && (
 							<>
 								<SmallSeparator />
-								<h3 className='section-h3 mb-2'>Lista de Pistas</h3>
+								<h3 className='section-h3 mb-2'>{t.detailTracklistTitle}</h3>
 								<ChildrenList>
 									{item.children.map((child, index) => {
 										if (child.kind === 'name')
@@ -249,7 +257,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 						{item.kind === 'compilation' && (
 							<>
 								<SmallSeparator />
-								<h3 className='section-h3 mb-2'>Lista de Pistas</h3>
+								<h3 className='section-h3 mb-2'>{t.detailTracklistTitle}</h3>
 								<ChildrenList>
 									{item.childrenTitles.map((childTitle, index) => {
 										return (
@@ -279,7 +287,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 			</section>
 			{item.videoUrl && (
 				<section>
-					<h2 className='section-h2'>Video</h2>
+					<h2 className='section-h2'>{t.detailVideoTitle}</h2>
 					<div className='mt-4 w-full'>
 						<YouTubeVideo
 							src={item.videoUrl}
@@ -291,7 +299,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 			)}
 			{item.description && (
 				<section>
-					<h2 className='section-h2'>Descripción</h2>
+					<h2 className='section-h2'>{t.detailDescriptionTitle}</h2>
 					<p className='mt-2'>
 						{item.description.split('\n').map((line, index, arr) => (
 							<span key={index}>
@@ -304,7 +312,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 			)}
 			{item.downloadUrls && item.downloadUrls.length > 0 && (
 				<section>
-					<h2 className='section-h2'>Descargas</h2>
+					<h2 className='section-h2'>{t.detailDownloadsTitle}</h2>
 					<div className='mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
 						{item.downloadUrls.map((download, index) => (
 							<div
@@ -416,15 +424,15 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 			)}
 			{item.credits && (
 				<section>
-					<h2 className='section-h2'>Créditos Extendidos</h2>
+					<h2 className='section-h2'>{t.detailCreditsTitle}</h2>
 					<div className='mt-4 grid grid-cols-1 gap-x-4 gap-y-8 rounded-md border border-secondary-800 px-4 pb-4 pt-3 text-left sm:grid-cols-2 sm:text-center'>
 						{item.credits.music && (
 							<div>
-								<h3 className='section-h3'>Música</h3>
+								<h3 className='section-h3'>{t.detailCreditsMusic}</h3>
 								<div className='mt-3 grid grid-cols-1 gap-x-2 gap-y-5 lg:grid-cols-2'>
 									{item.credits.music.composers && (
 										<div>
-											<h4 className='section-h4 mb-1'>Compositores</h4>
+											<h4 className='section-h4 mb-1'>{t.detailCreditsMusicComposers}</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
 												{item.credits.music.composers.map(
 													(artist, index) => (
@@ -438,7 +446,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									{item.credits.music.arrangers && (
 										<div>
-											<h4 className='section-h4 mb-1'>Arreglistas</h4>
+											<h4 className='section-h4 mb-1'>{t.detailCreditsMusicArrangers}</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
 												{item.credits.music.arrangers.map(
 													(artist, index) => (
@@ -452,7 +460,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									{item.credits.music.mixers && (
 										<div>
-											<h4 className='section-h4 mb-1'>Mixers</h4>
+											<h4 className='section-h4 mb-1'>{t.detailCreditsMusicMixers}</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
 												{item.credits.music.mixers.map((artist, index) => (
 													<li key={index}>
@@ -467,11 +475,11 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 						)}
 						{item.credits.visuals && (
 							<div>
-								<h3 className='section-h3'>Visuales</h3>
+								<h3 className='section-h3'>{t.detailCreditsVisuals}</h3>
 								<div className='mt-3 grid grid-cols-1 gap-x-2 gap-y-5 lg:grid-cols-2'>
 									{item.credits.visuals.foreground && (
 										<div>
-											<h4 className='section-h4 mb-1'>Primer Plano</h4>
+											<h4 className='section-h4 mb-1'>{t.detailCreditsVisualsForeground}</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
 												{item.credits.visuals.foreground.map(
 													(artist, index) => (
@@ -485,7 +493,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									{item.credits.visuals.background && (
 										<div>
-											<h4 className='section-h4 mb-1'>Fondo</h4>
+											<h4 className='section-h4 mb-1'>{t.detailCreditsVisualsBackground}</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
 												{item.credits.visuals.background.map(
 													(artist, index) => (
@@ -499,7 +507,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									{item.credits.visuals.cover && (
 										<div>
-											<h4 className='section-h4 mb-1'>Portada</h4>
+											<h4 className='section-h4 mb-1'>{t.detailCreditsVisualsCover}</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
 												{item.credits.visuals.cover.map((artist, index) => (
 													<li key={index}>
@@ -511,7 +519,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									{item.credits.visuals.thumbnail && (
 										<div>
-											<h4 className='section-h4 mb-1'>Miniatura</h4>
+											<h4 className='section-h4 mb-1'>{t.detailCreditsVisualsThumbnail}</h4>
 											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
 												{item.credits.visuals.thumbnail.map(
 													(artist, index) => (
@@ -531,7 +539,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 			)}
 			{item.tags && item.tags.length > 0 && (
 				<section>
-					<h2 className='section-h2'>Descriptores de Contenido</h2>
+					<h2 className='section-h2'>{t.detailTagsTitle}</h2>
 					<div className='mt-2 flex flex-wrap space-x-2'>
 						{item.tags.map((tag, index) => (
 							<span
@@ -544,7 +552,10 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 				</section>
 			)}
 			<BackSection href={`/${lang}/music`}>
-				Volver a <span className='font-semibold'>Música</span>
+				<Tr
+					t={t.backSectionButton}
+					components={{ 1: <span className='font-semibold' /> }}
+				/>
 			</BackSection>
 		</main>
 	);

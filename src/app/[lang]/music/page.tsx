@@ -5,8 +5,9 @@ import items from '@/data/music';
 import getRoot from '@/lib/getroot';
 import { FullArtistCredit, MusicItemSummary } from '@/types/music';
 import { Metadata, Viewport } from 'next';
-import { isValidLocale } from '@/lib/i18n';
+import { getMessages, isValidLocale, Locale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
+import Translated from '@/lib/i18n/Translated';
 
 export const viewport: Viewport = {
 	themeColor: '#c97f72',
@@ -40,6 +41,7 @@ const AuthorBriefCredit = ({ artist }: AuthorBriefCreditProps) =>
 	typeof artist === 'string' ? <span>{artist}</span> : <span>{artist.name}</span>;
 
 interface MusicCardProps {
+	lang: Locale;
 	href: Url;
 	imgSrc: string;
 	title: string;
@@ -48,7 +50,7 @@ interface MusicCardProps {
 	date: Date;
 }
 
-const MusicCard = ({ href, imgSrc, title, author, categories, date }: MusicCardProps) => {
+const MusicCard = ({ lang, href, imgSrc, title, author, categories, date }: MusicCardProps) => {
 	return (
 		<Link
 			href={href}
@@ -84,13 +86,15 @@ const MusicCard = ({ href, imgSrc, title, author, categories, date }: MusicCardP
 				</div>
 				<div className='absolute inset-1 flex items-center justify-center rounded-md bg-black bg-opacity-60 opacity-0 transition-opacity duration-500 md:group-hover:opacity-100'>
 					<span className='text-md font-semibold text-white'>
-						Haz clic para ver más...
+						<Translated lang={lang} t='Music/musicCardCTA' />
 					</span>
 				</div>
 			</div>
 
-			<div className='m-4 flex flex-grow flex-col justify-between'>
-				<h2 className='flex-shrink-0 text-lg font-semibold text-foreground'>{title}</h2>
+			<div className='m-4 mt-3 flex flex-grow flex-col justify-between'>
+				<h2 className='mb-1 flex-shrink-0 text-lg font-semibold leading-snug text-foreground'>
+					{title}
+				</h2>
 				<p className='flex-shrink-0 text-secondary-100'>{author}</p>
 				<div className='mt-4 flex flex-grow items-end justify-between space-x-4 text-secondary-300'>
 					<p className='flex-shrink-0 text-sm'>{date.getFullYear()}</p>
@@ -105,6 +109,10 @@ const MusicCard = ({ href, imgSrc, title, author, categories, date }: MusicCardP
 	);
 };
 
+export async function generateStaticParams() {
+	return locales.map((lang) => ({ lang }));
+}
+
 interface MusicListProps {
 	params: Promise<{ lang: string }>;
 }
@@ -113,6 +121,10 @@ const MusicList = async ({ params }: MusicListProps) => {
 	const { lang } = await params;
 
 	if (!lang || !isValidLocale(lang)) return notFound();
+
+	const messages = await getMessages(lang);
+	if (!messages) return notFound();
+	const t = messages.Music;
 
 	const summary = items.map(
 		(item): MusicItemSummary => ({
@@ -128,14 +140,15 @@ const MusicList = async ({ params }: MusicListProps) => {
 	return (
 		<main>
 			<section className='header'>
-				<h1 className='title'>Música</h1>
-				<p className='subtitle'>Piezas en la que he trabajado</p>
+				<h1 className='title'>{t.title}</h1>
+				<p className='subtitle'>{t.subtitle}</p>
 			</section>
 
 			<section>
 				<div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
 					{summary.map((item) => (
 						<MusicCard
+							lang={lang}
 							key={item.id}
 							href={`/${lang}/music/${item.id}`}
 							title={item.title}

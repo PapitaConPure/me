@@ -1,14 +1,28 @@
 {
     "Layout": {
         "headerName": "Papita con Puré",
+        "headerAria": "Página Principal",
         "navHome": "Inicio",
+        "navHomeAria": "Navegar a: Inicio",
         "navAbout": "Acerca de",
+        "navAboutAria": "Navegar a: Acerca de",
         "navProjects": "Proyectos",
+        "navProjectsAria": "Navegar a: Proyectos",
         "navMusic": "Música",
-        "navContact": "Contacto"
+        "navMusicAria": "Navegar a: Música",
+        "navContact": "Contacto",
+        "navContactAria": "Navegar a: Contacto",
+        "mobileNavShowAria": "Desplegar menú de navegación",
+        "mobileNavHideAria": "Ocultar menú de navegación",
+        "footerGitHubRepoAria": "Visitar el repositorio de GitHub de esta página",
+        "footerGitHubUserAria": "Visitar el perfil de GitHub de Papita con Puré"
     },
     "General": {
-        "loading": "Cargando..."
+        "loading": "Cargando...",
+        "backSectionButton": "Volver a <1>Inicio</1>"
+    },
+    "NotFound": {
+        "notice": "La dirección especificada no existe."
     },
     "MainPage": {
         "welcome": "Bienvenido",
@@ -43,15 +57,38 @@
     },
     "Projects": {
         "title": "Proyectos",
-        "subtitle": "Cosas curiosas que he hecho"
+        "subtitle": "Cosas curiosas que he hecho",
+        "notice": "En construcción..."
     },
     "Music": {
         "title": "Música",
         "subtitle": "Piezas en la que he trabajado",
-        "errorLoading": "Error al cargar la música"
+        "errorLoading": "Error al cargar la música",
+        "musicCardCTA": "Haz clic para ver más...",
+        "detailLinksTitle": "Enlaces",
+        "detailTracklistTitle": "Lista de Pistas",
+        "detailVideoTitle": "Video",
+        "detailDescriptionTitle": "Descripción",
+        "detailDownloadsTitle": "Descargas",
+        "detailCreditsTitle": "Créditos extendidos",
+        "detailCreditsMusic": "Música",
+        "detailCreditsMusicComposers": "Compositores",
+        "detailCreditsMusicArrangers": "Arreglistas",
+        "detailCreditsMusicMixers": "Mixers",
+        "detailCreditsVisuals": "Visuales",
+        "detailCreditsVisualsForeground": "Primer Plano",
+        "detailCreditsVisualsBackground": "Fondo",
+        "detailCreditsVisualsCover": "Portada",
+        "detailCreditsVisualsThumbnail": "Miniatura",
+        "detailTagsTitle": "Etiquetas",
+        "backSectionButton": "Volver a <1>Música</1>"
     },
     "Contact": {
         "title": "Contacto",
-        "subtitle": "Información para contactarme"
+        "subtitle": "Información para contactarme",
+        "businessCardTitle": "Profesional y Negocios",
+        "businessCard": "Solamente español e inglés.",
+        "socialCardTitle": "Social y Otros",
+        "socialCard": "Puedes hablarme en la mayoría de mis redes sin problemas, pero en estas puede que responda más rápido."
     }
 }

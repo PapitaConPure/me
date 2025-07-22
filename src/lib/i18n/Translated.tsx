@@ -1,4 +1,3 @@
-import { PropsWithChildren } from 'react';
 import { getMessages, Locale, Messages, SectionKey, TranslationId } from '.';
 
 interface TranslatedProps<TSectionKey extends SectionKey> {
@@ -9,9 +8,9 @@ interface TranslatedProps<TSectionKey extends SectionKey> {
 async function Translated<TSectionKey extends SectionKey>({
 	lang,
 	t,
-}: TranslatedProps<TSectionKey> & PropsWithChildren): Promise<string> {
+}: TranslatedProps<TSectionKey>): Promise<string> {
 	const messages = await getMessages(lang);
-	if (!messages) throw new ReferenceError("Couldn't find translations for locale");
+	if (!messages) throw new ReferenceError(`Couldn't find translations for locale: ${lang}`);
 
 	const [sectKey, id] = t.split('/') as [TSectionKey, TranslationId<TSectionKey>];
 	const section = messages[sectKey] as Messages[TSectionKey];

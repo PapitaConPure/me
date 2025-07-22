@@ -1,8 +1,24 @@
+import { getMessages, Locale } from '@/lib/i18n';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 function FooterSeparator() {
-	return <span className='px-1'>•</span>;
+	return (
+		<span aria-hidden className='px-1'>
+			•
+		</span>
+	);
 }
 
-export default function Footer() {
+interface FooterProps {
+	lang: Locale;
+}
+
+export default async function Footer({ lang }: FooterProps) {
+	const messages = await getMessages(lang);
+	const t = messages?.Layout;
+	if (!t) return <footer></footer>;
+
 	return (
 		<footer className='my-4 border-t border-b-secondary-800 border-t-secondary-800 border-opacity-60 py-4 text-center text-sm text-secondary-500'>
 			<span>
@@ -10,13 +26,13 @@ export default function Footer() {
 					href='https://github.com/PapitaConPure/me'
 					target='_blank'
 					aria-label='Visitar el repositorio de GitHub de esta página'>
-					<i className='fa fa-brands fa-github fa-lg'></i>
+					<FontAwesomeIcon icon={faGithub} size='lg' />
 				</a>
 			</span>
 
 			<FooterSeparator />
 
-			<span>2024</span>
+			<span aria-label='Page year'>2024</span>
 
 			<FooterSeparator />
 

@@ -1,14 +1,28 @@
 {
     "Layout": {
         "headerName": "Papita con Pure",
+        "headerAria": "Main Page",
         "navHome": "Home",
+        "navHomeAria": "Navigate to: Home",
         "navAbout": "About",
+        "navAboutAria": "Navigate to: About",
         "navProjects": "Projects",
+        "navProjectsAria": "Navigate to: Projects",
         "navMusic": "Music",
-        "navContact": "Contact"
+        "navMusicAria": "Navigate to: Music",
+        "navContact": "Contact",
+        "navContactAria": "Navigate to: Contact",
+        "mobileNavShowAria": "Show navigation menu",
+        "mobileNavHideAria": "Hide navigation menu",
+        "footerGitHubRepoAria": "Visit this page's GitHub repository",
+        "footerGitHubUserAria": "Visit Papita con Pure's GitHub profile"
     },
     "General": {
-        "loading": "Loading..."
+        "loading": "Loading...",
+        "backSectionButton": "Back to <1>Home</1>"
+    },
+    "NotFound": {
+        "notice": "Supplied path does not exist."
     },
     "MainPage": {
         "welcome": "Welcome",
@@ -43,15 +57,38 @@
     },
     "Projects": {
         "title": "Projects",
-        "subtitle": "Curious things I've done"
+        "subtitle": "Curious things I've done",
+        "notice": "Under construction..."
     },
     "Music": {
         "title": "Music",
         "subtitle": "Pieces I've worked on",
-        "errorLoading": "Error loading music"
+        "errorLoading": "Error loading music",
+        "musicCardCTA": "Click to see more...",
+        "detailLinksTitle": "Links",
+        "detailTracklistTitle": "Tracklist",
+        "detailVideoTitle": "Video",
+        "detailDescriptionTitle": "Description",
+        "detailDownloadsTitle": "Downloads",
+        "detailCreditsTitle": "Extended Credits",
+        "detailCreditsMusic": "Music",
+        "detailCreditsMusicComposers": "Composers",
+        "detailCreditsMusicArrangers": "Arrangers",
+        "detailCreditsMusicMixers": "Mixers",
+        "detailCreditsVisuals": "Visuals",
+        "detailCreditsVisualsForeground": "Foreground",
+        "detailCreditsVisualsBackground": "Background",
+        "detailCreditsVisualsCover": "Cover",
+        "detailCreditsVisualsThumbnail": "Thumbnail",
+        "detailTagsTitle": "Tags",
+        "backSectionButton": "Back to <1>Music</1>"
     },
     "Contact": {
         "title": "Contact",
-        "subtitle": "Contact information"
+        "subtitle": "Contact information",
+        "businessCardTitle": "Professional and Business",
+        "businessCard": "Spanish and English only.",
+        "socialCardTitle": "Social and Others",
+        "socialCard": "You can talk to me on most of my socials, but I may reply faster on these."
     }
 }
