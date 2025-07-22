@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Outfit, M_PLUS_2, Vollkorn, Noto_Serif_JP } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import '../globals.css';
 
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
