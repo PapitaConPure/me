@@ -821,8 +821,11 @@ const items: MusicItem[] = [
 			en: 'Rabbit of the Bar ~ Red and White Tubercle',
 			ja: '居酒屋の兎 ～ Red and White Tubercle',
 		},
-		description:
-			'Composition:\n• Papita con Puré (I. Z.) [Piano; Acoustic Guitar]\n• Karl Zuñiga [Drums; Strings; Bass]\n• Tewi [Violin; RTp]\n\nMix: Karl Zuñiga',
+		description: {
+			es: 'Composición:\n• Papita con Puré (I. Z.) [Piano; guitarra acústica]\n• Karl Zuñiga [Batería; cuerdas; bajo]\n• Tewi [Violín; trompeta]\n\nMezcla: Karl Zuñiga',
+			en: 'Composition:\n• Papita con Puré (I. Z.) [Piano; Acoustic Guitar]\n• Karl Zuñiga [Drums; Strings; Bass]\n• Tewi [Violin; RTp]\n\nMix: Karl Zuñiga',
+			ja: '作曲家:\n• Papita con Puré (I. Z.) [ピアノ; アコースティックギター]\n• Karl Zuñiga [ドラム; 弦楽器; ベース]\n• Tewi [バイオリン; トランペット]\n\nMix: Karl Zuñiga',
+		},
 		date: new Date('2021-01-07'),
 		categories: ['collab', 'original', 'touhou'],
 		coverUrl: '/images/music/pateka-1/cover.png',
@@ -1265,23 +1268,74 @@ const items: MusicItem[] = [
 			},
 		],
 		childrenTitles: [
-			'A Rainbow Spanning Gensokyo',
-			'A Shower of Strange Occurrences',
-			'Fortunate Kitten',
-			'The Cliff Hidden in Deep Green',
-			'Banditry Technology',
-			'The Perpetual Snow of Komakusa Blossoms',
-			'Smoking Dragon',
-			'The Obsolescent Industrial Ruins',
-			'Ore from the Age of the Gods',
-			'The Long-Awaited Oumagatoki',
-			'Starry Mountain of Tenma',
-			'Lunar Rainbow',
-			'Where is that Bustling Marketplace now ~ Immemorial Marketeers',
-			'The Sunday after the Storm',
-			'The Great Fantastic Underground Railway Network',
-			'The Princess Who Slays Dragon Kings',
-			'A Rainbow-Colored World',
+			{
+				es: 'A Rainbow Spanning Gensokyo',
+				ja: '虹の架かる幻想郷',
+			},
+			{
+				es: 'A Shower of Strange Occurrences',
+				ja: '妖異達の通り雨',
+			},
+			{
+				es: 'Fortunate Kitten',
+				ja: '大吉キトゥン',
+			},
+			{
+				es: 'The Cliff Hidden in Deep Green',
+				ja: '深緑に隠された断崖',
+			},
+			{
+				es: 'Banditry Technology',
+				ja: 'バンデットリィテクノロジー',
+			},
+			{
+				es: 'The Perpetual Snow of Komakusa Blossoms',
+				ja: '駒草咲くパーペチュアルスノー',
+			},
+			{
+				es: 'Smoking Dragon',
+				ja: 'スモーキングドラゴン',
+			},
+			{
+				es: 'The Obsolescent Industrial Ruins',
+				ja: '廃れゆく産業遺構',
+			},
+			{
+				es: 'Ore from the Age of the Gods',
+				ja: '神代鉱石',
+			},
+			{
+				es: 'The Long-Awaited Oumagatoki',
+				ja: '待ちわびた逢魔が時',
+			},
+			{
+				es: 'Starry Mountain of Tenma',
+				ja: '星降る天魔の山',
+			},
+			{
+				es: 'Lunar Rainbow',
+				ja: 'ルナレインボー',
+			},
+			{
+				es: 'Where is that Bustling Marketplace now ~ Immemorial Marketeers',
+				ja: 'あの賑やかな市場は今どこに ～ Immemorial Marketeers',
+			},
+			{
+				es: 'The Sunday after the Storm',
+				ja: '嵐の後の日曜日',
+			},
+			{
+				es: 'The Great Fantastic Underground Railway Network',
+				ja: '幻想の地下大線路網',
+			},
+			{
+				es: 'The Princess Who Slays Dragon Kings',
+				ja: '龍王殺しのプリンセス',
+			},
+			{
+				es: 'A Rainbow-Colored World',
+				ja: '虹色の世界',
+			},
 		],
 		tags: ['piano medley'],
 	},
@@ -1503,8 +1557,11 @@ const items: MusicItem[] = [
 			es: 'Kaisou Ressha',
 			ja: '海想列車',
 		},
-		description:
-			"Piano arrangement to celebrate former Hololive member Minato Aqua's 2021 birthday.",
+		description: {
+			es: 'Arreglo de piano para celebrar el cumpleaños de 2021 de Minato Aqua, quien fue previamente miembro de Hololive.',
+			en: "Piano arrangement to celebrate former Hololive member Minato Aqua's 2021 birthday.",
+			ja: '元ホロライブメンバー湊あくあさんの2021年の誕生日を祝うピアノアレンジ。',
+		},
 		date: new Date('2021-12-01'),
 		categories: ['arrangement', 'piano'],
 		coverUrl: '/images/music/kaisouressha/cover.png',
@@ -1696,8 +1753,11 @@ const items: MusicItem[] = [
 			en: 'Good Omens ~ Inhospitable Crossing',
 			ja: 'Good Omens ～ 不親切な交差点',
 		},
-		description:
-			'Composition:\n• Tewi [Piano; acoustic guitar; leads]\n• Karl Zuñiga [Drums; bass; details]\n• Papita con Puré [Piano; violin; details]\n\nMix: Karl Zuñiga',
+		description: {
+			es: 'Composición:\n• Tewi [Piano; guitarra acústica; leads]\n• Karl Zuñiga [Batería; bajo; detalles]\n• Papita con Puré [Piano; violín; detalles]\n\nMezcla: Karl Zuñiga',
+			en: 'Composition:\n• Tewi [Piano; Acoustic Guitar; Leads]\n• Karl Zuñiga [Drums; Bass; Details]\n• Papita con Puré [Piano; Violin; Details]\n\nMix: Karl Zuñiga',
+			ja: '作曲家:\n• Tewi [サックス; アコースティックギター; リード]\n• Karl Zuñiga [ドラム; ベース; 詳細]\n• Papita con Puré [ピアノ; バイオリン; 詳細]\n\nMix: Karl Zuñiga',
+		},
 		date: new Date('2022-01-29'),
 		categories: ['collab', 'original', 'touhou'],
 		coverUrl: '/images/music/pateka-2/cover.webp',
@@ -1765,8 +1825,11 @@ const items: MusicItem[] = [
 			es: 'Cemetery of Onbashira ~ Suwa Foughten Field',
 			ja: '御柱の墓場 ～ Suwa Foughten Field',
 		},
-		description:
-			"Mountain of Faith Stage 6 Theme and Yasaka Kanako's Theme mixed into one as a piano arrangement.",
+		description: {
+			es: 'Temas de nivel 6 y Yasaka Kanako de Mountain of Faith mezclados en uno, en forma de arreglo de piano.',
+			en: "Mountain of Faith Stage 6 Theme and Yasaka Kanako's Theme mixed into one as a piano arrangement.",
+			ja: '東方風神録ステージ6のテーマと八坂神奈子のテーマをミックスしたピアノアレンジです。',
+		},
 		date: new Date('2022-12-02'),
 		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/images/music/kanako-sb-piano/thumbnail.webp',
@@ -1923,8 +1986,11 @@ const items: MusicItem[] = [
 			es: 'Gyptos ~ Symphony of Opposing Forces',
 			ja: 'Gyptos ～ 対抗勢力のシンフォニー',
 		},
-		description:
-			'Base and general composition: Papita con Puré\n\nArrangement and extended composition: Karl Zuñiga\n\nBase mix: Papita con Puré\n\nFinal mix and mastering: Karl Zuñiga',
+		description: {
+			es: 'Base y composición general: Papita con Puré (I. Z.)\n\nArreglo y composición extendida: Karl Zuñiga\n\nMezcla base: Papita con Puré (I. Z.)\n\nMezcla final y masterización: Karl Zuñiga',
+			en: 'Base and general composition: Papita con Pure (I. Z.)\n\nArrangement and extended composition: Karl Zuñiga\n\nBase mix: Papita con Puré (I. Z.)\n\nFinal mix and mastering: Karl Zuñiga',
+			ja: '基礎と全体的な作曲： Papita con Puré (I. Z.)\n\nアレンジと拡張作曲： Karl Zuñiga\n\n基礎 mix： Papita con Puré (I. Z.)\n\n最終 mix、mastering： Karl Zuñiga',
+		},
 		date: new Date('2023-02-24'),
 		categories: ['collab', 'original'],
 		coverUrl: '/images/music/gyptos/cover.png',
@@ -2845,16 +2911,46 @@ const items: MusicItem[] = [
 			},
 		],
 		childrenTitles: [
-			'Intelligence of Beast',
-			'The World is Made in an Adorable Way',
-			'A Brave and Leisurely Beast',
-			'Tiny Shangry La',
-			'Magical Beast Scramble',
-			'The Oni Go to the Perpetual Mountain',
-			'Vampiric Cryptid Chupacabra',
-			'The Path to Yomi Where None Turn Back',
-			"The Deviants' Unobstructed Light ~ Kingdam of Nothingness",
-			'Do Beasts Have Intelligence?',
+			{
+				es: 'Intelligence of Beast',
+				ja: '獣の知性',
+			},
+			{
+				es: 'The World is Made in an Adorable Way',
+				ja: '世界は可愛く出来ている',
+			},
+			{
+				es: 'A Brave and Leisurely Beast',
+				ja: '勇敢で有閑な妖獣',
+			},
+			{
+				es: 'Tiny Shangry La',
+				ja: 'タイニーシャングリラ',
+			},
+			{
+				es: 'Magical Beast Scramble',
+				ja: '魔獣スクランブル',
+			},
+			{
+				es: 'The Oni Go to the Perpetual Mountain',
+				ja: '鬼は悠久の山に',
+			},
+			{
+				es: 'Vampiric Cryptid Chupacabra',
+				ja: '吸血怪獣チュパカブラ',
+			},
+			{
+				es: 'The Path to Yomi Where None Turn Back',
+				ja: '振り向かない黄泉の道',
+			},
+			{
+				es: "The Deviants' Unobstructed Light ~ Kingdam of Nothingness",
+				ja: '逸脱者達の無礙光 ～ Kingdam of Nothingness',
+			},
+			{
+				es: 'Do Beasts Have Intelligence?',
+				ja: '獣に知性はあるか',
+			},
 		],
 		tags: ['piano medley'],
 	},
@@ -2951,7 +3047,7 @@ const items: MusicItem[] = [
 		},
 		description: {
 			es: 'Composición:\n• Karl Zuñiga\n• Tewi [Sax; detalles]\n• Papita con Puré\n\nMezcla: Karl Zuñiga',
-			en: 'Composition:\n• Karl Zuñiga\n• Tewi [Sax; details]\n• Papita con Puré\n\nMix: Karl Zuñiga',
+			en: 'Composition:\n• Karl Zuñiga\n• Tewi [Sax; Details]\n• Papita con Puré\n\nMix: Karl Zuñiga',
 			ja: '作曲家:\n• Karl Zuñiga\n• Tewi [サックス; 詳細]\n• Papita con Puré\n\nMix: Karl Zuñiga',
 		},
 		date: new Date('2025-01-09'),
