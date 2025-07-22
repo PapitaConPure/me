@@ -1,13 +1,23 @@
 import { FullArtistCredit, MusicItem } from '@/types/music';
 
 const papitaCredit: FullArtistCredit = {
-	name: 'Papita con Puré',
-	clarification: 'I. Z.',
+	name: {
+		es: 'Papita con Puré',
+		en: 'Papita con Pure',
+		ja: 'Papita'
+	},
+	clarification: {
+		es: 'I. Z.',
+		ja: 'パピタ・コン・プレ / I. Z.',
+	},
 };
 
 const zunCredit: FullArtistCredit = {
 	name: 'ZUN',
-	clarification: '太田 順也',
+	clarification: {
+		en: 'Jun\'ya Ota',
+		ja: '太田 順也',
+	},
 	url: 'https://x.com/korindo',
 };
 

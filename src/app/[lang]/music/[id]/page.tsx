@@ -11,9 +11,10 @@ import VideoPreview from '@/components/VideoPreview';
 import { Metadata, Viewport } from 'next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faEye } from '@fortawesome/free-solid-svg-icons';
-import { getMessages, isValidLocale, locales } from '@/lib/i18n';
+import { getMessages, isValidLocale, Locale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
 import Tr from '@/lib/i18n/Tr';
+import { resolveLocalizableField } from '@/lib/music';
 
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
 
@@ -25,17 +26,22 @@ const ChildrenList = ({ children }: OlHTMLAttributes<HTMLDataListElement>) => (
 
 interface CredittedArtistProps {
 	artist: string | FullArtistCredit;
+	lang: Locale;
 }
 
-const CredittedArtist = ({ artist }: CredittedArtistProps) => {
+const CredittedArtist = ({ artist, lang }: CredittedArtistProps) => {
 	if (typeof artist === 'string') return <span>{artist}</span>;
 
 	if (!artist.url)
 		return (
-			<span>
-				{artist.name}{' '}
+			<span className='flex flex-wrap space-x-1 sm:justify-center'>
+				<span className='self-start leading-tight'>
+					{resolveLocalizableField(artist.name, lang)}
+				</span>
 				{artist.clarification && (
-					<span className='text-sm text-secondary-300'>({artist.clarification})</span>
+					<span className='self-end text-xs text-secondary-300'>
+						({resolveLocalizableField(artist.clarification, lang)})
+					</span>
 				)}
 			</span>
 		);
@@ -45,11 +51,13 @@ const CredittedArtist = ({ artist }: CredittedArtistProps) => {
 			href={artist.url}
 			target='_blank'
 			rel='noopener noreferrer'
-			className='group text-accent-500 hover:text-accent-600 hover:underline'>
-			{artist.name}{' '}
+			className='group flex flex-wrap space-x-1 text-accent-500 hover:text-accent-600 hover:underline sm:justify-center'>
+			<span className='self-start leading-tight'>
+				{resolveLocalizableField(artist.name, lang)}
+			</span>
 			{artist.clarification && (
-				<span className='text-xs text-accent-600 group-hover:text-accent-700'>
-					({artist.clarification})
+				<span className='self-end text-xs text-accent-600 group-hover:text-accent-700'>
+					({resolveLocalizableField(artist.clarification, lang)})
 				</span>
 			)}
 		</a>
@@ -84,21 +92,26 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: MusicDetailProps): Promise<Metadata> {
-	const { id = undefined } = await params;
+	const { id = undefined, lang = undefined } = await params;
 	const item = id ? itemsById[id] : undefined;
 
-	if (!item) return { title: 'Not Found' };
+	if (!lang || !isValidLocale(lang)) return { title: 'Not Found' };
+
+	const messages = await getMessages(lang);
+	if (!messages) return { title: 'Not Found' };
+
+	if (!item) return { title: messages.NotFound.notice };
 
 	const bigImageUrl = item.thumbnailUrl || item.coverUrl;
 
 	return {
-		title: item.title,
+		title: resolveLocalizableField(item.title, lang),
 		description:
-			item.description ||
+			resolveLocalizableField(item.description, lang) ||
 			`${item.displayArtist || item.artists.map((artist) => (typeof artist === 'string' ? artist : artist.name)).join(' & ')}`,
 		openGraph: {
-			title: item.title,
-			description: item.description || '',
+			title: resolveLocalizableField(item.title, lang),
+			description: resolveLocalizableField(item.description, lang),
 			url: `https://papitaconpure.github.io/me/music/${item.id}`,
 			images: [
 				bigImageUrl.startsWith('http')
@@ -110,8 +123,10 @@ export async function generateMetadata({ params }: MusicDetailProps): Promise<Me
 		},
 		twitter: {
 			card: 'summary_large_image',
-			title: item.title,
-			description: item.description || 'No description provided for this item.',
+			title: resolveLocalizableField(item.title, lang),
+			description:
+				resolveLocalizableField(item.description, lang) ||
+				'No description provided for this item.',
 			creator: item.displayArtist || item.artists.join(' & '),
 			site: 'https://papitaconpure.github.io/me',
 			images: [
@@ -168,18 +183,20 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 							className='w-full rounded-lg'></Image>
 					</div>
 					<div className='flex-grow'>
-						<h2 className='mb-1 text-xl text-foreground text-opacity-90'>
+						<h2 className='mt-[0.0625rem] mb-1.5 flex flex-wrap text-xl text-foreground text-opacity-90'>
 							{item.artists.map((artist, index, arr) => (
-								<span key={index + 1}>
-									<CredittedArtist artist={artist} />
+								<span key={index + 1} className='flex'>
+									<CredittedArtist artist={artist} lang={lang} />
 									{index < arr.length - 1 && (
-										<span className='mx-2 text-base text-secondary-500'>&</span>
+										<span className='mx-2 self-center text-base text-secondary-500'>
+											&
+										</span>
 									)}
 								</span>
 							))}
 						</h2>
 						<h1 className='mb-2.5 font-default-sans text-3xl font-extrabold text-foreground'>
-							{item.title}
+							{resolveLocalizableField(item.title, lang)}
 						</h1>
 						<div className='mb-3 flex flex-wrap space-x-2 text-xs font-light text-foreground text-opacity-80'>
 							{item.categories.map((cat, index) => (
@@ -203,7 +220,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 												target='_blank'
 												rel='noopener noreferrer'
 												className='text-accent-500 hover:text-accent-600 hover:underline'>
-												{link.label}
+												{resolveLocalizableField(link.label, lang)}
 											</a>
 										</li>
 									))}
@@ -226,7 +243,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 														{`${index + 1}`.padStart(2, '0')}.
 													</span>
 													<span className='flex-grow text-foreground hover:opacity-90'>
-														{child.data}
+														{resolveLocalizableField(child.data, lang)}
 													</span>
 												</li>
 											);
@@ -245,7 +262,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 												<Link
 													href={`${lang}/music/detail?id=${childItem.id}`}
 													className='flex-grow text-accent-500 hover:text-accent-400'>
-													{childItem.title}
+													{resolveLocalizableField(childItem.title, lang)}
 												</Link>
 											</li>
 										);
@@ -268,7 +285,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 													{`${index + 1}`.padStart(2, '0')}.
 												</span>
 												<span className='flex-grow text-foreground hover:opacity-90'>
-													{childTitle}
+													{resolveLocalizableField(childTitle, lang)}
 												</span>
 											</li>
 										);
@@ -301,12 +318,14 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 				<section>
 					<h2 className='section-h2'>{t.detailDescriptionTitle}</h2>
 					<p className='mt-2'>
-						{item.description.split('\n').map((line, index, arr) => (
-							<span key={index}>
-								{line}
-								{index < arr.length - 1 && <br />}
-							</span>
-						))}
+						{resolveLocalizableField(item.description, lang)
+							.split('\n')
+							.map((line, index, arr) => (
+								<span key={index}>
+									{line}
+									{index < arr.length - 1 && <br />}
+								</span>
+							))}
 					</p>
 				</section>
 			)}
@@ -371,7 +390,9 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 										</div>
 									</div>
 								</div>
-								<h2 className='mb-4 flex-grow'>{download.label}</h2>
+								<h2 className='mb-4 flex-grow'>
+									{resolveLocalizableField(download.label, lang)}
+								</h2>
 								{download.kind === 'audio' && (
 									<AudioPreview
 										{...download}
@@ -432,12 +453,21 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 								<div className='mt-3 grid grid-cols-1 gap-x-2 gap-y-5 lg:grid-cols-2'>
 									{item.credits.music.composers && (
 										<div>
-											<h4 className='section-h4 mb-1'>{t.detailCreditsMusicComposers}</h4>
-											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
+											<h4 className='section-h4 mb-1'>
+												{t.detailCreditsMusicComposers}
+											</h4>
+											<ul className='list-disc break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 												{item.credits.music.composers.map(
 													(artist, index) => (
-														<li key={index}>
-															{<CredittedArtist artist={artist} />}
+														<li
+															key={index}
+															className='overflow-wrap break-before-all break-after-all whitespace-normal text-wrap break-all'>
+															{
+																<CredittedArtist
+																	artist={artist}
+																	lang={lang}
+																/>
+															}
 														</li>
 													),
 												)}
@@ -446,12 +476,19 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									{item.credits.music.arrangers && (
 										<div>
-											<h4 className='section-h4 mb-1'>{t.detailCreditsMusicArrangers}</h4>
-											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
+											<h4 className='section-h4 mb-1'>
+												{t.detailCreditsMusicArrangers}
+											</h4>
+											<ul className='list-disc break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 												{item.credits.music.arrangers.map(
 													(artist, index) => (
 														<li key={index}>
-															{<CredittedArtist artist={artist} />}
+															{
+																<CredittedArtist
+																	artist={artist}
+																	lang={lang}
+																/>
+															}
 														</li>
 													),
 												)}
@@ -460,11 +497,20 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									{item.credits.music.mixers && (
 										<div>
-											<h4 className='section-h4 mb-1'>{t.detailCreditsMusicMixers}</h4>
-											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
+											<h4 className='section-h4 mb-1'>
+												{t.detailCreditsMusicMixers}
+											</h4>
+											<ul className='list-disc break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 												{item.credits.music.mixers.map((artist, index) => (
-													<li key={index}>
-														{<CredittedArtist artist={artist} />}
+													<li
+														key={index}
+														className='overflow-wrap break-before-all break-after-all whitespace-normal text-wrap break-all'>
+														{
+															<CredittedArtist
+																artist={artist}
+																lang={lang}
+															/>
+														}
 													</li>
 												))}
 											</ul>
@@ -479,12 +525,21 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 								<div className='mt-3 grid grid-cols-1 gap-x-2 gap-y-5 lg:grid-cols-2'>
 									{item.credits.visuals.foreground && (
 										<div>
-											<h4 className='section-h4 mb-1'>{t.detailCreditsVisualsForeground}</h4>
-											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
+											<h4 className='section-h4 mb-1'>
+												{t.detailCreditsVisualsForeground}
+											</h4>
+											<ul className='list-disc break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 												{item.credits.visuals.foreground.map(
 													(artist, index) => (
-														<li key={index}>
-															{<CredittedArtist artist={artist} />}
+														<li
+															key={index}
+															className='overflow-wrap break-before-all break-after-all whitespace-normal text-wrap break-all'>
+															{
+																<CredittedArtist
+																	artist={artist}
+																	lang={lang}
+																/>
+															}
 														</li>
 													),
 												)}
@@ -493,12 +548,21 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									{item.credits.visuals.background && (
 										<div>
-											<h4 className='section-h4 mb-1'>{t.detailCreditsVisualsBackground}</h4>
-											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
+											<h4 className='section-h4 mb-1'>
+												{t.detailCreditsVisualsBackground}
+											</h4>
+											<ul className='list-disc break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 												{item.credits.visuals.background.map(
 													(artist, index) => (
-														<li key={index}>
-															{<CredittedArtist artist={artist} />}
+														<li
+															key={index}
+															className='overflow-wrap break-before-all break-after-all whitespace-normal text-wrap break-all'>
+															{
+																<CredittedArtist
+																	artist={artist}
+																	lang={lang}
+																/>
+															}
 														</li>
 													),
 												)}
@@ -507,11 +571,20 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									{item.credits.visuals.cover && (
 										<div>
-											<h4 className='section-h4 mb-1'>{t.detailCreditsVisualsCover}</h4>
-											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
+											<h4 className='section-h4 mb-1'>
+												{t.detailCreditsVisualsCover}
+											</h4>
+											<ul className='list-disc break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 												{item.credits.visuals.cover.map((artist, index) => (
-													<li key={index}>
-														{<CredittedArtist artist={artist} />}
+													<li
+														key={index}
+														className='overflow-wrap break-before-all break-after-all whitespace-normal text-wrap break-all'>
+														{
+															<CredittedArtist
+																artist={artist}
+																lang={lang}
+															/>
+														}
 													</li>
 												))}
 											</ul>
@@ -519,12 +592,21 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									{item.credits.visuals.thumbnail && (
 										<div>
-											<h4 className='section-h4 mb-1'>{t.detailCreditsVisualsThumbnail}</h4>
-											<ul className='list-disc pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0'>
+											<h4 className='section-h4 mb-1'>
+												{t.detailCreditsVisualsThumbnail}
+											</h4>
+											<ul className='list-disc break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 												{item.credits.visuals.thumbnail.map(
 													(artist, index) => (
-														<li key={index}>
-															{<CredittedArtist artist={artist} />}
+														<li
+															key={index}
+															className='overflow-wrap break-before-all break-after-all whitespace-normal text-wrap break-all'>
+															{
+																<CredittedArtist
+																	artist={artist}
+																	lang={lang}
+																/>
+															}
 														</li>
 													),
 												)}

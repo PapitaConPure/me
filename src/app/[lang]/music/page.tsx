@@ -8,6 +8,7 @@ import { Metadata, Viewport } from 'next';
 import { getMessages, isValidLocale, Locale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
 import Translated from '@/lib/i18n/Translated';
+import { resolveLocalizableField } from '@/lib/music';
 
 export const viewport: Viewport = {
 	themeColor: '#c97f72',
@@ -35,10 +36,15 @@ export const metadata: Metadata = {
 
 interface AuthorBriefCreditProps {
 	artist: string | FullArtistCredit;
+	lang: Locale;
 }
 
-const AuthorBriefCredit = ({ artist }: AuthorBriefCreditProps) =>
-	typeof artist === 'string' ? <span>{artist}</span> : <span>{artist.name}</span>;
+const AuthorBriefCredit = ({ artist, lang }: AuthorBriefCreditProps) =>
+	typeof artist === 'string' ? (
+		<span>{artist}</span>
+	) : (
+		<span>{resolveLocalizableField(artist.name, lang)}</span>
+	);
 
 interface MusicCardProps {
 	lang: Locale;
@@ -151,20 +157,25 @@ const MusicList = async ({ params }: MusicListProps) => {
 							lang={lang}
 							key={item.id}
 							href={`/${lang}/music/${item.id}`}
-							title={item.title}
+							title={resolveLocalizableField(item.title, lang)}
 							author={
 								typeof item.artists === 'string'
 									? item.artists
-									: item.artists.map((artist, index, arr) => (
-											<span key={index + 1}>
-												<AuthorBriefCredit artist={artist} />
-												{index < arr.length - 1 && (
-													<span className='mx-1 text-sm text-secondary-500'>
-														&
-													</span>
-												)}
-											</span>
-										))
+									: Array.isArray(item.artists)
+										? item.artists.map((artist, index, arr) => (
+												<span key={index + 1}>
+													<AuthorBriefCredit
+														artist={artist}
+														lang={lang}
+													/>
+													{index < arr.length - 1 && (
+														<span className='mx-1 text-sm text-secondary-500'>
+															&
+														</span>
+													)}
+												</span>
+											))
+										: resolveLocalizableField(item.artists, lang)
 							}
 							categories={item.categories}
 							date={item.date}

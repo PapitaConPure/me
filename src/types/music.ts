@@ -1,6 +1,8 @@
+import { LocalizableField } from "./i18n";
+
 export interface ExternalLink {
 	source: 'youtube' | 'soundcloud' | 'spotify' | 'other';
-	label: string;
+	label: LocalizableField;
 	url: string;
 }
 
@@ -30,7 +32,7 @@ export interface AssetPreviewData {
 export interface BaseDownloadData {
 	url: string;
 	size: `${number} ${'K' | 'M' | 'G' | ''}${'B' | 'b'}`;
-	label: string;
+	label: LocalizableField;
 }
 
 export type ExternalDownloadData = {
@@ -49,8 +51,8 @@ export type DownloadUrl = AssetSpecification & AssetPreviewData & DownloadData;
 export type CategoryKey = 'original' | 'arrangement' | 'collab' | 'touhou' | 'piano' | 'medley';
 
 export interface FullArtistCredit {
-	name: string;
-	clarification?: string;
+	name: LocalizableField;
+	clarification?: LocalizableField;
 	url?: string;
 }
 
@@ -59,7 +61,7 @@ export type CreditsField = (string | FullArtistCredit)[];
 export interface BaseMusicItem {
 	id: string;
 	artists: CreditsField;
-	title: string;
+	title: LocalizableField;
 	date: Date;
 	categories: CategoryKey[];
 	coverUrl: string;
@@ -67,7 +69,7 @@ export interface BaseMusicItem {
 }
 
 export interface ExtendedMusicItemMetadata {
-	description?: string;
+	description?: LocalizableField;
 	displayArtist?: string;
 	videoUrl?: string;
 	credits?: ExtendedMusicItemCredits;
@@ -95,20 +97,22 @@ export type SingleMusicItem = {
 	parentId?: string;
 };
 
-export interface ChildMusicItemData {
-	kind: 'id' | 'name';
-	data: string;
+export interface ChildMusicItemData<TKind extends string, TData> {
+	kind: TKind;
+	data: TData;
 }
+
+export type AnyChildMusicItem = ChildMusicItemData<'id', string> | ChildMusicItemData<'name', LocalizableField>;
 
 export type AlbumMusicItem = {
 	kind: 'album' | 'ep';
-	children: ChildMusicItemData[];
+	children: AnyChildMusicItem[];
 };
 
 export type CompilationMusicItem = {
 	kind: 'compilation';
 	parentId?: string;
-	childrenTitles: string[];
+	childrenTitles: LocalizableField[];
 };
 
 export type AnyMusicItem = SingleMusicItem | AlbumMusicItem | CompilationMusicItem;
@@ -117,8 +121,8 @@ export type MusicItem = BaseMusicItem & ExtendedMusicItemMetadata & AnyMusicItem
 
 export interface MusicItemSummary {
 	id: string;
-	artists: string | CreditsField;
-	title: string;
+	artists: LocalizableField | CreditsField;
+	title: LocalizableField;
 	date: Date;
 	categories: CategoryKey[];
 	thumbnailUrl: string;
