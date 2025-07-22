@@ -2098,7 +2098,11 @@ const items: MusicItem[] = [
 		kind: 'single',
 		displayArtist: 'PaTeKa',
 		artists: [papitaCredit, tewaCredit, karlCredit],
-		title: '乙女の足音 ~ Arboleda Renaciente',
+		title: {
+			es: 'Maiden\'s Step ~ Arboleda Renaciente',
+			en: 'Maiden\'s Step ~ Reborn Grove',
+			ja: '乙女の足音 ~ Reborn Grove',
+		},
 		description: {
 			es: 'Composición:\n• Karl Zuñiga\n• Tewi [Sax; detalles]\n• Papita con Puré\n\nMezcla: Karl Zuñiga',
 			en: 'Composition:\n• Karl Zuñiga\n• Tewi [Sax; details]\n• Papita con Puré\n\nMix: Karl Zuñiga',
