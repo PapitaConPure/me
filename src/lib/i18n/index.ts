@@ -16,7 +16,7 @@ export const messagesIndex = {
 };
 
 export function isValidLocale(locale: string): locale is Locale {
-	return locales.includes(locale as Locale);
+	return locale != null && locales.includes(locale as Locale);
 }
 
 export async function getMessages(locale: Locale) {
