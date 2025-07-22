@@ -18,6 +18,8 @@
         "footerGitHubUserAria": "Visitar el perfil de GitHub de Papita con Puré"
     },
     "General": {
+        "metaSiteName": "Papita con Puré",
+        "papitaName": "Papita con Puré",
         "loading": "Cargando...",
         "backSectionButton": "Volver a <1>Inicio</1>"
     },
@@ -25,6 +27,8 @@
         "notice": "La dirección especificada no existe."
     },
     "MainPage": {
+        "metaTitle": "Inicio",
+        "metaDescription": "Sitio personal para Papita con Puré",
         "welcome": "Bienvenido",
         "welcomeMessage": "¡Hola! Soy Papita con Puré. Este sitio ofrece información actualizada sobre mí, mis redes y mis proyectos. Además, para individuos, grupos u organizaciones con consultas, dudas, quejas, sugerencias, etc., se ofrece información pública de contacto <1>aquí</1>.",
         "welcomeMessageAriaLabel": "Información de contacto de Papita con Puré",

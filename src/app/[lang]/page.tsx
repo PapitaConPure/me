@@ -1,4 +1,4 @@
-import { getMessages, isValidLocale, locales } from '@/lib/i18n';
+import { defaultLocale, getMessages, isValidLocale, locales } from '@/lib/i18n';
 import Tr from '@/lib/i18n/Tr';
 import { faDiscord, faGithub, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faFeather, faQuestion } from '@fortawesome/free-solid-svg-icons';
@@ -10,26 +10,6 @@ import { PropsWithChildren } from 'react';
 
 export const viewport: Viewport = {
 	themeColor: '#c97f72',
-};
-
-export const metadata: Metadata = {
-	title: 'Inicio',
-	description: 'Sitio personal para Papita con Puré',
-	openGraph: {
-		title: 'Inicio',
-		description: 'Sitio personal para Papita con Puré',
-		images: ['https://papitaconpure.github.io/me/potato.webp'],
-		type: 'website',
-		siteName: 'Papita con Puré',
-	},
-	twitter: {
-		card: 'summary_large_image',
-		title: 'Inicio',
-		description: 'Sitio personal para Papita con Puré',
-		creator: 'Papita con Puré',
-		site: 'https://papitaconpure.github.io/me',
-		images: ['https://papitaconpure.github.io/me/potato.webp'],
-	},
 };
 
 const Question = ({ children }: PropsWithChildren) => (
@@ -46,12 +26,42 @@ const Answer = ({ children }: PropsWithChildren) => (
 	</div>
 );
 
-export async function generateStaticParams() {
-	return locales.map((lang) => ({ lang }));
-}
-
 interface HomeProps {
 	params: Promise<{ lang: string }>;
+}
+
+export async function generateMetadata({ params }: HomeProps): Promise<Metadata> {
+	const lang = params ? (await params)?.lang : defaultLocale;
+
+	if (!lang || !isValidLocale(lang)) return { title: 'Not Found' };
+
+	const messages = await getMessages(lang);
+	if (!messages) return { title: 'Not Found' };
+	const t = messages.MainPage;
+
+	return {
+		title: t.metaTitle,
+		description: t.metaDescription,
+		openGraph: {
+			title: t.metaTitle,
+			description: t.metaDescription,
+			images: ['https://papitaconpure.github.io/me/potato.webp'],
+			type: 'website',
+			siteName: messages.General.metaSiteName,
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title: t.metaTitle,
+			description: t.metaDescription,
+			creator: messages.General.papitaName,
+			site: 'https://papitaconpure.github.io/me',
+			images: ['https://papitaconpure.github.io/me/potato.webp'],
+		},
+	};
+}
+
+export async function generateStaticParams() {
+	return locales.map((lang) => ({ lang }));
 }
 
 const Home = async ({ params }: HomeProps) => {
@@ -178,9 +188,7 @@ const Home = async ({ params }: HomeProps) => {
 						{t.learnMoreTitle}
 					</h2>
 
-					<p className='mb-1 text-center'>
-						{t.learnMore}
-					</p>
+					<p className='mb-1 text-center'>{t.learnMore}</p>
 
 					<Link
 						href={`${lang}/about`}
@@ -197,9 +205,7 @@ const Home = async ({ params }: HomeProps) => {
 					{t.myProjectsTitle}
 				</h2>
 
-				<p className='mb-1 text-center font-light text-secondary-100'>
-					{t.myProjects}
-				</p>
+				<p className='mb-1 text-center font-light text-secondary-100'>{t.myProjects}</p>
 
 				<Link
 					href={`${lang}/projects`}

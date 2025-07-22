@@ -18,6 +18,8 @@
         "footerGitHubUserAria": "Visit Papita con Pure's GitHub profile"
     },
     "General": {
+        "metaSiteName": "Papita con Pure",
+        "papitaName": "Papita con Pure",
         "loading": "Loading...",
         "backSectionButton": "Back to <1>Home</1>"
     },
@@ -25,6 +27,8 @@
         "notice": "Supplied path does not exist."
     },
     "MainPage": {
+        "metaTitle": "Home",
+        "metaDescription": "Personal website for Papita con Pure",
         "welcome": "Welcome",
         "welcomeMessage": "Hi! I'm Papita con Pure. This sife offers updated information about me, my networks and projects. Also, for individuals, groups, or organizations with inquiries, doubts, complaints, suggestions, etc., I offer some public contact information <1>here</1>.",
         "welcomeMessageAriaLabel": "Papita con Pure's contact information",
