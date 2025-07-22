@@ -5,10 +5,6 @@ import { isValidLocale } from '@/lib/i18n';
 import { M_PLUS_2, Noto_Serif_JP, Outfit, Vollkorn } from 'next/font/google';
 import { redirect } from 'next/navigation';
 
-interface NotFoundProps {
-	params: Promise<{ lang: string }>;
-}
-
 const outfit = Outfit({
 	subsets: ['latin', 'latin-ext'],
 	display: 'swap',
@@ -28,6 +24,10 @@ const notoSerifJp = Noto_Serif_JP({
 	subsets: ['latin', 'latin-ext'],
 	display: 'swap',
 });
+
+interface NotFoundProps {
+	params: Promise<{ lang: string }>;
+}
 
 export default async function NotFound({ params }: NotFoundProps) {
 	const lang = params ? (await params)?.lang : undefined;
@@ -61,7 +61,7 @@ export default async function NotFound({ params }: NotFoundProps) {
 							Volver a <span className='font-semibold'>Inicio</span>
 						</BackSection>
 					</main>
-                    <Footer />
+                    <Footer lang='es'/>
 				</body>
 			</html>
 		);

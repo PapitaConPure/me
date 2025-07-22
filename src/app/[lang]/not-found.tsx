@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 }
 
 const NotFound = async ({ params }: NotfoundProps) => {
-	const lang = (await params).lang;
+	const lang = params ? (await params)?.lang : defaultLocale;
 	const normalizedLang = isValidLocale(lang) ? lang : defaultLocale;
 	const messages = await getMessages(normalizedLang);
 	if (!messages)
