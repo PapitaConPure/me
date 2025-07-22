@@ -339,7 +339,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '9.26 MB',
 				url: '/audio/music/oni-showdown/Former Hell Showdown.mp3',
 			},
@@ -381,7 +381,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '16.7 MB',
 				url: '/audio/music/tredecillion-tears/Night of a Tredecillion Tears.mp3',
 			},
@@ -498,7 +498,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '15.2 MB',
 				url: '/audio/music/pateka-1/PaTeKa1.mp3',
 			},
@@ -705,7 +705,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '16.7 MB',
 				url: '/audio/music/empire-below/Claim from the Empire Below.mp3',
 			},
@@ -764,7 +764,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '43.6 MB',
 				url: '/audio/music/th18-piano/Unconnected Marketeers Piano Medley.mp3',
 			},
@@ -861,7 +861,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '8.64 MB',
 				url: '/audio/music/film-youkai/Unused Film Strip.mp3',
 			},
@@ -926,7 +926,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '9.26 MB',
 				url: '/audio/music/heart-cup/Mind Yet Not Heart.mp3',
 			},
@@ -1020,7 +1020,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '9.60 MB',
 				url: '/audio/music/kaisouressha/kaisouressha.mp3',
 			},
@@ -1092,7 +1092,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '9.20 MB',
 				url: '/audio/music/izanagi-bloom/Izanagi Bloom Phenomenon.mp3',
 			},
@@ -1156,7 +1156,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '5.83 MB',
 				url: '/audio/music/pateka-2/Buen Presagio ~ Travesía Inhóspita.mp3',
 			},
@@ -1216,7 +1216,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '12.4 MB',
 				url: '/audio/music/kanako-sb-piano/kanako.mp3',
 			},
@@ -1260,7 +1260,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '11.3 MB',
 				url: '/audio/music/spols/Stellar Passage of Lunatic Starway.mp3',
 			},
@@ -1332,7 +1332,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '8.40 MB',
 				url: '/audio/music/gyptos/gyptos.mp3',
 			},
@@ -1405,7 +1405,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '11.5 MB',
 				url: '/audio/music/th19-title-piano/th19_01.mp3',
 			},
@@ -1478,7 +1478,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '14.01 MB',
 				url: '/audio/music/th19-cute-world-piano/The World is Made From Cuteness.mp3',
 			},
@@ -1566,21 +1566,21 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '57.6 MB',
 				url: '/audio/music/th19-piano/th19.mp3',
 			},
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Mano izquierda completa (320kbps)',
+				label: 'Mano izquierda completa (320Kbps)',
 				size: '57.6 MB',
 				url: '/audio/music/th19-piano/piano_low.mp3',
 			},
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Mano derecha completa (320kbps)',
+				label: 'Mano derecha completa (320Kbps)',
 				size: '57.6 MB',
 				url: '/audio/music/th19-piano/piano_high.mp3',
 			},
@@ -2053,7 +2053,7 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: 'Pista completa (320Kbps)',
 				size: '9.05 MB',
 				url: '/audio/music/aswotts/A Star We Owe to the Sky.mp3',
 			},
@@ -2099,8 +2099,11 @@ const items: MusicItem[] = [
 		displayArtist: 'PaTeKa',
 		artists: [papitaCredit, tewaCredit, karlCredit],
 		title: '乙女の足音 ~ Arboleda Renaciente',
-		description:
-			'Composition:\n• Karl Zuñiga\n• Tewi [Sax; details]\n• Papita con Puré\n\nMix: Karl Zuñiga',
+		description: {
+			es: 'Composición:\n• Karl Zuñiga\n• Tewi [Sax; detalles]\n• Papita con Puré\n\nMezcla: Karl Zuñiga',
+			en: 'Composition:\n• Karl Zuñiga\n• Tewi [Sax; details]\n• Papita con Puré\n\nMix: Karl Zuñiga',
+			ja: '作曲家:\n• Karl Zuñiga\n• Tewi [サックス; 詳細]\n• Papita con Puré\n\nMix: Karl Zuñiga',
+		},
 		date: new Date('2025-01-09'),
 		categories: ['collab', 'original'],
 		coverUrl: '/images/music/pateka-3/cover.webp',
@@ -2131,7 +2134,11 @@ const items: MusicItem[] = [
 		externalLinks: [
 			{
 				source: 'youtube',
-				label: 'YouTube (por Karl Zuñiga)',
+				label: {
+					es: 'YouTube (en canal de Karl Zuñiga)',
+					en: 'YouTube (in Karl Zuñiga\'s channel)',
+					ja: 'YouTube (Karl Zuñigaのチャンネル内)',
+				},
 				url: 'https://www.youtube.com/watch?v=yjuLQ-HOpsY',
 			},
 		],
@@ -2139,28 +2146,44 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'flac',
-				label: 'Pista completa (16-bit int)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '33.4 MB',
 				url: '/audio/music/pateka-3/pateka3.flac',
 			},
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: {
+					es: 'Pista completa (320Kbps)',
+					en: 'Full Track (320Kbps)',
+					ja: 'フルトラック (320Kbps)',
+				},
 				size: '11.2 MB',
 				url: '/audio/music/pateka-3/pateka3.mp3',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Portada (3000x3000)',
+				label: {
+					es: 'Portada (3000x3000)',
+					en: 'Cover (3000x3000)',
+					ja: '表紙 (3000x3000)',
+				},
 				size: '9.65 MB',
 				url: '/images/music/pateka-3/cover.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Portada (3000x3000)',
+				label: {
+					es: 'Portada (3000x3000)',
+					en: 'Cover (3000x3000)',
+					ja: '表紙 (3000x3000)',
+				},
 				size: '443 KB',
 				url: '/images/music/pateka-3/cover.webp',
 			},
@@ -2171,7 +2194,10 @@ const items: MusicItem[] = [
 		id: 'blade-of-warmness',
 		kind: 'single',
 		artists: [papitaCredit],
-		title: 'Blade of Warmness',
+		title: {
+			es: 'Blade of Warmness',
+			ja: '暖かさの刃',
+		},
 		date: new Date('2025-05-01'),
 		categories: ['original'],
 		coverUrl: '/images/music/blade-of-warmness/cover.png',
@@ -2188,91 +2214,143 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'flac',
-				label: 'Pista completa (16-bit int)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '28.4 MB',
 				url: '/audio/music/blade-of-warmness/blade of warmness.flac',
 			},
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: {
+					es: 'Pista completa (320Kbps)',
+					en: 'Full Track (320Kbps)',
+					ja: 'フルトラック (320Kbps)',
+				},
 				size: '9.92 MB',
 				url: '/audio/music/blade-of-warmness/blade of warmness.mp3',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Portada (2k)',
+				label: {
+					es: 'Portada (2k)',
+					en: 'Cover (2k)',
+					ja: '表紙 (2k)',
+				},
 				size: '4.04 MB',
 				url: '/images/music/blade-of-warmness/cover.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Portada (posterior) (2k)',
+				label: {
+					es: 'Portada (posterior) (2k)',
+					en: 'Cover (Back) (2k)',
+					ja: '裏表紙 (2k)',
+				},
 				size: '4.14 MB',
 				url: '/images/music/blade-of-warmness/back.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura 1 (720p)',
+				label: {
+					es: 'Miniatura 1 (720p)',
+					en: 'Thumbnail 1 (720p)',
+					ja: 'サムネイル１ (720p)',
+				},
 				size: '988 KB',
 				url: '/images/music/blade-of-warmness/thumb1.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura 3 (720p)',
+				label: {
+					es: 'Miniatura 3 (720p)',
+					en: 'Thumbnail 3 (720p)',
+					ja: 'サムネイ３ (720p)',
+				},
 				size: '876 KB',
 				url: '/images/music/blade-of-warmness/thumb3.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura 4 (720p)',
+				label: {
+					es: 'Miniatura 4 (720p)',
+					en: 'Thumbnail 4 (720p)',
+					ja: 'サムネイ４ (720p)',
+				},
 				size: '797 KB',
 				url: '/images/music/blade-of-warmness/thumb4.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura 5 (720p)',
+				label: {
+					es: 'Miniatura 5 (720p)',
+					en: 'Thumbnail 5 (720p)',
+					ja: 'サムネイル５ (720p)',
+				},
 				size: '1.00 MB',
 				url: '/images/music/blade-of-warmness/thumb5.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura 5 (720p)',
+				label: {
+					es: 'Miniatura 5 (720p)',
+					en: 'Thumbnail 5 (720p)',
+					ja: 'サムネイル５ (720p)',
+				},
 				size: '47.0 KB',
 				url: '/images/music/blade-of-warmness/thumbnail.webp',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura 6 (720p)',
+				label: {
+					es: 'Miniatura 6 (720p)',
+					en: 'Thumbnail 6 (720p)',
+					ja: 'サムネイル６ (720p)',
+				},
 				size: '1.09 MB',
 				url: '/images/music/blade-of-warmness/thumb6.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura 7 (720p)',
+				label: {
+					es: 'Miniatura 7 (720p)',
+					en: 'Thumbnail 7 (720p)',
+					ja: 'サムネイル７ (720p)',
+				},
 				size: '932 KB',
 				url: '/images/music/blade-of-warmness/thumb7.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura 8 (720p)',
+				label: {
+					es: 'Miniatura 8 (720p)',
+					en: 'Thumbnail 8 (720p)',
+					ja: 'サムネイル８ (720p)',
+				},
 				size: '821 KB',
 				url: '/images/music/blade-of-warmness/thumb8.png',
 			},
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Bucle 1) (h.264 / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Bucle 1) (h.264 / 4k@60fps) (archive.org)',
+					en: 'Animation (Loop 1) (h.264 / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Loop 1) (h.264 / 4k@60fps) (archive.org)',
+				},
 				size: '54.8 MB',
 				url: 'https://archive.org/download/blade-of-warmness-animation-by-papitapure/loop_main.mp4',
 				previewUrl: '/video/music/blade-of-warmness/loop_main.webm',
@@ -2283,7 +2361,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mov',
-				label: 'Animación (Bucle 1) (DNxHR HQ / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Bucle 1) (DNxHR HQ / 4k@60fps) (archive.org)',
+					en: 'Animation (Loop 1) (DNxHR HQ / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Loop 1) (DNxHR HQ / 4k@60fps) (archive.org)',
+				},
 				size: '868 MB',
 				url: 'https://archive.org/download/blade-of-warmness-animation-by-papitapure/loop_main.mov',
 				previewUrl: '/video/music/blade-of-warmness/loop_main.webm',
@@ -2293,7 +2375,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Bucle 2) (h.264 / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Bucle 2) (h.264 / 4k@60fps) (archive.org)',
+					en: 'Animation (Loop 2) (h.264 / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Loop 2) (h.264 / 4k@60fps) (archive.org)',
+				},
 				size: '55.2 MB',
 				url: 'https://archive.org/download/blade-of-warmness-animation-by-papitapure/loop_chorus.mp4',
 				previewUrl: '/video/music/blade-of-warmness/loop_chorus.webm',
@@ -2304,7 +2390,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mov',
-				label: 'Animación (Bucle 2) (DNxHR HQ / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Bucle 2) (DNxHR HQ / 4k@60fps) (archive.org)',
+					en: 'Animation (Loop 2) (DNxHR HQ / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Loop 2) (DNxHR HQ / 4k@60fps) (archive.org)',
+				},
 				size: '229 MB',
 				url: 'https://archive.org/download/blade-of-warmness-animation-by-papitapure/loop_chorus.mov',
 				previewUrl: '/video/music/blade-of-warmness/loop_chorus.webm',
@@ -2314,7 +2404,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Lineal 1) (h.264 / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Lineal 1) (h.264 / 4k@60fps) (archive.org)',
+					en: 'Animation (Linear 1) (h.264 / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Linear 1) (h.264 / 4k@60fps) (archive.org)',
+				},
 				size: '89.9 MB',
 				url: 'https://archive.org/download/blade-of-warmness-animation-by-papitapure/straight_1.mp4',
 				previewUrl: '/video/music/blade-of-warmness/straight_1.webm',
@@ -2325,7 +2419,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mov',
-				label: 'Animación (Lineal 1) (DNxHR HQ / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Lineal 1) (DNxHR HQ / 4k@60fps) (archive.org)',
+					en: 'Animation (Linear 1) (DNxHR HQ / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Linear 1) (DNxHR HQ / 4k@60fps) (archive.org)',
+				},
 				size: '1.69 GB',
 				url: 'https://archive.org/download/blade-of-warmness-animation-by-papitapure/straight_1.mov',
 				previewUrl: '/video/music/blade-of-warmness/straight_1.webm',
@@ -2335,7 +2433,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Lineal 2) (h.264 / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Lineal 2) (h.264 / 4k@60fps) (archive.org)',
+					en: 'Animation (Linear 2) (h.264 / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Linear 2) (h.264 / 4k@60fps) (archive.org)',
+				},
 				size: '200 MB',
 				url: 'https://archive.org/download/blade-of-warmness-animation-by-papitapure/straight_2.mp4',
 				previewUrl: '/video/music/blade-of-warmness/straight_2.webm',
@@ -2346,7 +2448,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mov',
-				label: 'Animación (Lineal 2) (DNxHR HQ / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Lineal 2) (DNxHR HQ / 4k@60fps) (archive.org)',
+					en: 'Animation (Linear 2) (DNxHR HQ / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Linear 2) (DNxHR HQ / 4k@60fps) (archive.org)',
+				},
 				size: '1.16 GB',
 				url: 'https://archive.org/download/blade-of-warmness-animation-by-papitapure/straight_2.mov',
 				previewUrl: '/video/music/blade-of-warmness/straight_2.webm',
@@ -2356,7 +2462,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Lineal 3) (h.264 / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Lineal 3) (h.264 / 4k@60fps) (archive.org)',
+					en: 'Animation (Linear 3) (h.264 / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Linear 3) (h.264 / 4k@60fps) (archive.org)',
+				},
 				size: '173 MB',
 				url: 'https://archive.org/download/blade-of-warmness-animation-by-papitapure/straight_3.mp4',
 				previewUrl: '/video/music/blade-of-warmness/straight_3.webm',
@@ -2367,7 +2477,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mov',
-				label: 'Animación (Lineal 3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Lineal 3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					en: 'Animation (Linear 3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Linear 3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				},
 				size: '676 MB',
 				url: 'https://archive.org/download/blade-of-warmness-animation-by-papitapure/straight_3.mov',
 				previewUrl: '/video/music/blade-of-warmness/straight_3.webm',
@@ -2377,7 +2491,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete completo (MediaFire)',
+				label: {
+					es: 'Paquete completo (MediaFire)',
+					en: 'Full Pack (MediaFire)',
+					ja: 'フルパック (MediaFire)',
+				},
 				size: '3.42 GB',
 				url: 'https://www.mediafire.com/file/a58tjhq1jsom1qt/Blade_of_Warmness_by_PapitaPur%25C3%25A9.zip/file',
 				external: true,
@@ -2390,7 +2508,10 @@ const items: MusicItem[] = [
 		id: 'th20-prester-john-piano',
 		kind: 'single',
 		artists: [zunCredit, papitaCredit],
-		title: 'Golden Land of Prester John',
+		title: {
+			es: 'Golden Land of Prester John',
+			ja: 'プレステ・ジョアンの黄金境',
+		},
 		date: new Date('2025-06-05'),
 		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/images/music/th20-prester-john-piano/cover.png',
@@ -2422,56 +2543,88 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'flac',
-				label: 'Pista completa (16-bit int)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '19.6 MB',
 				url: '/audio/music/th20-prester-john-piano/th20stage3.flac',
 			},
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: {
+					es: 'Pista completa (320Kbps)',
+					en: 'Full Track (320Kbps)',
+					ja: 'フルトラック (320Kbps)',
+				},
 				size: '10.8 MB',
 				url: '/audio/music/th20-prester-john-piano/th20stage3.mp3',
 			},
 			{
 				kind: 'file',
 				format: 'midi',
-				label: 'MIDI completo',
+				label: {
+					es: 'MIDI completo',
+					en: 'Full MIDI',
+					ja: 'フルMIDI',
+				},
 				size: '657 KB',
 				url: '/music-item-misc/th20-prester-john-piano/th20stage3midi.mid',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Portada (1024X1024)',
+				label: {
+					es: 'Portada (1024X1024)',
+					en: 'Cover (1024X1024)',
+					ja: '表紙 (1024X1024)',
+				},
 				size: '0.97 MB',
 				url: '/images/music/th20-prester-john-piano/cover.png',
 			},
 			{
 				kind: 'image',
 				format: 'jpg',
-				label: 'Portada (1024X1024)',
+				label: {
+					es: 'Portada (1024X1024)',
+					en: 'Cover (1024X1024)',
+					ja: '表紙 (1024X1024)',
+				},
 				size: '222 KB',
 				url: '/images/music/th20-prester-john-piano/folder.jpg',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '1.26 MB',
 				url: '/images/music/th20-prester-john-piano/thumbnail.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '101 KB',
 				url: '/images/music/th20-prester-john-piano/thumbnail.webp',
 			},
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Entrada S3) (h.264 / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Entrada S3) (h.264 / 4k@60fps) (archive.org)',
+					en: 'Animation (In S3) (h.264 / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (In S3) (h.264 / 4k@60fps) (archive.org)',
+				},
 				size: '110 MB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMP4%20-%20H.264%204k%4060%2F1_s3a_in.mp4',
 				previewUrl: '/video/music/th20-prester-john-piano/1_s3a_in.webm',
@@ -2482,7 +2635,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mov',
-				label: 'Animación (Entrada S3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Entrada S3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					en: 'Animation (In S3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (In S3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				},
 				size: '821 MB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMOV%20-%20DNxHR%20HQ%204k%4060%2F1_s3a_in.mov',
 				previewUrl: '/video/music/th20-prester-john-piano/1_s3a_in.webm',
@@ -2492,7 +2649,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Bucle S3) (h.264 / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Bucle S3) (h.264 / 4k@60fps) (archive.org)',
+					en: 'Animation (Loop S3) (h.264 / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Loop S3) (h.264 / 4k@60fps) (archive.org)',
+				},
 				size: '206 MB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMP4%20-%20H.264%204k%4060%2F2_s3a_loop.mp4',
 				previewUrl: '/video/music/th20-prester-john-piano/2_s3a_loop.webm',
@@ -2503,7 +2664,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mov',
-				label: 'Animación (Bucle S3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Bucle S3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					en: 'Animation (Loop S3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Loop S3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				},
 				size: '1.41 GB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMOV%20-%20DNxHR%20HQ%204k%4060%2F2_s3a_loop.mov',
 				previewUrl: '/video/music/th20-prester-john-piano/2_s3a_loop.webm',
@@ -2513,7 +2678,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Salida S3) (h.264 / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Salida S3) (h.264 / 4k@60fps) (archive.org)',
+					en: 'Animation (Out S3) (h.264 / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Out S3) (h.264 / 4k@60fps) (archive.org)',
+				},
 				size: '181 MB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMP4%20-%20H.264%204k%4060%2F3_s3a_out.mp4',
 				previewUrl: '/video/music/th20-prester-john-piano/3_s3a_out.webm',
@@ -2524,7 +2693,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mov',
-				label: 'Animación (Salida S3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Salida S3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					en: 'Animation (Out S3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Out S3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				},
 				size: '1.56 GB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMOV%20-%20DNxHR%20HQ%204k%4060%2F3_s3a_out.mov',
 				previewUrl: '/video/music/th20-prester-john-piano/3_s3a_out.webm',
@@ -2534,7 +2707,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Entrada B3) (h.264 / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Entrada B3) (h.264 / 4k@60fps) (archive.org)',
+					en: 'Animation (In B3) (h.264 / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (In B3) (h.264 / 4k@60fps) (archive.org)',
+				},
 				size: '20.6 MB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMP4%20-%20H.264%204k%4060%2F4_b3a_in.mp4',
 				previewUrl: '/video/music/th20-nareko-piano/4_b3a_in.webm',
@@ -2545,7 +2722,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mov',
-				label: 'Animación (Entrada B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Entrada B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					en: 'Animation (In B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (In B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				},
 				size: '232 MB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMOV%20-%20DNxHR%20HQ%204k%4060%2F4_b3a_in.mov',
 				previewUrl: '/video/music/th20-nareko-piano/4_b3a_in.webm',
@@ -2555,7 +2736,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Bucle B3) (h.264 / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Bucle B3) (h.264 / 4k@60fps) (archive.org)',
+					en: 'Animation (Loop B3) (h.264 / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Loop B3) (h.264 / 4k@60fps) (archive.org)',
+				},
 				size: '89.4 MB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMP4%20-%20H.264%204k%4060%2F5_b3a_loop.mp4',
 				previewUrl: '/video/music/th20-nareko-piano/5_b3a_loop.webm',
@@ -2566,7 +2751,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mov',
-				label: 'Animación (Bucle B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Bucle B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					en: 'Animation (Loop B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Loop B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				},
 				size: '885 MB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMOV%20-%20DNxHR%20HQ%204k%4060%2F5_b3a_loop.mov',
 				previewUrl: '/video/music/th20-nareko-piano/5_b3a_loop.webm',
@@ -2576,7 +2765,10 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete de música (archive.org)',
+				label: {
+					es: 'Paquete de música (archive.org)',
+					en: 'Music Pack (archive.org)',
+				},
 				size: '31.7 MB',
 				url: 'https://archive.org/download/th-20-stg-3-piano-by-papita-pure/TH20%20STG3%20Piano%20by%20PapitaPur%C3%A9.zip',
 				external: true,
@@ -2585,7 +2777,10 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete de animación (incluye animación de Boss 3) (archive.org)',
+				label: {
+					es: 'Paquete de animación (incluye animación de Stage 3) (archive.org)',
+					en: 'Animation Pack (Stage 3 animation included) (archive.org)',
+				},
 				size: '5.30 GB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip',
 				external: true,
@@ -2598,7 +2793,10 @@ const items: MusicItem[] = [
 		id: 'th20-nareko-piano',
 		kind: 'single',
 		artists: [zunCredit, papitaCredit],
-		title: 'Might as Well Stake Your Life to Solve the Riddle',
+		title: {
+			es: 'Might as Well Stake Your Life to Solve the Riddle',
+			ja: 'どうせなら命を賭けて謎を解け',
+		},
 		date: new Date('2025-06-12'),
 		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/images/music/th20-nareko-piano/thumbnail.webp',
@@ -2630,42 +2828,66 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'flac',
-				label: 'Pista completa (16-bit int)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '19.7 MB',
 				url: '/audio/music/th20-nareko-piano/th20boss3.flac',
 			},
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: {
+					es: 'Pista completa (320Kbps)',
+					en: 'Full Track (320Kbps)',
+					ja: 'フルトラック (320Kbps)',
+				},
 				size: '10.9 MB',
 				url: '/audio/music/th20-nareko-piano/th20boss3.mp3',
 			},
 			{
 				kind: 'file',
 				format: 'midi',
-				label: 'MIDI completo',
+				label: {
+					es: 'MIDI completo',
+					en: 'Full MIDI',
+					ja: 'フルMIDI',
+				},
 				size: '472 KB',
 				url: '/music-item-misc/th20-nareko-piano/th20boss3midi.mid',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '970 KB',
 				url: '/images/music/th20-nareko-piano/thumbnail.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '94.6 KB',
 				url: '/images/music/th20-nareko-piano/thumbnail.webp',
 			},
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Entrada B3) (h.264 / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Entrada B3) (h.264 / 4k@60fps) (archive.org)',
+					en: 'Animation (In B3) (h.264 / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (In B3) (h.264 / 4k@60fps) (archive.org)',
+				},
 				size: '20.6 MB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMP4%20-%20H.264%204k%4060%2F4_b3a_in.mp4',
 				previewUrl: '/video/music/th20-nareko-piano/4_b3a_in.webm',
@@ -2676,7 +2898,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mov',
-				label: 'Animación (Entrada B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Entrada B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					en: 'Animation (In B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (In B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				},
 				size: '232 MB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMOV%20-%20DNxHR%20HQ%204k%4060%2F4_b3a_in.mov',
 				previewUrl: '/video/music/th20-nareko-piano/4_b3a_in.webm',
@@ -2686,7 +2912,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Bucle B3) (h.264 / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Bucle B3) (h.264 / 4k@60fps) (archive.org)',
+					en: 'Animation (Loop B3) (h.264 / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Loop B3) (h.264 / 4k@60fps) (archive.org)',
+				},
 				size: '89.4 MB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMP4%20-%20H.264%204k%4060%2F5_b3a_loop.mp4',
 				previewUrl: '/video/music/th20-nareko-piano/5_b3a_loop.webm',
@@ -2697,7 +2927,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mov',
-				label: 'Animación (Bucle B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Bucle B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					en: 'Animation (Loop B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Loop B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				},
 				size: '885 MB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMOV%20-%20DNxHR%20HQ%204k%4060%2F5_b3a_loop.mov',
 				previewUrl: '/video/music/th20-nareko-piano/5_b3a_loop.webm',
@@ -2707,7 +2941,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Salida B3) (h.264 / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Salida B3) (h.264 / 4k@60fps) (archive.org)',
+					en: 'Animation (Out B3) (h.264 / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Out B3) (h.264 / 4k@60fps) (archive.org)',
+				},
 				size: '41.1 MB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMP4%20-%20H.264%204k%4060%2F6_b3a_out.mp4',
 				previewUrl: '/video/music/th20-nareko-piano/6_b3a_out.webm',
@@ -2718,7 +2956,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mov',
-				label: 'Animación (Salida B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Salida B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					en: 'Animation (Out B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Out B3) (DNxHR HQ / 4k@60fps) (archive.org)',
+				},
 				size: '251 MB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9%2FMOV%20-%20DNxHR%20HQ%204k%4060%2F6_b3a_out.mov',
 				previewUrl: '/video/music/th20-nareko-piano/6_b3a_out.webm',
@@ -2728,7 +2970,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete de música (archive.org)',
+				label: {
+					es: 'Paquete de música (archive.org)',
+					en: 'Music Pack (archive.org)',
+					ja: 'Music Pack (archive.org)',
+				},
 				size: '30.6 MB',
 				url: 'https://archive.org/download/th-20-boss-3-piano-by-papita-pure/TH20%20Boss%203%20Piano%20by%20PapitaPur%C3%A9.zip',
 				external: true,
@@ -2737,7 +2983,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete de animación (incluye animación de Stage 3) (archive.org)',
+				label: {
+					es: 'Paquete de animación (incluye animación de Stage 3) (archive.org)',
+					en: 'Animation Pack (Stage 3 animation included) (archive.org)',
+					ja: 'アニメーション Pack (Stage 3 animation included) (archive.org)',
+				},
 				size: '5.30 GB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip',
 				external: true,
@@ -2750,7 +3000,10 @@ const items: MusicItem[] = [
 		id: 'th20-title-piano',
 		kind: 'single',
 		artists: [zunCredit, papitaCredit],
-		title: 'Shrine Maiden Crowned with Glory',
+		title: {
+			es: 'Shrine Maiden Crowned with Glory',
+			ja: '錦の上の巫女',
+		},
 		date: new Date('2025-06-20'),
 		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/images/music/th20-title-piano/thumbnail.webp',
@@ -2782,42 +3035,66 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'flac',
-				label: 'Pista completa (16-bit int)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '14.6 MB',
 				url: '/audio/music/th20-title-piano/th20title.flac',
 			},
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320kbps)',
+				label: {
+					es: 'Pista completa (320Kbps)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (320Kbps)',
+				},
 				size: '8.95 MB',
 				url: '/audio/music/th20-title-piano/th20title.mp3',
 			},
 			{
 				kind: 'file',
 				format: 'midi',
-				label: 'MIDI completo (MediaFire)',
+				label: {
+					es: 'MIDI completo (MediaFire)',
+					en: 'Full MIDI (MediaFire)',
+					ja: 'フルMIDI (MediaFire)',
+				},
 				size: '317 KB',
 				url: '/music-item-misc/th20-nareko-piano/th20titlemidi.mid',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '1.39 MB',
 				url: '/images/music/th20-title-piano/thumbnail.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '125 KB',
 				url: '/images/music/th20-title-piano/thumbnail.webp',
 			},
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Bucle) (h.264 / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Bucle) (h.264 / 4k@60fps) (archive.org)',
+					en: 'Animation (Loop) (h.264 / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Loop) (h.264 / 4k@60fps) (archive.org)',
+				},
 				size: '430 MB',
 				url: 'https://archive.org/download/th-20-title-animation-by-papita-pure/TH20%20Title%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20Title%20Animation%20by%20PapitaPur%C3%A9%2FMP4%20-%20H.264%204k%4060%2F0_title_loop.mp4',
 				previewUrl: '/video/music/th20-title-piano/0_title_loop.webm',
@@ -2826,7 +3103,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mov',
-				label: 'Animación (Bucle) (DNxHR HQ / 4k@60fps) (archive.org)',
+				label: {
+					es: 'Animación (Bucle) (DNxHR HQ / 4k@60fps) (archive.org)',
+					en: 'Animation (Loop) (DNxHR HQ / 4k@60fps) (archive.org)',
+					ja: 'アニメーション (Loop) (DNxHR HQ / 4k@60fps) (archive.org)',
+				},
 				size: '1.69 GB',
 				url: 'https://archive.org/download/th-20-title-animation-by-papita-pure/TH20%20Title%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20Title%20Animation%20by%20PapitaPur%C3%A9%2FMOV%20-%20DNxHR%20HQ%204k%4060%2F0_title_loop.mov',
 				previewUrl: '/video/music/th20-title-piano/0_title_loop.webm',
@@ -2835,7 +3116,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete de música (archive.org)',
+				label: {
+					es: 'Paquete de música (archive.org)',
+					en: 'Music Pack (archive.org)',
+					ja: '音楽パック (archive.org)',
+				},
 				size: '23.3 MB',
 				url: 'https://archive.org/download/th-20-title-piano-by-papita-pure/TH20%20Title%20Piano%20by%20PapitaPur%C3%A9.zip',
 				external: true,
@@ -2844,7 +3129,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete de animación (archive.org)',
+				label: {
+					es: 'Paquete de animación (archive.org)',
+					en: 'Animation Pack (archive.org)',
+					ja: 'アニメーションパック (archive.org)',
+				},
 				size: '2.1 GB',
 				url: 'https://archive.org/download/th-20-title-animation-by-papita-pure/TH20%20Title%20Animation%20by%20PapitaPur%C3%A9.zip',
 				external: true,
