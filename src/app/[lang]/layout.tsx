@@ -1,12 +1,10 @@
 import type { Metadata } from 'next';
 import { Outfit, M_PLUS_2, Vollkorn, Noto_Serif_JP } from 'next/font/google';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import '../globals.css';
 
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import { isValidLocale, locales } from '@/lib/i18n';
+import { defaultLocale, isValidLocale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
 config.autoAddCss = false;
 
@@ -45,7 +43,7 @@ export async function generateStaticParams() {
 }
 
 export default async function RootLayout({ children, params }: Readonly<Props>) {
-	const lang = (await params).lang;
+	const lang = params ? (await params)?.lang : defaultLocale;
 
 	if (!isValidLocale(lang)) return notFound();
 
@@ -63,9 +61,7 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
 				/>
 			</head>
 			<body className='w-full bg-background pt-[60px] font-default-sans text-foreground antialiased'>
-				<Header lang={lang} />
 				{children}
-				<Footer lang={lang} />
 			</body>
 		</html>
 	);
