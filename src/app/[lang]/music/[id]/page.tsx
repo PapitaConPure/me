@@ -458,7 +458,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 			{item.credits && (
 				<section>
 					<h2 className='section-h2'>{t.detailCreditsTitle}</h2>
-					<div className='mt-4 grid grid-cols-1 gap-x-6 lg:gap-x-8 gap-y-8 rounded-md border border-secondary-800 px-4 pb-4 pt-3 text-left sm:grid-cols-2 sm:text-center'>
+					<div className='mt-4 grid grid-cols-1 gap-x-6 gap-y-8 rounded-md border border-secondary-800 px-4 pb-4 pt-3 text-left sm:grid-cols-2 sm:text-center lg:gap-x-8'>
 						{item.credits.music && (
 							<div>
 								<h3 className='section-h3'>{t.detailCreditsMusic}</h3>
