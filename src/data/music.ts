@@ -4,7 +4,7 @@ const papitaCredit: FullArtistCredit = {
 	name: {
 		es: 'Papita con Puré',
 		en: 'Papita con Pure',
-		ja: 'Papita'
+		ja: 'Papita',
 	},
 	clarification: {
 		es: 'I. Z.',
@@ -15,7 +15,7 @@ const papitaCredit: FullArtistCredit = {
 const zunCredit: FullArtistCredit = {
 	name: 'ZUN',
 	clarification: {
-		en: 'Jun\'ya Ota',
+		en: "Jun'ya Ota",
 		ja: '太田 順也',
 	},
 	url: 'https://x.com/korindo',
@@ -37,23 +37,20 @@ const items: MusicItem[] = [
 		id: 'th-piano-medley-6-17',
 		kind: 'compilation',
 		artists: [zunCredit, papitaCredit],
-		credits: {
-			music: {
-				composers: [zunCredit],
-				arrangers: [papitaCredit],
-			},
+		title: {
+			es: 'Touhou Piano Medley (6~17) (7.5~16.5)',
+			ja: ' 東方ピアノメドレー 【紅~鬼】【萃~秘】',
 		},
-		title: 'Touhou Piano Medley 6~17 7.5~16.5',
 		date: new Date('2020-10-02'),
 		categories: ['arrangement', 'piano', 'touhou', 'medley'],
 		coverUrl: 'https://i.imgur.com/Br77B9v.png',
-		thumbnailUrl: 'https://i.imgur.com/Br77B9v.png',
-		videoUrl: 'https://www.youtube.com/watch?v=4FoF9akYFCc',
+		thumbnailUrl: '/images/music/th-6-17-75-165/thumbnail.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=piWjxTchKeo',
 		externalLinks: [
 			{
 				source: 'youtube',
 				label: 'YouTube',
-				url: 'https://www.youtube.com/watch?v=4FoF9akYFCc',
+				url: 'https://www.youtube.com/watch?v=piWjxTchKeo',
 			},
 			{
 				source: 'soundcloud',
@@ -61,63 +58,417 @@ const items: MusicItem[] = [
 				url: 'https://soundcloud.com/user-158678041/piano-touhou-piano-medley-617-75165',
 			},
 		],
+		credits: {
+			music: {
+				composers: [zunCredit],
+				arrangers: [papitaCredit],
+			},
+			visuals: {
+				foreground: [
+					{
+						name: 'baba',
+						url: 'https://www.pixiv.net/en/users/3422465',
+					},
+				],
+				background: [
+					{
+						name: 'ieka95',
+						url: 'https://www.pixiv.net/artworks/45062673',
+					},
+					{
+						name: 'Pixerite',
+						url: 'https://www.pixiv.net/artworks/76379535',
+					},
+					{
+						name: 'Bzsk.',
+						url: 'https://www.pixiv.net/artworks/77560891',
+					},
+					{
+						name: 'LENK64',
+						url: 'https://www.deviantart.com/lenk64/art/Satono-and-Mai-wallpaper-698776166',
+					},
+					'musteflott419',
+					{
+						name: 'あおいくじら',
+						url: 'https://www.pixiv.net/artworks/52591025',
+					},
+					{
+						name: '🦢 がらうどん',
+						url: 'https://www.pixiv.net/artworks/73027481',
+					},
+					{
+						name: '一ノ瀬ロム',
+						url: 'https://www.pixiv.net/artworks/42405274',
+					},
+					'sheya',
+					{
+						name: 'もねてぃ',
+						url: 'https://www.pixiv.net/artworks/26890409',
+					},
+					{
+						name: '春世',
+						url: 'https://www.pixiv.net/artworks/74110148',
+					},
+					{
+						name: '庭鶏',
+						url: 'https://www.pixiv.net/artworks/49291728',
+					},
+					{
+						name: '結城辰也',
+						url: 'https://www.pixiv.net/artworks/2217502',
+					},
+					{
+						name: 'Capura.L',
+						url: 'https://www.pixiv.net/en/users/2475',
+					},
+					{
+						name: 'itomugi-kun',
+						url: 'https://gelbooru.com/index.php?page=post&s=view&id=1611373',
+					},
+					{
+						name: 'a-ru',
+						url: 'https://www.pixiv.net/artworks/20921732',
+					},
+					{
+						name: 'amibazh',
+						url: 'https://www.pixiv.net/artworks/65477498',
+					},
+					{
+						name: {
+							es: '🔞 Sayori (NEKO WORKS)',
+							ja: '🔞 さより (NEKO WORKS)',
+						},
+						url: 'https://x.com/sayori_nw',
+					},
+					'bridow',
+					{
+						name: 'けも　ちはる',
+						url: 'https://www.pixiv.net/artworks/80129938',
+					},
+					{
+						name: '串子',
+						url: 'https://www.pixiv.net/artworks/48305869',
+					},
+					{
+						name: 'Snozaki篠崎',
+						url: 'https://www.pixiv.net/artworks/75533537',
+					},
+					{
+						name: 'ヤーベン',
+						url: 'https://www.pixiv.net/artworks/73352466',
+					},
+					'asakura masatoki',
+					'mizumoto tadashi',
+					{
+						name: 'りすたる',
+						url: 'https://www.pixiv.net/artworks/56995903',
+					},
+					{
+						name: '喧静',
+						url: 'https://www.pixiv.net/artworks/57125086',
+					},
+					{
+						name: '猫水瀬',
+						url: 'https://www.pixiv.net/artworks/26660725',
+					},
+					{
+						name: 'たつきち',
+						url: 'https://www.pixiv.net/artworks/2529461',
+					},
+					'desuran',
+					{
+						name: '村上４時',
+						url: 'https://www.pixiv.net/artworks/16142353',
+					},
+					{
+						name: 'ちょんちょん',
+						url: 'https://www.pixiv.net/artworks/9460669',
+					},
+					{
+						name: '氷紋',
+						url: 'https://www.pixiv.net/artworks/49512330',
+					},
+					{
+						name: 'mayo',
+						clarification: 'miyusa',
+					},
+					{
+						name: '路地子',
+						url: 'https://www.pixiv.net/artworks/17104037',
+					},
+					{
+						name: 'U-Joe',
+						url: 'https://www.pixiv.net/artworks/76629784',
+					},
+					{
+						name: 'AFZero',
+						url: 'https://www.pixiv.net/artworks/36113767',
+					},
+					{
+						name: '明輝(あきてる)',
+						url: 'https://www.pixiv.net/artworks/70378517',
+					},
+					{
+						name: 'NGA是创世的爸爸',
+						url: 'https://www.pixiv.net/artworks/72859380',
+					},
+					{
+						name: '渊子',
+						url: 'https://www.pixiv.net/artworks/67759529',
+					},
+					{
+						name: 'キ サ ム',
+						url: 'https://www.pixiv.net/artworks/68028464',
+					},
+					{
+						name: '抽风男',
+						url: 'https://www.pixiv.net/artworks/80891190',
+					},
+					'r2sais',
+					{
+						name: 'wjstpwls4',
+						url: 'https://www.pixiv.net/en/artworks/58653985',
+					},
+					{
+						name: 'KUYA',
+						url: 'https://www.pixiv.net/artworks/83858729',
+					},
+					{
+						name: '有るごん (No.18)',
+						url: 'https://www.pixiv.net/en/artworks/73667322',
+					},
+					{
+						name: 'しろもる',
+						url: 'https://www.pixiv.net/en/artworks/67253607',
+					},
+				],
+			},
+		},
 		childrenTitles: [
-			'Entrusting this World to Idols ~ Idolatrize World',
-			'Jelly Stone',
-			'The Concealed Four Seasons ~ Hidden Star in All Seasons',
-			'No More Going Through Doors',
-			'Pure Furies ~ Whereabouts of the Heart',
-			'Pandemonic Planet',
-			'The Reversed Wheel of Fortune',
-			'Primordial Beat ~ Pristine Beat',
-			'Mysterious Purification Rod',
-			'Shoutoku Legend ~ True Administrator',
-			'Night Sakura of Dead Spirits',
-			'Emotional Skyscraper ~ Cosmic Mind',
-			'Rural Makai City Esoteria',
-			'Green-Eyed Jealousy',
-			'The Sealed Away Youkai ~ Lost Place',
-			'The Venerable Ancient Battlefield ~ Suwa Foughten Field',
-			'Faith is for the Transient People',
-			'Mound of Life',
-			'Eastern Judgement of the Sixtieth Year ~ Fate of Sixty Years',
-			'Kaeidzuka ~ Higan Retour',
-			'Eternal Dream ~ Mystic Maple',
-			'Voyage 1969',
-			'Flight of the Bamboo Cutter ~ Lunatic Princess',
-			'Gensokyo Millennium ~ History of the Moon',
-			'Bloom Nobly, Ink-Black Cherry Blossoms ~ Border of Life',
-			'Ultimate Truth',
-			'The Capital City of Flowers in the Sky',
-			'The Doll Maker of Bucuresti',
-			'Septette for the Dead Princess',
-			'Lunate Elf',
-			'Onigashima in the Fairyland',
-			'Swift Battle',
-			'Wind Circulation ~ Wind Tour',
-			'Tengu is Watching ~ Black Eyes',
-			'Broken Moon',
-			"The Ground's Color is Yellow",
-			'Our Hisou Tensoku',
-			'The Legendary Titan',
-			'Bell of Avici ~ Infinite Nightmare',
-			'The Youkai Mountain ~ Mysterious Mountain',
-			'Magus Night',
-			'Great Fairy Wars ~ Fairy Wars',
-			'Shinkirou Orchestra',
-			'The Lost Emotion',
-			'Cheat Against the Impossible Danmaku',
-			'Eternal Short-Lived Reign',
-			'Bamboo Forest in Flames',
-			'Battlefield of Hanahazama',
-			'Tonight Stars an Easygoing Egoist ~ Egoistic Flowers',
-			'Spirit Possession Flowers in Full Bloom',
-			"The Ground's Color is Yellow ~ Primrose",
-			'The Palanquin Ship Flies in the Sky',
-			'Constant and Unchanging',
-			'Lunatic Dreamer',
-			'Nightmare Diary',
-			"Kid's Festival ~ Innocent Treasures",
+			{
+				es: 'Entrusting this World to Idols ~ Idolatrize World',
+				ja: '偶像に世界を委ねて ～ Idolatrize World',
+			},
+			{
+				es: 'Jelly Stone',
+				ja: 'ジェリーストーン',
+			},
+			{
+				es: 'Secret God Matara ~ Hidden Star in All Seasons',
+				ja: '秘神マターラ ～ Hidden Star in All Seasons.',
+			},
+			{
+				es: 'No More Going Through Doors',
+				ja: 'もうドアには入れない',
+			},
+			{
+				es: 'Pure Furies ~ Whereabouts of the Heart',
+				ja: 'ピュアヒューリーズ ～ 心の在処',
+			},
+			{
+				es: 'Pandemonic Planet',
+				ja: 'パンデモニックプラネット',
+			},
+			{
+				es: 'The Reversed Wheel of Fortune',
+				ja: '逆転するホイールオブフォーチュン',
+			},
+			{
+				es: 'Primordial Beat ~ Pristine Beat',
+				ja: '始原のビート ～ Pristine Beat',
+			},
+			{
+				es: 'Mysterious Purification Rod',
+				ja: '不思議なお祓い棒',
+			},
+			{
+				es: 'Shoutoku Legend ~ True Administrator',
+				ja: '聖徳伝説 ～ True Administrator',
+			},
+			{
+				es: 'Night Sakura of Dead Spirits',
+				ja: '死霊の夜桜',
+			},
+			{
+				es: 'Emotional Skyscraper ~ Cosmic Mind',
+				ja: '感情の摩天楼 ～ Cosmic Mind',
+			},
+			{
+				es: 'Rural Makai City Esoteria',
+				ja: '魔界地方都市エソテリア',
+			},
+			{
+				es: 'Green-Eyed Jealousy',
+				ja: '緑眼のジェラシー',
+			},
+			{
+				es: 'The Sealed Away Youkai ~ Lost Place',
+				ja: '封じられた妖怪 ～ Lost Place',
+			},
+			{
+				es: 'The Venerable Ancient Battlefield ~ Suwa Foughten Field',
+				ja: '神さびた古戦場 ～ Suwa Foughten Field',
+			},
+			{
+				es: 'Faith is for the Transient People',
+				ja: '信仰は儚き人間の為に',
+			},
+			{
+				es: 'Mound of Life',
+				ja: '此岸の塚',
+			},
+			{
+				es: 'Eastern Judgement of the Sixtieth Year ~ Fate of Sixty Years',
+				ja: '六十年目の東方裁判 ～ Fate of Sixty Years',
+			},
+			{
+				es: 'Kaeidzuka ~ Higan Retour',
+				ja: '花映塚 ～ Higan Retour',
+			},
+			{
+				es: 'Eternal Dream ~ Mystic Maple',
+				ja: 'Eternal Dream ～ 幽玄の槭樹',
+			},
+			{
+				es: 'Voyage 1969',
+				ja: 'ヴォヤージュ1969',
+			},
+			{
+				es: 'Flight of the Bamboo Cutter ~ Lunatic Princess',
+				ja: '竹取飛翔 ～ Lunatic Princess',
+			},
+			{
+				es: 'Gensokyo Millennium ~ History of the Moon',
+				ja: '千年幻想郷 ～ History of the Moon',
+			},
+			{
+				es: 'Bloom Nobly, Ink-Black Cherry Blossoms ~ Border of Life',
+				ja: '幽雅に咲かせ、墨染の桜 〜 Border of Life',
+			},
+			{
+				es: 'Ultimate Truth',
+				ja: 'アルティメットトゥルース',
+			},
+			{
+				es: 'The Capital City of Flowers in the Sky',
+				ja: '天空の花の都 (The Capital City of Flowers in the Sky)',
+			},
+			{
+				es: 'The Doll Maker of Bucuresti',
+				ja: 'ブクレシュティの人形師',
+			},
+			{
+				es: 'Septette for the Dead Princess',
+				ja: '亡き王女の為のセプテット',
+			},
+			{
+				es: 'Lunate Elf',
+				ja: 'ルーネイトエルフ',
+			},
+			{
+				es: 'Onigashima in the Fairyland ~ Missing Power',
+				ja: '御伽の国の鬼が島 ～ Missing Power',
+			},
+			{
+				es: 'Swift Battle',
+				ja: '戦迅',
+			},
+			{
+				es: 'Wind Circulation ~ Wind Tour',
+				ja: '風の循環 ～ Wind Tour',
+			},
+			{
+				es: 'Tengu is Watching ~ Black Eyes',
+				ja: '天狗が見ている ～ Black Eyes',
+			},
+			{
+				es: 'Broken Moon',
+				ja: '砕月',
+			},
+			{
+				es: "The Ground's Color is Yellow",
+				ja: '地の色は黄色',
+			},
+			{
+				es: 'Our Hisou Tensoku',
+				ja: 'ぼくらの非想天則',
+			},
+			{
+				es: 'The Legendary Titan',
+				ja: '伝説の巨神',
+			},
+			{
+				es: 'Bell of Avici ~ Infinite Nightmare',
+				ja: '無間の鐘 ～ Infinite Nightmare',
+			},
+			{
+				es: 'The Youkai Mountain ~ Mysterious Mountain',
+				ja: '妖怪の山 ～ Mysterious Mountain',
+			},
+			{
+				es: 'Magus Night',
+				ja: 'メイガスナイト',
+			},
+			{
+				es: 'Great Fairy Wars ~ Fairy Wars',
+				ja: '妖精大戦争 ～ Fairy Wars',
+			},
+			{
+				es: 'Shinkirou Orchestra',
+				ja: '心綺楼囃子',
+			},
+			{
+				es: 'The Lost Emotion',
+				ja: '亡失のエモーション',
+			},
+			{
+				es: 'Cheat Against the Impossible Danmaku',
+				ja: '不可能弾幕には反則を',
+			},
+			{
+				es: 'Eternal Short-Lived Reign',
+				ja: '永遠の三日天下',
+			},
+			{
+				es: 'Bamboo Forest in Flames',
+				ja: '竹林インフレイム',
+			},
+			{
+				es: 'Battlefield of Hanahazama',
+				ja: '華狭間のバトルフィールド',
+			},
+			{
+				es: 'Tonight Stars an Easygoing Egoist ~ Egoistic Flowers.',
+				ja: '今宵は飄逸なエゴイスト(Live ver) ～ Egoistic Flowers.',
+			},
+			{
+				es: 'Spirit Possession Flowers in Full Bloom',
+				ja: '咲き誇る憑依華',
+			},
+			{
+				es: "The Ground's Color is Yellow ~ Primrose",
+				ja: '地の色は黄色 ～ Primrose',
+			},
+			{
+				es: 'The Palanquin Ship Flies in the Sky',
+				ja: '聖輦船空を往く',
+			},
+			{
+				es: 'Constant and Unchanging',
+				ja: '恒常不変の参廟祀',
+			},
+			{
+				es: 'Lunatic Dreamer',
+				ja: 'ルナティックドリーマー',
+			},
+			{
+				es: 'Nightmare Diary',
+				ja: 'ナイトメアダイアリー',
+			},
+			{
+				es: "Kid's Festival ~ Innocent Treasures",
+				ja: '童祭 ～ Innocent Treasures',
+			},
 		],
 		tags: ['piano medley', 'low quality'],
 	},
@@ -125,7 +476,10 @@ const items: MusicItem[] = [
 		id: 'okina-piano-drums',
 		kind: 'single',
 		artists: [zunCredit, papitaCredit],
-		title: 'The Concealed Four Seasons',
+		title: {
+			es: 'The Concealed Four Seasons',
+			ja: '秘匿されたフォーシーズンズ',
+		},
 		date: new Date('2020-04-05'),
 		categories: ['arrangement', 'touhou'],
 		coverUrl: '/potato.webp',
@@ -237,7 +591,10 @@ const items: MusicItem[] = [
 		id: 'neko-4-op-piano',
 		kind: 'single',
 		artists: [papitaCredit],
-		title: 'NEKOPARA Vol.4『SWEET×SWEET』',
+		title: {
+			es: 'NEKOPARA Vol.4『SWEET×SWEET』',
+			ja: 'ネコぱら vol.4『SWEET×SWEET』',
+		},
 		date: new Date('2020-10-07'),
 		categories: ['arrangement', 'piano'],
 		coverUrl: '/potato.webp',
@@ -281,7 +638,10 @@ const items: MusicItem[] = [
 		id: 'former-hell-showdown',
 		kind: 'single',
 		artists: [papitaCredit],
-		title: 'Former Hell Showdown',
+		title: {
+			es: 'Former Hell Showdown',
+			ja: '旧地獄の対決',
+		},
 		date: new Date('2020-12-22'),
 		categories: ['original', 'touhou'],
 		coverUrl: '/images/music/oni-showdown/onishowdown.webp',
@@ -339,7 +699,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '9.26 MB',
 				url: '/audio/music/oni-showdown/Former Hell Showdown.mp3',
 			},
@@ -364,7 +728,10 @@ const items: MusicItem[] = [
 		id: 'tredecillion-tears',
 		kind: 'single',
 		artists: [papitaCredit],
-		title: 'Night of a Tredecillion Tears',
+		title: {
+			es: 'Night of a Tredecillion Tears',
+			ja: '夜のトレデシリオンな涙',
+		},
 		date: new Date('2020-12-29'),
 		categories: ['original', 'touhou'],
 		coverUrl: '/images/music/tredecillion-tears/cover.png',
@@ -381,7 +748,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '16.7 MB',
 				url: '/audio/music/tredecillion-tears/Night of a Tredecillion Tears.mp3',
 			},
@@ -402,14 +773,22 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '1.31 MB',
 				url: '/images/music/tredecillion-tears/sadnight.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '84.6 KB',
 				url: '/images/music/tredecillion-tears/sadnight.webp',
 			},
@@ -421,7 +800,11 @@ const items: MusicItem[] = [
 		kind: 'single',
 		displayArtist: 'PaTeKa',
 		artists: [papitaCredit, tewaCredit, karlCredit],
-		title: 'Rabbit of the Bar ~ Red and White Tubercle',
+		title: {
+			es: 'Conejo del Bar ~ Tubérculo Rojo y Blanco',
+			en: 'Rabbit of the Bar ~ Red and White Tubercle',
+			ja: '居酒屋の兎 ～ Red and White Tubercle',
+		},
 		description:
 			'Composition:\n• Papita con Puré (I. Z.) [Piano; Acoustic Guitar]\n• Karl Zuñiga [Drums; Strings; Bass]\n• Tewi [Violin; RTp]\n\nMix: Karl Zuñiga',
 		date: new Date('2021-01-07'),
@@ -498,7 +881,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '15.2 MB',
 				url: '/audio/music/pateka-1/PaTeKa1.mp3',
 			},
@@ -512,14 +899,22 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '1.42 MB',
 				url: '/images/music/pateka-1/pateka.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '62.5 KB',
 				url: '/images/music/pateka-1/pateka.webp',
 			},
@@ -658,14 +1053,22 @@ const items: MusicItem[] = [
 				format: 'png',
 				url: '/images/music/eurotest-1/eurotest2.png',
 				size: '1.16 MB',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 			},
 			{
 				kind: 'image',
 				format: 'webp',
 				url: '/images/music/eurotest-1/eurotest2.webp',
 				size: '95.2 KB',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 			},
 		],
 		tags: ['electronic', 'eurobeat'],
@@ -674,7 +1077,10 @@ const items: MusicItem[] = [
 		id: 'cfteb',
 		kind: 'single',
 		artists: [papitaCredit],
-		title: 'Claim from the Empire Below',
+		title: {
+			es: 'Claim from the Empire Below',
+			ja: '下帝国からの主張',
+		},
 		date: new Date('2021-04-24'),
 		categories: ['original', 'touhou'],
 		coverUrl: '/images/music/empire-below/cfteb.webp',
@@ -705,21 +1111,33 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '16.7 MB',
 				url: '/audio/music/empire-below/Claim from the Empire Below.mp3',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '1.40 MB',
 				url: '/images/music/empire-below/cfteb.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '114 KB',
 				url: '/images/music/empire-below/cfteb.webp',
 			},
@@ -730,7 +1148,10 @@ const items: MusicItem[] = [
 		id: 'th18-piano-medley',
 		kind: 'compilation',
 		artists: [zunCredit, papitaCredit],
-		title: 'Unconnected Marketeers Piano Medley',
+		title: {
+			es: 'Unconnected Marketeers Piano Medley',
+			ja: '東方虹龍洞ピアノメドレー',
+		},
 		date: new Date('2021-05-07'),
 		categories: ['arrangement', 'piano', 'touhou', 'medley'],
 		coverUrl: '/images/music/th18-piano/cover.png',
@@ -764,7 +1185,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '43.6 MB',
 				url: '/audio/music/th18-piano/Unconnected Marketeers Piano Medley.mp3',
 			},
@@ -778,21 +1203,33 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '1.32 MB',
 				url: '/images/music/th18-piano/thumbnail.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '107 KB',
 				url: '/images/music/th18-piano/thumbnail.webp',
 			},
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete completo (MediaFire)',
+				label: {
+					es: 'Paquete completo (MediaFire)',
+					en: 'Full Pack (MediaFire)',
+					ja: 'フルパック (MediaFire)',
+				},
 				size: '45.51 MB',
 				url: 'https://www.mediafire.com/file/helfrbn2dxukidt/Touhou_18_Piano_Medley.zip/file',
 				external: true,
@@ -824,7 +1261,10 @@ const items: MusicItem[] = [
 		id: 'unused-film-strip',
 		kind: 'single',
 		artists: [papitaCredit],
-		title: 'Unused Film Strip',
+		title: {
+			es: 'Unused Film Strip',
+			ja: '未使用フィルムストリップ',
+		},
 		description:
 			'Character profile:' +
 			'\nEishoku Hakuro' +
@@ -861,7 +1301,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '8.64 MB',
 				url: '/audio/music/film-youkai/Unused Film Strip.mp3',
 			},
@@ -882,21 +1326,33 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '1.95 MB',
 				url: '/images/music/film-youkai/miniatura.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '155 KB',
 				url: '/images/music/film-youkai/miniatura.webp',
 			},
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete completo (MediaFire)',
+				label: {
+					es: 'Paquete completo (MediaFire)',
+					en: 'Full Pack (MediaFire)',
+					ja: 'フルパック (MediaFire)',
+				},
 				size: '10.43 MB',
 				url: 'https://www.mediafire.com/file/sy58gn87bpcy3av/Unused_Film_Strip.zip/file',
 				external: true,
@@ -926,7 +1382,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '9.26 MB',
 				url: '/audio/music/heart-cup/Mind Yet Not Heart.mp3',
 			},
@@ -947,21 +1407,33 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '1.13 MB',
 				url: '/images/music/heart-cup/thumbnail.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '43.3 KB',
 				url: '/images/music/heart-cup/thumbnail.webp',
 			},
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete completo (MediaFire)',
+				label: {
+					es: 'Paquete completo (MediaFire)',
+					en: 'Full Pack (MediaFire)',
+					ja: 'フルパック (MediaFire)',
+				},
 				size: '16.24 MB',
 				url: 'https://www.mediafire.com/file/kiqu6crdinh89bw/MindYetNotHeart.zip/file',
 				external: true,
@@ -975,8 +1447,10 @@ const items: MusicItem[] = [
 		kind: 'single',
 		artists: [
 			{
-				name: '湊あくあ',
-				clarification: 'Minato Aqua',
+				name: {
+					es: 'Minato Aqua',
+					ja: '湊あくあ',
+				},
 				url: 'https://www.youtube.com/channel/UC1opHUrw8rvnsadT-iGp7Cg',
 			},
 			papitaCredit,
@@ -1020,7 +1494,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '9.60 MB',
 				url: '/audio/music/kaisouressha/kaisouressha.mp3',
 			},
@@ -1048,21 +1526,33 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '1.24 MB',
 				url: '/images/music/kaisouressha/thumbnail.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '33.9 KB',
 				url: '/images/music/kaisouressha/thumbnail.webp',
 			},
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete completo (MediaFire)',
+				label: {
+					es: 'Paquete completo (MediaFire)',
+					en: 'Full Pack (MediaFire)',
+					ja: 'フルパック (MediaFire)',
+				},
 				size: '38.19 MB',
 				url: 'https://www.mediafire.com/file/twbokfkmyirspna/Kaisou_Ressha.zip/file',
 				external: true,
@@ -1075,7 +1565,10 @@ const items: MusicItem[] = [
 		id: 'izanagi-bloom-phenomenon',
 		kind: 'single',
 		artists: [papitaCredit],
-		title: 'Izanagi Bloom Phenomenon',
+		title: {
+			es: 'Izanagi Bloom Phenomenon',
+			ja: 'イザナギブルーム現象',
+		},
 		date: new Date('2021-12-30'),
 		categories: ['original', 'touhou'],
 		coverUrl: '/images/music/izanagi-bloom/cover.png',
@@ -1092,7 +1585,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '9.20 MB',
 				url: '/audio/music/izanagi-bloom/Izanagi Bloom Phenomenon.mp3',
 			},
@@ -1106,14 +1603,22 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '146 KB',
 				url: '/images/music/izanagi-bloom/thumbnail.webp',
 			},
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete completo (MediaFire)',
+				label: {
+					es: 'Paquete completo (MediaFire)',
+					en: 'Full Pack (MediaFire)',
+					ja: 'フルパック (MediaFire)',
+				},
 				size: '21.50 MB',
 				url: 'https://www.mediafire.com/file/dk3ifbdn7kexvnq/Izanagi_Bloom_Phenomenon.rar/file',
 				external: true,
@@ -1156,7 +1661,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '5.83 MB',
 				url: '/audio/music/pateka-2/Buen Presagio ~ Travesía Inhóspita.mp3',
 			},
@@ -1181,7 +1690,10 @@ const items: MusicItem[] = [
 		id: 'kanako-sb-piano',
 		kind: 'single',
 		artists: [zunCredit, papitaCredit],
-		title: 'Cemetery of Onbashira ~ Suwa Foughten Field',
+		title: {
+			es: 'Cemetery of Onbashira ~ Suwa Foughten Field',
+			ja: '御柱の墓場 ～ Suwa Foughten Field',
+		},
 		description:
 			"Mountain of Faith Stage 6 Theme and Yasaka Kanako's Theme mixed into one as a piano arrangement.",
 		date: new Date('2022-12-02'),
@@ -1216,21 +1728,33 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '12.4 MB',
 				url: '/audio/music/kanako-sb-piano/kanako.mp3',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '79.3 KB',
 				url: '/images/music/kanako-sb-piano/thumbnail.webp',
 			},
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete completo (MediaFire)',
+				label: {
+					es: 'Paquete completo (MediaFire)',
+					en: 'Full Pack (MediaFire)',
+					ja: 'フルパック (MediaFire)',
+				},
 				size: '133.96 MB',
 				url: 'https://www.mediafire.com/file/d2q5tpim7f3dlmr/COOSFF_by_PapitaPur%25C3%25A9.zip/file',
 				external: true,
@@ -1243,7 +1767,10 @@ const items: MusicItem[] = [
 		id: 'spols',
 		kind: 'single',
 		artists: [papitaCredit],
-		title: 'Stellar Passage of Lunatic Starway',
+		title: {
+			es: 'Stellar Passage of Lunatic Starway',
+			ja: 'ルナティックスターウェイのステラー通路',
+		},
 		date: new Date('2022-12-16'),
 		categories: ['original', 'touhou'],
 		coverUrl: '/images/music/spols/cover.png',
@@ -1260,7 +1787,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '11.3 MB',
 				url: '/audio/music/spols/Stellar Passage of Lunatic Starway.mp3',
 			},
@@ -1288,7 +1819,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete completo (MediaFire)',
+				label: {
+					es: 'Paquete completo (MediaFire)',
+					en: 'Full Pack (MediaFire)',
+					ja: 'フルパック (MediaFire)',
+				},
 				size: '28.69 MB',
 				url: 'https://www.mediafire.com/file/ymztpu5l95ckw8r/SPoLS_by_PapitaPur%25C3%25A9.zip/file',
 				external: true,
@@ -1301,7 +1836,10 @@ const items: MusicItem[] = [
 		id: 'gyptos',
 		kind: 'single',
 		artists: [papitaCredit, karlCredit],
-		title: 'Gyptos ~ Symphony of Opposing Forces',
+		title: {
+			es: 'Gyptos ~ Symphony of Opposing Forces',
+			ja: 'Gyptos ～ 対抗勢力のシンフォニー',
+		},
 		description:
 			'Base and general composition: Papita con Puré\n\nArrangement and extended composition: Karl Zuñiga\n\nBase mix: Papita con Puré\n\nFinal mix and mastering: Karl Zuñiga',
 		date: new Date('2023-02-24'),
@@ -1332,7 +1870,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '8.40 MB',
 				url: '/audio/music/gyptos/gyptos.mp3',
 			},
@@ -1360,7 +1902,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete completo (MediaFire)',
+				label: {
+					es: 'Paquete completo (MediaFire)',
+					en: 'Full Pack (MediaFire)',
+					ja: 'フルパック (MediaFire)',
+				},
 				size: '120.71 MB',
 				url: 'https://www.mediafire.com/file/b4b24wi5ktopx21/Gyptos_by_PapitaPur%25C3%25A9_%2526_KarlZu%25C3%25B1iga.zip/file',
 				external: true,
@@ -1373,7 +1919,10 @@ const items: MusicItem[] = [
 		id: 'th19-title-piano',
 		kind: 'single',
 		artists: [zunCredit, papitaCredit],
-		title: 'Intelligence of Beast',
+		title: {
+			es: 'Intelligence of Beast',
+			ja: '獣の知性',
+		},
 		date: new Date('2023-07-28'),
 		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/images/music/th19-title-piano/cover.png',
@@ -1405,7 +1954,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '11.5 MB',
 				url: '/audio/music/th19-title-piano/th19_01.mp3',
 			},
@@ -1419,7 +1972,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '187 KB',
 				url: '/images/music/th19-title-piano/thumbnail.webp',
 			},
@@ -1433,7 +1990,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete completo (MediaFire)',
+				label: {
+					es: 'Paquete completo (MediaFire)',
+					en: 'Full Pack (MediaFire)',
+					ja: 'フルパック (MediaFire)',
+				},
 				size: '54.27 MB',
 				url: 'https://www.mediafire.com/file/7aj6dsy7azfox34/Intelligence_of_Beast_by_PapitaPur%25C3%25A9.zip/file',
 				external: true,
@@ -1446,7 +2007,10 @@ const items: MusicItem[] = [
 		id: 'th19-cute-world-piano',
 		kind: 'single',
 		artists: [zunCredit, papitaCredit],
-		title: 'The World is Made in an Adorable Way',
+		title: {
+			es: 'The World is Made in an Adorable Way',
+			ja: '世界は可愛く出来ている',
+		},
 		date: new Date('2023-08-04'),
 		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/images/music/th19-cute-world-piano/thumbnail.webp',
@@ -1478,14 +2042,22 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '14.01 MB',
 				url: '/audio/music/th19-cute-world-piano/The World is Made From Cuteness.mp3',
 			},
 			{
 				kind: 'file',
 				format: 'midi',
-				label: 'MIDI completo (MediaFire)',
+				label: {
+					es: 'MIDI completo (MediaFire)',
+					en: 'Full MIDI (MediaFire)',
+					ja: 'フルMIDI (MediaFire)',
+				},
 				size: '89.24 KB',
 				url: 'https://www.mediafire.com/file/z5qi4t53qli1yc1/TWMAW_Piano_by_PapitaPur%25C3%25A9.zip/file',
 				external: true,
@@ -1493,14 +2065,22 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (960x540)',
+				label: {
+					es: 'Miniatura (960x540)',
+					en: 'Thumbnail (960x540)',
+					ja: 'サムネイル (960x540)',
+				},
 				size: '0.98 MB',
 				url: '/images/music/th19-cute-world-piano/thumbnail.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (960x540)',
+				label: {
+					es: 'Miniatura (960x540)',
+					en: 'Thumbnail (960x540)',
+					ja: 'サムネイル (960x540)',
+				},
 				size: '91.7 KB',
 				url: '/images/music/th19-cute-world-piano/thumbnail.webp',
 			},
@@ -1514,7 +2094,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete completo (MediaFire)',
+				label: {
+					es: 'Paquete completo (MediaFire)',
+					en: 'Full Pack (MediaFire)',
+					ja: 'フルパック (MediaFire)',
+				},
 				size: '22.95 MB',
 				url: 'https://www.mediafire.com/file/z5qi4t53qli1yc1/TWMAW_Piano_by_PapitaPur%25C3%25A9.zip/file',
 				external: true,
@@ -1527,7 +2111,10 @@ const items: MusicItem[] = [
 		id: 'th19-piano-medley',
 		kind: 'compilation',
 		artists: [zunCredit, papitaCredit],
-		title: 'Unfinished Dream of All Living Ghost. Piano Medley',
+		title: {
+			es: 'Unfinished Dream of All Living Ghost. Piano Medley',
+			ja: '東方獣王園ピアノメドレー',
+		},
 		date: new Date('2023-12-23'),
 		categories: ['arrangement', 'piano', 'touhou', 'medley'],
 		coverUrl: '/images/music/th19-piano/cover.png',
@@ -1566,7 +2153,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '57.6 MB',
 				url: '/audio/music/th19-piano/th19.mp3',
 			},
@@ -1587,7 +2178,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'midi',
-				label: 'MIDI completo',
+				label: {
+					es: 'MIDI completo',
+					en: 'Full MIDI',
+					ja: 'フルMIDI',
+				},
 				size: '320 KB',
 				url: '/music-item-misc/th19-piano/f_th19.mid',
 			},
@@ -1664,14 +2259,22 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '1.30 MB',
 				url: '/images/music/th19-piano/thumbnail.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (720p)',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
 				size: '131 KB',
 				url: '/images/music/th19-piano/thumbnail.webp',
 			},
@@ -2011,7 +2614,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete completo (MediaFire)',
+				label: {
+					es: 'Paquete completo (MediaFire)',
+					en: 'Full Pack (MediaFire)',
+					ja: 'フルパック (MediaFire)',
+				},
 				size: '605.56 MB',
 				url: 'https://www.mediafire.com/file/2vtqhjy2hee8kqa/Touhou_19_Piano_Medley_by_PapaPur%25C3%25A9.zip/file',
 				external: true,
@@ -2053,21 +2660,33 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Pista completa (320Kbps)',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
 				size: '9.05 MB',
 				url: '/audio/music/aswotts/A Star We Owe to the Sky.mp3',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (540p)',
+				label: {
+					es: 'Miniatura (540p)',
+					en: 'Thumbnail (540p)',
+					ja: 'サムネイル (540p)',
+				},
 				size: '854 KB',
 				url: '/images/music/aswotts/thumbnail.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (540p)',
+				label: {
+					es: 'Miniatura (540p)',
+					en: 'Thumbnail (540p)',
+					ja: 'サムネイル (540p)',
+				},
 				size: '33 KB',
 				url: '/images/music/aswotts/thumbnail.webp',
 			},
@@ -2084,7 +2703,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'zip',
-				label: 'Paquete completo (MediaFire)',
+				label: {
+					es: 'Paquete completo (MediaFire)',
+					en: 'Full Pack (MediaFire)',
+					ja: 'フルパック (MediaFire)',
+				},
 				size: '359 MB',
 				url: 'https://www.mediafire.com/file/5jqwu00nv4t2b2w/ASWOttS_by_PapaPur%25C3%25A9.zip/file',
 				external: true,
@@ -2099,8 +2722,8 @@ const items: MusicItem[] = [
 		displayArtist: 'PaTeKa',
 		artists: [papitaCredit, tewaCredit, karlCredit],
 		title: {
-			es: 'Maiden\'s Step ~ Arboleda Renaciente',
-			en: 'Maiden\'s Step ~ Reborn Grove',
+			es: "Maiden's Step ~ Arboleda Renaciente",
+			en: "Maiden's Step ~ Reborn Grove",
 			ja: '乙女の足音 ~ Reborn Grove',
 		},
 		description: {
@@ -2140,7 +2763,7 @@ const items: MusicItem[] = [
 				source: 'youtube',
 				label: {
 					es: 'YouTube (en canal de Karl Zuñiga)',
-					en: 'YouTube (in Karl Zuñiga\'s channel)',
+					en: "YouTube (in Karl Zuñiga's channel)",
 					ja: 'YouTube (Karl Zuñigaのチャンネル内)',
 				},
 				url: 'https://www.youtube.com/watch?v=yjuLQ-HOpsY',
