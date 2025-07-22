@@ -710,14 +710,22 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (1080p)',
+				label: {
+					es: 'Miniatura (1080p)',
+					en: 'Thumbnail (1080p)',
+					ja: 'サムネイル (1080p)',
+				},
 				size: '2.21 MB',
 				url: '/images/music/oni-showdown/onishowdown.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (1080p)',
+				label: {
+					es: 'Miniatura (1080p)',
+					en: 'Thumbnail (1080p)',
+					ja: 'サムネイル (1080p)',
+				},
 				size: '178 KB',
 				url: '/images/music/oni-showdown/onishowdown.webp',
 			},
@@ -759,14 +767,22 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Portada (356x356)',
+				label: {
+					es: 'Portada (356x356)',
+					en: 'Cover (356x356)',
+					ja: '表紙 (356x356)',
+				},
 				size: '171 KB',
 				url: '/images/music/tredecillion-tears/cover.png',
 			},
 			{
 				kind: 'image',
 				format: 'jpg',
-				label: 'Portada (200x200)',
+				label: {
+					es: 'Portada (200x200)',
+					en: 'Cover (200x200)',
+					ja: '表紙 (200x200)',
+				},
 				size: '24.8 KB',
 				url: '/images/music/tredecillion-tears/Folder.jpg',
 			},
@@ -892,7 +908,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Portada (5000x5000)',
+				label: {
+					es: 'Portada (5000x5000)',
+					en: 'Cover (5000x5000)',
+					ja: '表紙 (5000x5000)',
+				},
 				size: '14.7 MB',
 				url: '/images/music/pateka-1/cover.png',
 			},
@@ -1046,7 +1066,11 @@ const items: MusicItem[] = [
 				format: 'mp3',
 				url: '/audio/music/eurotest-1/Take and Forsake.mp3',
 				size: '9.16 MB',
-				label: 'Pista completa (320 Kbps)',
+				label: {
+					es: 'Pista completa (320 Kbps)',
+					en: 'Full track (320 Kbps)',
+					ja: 'フルトラック (320 Kbps)',
+				},
 			},
 			{
 				kind: 'image',
@@ -1196,7 +1220,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Portada (724x724)',
+				label: {
+					es: 'Portada (724x724)',
+					en: 'Cover (724x724)',
+					ja: '表紙 (724x724)',
+				},
 				size: '840 KB',
 				url: '/images/music/th18-piano/cover.png',
 			},
@@ -1312,14 +1340,22 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Retrato de Hakuro (2246x3109)',
+				label: {
+					es: 'Retrato de Hakuro (2246x3109)',
+					en: 'Hakuro Portrait (2246x3109)',
+					ja: 'Hakuroポートレート (2246x3109)',
+				},
 				size: '1.34 MB',
 				url: '/images/music/film-youkai/hakuro.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Portada (1080p)',
+				label: {
+					es: 'Portada (1080p)',
+					en: 'Cover (1080p)',
+					ja: '表紙 (1080p)',
+				},
 				size: '1.14 MB',
 				url: '/images/music/film-youkai/cover.png',
 			},
@@ -1393,14 +1429,22 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'jpg',
-				label: 'Portada (966x966)',
+				label: {
+					es: 'Portada (966x966)',
+					en: 'Cover (966x966)',
+					ja: '表紙 (966x966)',
+				},
 				size: '117 KB',
 				url: '/images/music/heart-cup/cover.jpg',
 			},
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (h.264 / 1080p@60fps)',
+				label: {
+					es: 'Animación (h.264 / 1080p@60fps)',
+					en: 'Animation (h.264 / 1080p@60fps)',
+					ja: 'アニメーション (h.264 / 1080p@60fps)',
+				},
 				size: '6.17 MB',
 				url: '/video/music/heart-cup/mynh.mp4',
 			},
@@ -1455,7 +1499,10 @@ const items: MusicItem[] = [
 			},
 			papitaCredit,
 		],
-		title: '海想列車',
+		title: {
+			es: 'Kaisou Ressha',
+			ja: '海想列車',
+		},
 		description:
 			"Piano arrangement to celebrate former Hololive member Minato Aqua's 2021 birthday.",
 		date: new Date('2021-12-01'),
@@ -1512,14 +1559,22 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Entrada) (h.264 / 1080p@60fps)',
+				label: {
+					es: 'Animación (Entrada) (h.264 / 1080p@60fps)',
+					en: 'Animation (In) (h.264 / 1080p@60fps)',
+					ja: 'アニメーション (In) (h.264 / 1080p@60fps)',
+				},
 				size: '12.3 MB',
 				url: '/video/music/kaisouressha/ksrs_intro.mp4',
 			},
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Bucle) (h.264 / 1080p@60fps)',
+				label: {
+					es: 'Animación (Bucle) (h.264 / 1080p@60fps)',
+					en: 'Animation (Loop) (h.264 / 1080p@60fps)',
+					ja: 'アニメーション (Loop) (h.264 / 1080p@60fps)',
+				},
 				size: '12.2 MB',
 				url: '/video/music/kaisouressha/ksrs_loop.mp4',
 			},
@@ -1596,7 +1651,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Portada (1080p)',
+				label: {
+					es: 'Portada (1080p)',
+					en: 'Cover (1080p)',
+					ja: '表紙 (1080p)',
+				},
 				size: '1.50 MB',
 				url: '/images/music/izanagi-bloom/cover.png',
 			},
@@ -1632,7 +1691,11 @@ const items: MusicItem[] = [
 		kind: 'single',
 		displayArtist: 'PaTeKa',
 		artists: [papitaCredit, tewaCredit, karlCredit],
-		title: 'Good Omens ~ Inhospitable Crossing',
+		title: {
+			es: 'Buen Presagio ~ Travesía Inhóspita',
+			en: 'Good Omens ~ Inhospitable Crossing',
+			ja: 'Good Omens ～ 不親切な交差点',
+		},
 		description:
 			'Composition:\n• Tewi [Piano; acoustic guitar; leads]\n• Karl Zuñiga [Drums; bass; details]\n• Papita con Puré [Piano; violin; details]\n\nMix: Karl Zuñiga',
 		date: new Date('2022-01-29'),
@@ -1672,14 +1735,22 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'jpg',
-				label: 'Portada (3000x3000)',
+				label: {
+					es: 'Portada (3000x3000)',
+					en: 'Cover (3000x3000)',
+					ja: '表紙 (3000x3000)',
+				},
 				size: '559 KB',
 				url: '/images/music/pateka-2/cover.jpg',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Portada (3000x3000)',
+				label: {
+					es: 'Portada (3000x3000)',
+					en: 'Cover (3000x3000)',
+					ja: '表紙 (3000x3000)',
+				},
 				size: '139 KB',
 				url: '/images/music/pateka-2/cover.webp',
 			},
@@ -1798,21 +1869,33 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Portada (1080p)',
+				label: {
+					es: 'Portada (1080p)',
+					en: 'Cover (1080p)',
+					ja: '表紙 (1080p)',
+				},
 				size: '1.20 MB',
 				url: '/images/music/spols/cover.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (1080p)',
+				label: {
+					es: 'Miniatura (1080p)',
+					en: 'Thumbnail (1080p)',
+					ja: 'サムネイル (1080p)',
+				},
 				size: '2.03 MB',
 				url: '/images/music/spols/spols.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (1080p)',
+				label: {
+					es: 'Miniatura (1080p)',
+					en: 'Thumbnail (1080p)',
+					ja: 'サムネイル (1080p)',
+				},
 				size: '114 KB',
 				url: '/images/music/spols/spols.webp',
 			},
@@ -1881,21 +1964,33 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Portada (984x984)',
+				label: {
+					es: 'Portada (984x984)',
+					en: 'Cover (984x984)',
+					ja: '表紙 (984x984)',
+				},
 				size: '668 KB',
 				url: '/images/music/gyptos/cover.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Miniatura (1080p)',
+				label: {
+					es: 'Miniatura (1080p)',
+					en: 'Thumbnail (1080p)',
+					ja: 'サムネイル (1080p)',
+				},
 				size: '2.21 MB',
 				url: '/images/music/gyptos/gyptos.png',
 			},
 			{
 				kind: 'image',
 				format: 'webp',
-				label: 'Miniatura (1080p)',
+				label: {
+					es: 'Miniatura (1080p)',
+					en: 'Thumbnail (1080p)',
+					ja: 'サムネイル (1080p)',
+				},
 				size: '124 KB',
 				url: '/images/music/gyptos/gyptos.webp',
 			},
@@ -1965,7 +2060,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Portada (1080p)',
+				label: {
+					es: 'Portada (1080p)',
+					en: 'Cover (1080p)',
+					ja: '表紙 (1080p)',
+				},
 				size: '1.72 MB',
 				url: '/images/music/th19-title-piano/cover.png',
 			},
@@ -1983,7 +2082,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Bucle) (h.264 / 1080p@60fps)',
+				label: {
+					es: 'Animación (Bucle) (h.264 / 1080p@60fps)',
+					en: 'Animation (Loop) (h.264 / 1080p@60fps)',
+					ja: 'アニメーション (Loop) (h.264 / 1080p@60fps)',
+				},
 				size: '41.1 MB',
 				url: '/video/music/th19-title-piano/loop0.mp4',
 			},
@@ -2087,7 +2190,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación (Bucle) (h.264 / 1080p@60fps)',
+				label: {
+					es: 'Animación (Bucle) (h.264 / 1080p@60fps)',
+					en: 'Animation (Loop) (h.264 / 1080p@60fps)',
+					ja: 'アニメーション (Loop) (h.264 / 1080p@60fps)',
+				},
 				size: '9.07 MB',
 				url: '/video/music/th19-cute-world-piano/01_battle1_loop.mp4',
 			},
@@ -2164,14 +2271,22 @@ const items: MusicItem[] = [
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Mano izquierda completa (320Kbps)',
+				label: {
+					es: 'Mano izquierda completa (320 Kbps)',
+					en: 'Full Left Hand (320 Kbps)',
+					ja: 'フル左手 (320 Kbps)',
+				},
 				size: '57.6 MB',
 				url: '/audio/music/th19-piano/piano_low.mp3',
 			},
 			{
 				kind: 'audio',
 				format: 'mp3',
-				label: 'Mano derecha completa (320Kbps)',
+				label: {
+					es: 'Mano derecha completa (320 Kbps)',
+					en: 'Full Right Hand (320 Kbps)',
+					ja: 'フル右手 (320 Kbps)',
+				},
 				size: '57.6 MB',
 				url: '/audio/music/th19-piano/piano_high.mp3',
 			},
@@ -2189,70 +2304,110 @@ const items: MusicItem[] = [
 			{
 				kind: 'file',
 				format: 'pdf',
-				label: 'Planilla de Rutas de Historia',
+				label: {
+					es: 'Planilla de Rutas de Historia',
+					en: 'Story Mode Routes Sheet',
+					ja: 'ストーリーモードルートシート',
+				},
 				size: '591 KB',
 				url: '/music-item-misc/th19-piano/routes.pdf',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Retrato de Reimu (1496x1949)',
+				label: {
+					es: 'Retrato de Reimu (1496x1949)',
+					en: 'Reimu Portrait (1496x1949)',
+					ja: '霊夢ポートレート (1496x1949)',
+				},
 				size: '1.41 MB',
 				url: '/images/music/th19-piano/01b_col_reimu.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Retrato de Enoko (601x1628)',
+				label: {
+					es: 'Retrato de Enoko (601x1628)',
+					en: 'Enoko Portrait (601x1628)',
+					ja: '慧ノ子ポートレート (601x1628)',
+				},
 				size: '1.06 MB',
 				url: '/images/music/th19-piano/04b_col_enoko.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Retrato de Son (1182x2112)',
+				label: {
+					es: 'Retrato de Biten (1182x2112)',
+					en: 'Biten Portrait (1182x2112)',
+					ja: '美天ポートレート (1182x2112)',
+				},
 				size: '1.41 MB',
 				url: '/images/music/th19-piano/05b_col_son.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Retrato de Marisa (1471x1263)',
+				label: {
+					es: 'Retrato de Marisa (1471x1263)',
+					en: 'Marisa Portrait (1471x1263)',
+					ja: '魔理沙ポートレート (1471x1263)',
+				},
 				size: '1.54 MB',
 				url: '/images/music/th19-piano/06b_col_marisa.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Retrato de Chiyari (977x1712)',
+				label: {
+					es: 'Retrato de Chiyari (977x1712)',
+					en: 'Chiyari Portrait (977x1712)',
+					ja: 'ちやりポートレート (977x1712)',
+				},
 				size: '1.30 MB',
 				url: '/images/music/th19-piano/09b_col_chiyari.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Retrato de Hisami (657x1877)',
+				label: {
+					es: 'Retrato de Hisami (657x1877)',
+					en: 'Hisami Portrait (657x1877)',
+					ja: '日狭美ポートレート (657x1877)',
+				},
 				size: '1.07 MB',
 				url: '/images/music/th19-piano/10b_col_hisami.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Retrato de Zanmu (779x1799)',
+				label: {
+					es: 'Retrato de Zanmu (779x1799)',
+					en: 'Zanmu Portrait (779x1799)',
+					ja: '残無ポートレート (779x1799)',
+				},
 				size: '1.62 MB',
 				url: '/images/music/th19-piano/11b_col_zanmu.png',
 			},
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Portada (1080p)',
+				label: {
+					es: 'Portada (1080p)',
+					en: 'Cover (1080p)',
+					ja: '表紙 (1080p)',
+				},
 				size: '464 KB',
 				url: '/images/music/th19-piano/cover.png',
 			},
 			{
 				kind: 'image',
 				format: 'jpg',
-				label: 'Portada (1080p)',
+				label: {
+					es: 'Portada (1080p)',
+					en: 'Cover (1080p)',
+					ja: '表紙 (1080p)',
+				},
 				size: '516 KB',
 				url: '/images/music/th19-piano/folder.jpg',
 			},
@@ -2281,7 +2436,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Título (Bucle) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Título (Bucle) (h.264 1080p@60fps)',
+					en: 'Animation - Title (Bucle) (h.264 1080p@60fps)',
+					ja: 'アニメーション - タイトル (Bucle) (h.264 1080p@60fps)',
+				},
 				size: '40.4 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/00a_L1_title.mp4',
 				previewUrl: '/video/music/th19-piano/00a_L1_title.webm',
@@ -2290,7 +2449,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Canal of Willows (Bucle) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Canal of Willows (Bucle) (h.264 1080p@60fps)',
+					en: 'Animation - Canal of Willows (Bucle) (h.264 1080p@60fps)',
+					ja: 'アニメーション - Canal of Willows (Bucle) (h.264 1080p@60fps)',
+				},
 				size: '9.07 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/01a_L1_canalOfWillows.mp4',
 				previewUrl: '/video/music/th19-piano/01a_L1_canalOfWillows.webm',
@@ -2299,7 +2462,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Untrodden Valley (Bucle) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Untrodden Valley (Bucle) (h.264 1080p@60fps)',
+					en: 'Animation - Untrodden Valley (Bucle) (h.264 1080p@60fps)',
+					ja: 'アニメーション - Untrodden Valley (Bucle) (h.264 1080p@60fps)',
+				},
 				size: '23.3 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/02a_L1_untroddenValley.mp4',
 				previewUrl: '/video/music/th19-piano/02a_L1_untroddenValley.webm',
@@ -2308,7 +2475,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Moriya Shrine Inner Sanctum (Bucle) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Moriya Shrine Inner Sanctum (Bucle) (h.264 1080p@60fps)',
+					en: 'Animation - Moriya Shrine Inner Sanctum (Bucle) (h.264 1080p@60fps)',
+					ja: 'アニメーション - Moriya Shrine Inner Sanctum (Bucle) (h.264 1080p@60fps)',
+				},
 				size: '25.0 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/03a_L1_moriyaShrineInnerSanctum.mp4',
 				previewUrl: '/video/music/th19-piano/03a_L1_moriyaShrineInnerSanctum.webm',
@@ -2317,7 +2488,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Forest of Magic (Bucle) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Forest of Magic (Bucle) (h.264 1080p@60fps)',
+					en: 'Animation - Forest of Magic (Bucle) (h.264 1080p@60fps)',
+					ja: 'アニメーション - Forest of Magic (Bucle) (h.264 1080p@60fps)',
+				},
 				size: '10.9 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/04a_L1_forestOfMagic.mp4',
 				previewUrl: '/video/music/th19-piano/04a_L1_forestOfMagic.webm',
@@ -2326,7 +2501,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Foot of the Youkai Mountain (Bucle) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Foot of the Youkai Mountain (Bucle) (h.264 1080p@60fps)',
+					en: 'Animation - Foot of the Youkai Mountain (Bucle) (h.264 1080p@60fps)',
+					ja: 'アニメーション - Foot of the Youkai Mountain (Bucle) (h.264 1080p@60fps)',
+				},
 				size: '23.6 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/05a_L1_footOfTheYoukaiMountain.mp4',
 				previewUrl: '/video/music/th19-piano/05a_L1_footOfTheYoukaiMountain.webm',
@@ -2335,7 +2514,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Youkai Mountain Hills (Bucle 1) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Youkai Mountain Hills (Bucle 1) (h.264 1080p@60fps)',
+					en: 'Animation - Youkai Mountain Hills (Bucle 1) (h.264 1080p@60fps)',
+					ja: 'アニメーション - Youkai Mountain Hills (Bucle 1) (h.264 1080p@60fps)',
+				},
 				size: '4.47 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/06a_L1_youkaiMountainHills.mp4',
 				previewUrl: '/video/music/th19-piano/06a_L1_youkaiMountainHills.webm',
@@ -2344,7 +2527,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Youkai Mountain Hills (Transición 1 → 2) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Youkai Mountain Hills (Transición 1 → 2) (h.264 1080p@60fps)',
+					en: 'Animation - Youkai Mountain Hills (Transición 1 → 2) (h.264 1080p@60fps)',
+					ja: 'アニメーション - Youkai Mountain Hills (Transición 1 → 2) (h.264 1080p@60fps)',
+				},
 				size: '5.77 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/06b_1L2_youkaiMountainHills.mp4',
 				previewUrl: '/video/music/th19-piano/06b_1L2_youkaiMountainHills.webm',
@@ -2353,7 +2540,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Youkai Mountain Hills (Bucle 2) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Youkai Mountain Hills (Bucle 2) (h.264 1080p@60fps)',
+					en: 'Animation - Youkai Mountain Hills (Bucle 2) (h.264 1080p@60fps)',
+					ja: 'アニメーション - Youkai Mountain Hills (Bucle 2) (h.264 1080p@60fps)',
+				},
 				size: '6.00 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/06c_L2_youkaiMountainHills.mp4',
 				previewUrl: '/video/music/th19-piano/06c_L2_youkaiMountainHills.webm',
@@ -2362,7 +2553,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Higan (Bucle) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Higan (Bucle) (h.264 1080p@60fps)',
+					en: 'Animation - Higan (Bucle) (h.264 1080p@60fps)',
+					ja: 'アニメーション - Higan (Bucle) (h.264 1080p@60fps)',
+				},
 				size: '45.4 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/07a_L1_higan.mp4',
 				previewUrl: '/video/music/th19-piano/07a_L1_higan.webm',
@@ -2371,7 +2566,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Sai no Kawara (Bucle) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Sai no Kawara (Bucle) (h.264 1080p@60fps)',
+					en: 'Animation - Sai no Kawara (Bucle) (h.264 1080p@60fps)',
+					ja: 'アニメーション - Sai no Kawara (Bucle) (h.264 1080p@60fps)',
+				},
 				size: '15.7 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/08a_L1_saiNoKawara.mp4',
 				previewUrl: '/video/music/th19-piano/08a_L1_saiNoKawara.webm',
@@ -2380,7 +2579,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Hell of Blood Pools (Bucle) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Hell of Blood Pools (Bucle) (h.264 1080p@60fps)',
+					en: 'Animation - Hell of Blood Pools (Bucle) (h.264 1080p@60fps)',
+					ja: 'アニメーション - Hell of Blood Pools (Bucle) (h.264 1080p@60fps)',
+				},
 				size: '7.04 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/09a_L1_hellOfBloodPools.mp4',
 				previewUrl: '/video/music/th19-piano/09a_L1_hellOfBloodPools.webm',
@@ -2389,7 +2592,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Greater Hell (Bucle 1) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Greater Hell (Bucle 1) (h.264 1080p@60fps)',
+					en: 'Animation - Greater Hell (Bucle 1) (h.264 1080p@60fps)',
+					ja: 'アニメーション - Greater Hell (Bucle 1) (h.264 1080p@60fps)',
+				},
 				size: '7.87 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/10a_L1_greaterHell.mp4',
 				previewUrl: '/video/music/th19-piano/10a_L1_greaterHell.webm',
@@ -2398,7 +2605,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Greater Hell (Transición 1 → 2) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Greater Hell (Transición 1 → 2) (h.264 1080p@60fps)',
+					en: 'Animation - Greater Hell (Transición 1 → 2) (h.264 1080p@60fps)',
+					ja: 'アニメーション - Greater Hell (Transición 1 → 2) (h.264 1080p@60fps)',
+				},
 				size: '10.3 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/10b_1L2_greaterHell.mp4',
 				previewUrl: '/video/music/th19-piano/10b_1L2_greaterHell.webm',
@@ -2407,7 +2618,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Greater Hell (Bucle 2) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Greater Hell (Bucle 2) (h.264 1080p@60fps)',
+					en: 'Animation - Greater Hell (Bucle 2) (h.264 1080p@60fps)',
+					ja: 'アニメーション - Greater Hell (Bucle 2) (h.264 1080p@60fps)',
+				},
 				size: '12.2 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/10c_L2_greaterHell.mp4',
 				previewUrl: '/video/music/th19-piano/10c_L2_greaterHell.webm',
@@ -2416,7 +2631,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mp4',
-				label: 'Animación - Hell (Bucle) (h.264 1080p@60fps)',
+				label: {
+					es: 'Animación - Hell (Bucle) (h.264 1080p@60fps)',
+					en: 'Animation - Hell (Bucle) (h.264 1080p@60fps)',
+					ja: 'アニメーション - Hell (Bucle) (h.264 1080p@60fps)',
+				},
 				size: '83.21 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/11a_L1_hell.mp4',
 				previewUrl: '/video/music/th19-piano/11a_L1_hell.webm',
@@ -2693,7 +2912,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'video',
 				format: 'mov',
-				label: 'Animación (Bucle) (DNxHR 12-bit / 1080p@30fps) (archive.org)',
+				label: {
+					es: 'Animación (Bucle) (DNxHR 12-bit / 1080p@30fps) (archive.org)',
+					en: 'Animation (Loop) (DNxHR 12-bit / 1080p@30fps) (archive.org)',
+					ja: 'アニメーション (Loop) (DNxHR 12-bit / 1080p@30fps) (archive.org)',
+				},
 				size: '350 MB',
 				url: 'https://archive.org/download/aswotts-loop1-by-papitapure/loop1.mov',
 				previewUrl: '/video/music/aswotts/preview.webm',
@@ -2724,7 +2947,7 @@ const items: MusicItem[] = [
 		title: {
 			es: "Maiden's Step ~ Arboleda Renaciente",
 			en: "Maiden's Step ~ Reborn Grove",
-			ja: '乙女の足音 ~ Reborn Grove',
+			ja: '乙女の足音 ～ Reborn Grove',
 		},
 		description: {
 			es: 'Composición:\n• Karl Zuñiga\n• Tewi [Sax; detalles]\n• Papita con Puré\n\nMezcla: Karl Zuñiga',
@@ -2785,9 +3008,9 @@ const items: MusicItem[] = [
 				kind: 'audio',
 				format: 'mp3',
 				label: {
-					es: 'Pista completa (320Kbps)',
-					en: 'Full Track (320Kbps)',
-					ja: 'フルトラック (320Kbps)',
+					es: 'Pista completa (320 Kbps)',
+					en: 'Full Track (320 Kbps)',
+					ja: 'フルトラック (320 Kbps)',
 				},
 				size: '11.2 MB',
 				url: '/audio/music/pateka-3/pateka3.mp3',
@@ -2853,9 +3076,9 @@ const items: MusicItem[] = [
 				kind: 'audio',
 				format: 'mp3',
 				label: {
-					es: 'Pista completa (320Kbps)',
-					en: 'Full Track (320Kbps)',
-					ja: 'フルトラック (320Kbps)',
+					es: 'Pista completa (320 Kbps)',
+					en: 'Full Track (320 Kbps)',
+					ja: 'フルトラック (320 Kbps)',
 				},
 				size: '9.92 MB',
 				url: '/audio/music/blade-of-warmness/blade of warmness.mp3',
@@ -2899,7 +3122,7 @@ const items: MusicItem[] = [
 				label: {
 					es: 'Miniatura 3 (720p)',
 					en: 'Thumbnail 3 (720p)',
-					ja: 'サムネイ３ (720p)',
+					ja: 'サムネイル３ (720p)',
 				},
 				size: '876 KB',
 				url: '/images/music/blade-of-warmness/thumb3.png',
@@ -2910,7 +3133,7 @@ const items: MusicItem[] = [
 				label: {
 					es: 'Miniatura 4 (720p)',
 					en: 'Thumbnail 4 (720p)',
-					ja: 'サムネイ４ (720p)',
+					ja: 'サムネイル４ (720p)',
 				},
 				size: '797 KB',
 				url: '/images/music/blade-of-warmness/thumb4.png',
@@ -3182,9 +3405,9 @@ const items: MusicItem[] = [
 				kind: 'audio',
 				format: 'mp3',
 				label: {
-					es: 'Pista completa (320Kbps)',
-					en: 'Full Track (320Kbps)',
-					ja: 'フルトラック (320Kbps)',
+					es: 'Pista completa (320 Kbps)',
+					en: 'Full Track (320 Kbps)',
+					ja: 'フルトラック (320 Kbps)',
 				},
 				size: '10.8 MB',
 				url: '/audio/music/th20-prester-john-piano/th20stage3.mp3',
@@ -3467,9 +3690,9 @@ const items: MusicItem[] = [
 				kind: 'audio',
 				format: 'mp3',
 				label: {
-					es: 'Pista completa (320Kbps)',
-					en: 'Full Track (320Kbps)',
-					ja: 'フルトラック (320Kbps)',
+					es: 'Pista completa (320 Kbps)',
+					en: 'Full Track (320 Kbps)',
+					ja: 'フルトラック (320 Kbps)',
 				},
 				size: '10.9 MB',
 				url: '/audio/music/th20-nareko-piano/th20boss3.mp3',
@@ -3674,9 +3897,9 @@ const items: MusicItem[] = [
 				kind: 'audio',
 				format: 'mp3',
 				label: {
-					es: 'Pista completa (320Kbps)',
+					es: 'Pista completa (320 Kbps)',
 					en: 'Full Track (16-bit int)',
-					ja: 'フルトラック (320Kbps)',
+					ja: 'フルトラック (320 Kbps)',
 				},
 				size: '8.95 MB',
 				url: '/audio/music/th20-title-piano/th20title.mp3',
