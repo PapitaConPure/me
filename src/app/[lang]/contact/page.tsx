@@ -66,7 +66,7 @@ const Contact = async ({ params }: ContactProps) => {
 							className='social-btn flex border-transparent bg-primary-main transition-colors hover:bg-primary-700 sm:w-64 md:w-36 md:px-4 lg:mx-1 lg:w-44'
 							aria-label='Enviar correo a Papita con Puré'>
 							<FontAwesomeIcon icon={faEnvelope} fontSize={24} />
-							<span className='w-full text-center'>Enviar Correo</span>
+							<span className='w-full text-center'>{t.businessCardMailCTA}</span>
 						</a>
 						<a
 							tabIndex={0}
