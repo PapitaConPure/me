@@ -55,7 +55,7 @@ interface HomeProps {
 }
 
 const Home = async ({ params }: HomeProps) => {
-	const lang = (await params).lang;
+	const { lang } = await params;
 
 	if (!isValidLocale(lang)) return notFound();
 
