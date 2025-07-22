@@ -1797,7 +1797,7 @@ const items: MusicItem[] = [
 				label: 'Animación - Greater Hell (Bucle 2) (h.264 1080p@60fps)',
 				size: '12.2 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/10c_L2_greaterHell.mp4',
-				previewUrl: '/video/music/th19-piano/00a_L1_title.webm',
+				previewUrl: '/video/music/th19-piano/10c_L2_greaterHell.webm',
 				previewFormat: 'webm',
 			},
 			{
@@ -1806,7 +1806,7 @@ const items: MusicItem[] = [
 				label: 'Animación - Hell (Bucle) (h.264 1080p@60fps)',
 				size: '83.21 MB',
 				url: 'https://github.com/PapitaConPure/TH19-Backgrounds/raw/refs/heads/main/11a_L1_hell.mp4',
-				previewUrl: '/video/music/th19-piano/00a_L1_title.webm',
+				previewUrl: '/video/music/th19-piano/11a_L1_hell.webm',
 				previewFormat: 'webm',
 			},
 			{
