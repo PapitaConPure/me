@@ -29,7 +29,7 @@
 }
 
 .section-h4 {
-	@apply font-default-sans text-xl font-light text-secondary-300;
+	@apply font-default-sans text-base font-extralight text-secondary-400;
 }
 
 .btn {

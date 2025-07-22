@@ -51,12 +51,12 @@ const CredittedArtist = ({ artist, lang }: CredittedArtistProps) => {
 			href={artist.url}
 			target='_blank'
 			rel='noopener noreferrer'
-			className='group flex flex-wrap space-x-1 text-accent-500 hover:text-accent-600 hover:underline sm:justify-center'>
+			className='group flex flex-wrap space-x-1 text-accent-400 hover:text-accent-500 hover:underline sm:justify-center'>
 			<span className='self-start leading-tight'>
 				{resolveLocalizableField(artist.name, lang)}
 			</span>
 			{artist.clarification && (
-				<span className='self-end text-xs text-accent-600 group-hover:text-accent-700'>
+				<span className='self-end text-xs text-accent-500 group-hover:text-accent-600'>
 					({resolveLocalizableField(artist.clarification, lang)})
 				</span>
 			)}
@@ -227,7 +227,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 												href={link.url}
 												target='_blank'
 												rel='noopener noreferrer'
-												className='text-accent-500 hover:text-accent-600 hover:underline'>
+												className='text-accent-400 hover:text-accent-500 hover:underline'>
 												{resolveLocalizableField(link.label, lang)}
 											</a>
 										</li>
@@ -269,7 +269,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 												</span>
 												<Link
 													href={`${lang}/music/detail?id=${childItem.id}`}
-													className='flex-grow text-accent-500 hover:text-accent-400'>
+													className='flex-grow text-accent-400 hover:text-accent-500'>
 													{resolveLocalizableField(childItem.title, lang)}
 												</Link>
 											</li>
@@ -458,18 +458,16 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 						{item.credits.music && (
 							<div>
 								<h3 className='section-h3'>{t.detailCreditsMusic}</h3>
-								<div className='mt-3 grid grid-cols-1 gap-x-2 gap-y-5 lg:grid-cols-2'>
+								<div className='mt-4 grid grid-cols-1 gap-x-2 gap-y-5 lg:grid-cols-2'>
 									{item.credits.music.composers && (
 										<div>
-											<h4 className='section-h4 mb-1'>
+											<h4 className='section-h4 mb-2'>
 												{t.detailCreditsMusicComposers}
 											</h4>
-											<ul className='list-disc break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
+											<ul className='flex list-disc flex-col gap-y-1 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 												{item.credits.music.composers.map(
 													(artist, index) => (
-														<li
-															key={index}
-															className='overflow-wrap break-before-all break-after-all whitespace-normal text-wrap break-all'>
+														<li key={index}>
 															{
 																<CredittedArtist
 																	artist={artist}
@@ -484,10 +482,10 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									{item.credits.music.arrangers && (
 										<div>
-											<h4 className='section-h4 mb-1'>
+											<h4 className='section-h4 mb-2'>
 												{t.detailCreditsMusicArrangers}
 											</h4>
-											<ul className='list-disc break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
+											<ul className='flex list-disc flex-col gap-y-1 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 												{item.credits.music.arrangers.map(
 													(artist, index) => (
 														<li key={index}>
@@ -505,14 +503,12 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									{item.credits.music.mixers && (
 										<div>
-											<h4 className='section-h4 mb-1'>
+											<h4 className='section-h4 mb-2'>
 												{t.detailCreditsMusicMixers}
 											</h4>
-											<ul className='list-disc break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
+											<ul className='flex list-disc flex-col gap-y-1 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 												{item.credits.music.mixers.map((artist, index) => (
-													<li
-														key={index}
-														className='overflow-wrap break-before-all break-after-all whitespace-normal text-wrap break-all'>
+													<li key={index}>
 														{
 															<CredittedArtist
 																artist={artist}
@@ -530,18 +526,16 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 						{item.credits.visuals && (
 							<div>
 								<h3 className='section-h3'>{t.detailCreditsVisuals}</h3>
-								<div className='mt-3 grid grid-cols-1 gap-x-2 gap-y-5 lg:grid-cols-2'>
+								<div className='mt-4 grid grid-cols-1 gap-x-2 gap-y-5 lg:grid-cols-2'>
 									{item.credits.visuals.foreground && (
 										<div>
-											<h4 className='section-h4 mb-1'>
+											<h4 className='section-h4 mb-2'>
 												{t.detailCreditsVisualsForeground}
 											</h4>
-											<ul className='list-disc break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
+											<ul className='flex list-disc flex-col gap-y-1 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 												{item.credits.visuals.foreground.map(
 													(artist, index) => (
-														<li
-															key={index}
-															className='overflow-wrap break-before-all break-after-all whitespace-normal text-wrap break-all'>
+														<li key={index}>
 															{
 																<CredittedArtist
 																	artist={artist}
@@ -556,15 +550,13 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									{item.credits.visuals.background && (
 										<div>
-											<h4 className='section-h4 mb-1'>
+											<h4 className='section-h4 mb-2'>
 												{t.detailCreditsVisualsBackground}
 											</h4>
-											<ul className='list-disc break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
+											<ul className='flex list-disc flex-col gap-y-1 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 												{item.credits.visuals.background.map(
 													(artist, index) => (
-														<li
-															key={index}
-															className='overflow-wrap break-before-all break-after-all whitespace-normal text-wrap break-all'>
+														<li key={index}>
 															{
 																<CredittedArtist
 																	artist={artist}
@@ -579,14 +571,12 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									{item.credits.visuals.cover && (
 										<div>
-											<h4 className='section-h4 mb-1'>
+											<h4 className='section-h4 mb-2'>
 												{t.detailCreditsVisualsCover}
 											</h4>
-											<ul className='list-disc break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
+											<ul className='flex list-disc flex-col gap-y-1 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 												{item.credits.visuals.cover.map((artist, index) => (
-													<li
-														key={index}
-														className='overflow-wrap break-before-all break-after-all whitespace-normal text-wrap break-all'>
+													<li key={index}>
 														{
 															<CredittedArtist
 																artist={artist}
@@ -600,15 +590,13 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									{item.credits.visuals.thumbnail && (
 										<div>
-											<h4 className='section-h4 mb-1'>
+											<h4 className='section-h4 mb-2'>
 												{t.detailCreditsVisualsThumbnail}
 											</h4>
-											<ul className='list-disc break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
+											<ul className='flex list-disc flex-col gap-y-1 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
 												{item.credits.visuals.thumbnail.map(
 													(artist, index) => (
-														<li
-															key={index}
-															className='overflow-wrap break-before-all break-after-all whitespace-normal text-wrap break-all'>
+														<li key={index}>
 															{
 																<CredittedArtist
 																	artist={artist}
