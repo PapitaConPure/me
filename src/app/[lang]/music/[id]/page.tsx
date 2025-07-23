@@ -477,12 +477,8 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 								<div className='flex w-full flex-shrink-0 space-x-2'>
 									<DirectDownloadButton
 										href={getRoot(download.url)}
-										download={!download.external || !download.openNewTab}
-										target={
-											download.external && download.openNewTab
-												? '_blank'
-												: '_self'
-										}
+										download={!download.external || download.direct}
+										target={download.external ? '_blank' : '_self'}
 										rel='noopener noreferrer'
 										className='flex flex-grow cursor-pointer items-center justify-center rounded-md bg-primary-main px-5 py-4 text-white transition-colors duration-200 hover:bg-primary-700 sm:px-4 sm:py-3 md:py-2'
 										downloadStageChildren={

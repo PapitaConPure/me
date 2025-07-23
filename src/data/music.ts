@@ -1264,7 +1264,6 @@ const items: MusicItem[] = [
 				size: '45.51 MB',
 				url: 'https://www.mediafire.com/file/helfrbn2dxukidt/Touhou_18_Piano_Medley.zip/file',
 				external: true,
-				openNewTab: true,
 			},
 		],
 		childrenTitles: [
@@ -1446,7 +1445,6 @@ const items: MusicItem[] = [
 				size: '10.43 MB',
 				url: 'https://www.mediafire.com/file/sy58gn87bpcy3av/Unused_Film_Strip.zip/file',
 				external: true,
-				openNewTab: true,
 			},
 		],
 		tags: ['touhou style', 'original character'],
@@ -1535,7 +1533,6 @@ const items: MusicItem[] = [
 				size: '16.24 MB',
 				url: 'https://www.mediafire.com/file/kiqu6crdinh89bw/MindYetNotHeart.zip/file',
 				external: true,
-				openNewTab: true,
 			},
 		],
 		tags: ['emotional', 'piano original'],
@@ -1668,7 +1665,6 @@ const items: MusicItem[] = [
 				size: '38.19 MB',
 				url: 'https://www.mediafire.com/file/twbokfkmyirspna/Kaisou_Ressha.zip/file',
 				external: true,
-				openNewTab: true,
 			},
 		],
 		tags: ['piano arrangement'],
@@ -1738,7 +1734,6 @@ const items: MusicItem[] = [
 				size: '21.50 MB',
 				url: 'https://www.mediafire.com/file/dk3ifbdn7kexvnq/Izanagi_Bloom_Phenomenon.rar/file',
 				external: true,
-				openNewTab: true,
 			},
 		],
 		tags: ['touhou fighter style', 'touhou style'],
@@ -1892,7 +1887,6 @@ const items: MusicItem[] = [
 				size: '133.96 MB',
 				url: 'https://www.mediafire.com/file/d2q5tpim7f3dlmr/COOSFF_by_PapitaPur%25C3%25A9.zip/file',
 				external: true,
-				openNewTab: true,
 			},
 		],
 		tags: ['mountain of faith', 'piano arrangement'],
@@ -1973,7 +1967,6 @@ const items: MusicItem[] = [
 				size: '28.69 MB',
 				url: 'https://www.mediafire.com/file/ymztpu5l95ckw8r/SPoLS_by_PapitaPur%25C3%25A9.zip/file',
 				external: true,
-				openNewTab: true,
 			},
 		],
 		tags: ['legacy of lunatic kingdom', 'touhou style'],
@@ -2071,7 +2064,6 @@ const items: MusicItem[] = [
 				size: '120.71 MB',
 				url: 'https://www.mediafire.com/file/b4b24wi5ktopx21/Gyptos_by_PapitaPur%25C3%25A9_%2526_KarlZu%25C3%25B1iga.zip/file',
 				external: true,
-				openNewTab: true,
 			},
 		],
 		tags: ['exotic', 'metal'],
@@ -2167,7 +2159,6 @@ const items: MusicItem[] = [
 				size: '54.27 MB',
 				url: 'https://www.mediafire.com/file/7aj6dsy7azfox34/Intelligence_of_Beast_by_PapitaPur%25C3%25A9.zip/file',
 				external: true,
-				openNewTab: true,
 			},
 		],
 		tags: ['piano arrangement'],
@@ -2275,7 +2266,6 @@ const items: MusicItem[] = [
 				size: '22.95 MB',
 				url: 'https://www.mediafire.com/file/z5qi4t53qli1yc1/TWMAW_Piano_by_PapitaPur%25C3%25A9.zip/file',
 				external: true,
-				openNewTab: true,
 			},
 		],
 		tags: ['piano arrangement'],
@@ -2907,7 +2897,6 @@ const items: MusicItem[] = [
 				size: '605.56 MB',
 				url: 'https://www.mediafire.com/file/2vtqhjy2hee8kqa/Touhou_19_Piano_Medley_by_PapaPur%25C3%25A9.zip/file',
 				external: true,
-				openNewTab: true,
 			},
 		],
 		childrenTitles: [
@@ -3030,7 +3019,6 @@ const items: MusicItem[] = [
 				size: '359 MB',
 				url: 'https://www.mediafire.com/file/5jqwu00nv4t2b2w/ASWOttS_by_PapaPur%25C3%25A9.zip/file',
 				external: true,
-				openNewTab: true,
 			},
 		],
 		tags: ['pop', 'rock'],
@@ -3302,7 +3290,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/blade-of-warmness/loop_main.webm',
 				previewFormat: 'webm',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3317,6 +3305,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/blade-of-warmness/loop_main.webm',
 				previewFormat: 'webm',
 				external: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3331,7 +3320,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/blade-of-warmness/loop_chorus.webm',
 				previewFormat: 'webm',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3346,6 +3335,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/blade-of-warmness/loop_chorus.webm',
 				previewFormat: 'webm',
 				external: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3360,7 +3350,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/blade-of-warmness/straight_1.webm',
 				previewFormat: 'webm',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3375,6 +3365,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/blade-of-warmness/straight_1.webm',
 				previewFormat: 'webm',
 				external: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3389,7 +3380,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/blade-of-warmness/straight_2.webm',
 				previewFormat: 'webm',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3404,6 +3395,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/blade-of-warmness/straight_2.webm',
 				previewFormat: 'webm',
 				external: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3418,7 +3410,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/blade-of-warmness/straight_3.webm',
 				previewFormat: 'webm',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3433,6 +3425,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/blade-of-warmness/straight_3.webm',
 				previewFormat: 'webm',
 				external: true,
+				direct: true,
 			},
 			{
 				kind: 'file',
@@ -3445,7 +3438,6 @@ const items: MusicItem[] = [
 				size: '3.42 GB',
 				url: 'https://www.mediafire.com/file/a58tjhq1jsom1qt/Blade_of_Warmness_by_PapitaPur%25C3%25A9.zip/file',
 				external: true,
-				openNewTab: true,
 			},
 		],
 		tags: ['electronic', 'orchestral'],
@@ -3576,7 +3568,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-prester-john-piano/1_s3a_in.webm',
 				previewFormat: 'webm',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3591,6 +3583,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-prester-john-piano/1_s3a_in.webm',
 				previewFormat: 'webm',
 				external: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3605,7 +3598,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-prester-john-piano/2_s3a_loop.webm',
 				previewFormat: 'webm',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3620,6 +3613,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-prester-john-piano/2_s3a_loop.webm',
 				previewFormat: 'webm',
 				external: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3634,7 +3628,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-prester-john-piano/3_s3a_out.webm',
 				previewFormat: 'webm',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3649,6 +3643,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-prester-john-piano/3_s3a_out.webm',
 				previewFormat: 'webm',
 				external: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3663,7 +3658,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-nareko-piano/4_b3a_in.webm',
 				previewFormat: 'webm',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3678,6 +3673,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-nareko-piano/4_b3a_in.webm',
 				previewFormat: 'webm',
 				external: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3692,7 +3688,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-nareko-piano/5_b3a_loop.webm',
 				previewFormat: 'webm',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3707,6 +3703,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-nareko-piano/5_b3a_loop.webm',
 				previewFormat: 'webm',
 				external: true,
+				direct: true,
 			},
 			{
 				kind: 'file',
@@ -3718,7 +3715,7 @@ const items: MusicItem[] = [
 				size: '31.7 MB',
 				url: 'https://archive.org/download/th-20-stg-3-piano-by-papita-pure/TH20%20STG3%20Piano%20by%20PapitaPur%C3%A9.zip',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'file',
@@ -3730,7 +3727,7 @@ const items: MusicItem[] = [
 				size: '5.30 GB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 		],
 		tags: ['piano arrangement'],
@@ -3839,7 +3836,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-nareko-piano/4_b3a_in.webm',
 				previewFormat: 'webm',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3854,6 +3851,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-nareko-piano/4_b3a_in.webm',
 				previewFormat: 'webm',
 				external: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3868,7 +3866,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-nareko-piano/5_b3a_loop.webm',
 				previewFormat: 'webm',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3883,6 +3881,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-nareko-piano/5_b3a_loop.webm',
 				previewFormat: 'webm',
 				external: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3897,7 +3896,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-nareko-piano/6_b3a_out.webm',
 				previewFormat: 'webm',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -3912,6 +3911,7 @@ const items: MusicItem[] = [
 				previewUrl: '/video/music/th20-nareko-piano/6_b3a_out.webm',
 				previewFormat: 'webm',
 				external: true,
+				direct: true,
 			},
 			{
 				kind: 'file',
@@ -3924,7 +3924,7 @@ const items: MusicItem[] = [
 				size: '30.6 MB',
 				url: 'https://archive.org/download/th-20-boss-3-piano-by-papita-pure/TH20%20Boss%203%20Piano%20by%20PapitaPur%C3%A9.zip',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'file',
@@ -3937,7 +3937,7 @@ const items: MusicItem[] = [
 				size: '5.30 GB',
 				url: 'https://archive.org/download/th-20-stg-3-boss-3-animation-by-papita-pure/TH20%20STG3%2BBOSS3%20Animation%20by%20PapitaPur%C3%A9.zip',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 		],
 		tags: ['piano arrangement'],
@@ -4045,6 +4045,8 @@ const items: MusicItem[] = [
 				url: 'https://archive.org/download/th-20-title-animation-by-papita-pure/TH20%20Title%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20Title%20Animation%20by%20PapitaPur%C3%A9%2FMP4%20-%20H.264%204k%4060%2F0_title_loop.mp4',
 				previewUrl: '/video/music/th20-title-piano/0_title_loop.webm',
 				previewFormat: 'webm',
+				external: true,
+				direct: true,
 			},
 			{
 				kind: 'video',
@@ -4058,6 +4060,8 @@ const items: MusicItem[] = [
 				url: 'https://archive.org/download/th-20-title-animation-by-papita-pure/TH20%20Title%20Animation%20by%20PapitaPur%C3%A9.zip/TH20%20Title%20Animation%20by%20PapitaPur%C3%A9%2FMOV%20-%20DNxHR%20HQ%204k%4060%2F0_title_loop.mov',
 				previewUrl: '/video/music/th20-title-piano/0_title_loop.webm',
 				previewFormat: 'webm',
+				external: true,
+				direct: true,
 			},
 			{
 				kind: 'file',
@@ -4070,7 +4074,7 @@ const items: MusicItem[] = [
 				size: '23.3 MB',
 				url: 'https://archive.org/download/th-20-title-piano-by-papita-pure/TH20%20Title%20Piano%20by%20PapitaPur%C3%A9.zip',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 			{
 				kind: 'file',
@@ -4083,7 +4087,7 @@ const items: MusicItem[] = [
 				size: '2.1 GB',
 				url: 'https://archive.org/download/th-20-title-animation-by-papita-pure/TH20%20Title%20Animation%20by%20PapitaPur%C3%A9.zip',
 				external: true,
-				openNewTab: true,
+				direct: true,
 			},
 		],
 		tags: ['piano arrangement'],
