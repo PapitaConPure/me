@@ -578,7 +578,10 @@ const items: MusicItem[] = [
 		id: 'reimu-dead-god',
 		kind: 'single',
 		artists: [papitaCredit],
-		title: 'The Shrine that Worships a Dead God',
+		title: {
+			es: 'The Shrine that Worships a Dead God',
+			ja: '死んだ神の崇拝神社',
+		},
 		date: new Date('2020-10-07'),
 		categories: ['original', 'touhou'],
 		coverUrl: '/potato.webp',
@@ -621,7 +624,10 @@ const items: MusicItem[] = [
 		id: 'last-remote-piano',
 		kind: 'single',
 		artists: [zunCredit, papitaCredit],
-		title: 'Last Remote',
+		title: {
+			es: 'Last Remote',
+			ja: 'ラストリモート',
+		},
 		date: new Date('2020-12-19'),
 		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/potato.webp',
@@ -638,6 +644,19 @@ const items: MusicItem[] = [
 				source: 'youtube',
 				label: 'YouTube',
 				url: 'https://www.youtube.com/watch?v=J8RcKwhwtwU',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: {
+					es: 'Pista completa (320 Kbps)',
+					en: 'Full Track (320 Kbps)',
+					ja: 'フルトラック (320 Kbps)',
+				},
+				size: '11.2 MB',
+				url: '/audio/music/last-remote-piano/Last Remote Piano.mp3',
 			},
 		],
 		tags: ['piano arrangement', 'low quality'],
@@ -960,7 +979,10 @@ const items: MusicItem[] = [
 		id: 'komakusa-piano',
 		kind: 'single',
 		artists: [zunCredit, papitaCredit],
-		title: 'The Perpetual Snow of Komakusa Blossoms',
+		title: {
+			es: 'The Perpetual Snow of Komakusa Blossoms',
+			ja: '駒草咲くパーペチュアルスノー',
+		},
 		date: new Date('2021-03-25'),
 		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/images/music/komakusa-piano/thumbnail.webp',
@@ -988,6 +1010,19 @@ const items: MusicItem[] = [
 				url: 'https://www.youtube.com/watch?v=BUNgOKm5Z8U',
 			},
 		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: {
+					es: 'Pista completa (320 Kbps)',
+					en: 'Full Track (320 Kbps)',
+					ja: 'フルトラック (320 Kbps)',
+				},
+				size: '14.7 MB',
+				url: '/audio/music/komakusa-piano/The Perpetual Snow of Komakusa Blossoms.mp3',
+			},
+		],
 		tags: ['piano arrangement'],
 	},
 	//TH18 Boss 3 Piano Arrangement
@@ -995,7 +1030,10 @@ const items: MusicItem[] = [
 		id: 'sannyo-piano',
 		kind: 'single',
 		artists: [zunCredit, papitaCredit],
-		title: 'Smoking Dragon',
+		title: {
+			es: 'Smoking Dragon',
+			ja: 'スモーキングドラゴン',
+		},
 		date: new Date('2021-03-27'),
 		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/images/music/smoking-dragon-piano/thumbnail.webp',
@@ -1023,6 +1061,19 @@ const items: MusicItem[] = [
 				url: 'https://www.youtube.com/watch?v=SeORE1zUuv8',
 			},
 		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'wav',
+				label: {
+					es: 'Pista completa (32-bit float)',
+					en: 'Full Track (32-bit float)',
+					ja: 'フルトラック (32-bit float)',
+				},
+				size: '93.6 MB',
+				url: '/audio/music/smoking-dragon-piano/Smoking Dragon.wav',
+			},
+		],
 		tags: ['piano arrangement'],
 	},
 	//TH18 Stage 2 Piano Arrangement
@@ -1030,7 +1081,10 @@ const items: MusicItem[] = [
 		id: 'deep-green-cliff-piano',
 		kind: 'single',
 		artists: [zunCredit, papitaCredit],
-		title: 'The Cliff Hidden in Deep Green',
+		title: {
+			es: 'The Cliff Hidden in Deep Green',
+			ja: '深緑に隠された断崖',
+		},
 		date: new Date('2021-03-31'),
 		categories: ['arrangement', 'piano', 'touhou'],
 		coverUrl: '/images/music/cliff-deep-green-piano/thumbnail.webp',
@@ -1056,6 +1110,19 @@ const items: MusicItem[] = [
 				source: 'youtube',
 				label: 'YouTube',
 				url: 'https://www.youtube.com/watch?v=QLxJPqjB-kc',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'wav',
+				label: {
+					es: 'Pista completa (32-bit float)',
+					en: 'Full Track (32-bit float)',
+					ja: 'フルトラック (32-bit float)',
+				},
+				size: '97.8 MB',
+				url: '/audio/music/cliff-deep-green-piano/The Cliff Hidden in Deep Green.wav',
 			},
 		],
 		tags: ['piano arrangement'],
