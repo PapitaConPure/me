@@ -80,7 +80,7 @@ interface CreditsFieldDescriptor {
 	creditsField: CreditsField;
 }
 
-interface ExtendedCreditsProps {
+interface ExtendedCreditsCategoryProps {
 	localizedCategoryTitle: string;
 	creditsFieldDescriptors: CreditsFieldDescriptor[];
 	lang: Locale;
@@ -90,7 +90,7 @@ function ExtendedCreditsCategory({
 	localizedCategoryTitle,
 	creditsFieldDescriptors,
 	lang,
-}: ExtendedCreditsProps) {
+}: ExtendedCreditsCategoryProps) {
 	return (
 		<div>
 			<h3 className='section-h3'>{localizedCategoryTitle}</h3>
@@ -262,7 +262,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 							{item.categories.map((cat, index) => (
 								<div
 									key={index}
-									className='mb-2 rounded-full border border-primary-500 px-2 py-0.5 text-primary-500'>
+									className='mb-2 rounded-full border border-primary-500 px-2 py-0.5 text-primary-400'>
 									{cat.toUpperCase()}
 								</div>
 							))}
