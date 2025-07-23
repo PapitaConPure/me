@@ -473,7 +473,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano medley', 'low quality'],
 	},
-	
+
 	//TH16 Boss 6 Pretty Bad Arrangement
 	{
 		id: 'okina-piano-drums',
@@ -508,7 +508,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement', 'piano and drums', 'low quality'],
 	},
-	
+
 	//Will Not to Vanish in Fragments
 	{
 		id: 'will-not-to-vanish-in-fragments',
@@ -529,7 +529,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['rock', 'low quality'],
 	},
-	
+
 	//Cafe Terrace Memories
 	{
 		id: 'cafe-terrace-memories',
@@ -556,7 +556,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement', 'low quality'],
 	},
-	
+
 	//Popular Emotion
 	{
 		id: 'popular-emotion',
@@ -577,7 +577,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['pop', 'piano original', 'piano and drums', 'low quality'],
 	},
-	
+
 	//The Shrine that Worships a Dead God
 	{
 		id: 'reimu-dead-god',
@@ -601,7 +601,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['rock', 'touhou style', 'low quality'],
 	},
-	
+
 	//Nekopara vol.4 OP Piano Arrangement
 	{
 		id: 'neko-4-op-piano',
@@ -625,7 +625,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement', 'low quality'],
 	},
-	
+
 	//TH11 Stage X Piano Arrangement
 	{
 		id: 'last-remote-piano',
@@ -668,7 +668,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement', 'low quality'],
 	},
-	
+
 	//Former Hell Showdown
 	{
 		id: 'former-hell-showdown',
@@ -984,7 +984,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['windows era 1 style', 'touhou style'],
 	},
-	
+
 	//TH18 Stage 3 Piano Arrangement
 	{
 		id: 'komakusa-piano',
@@ -1036,7 +1036,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement'],
 	},
-	
+
 	//TH18 Boss 3 Piano Arrangement
 	{
 		id: 'sannyo-piano',
@@ -1088,7 +1088,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement'],
 	},
-	
+
 	//TH18 Stage 2 Piano Arrangement
 	{
 		id: 'deep-green-cliff-piano',
@@ -1140,7 +1140,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement'],
 	},
-	
+
 	//Take and Forsake
 	{
 		id: 'take-and-forsake',
@@ -1196,7 +1196,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['electronic', 'eurobeat'],
 	},
-	
+
 	//Claim from the Empire Below
 	{
 		id: 'cfteb',
@@ -1269,7 +1269,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['wily beast and weakest creature', 'touhou style'],
 	},
-	
+
 	//TH18 Piano Medley
 	{
 		id: 'th18-piano-medley',
@@ -2178,6 +2178,50 @@ const items: MusicItem[] = [
 			},
 			{
 				kind: 'image',
+				format: 'png',
+				label: {
+					es: 'Escena (Quieto 1) (1080p)',
+					en: 'Scene (Still 1) (1080p)',
+					ja: 'シーン (静止1) (1080p)',
+				},
+				size: '3.33 MB',
+				url: '/images/music/izanagi-bloom/0.png',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: {
+					es: 'Escena (Quieto 2) (1080p)',
+					en: 'Scene (Still 2) (1080p)',
+					ja: 'シーン (静止2) (1080p)',
+				},
+				size: '3.35 MB',
+				url: '/images/music/izanagi-bloom/1.png',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: {
+					es: 'Escena (Quieto 3) (1080p)',
+					en: 'Scene (Still 3) (1080p)',
+					ja: 'シーン (静止3) (1080p)',
+				},
+				size: '3.32 MB',
+				url: '/images/music/izanagi-bloom/2.png',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: {
+					es: 'Miniatura (1080p)',
+					en: 'Thumbnail (1080p)',
+					ja: 'サムネイル (1080p)',
+				},
+				size: '2.47 MB',
+				url: '/images/music/izanagi-bloom/izanagi.png',
+			},
+			{
+				kind: 'image',
 				format: 'webp',
 				label: {
 					es: 'Miniatura (720p)',
@@ -2405,6 +2449,17 @@ const items: MusicItem[] = [
 				url: '/images/music/spols/cover.png',
 			},
 			{
+				kind: 'video',
+				format: 'mp4',
+				label: {
+					es: 'Animación (Bucle) (h.264 / 1080p@60)',
+					en: 'Animation (Loop) (h.264 / 1080p@60)',
+					ja: 'アニメーション (ループ) (h.264 / 1080p@60)',
+				},
+				size: '16.7 MB',
+				url: '/video/music/spols/loop.mp4',
+			},
+			{
 				kind: 'image',
 				format: 'png',
 				label: {
@@ -2502,6 +2557,56 @@ const items: MusicItem[] = [
 				},
 				size: '668 KB',
 				url: '/images/music/gyptos/cover.png',
+			},
+			{
+				kind: 'video',
+				format: 'mp4',
+				label: {
+					es: 'Animación (Bucle 1) (h.264 / 1080p@60)',
+					en: 'Animation (Loop 1) (h.264 / 1080p@60)',
+					ja: 'アニメーション (ループ1) (h.264 / 1080p@60)',
+				},
+				size: '32.3 MB',
+				url: '/video/music/gyptos/1_loop1.mp4',
+				previewFormat: 'webm',
+				previewUrl: '/video/music/gyptos/1_loop1.webm',
+			},
+			{
+				kind: 'video',
+				format: 'mp4',
+				label: {
+					es: 'Animación (Bucle 2) (h.264 / 1080p@60)',
+					en: 'Animation (Loop 2) (h.264 / 1080p@60)',
+					ja: 'アニメーション (ループ2) (h.264 / 1080p@60)',
+				},
+				size: '40.6 MB',
+				url: '/video/music/gyptos/2_loop2.mp4',
+				previewFormat: 'webm',
+				previewUrl: '/video/music/gyptos/2_loop2.webm',
+			},
+			{
+				kind: 'video',
+				format: 'mp4',
+				label: {
+					es: 'Animación (Bucle 3) (h.264 / 1080p@60)',
+					en: 'Animation (Loop 3) (h.264 / 1080p@60)',
+					ja: 'アニメーション (ループ3) (h.264 / 1080p@60)',
+				},
+				size: '38.1 MB',
+				url: '/video/music/gyptos/3_loop3.mp4',
+				previewFormat: 'webm',
+				previewUrl: '/video/music/gyptos/3_loop3.webm',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: {
+					es: 'Escena (Quieto Salida 4) (1080p)',
+					en: 'Scene (Still Salida 4) (1080p)',
+					ja: 'シーン (静止アウト4) (1080p)',
+				},
+				size: '2.63 MB',
+				url: '/images/music/gyptos/4_end.png',
 			},
 			{
 				kind: 'image',
