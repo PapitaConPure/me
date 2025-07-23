@@ -62,7 +62,7 @@ const CredittedArtist = ({ artist, lang }: CredittedArtistProps) => {
 			href={artist.url}
 			target='_blank'
 			rel='noopener noreferrer'
-			className='group flex flex-wrap space-x-1 text-accent-400 visited:text-accent-300 hover:text-accent-500 hover:underline active:text-accent-600 sm:justify-center'>
+			className='text-link group flex flex-wrap space-x-1 sm:justify-center'>
 			<span className='self-start leading-tight'>
 				{resolveLocalizableField(artist.name, lang)}
 			</span>
@@ -279,7 +279,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 												href={link.url}
 												target='_blank'
 												rel='noopener noreferrer'
-												className='text-accent-400 visited:text-accent-300 hover:text-accent-500 hover:underline active:text-accent-600'>
+												className='text-link'>
 												{resolveLocalizableField(link.label, lang)}
 											</a>
 										</li>

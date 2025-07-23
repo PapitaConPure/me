@@ -43,3 +43,7 @@
 .social-btn {
 	@apply btn mx-0.5 my-1 w-full border text-white sm:w-64 md:w-36 md:px-4 lg:mx-1 lg:w-44 lg:px-8;
 }
+
+.text-link {
+	@apply text-accent-400 visited:text-accent-300 hover:text-accent-500 hover:underline active:text-accent-600;
+}

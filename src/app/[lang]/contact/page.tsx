@@ -70,7 +70,7 @@ const Contact = async ({ params }: ContactProps) => {
 					<p className='font-sm'>
 						<a
 							href='mailto:papitapurecontact@gmail.com'
-							className='text-accent-400 visited:text-accent-300 hover:text-accent-500 hover:underline active:text-accent-600'>
+							className='text-link'>
 							papitapurecontact@gmail.com
 						</a>
 					</p>
