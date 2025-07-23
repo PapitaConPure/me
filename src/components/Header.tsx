@@ -31,7 +31,7 @@ export default async function Header({ lang }: HeaderProps) {
 						alt='Logo'
 						width={64}
 						height={64}
-						className='h-8 w-auto text-sm font-light'
+						className='h-8 my-auto w-auto text-sm font-light'
 					/>
 					<span className='select-none'>{t.headerName}</span>
 				</Link>

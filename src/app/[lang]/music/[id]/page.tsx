@@ -233,7 +233,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 		<main>
 			<section>
 				<div className='flex flex-col items-start justify-start sm:flex-row sm:space-x-8'>
-					<div className='mx-auto mb-8 w-[90%] max-w-[30rem] flex-shrink-0 sm:mx-0 sm:mb-0 sm:w-80 md:w-96'>
+					<div className='mx-auto mb-8 w-[90%] max-w-[30rem] flex-shrink-0 sm:mx-0 sm:mb-0 sm:w-80 sm:max-w-[50%] md:w-96'>
 						<Image
 							src={getRoot(item.coverUrl || item.thumbnailUrl)}
 							alt='Cover Art'
