@@ -473,6 +473,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano medley', 'low quality'],
 	},
+	
 	//TH16 Boss 6 Pretty Bad Arrangement
 	{
 		id: 'okina-piano-drums',
@@ -507,6 +508,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement', 'piano and drums', 'low quality'],
 	},
+	
 	//Will Not to Vanish in Fragments
 	{
 		id: 'will-not-to-vanish-in-fragments',
@@ -527,6 +529,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['rock', 'low quality'],
 	},
+	
 	//Cafe Terrace Memories
 	{
 		id: 'cafe-terrace-memories',
@@ -553,6 +556,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement', 'low quality'],
 	},
+	
 	//Popular Emotion
 	{
 		id: 'popular-emotion',
@@ -573,6 +577,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['pop', 'piano original', 'piano and drums', 'low quality'],
 	},
+	
 	//The Shrine that Worships a Dead God
 	{
 		id: 'reimu-dead-god',
@@ -596,6 +601,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['rock', 'touhou style', 'low quality'],
 	},
+	
 	//Nekopara vol.4 OP Piano Arrangement
 	{
 		id: 'neko-4-op-piano',
@@ -619,6 +625,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement', 'low quality'],
 	},
+	
 	//TH11 Stage X Piano Arrangement
 	{
 		id: 'last-remote-piano',
@@ -661,6 +668,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement', 'low quality'],
 	},
+	
 	//Former Hell Showdown
 	{
 		id: 'former-hell-showdown',
@@ -760,6 +768,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['touhou fighter style', 'touhou style'],
 	},
+
 	//Night of a Tredecillion Tears
 	{
 		id: 'tredecillion-tears',
@@ -840,6 +849,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['gensofest', 'legacy of lunatic kingdom', 'touhou style'],
 	},
+
 	//PaTeKa 1
 	{
 		id: 'pateka-1',
@@ -974,6 +984,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['windows era 1 style', 'touhou style'],
 	},
+	
 	//TH18 Stage 3 Piano Arrangement
 	{
 		id: 'komakusa-piano',
@@ -1025,6 +1036,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement'],
 	},
+	
 	//TH18 Boss 3 Piano Arrangement
 	{
 		id: 'sannyo-piano',
@@ -1076,6 +1088,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement'],
 	},
+	
 	//TH18 Stage 2 Piano Arrangement
 	{
 		id: 'deep-green-cliff-piano',
@@ -1127,6 +1140,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement'],
 	},
+	
 	//Take and Forsake
 	{
 		id: 'take-and-forsake',
@@ -1182,6 +1196,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['electronic', 'eurobeat'],
 	},
+	
 	//Claim from the Empire Below
 	{
 		id: 'cfteb',
@@ -1254,6 +1269,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['wily beast and weakest creature', 'touhou style'],
 	},
+	
 	//TH18 Piano Medley
 	{
 		id: 'th18-piano-medley',
@@ -1346,7 +1362,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループT) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '7.50 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um00_title.mp4',
 				previewUrl: '/video/music/th18-piano/um00_title.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1361,7 +1377,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループS1) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '10.1 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um01_stage1.mp4',
 				previewUrl: '/video/music/th18-piano/um01_stage1.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1376,7 +1392,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループB1) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '10.1 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um02_boss1.mp4',
 				previewUrl: '/video/music/th18-piano/um02_boss1.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1391,7 +1407,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループS2A) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '13.9 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um03_stage2.mp4',
 				previewUrl: '/video/music/th18-piano/um03_stage2.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1406,7 +1422,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (遷移S2A→S2B) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '15.0 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um04_stage2gotoend.mp4',
 				previewUrl: '/video/music/th18-piano/um04_stage2gotoend.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1421,7 +1437,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループS2B) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '11.7 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um05_stage2end.mp4',
 				previewUrl: '/video/music/th18-piano/um05_stage2end.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1436,7 +1452,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループS3) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '12.1 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um06_stage3.mp4',
 				previewUrl: '/video/music/th18-piano/um06_stage3.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1451,7 +1467,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (アウトS3) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '825 KB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um07_stage3end.mp4',
 				previewUrl: '/video/music/th18-piano/um07_stage3end.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1488,7 +1504,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループB3) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '6.49 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um10_boss3.mp4',
 				previewUrl: '/video/music/th18-piano/um10_boss3.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1503,7 +1519,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (アウトB3) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '9.23 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um11_boss3end.mp4',
 				previewUrl: '/video/music/th18-piano/um11_boss3end.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1518,7 +1534,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (インS4) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '4.27 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um12_stage4start.mp4',
 				previewUrl: '/video/music/th18-piano/um12_stage4start.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1533,7 +1549,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループS4) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '3.65 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um13_stage4.mp4',
 				previewUrl: '/video/music/th18-piano/um13_stage4.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1548,7 +1564,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループS5A) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '4.38 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um14_stage5.mp4',
 				previewUrl: '/video/music/th18-piano/um14_stage5.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1563,7 +1579,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (遷移S5A→S5B) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '4.51 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um15_stage5gotoboss.mp4',
 				previewUrl: '/video/music/th18-piano/um15_stage5gotoboss.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1578,7 +1594,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループS5B) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '6.45 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um16_stage5boss.mp4',
 				previewUrl: '/video/music/th18-piano/um16_stage5boss.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1593,7 +1609,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループS6) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '20.8 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um17_stage6.mp4',
 				previewUrl: '/video/music/th18-piano/um17_stage6.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1608,7 +1624,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (遷移S6→B6) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '12.0 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um18_stage6toboss.mp4',
 				previewUrl: '/video/music/th18-piano/um18_stage6toboss.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1623,7 +1639,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループB6) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '3.95 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um19_boss6.mp4',
 				previewUrl: '/video/music/th18-piano/um19_boss6.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1638,7 +1654,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループED) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '3.28 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um20_ending.mp4',
 				previewUrl: '/video/music/th18-piano/um20_ending.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1653,7 +1669,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループSX) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '11.8 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um21_stagex.mp4',
 				previewUrl: '/video/music/th18-piano/um21_stagex.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1668,7 +1684,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループBX) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '8.17 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um22_bossx.mp4',
 				previewUrl: '/video/music/th18-piano/um22_bossx.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1683,7 +1699,7 @@ const items: MusicItem[] = [
 					ja: 'アニメーション (ループSR) (h.264 / 1080p@60) (archive.org)',
 				},
 				size: '4.17 MB',
-				url: '',
+				url: 'https://archive.org/download/th18-piano-medley/um23_staffroll.mp4',
 				previewUrl: '/video/music/th18-piano/um23_staffroll.webm',
 				previewFormat: 'webm',
 				external: true,
@@ -1774,6 +1790,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano medley'],
 	},
+
 	//Unused Film Strip
 	{
 		id: 'unused-film-strip',
@@ -1833,7 +1850,7 @@ const items: MusicItem[] = [
 				label: {
 					es: 'Retrato de Hakuro (2246x3109)',
 					en: 'Hakuro Portrait (2246x3109)',
-					ja: 'Hakuroポートレート (2246x3109)',
+					ja: '白黒ポートレート (2246x3109)',
 				},
 				size: '1.34 MB',
 				url: '/images/music/film-youkai/hakuro.png',
@@ -1886,6 +1903,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['touhou style', 'original character'],
 	},
+
 	//Mind, Yet Not Heart
 	{
 		id: 'mind-yet-not-heart',
@@ -1975,6 +1993,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['emotional', 'piano original'],
 	},
+
 	//Kaisou Ressha Piano Arrangement
 	{
 		id: 'kaisou-ressha-piano',
@@ -2045,7 +2064,11 @@ const items: MusicItem[] = [
 			{
 				kind: 'image',
 				format: 'png',
-				label: 'Portada «?» (1920x1080)',
+				label: {
+					es: 'Portada «?» (1920x1080)',
+					en: 'Cover «?» (1920x1080)',
+					ja: '表紙 «?» (1920x1080)',
+				},
 				size: '2.30 MB',
 				url: '/images/music/kaisouressha/cover.png',
 			},
@@ -2108,6 +2131,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement'],
 	},
+
 	//Izanagi Bloom Phenomenon
 	{
 		id: 'izanagi-bloom-phenomenon',
@@ -2178,6 +2202,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['touhou fighter style', 'touhou style'],
 	},
+
 	//PaTeKa 2
 	{
 		id: 'pateka-2',
@@ -2253,6 +2278,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['touhou style'],
 	},
+
 	//Mountain of Faith Stage x Boss 6 Themes Piano Arrangement
 	{
 		id: 'kanako-sb-piano',
@@ -2333,6 +2359,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['mountain of faith', 'piano arrangement'],
 	},
+
 	//Stellar Passage of Lunatic Starway
 	{
 		id: 'spols',
@@ -2414,6 +2441,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['legacy of lunatic kingdom', 'touhou style'],
 	},
+
 	//Gyptos
 	{
 		id: 'gyptos',
@@ -2512,6 +2540,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['exotic', 'metal'],
 	},
+
 	//TH19 Title Theme Piano Arrangement
 	{
 		id: 'th19-title-piano',
@@ -2608,6 +2637,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement'],
 	},
+
 	//TH19 Early Battle Theme Piano Arrangement
 	{
 		id: 'th19-cute-world-piano',
@@ -2716,6 +2746,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement'],
 	},
+
 	//TH19 Piano Medley
 	{
 		id: 'th19-piano-medley',
@@ -3509,6 +3540,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano medley'],
 	},
+
 	//A Star We Owe to the Sky
 	{
 		id: 'aswotts',
@@ -3590,6 +3622,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['pop', 'rock'],
 	},
+
 	//PaTeKa 3
 	{
 		id: 'pateka-3',
@@ -3692,6 +3725,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['ambiental'],
 	},
+
 	//Blade of Warmness
 	{
 		id: 'blade-of-warmness',
@@ -4011,6 +4045,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['electronic', 'orchestral'],
 	},
+
 	//TH20 Stage 3 Theme Piano Arrangement
 	{
 		id: 'th20-prester-john-piano',
@@ -4304,6 +4339,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement'],
 	},
+
 	//TH20 Boss 3 Theme Piano Arrangement
 	{
 		id: 'th20-nareko-piano',
@@ -4515,6 +4551,7 @@ const items: MusicItem[] = [
 		],
 		tags: ['piano arrangement'],
 	},
+
 	//TH20 Title Theme Piano Arrangement
 	{
 		id: 'th20-title-piano',
