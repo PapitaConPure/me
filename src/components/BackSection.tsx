@@ -2,11 +2,11 @@ import { Url } from 'next/dist/shared/lib/router/router';
 import Link from 'next/link';
 import { PropsWithChildren } from 'react';
 
-interface BackSectionProps {
+interface BackSectionProps extends PropsWithChildren {
 	href: Url;
 }
 
-const BackSection = ({ href, children }: BackSectionProps & PropsWithChildren) => {
+const BackSection = ({ href, children }: BackSectionProps) => {
 	return (
 		<section className='flex items-center justify-center'>
 			<Link

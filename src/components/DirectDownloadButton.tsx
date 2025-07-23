@@ -2,7 +2,7 @@
 
 import React, { AnchorHTMLAttributes, ReactNode, useState } from 'react';
 
-interface DirectDownloadButtonProps {
+interface DirectDownloadButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 	downloadStageChildren: ReactNode;
 	idleClassName?: string;
 	downloadingClassName?: string;
@@ -13,7 +13,7 @@ function DirectDownloadButton({
 	className,
 	children,
 	...props
-}: DirectDownloadButtonProps & AnchorHTMLAttributes<HTMLAnchorElement>) {
+}: DirectDownloadButtonProps) {
 	const [downloading, setDownloading] = useState(false);
 
 	return (

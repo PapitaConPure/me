@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import { IframeHTMLAttributes, useState } from 'react';
 
-interface VideoProps {
+interface VideoProps extends IframeHTMLAttributes<HTMLIFrameElement> {
 	src: string;
 	thumbnailUrl?: string;
 }
@@ -16,7 +16,7 @@ export function YouTubeVideo({
 	thumbnailUrl,
 	className = '',
 	...props
-}: VideoProps & IframeHTMLAttributes<HTMLIFrameElement>) {
+}: VideoProps) {
 	const [loading, setLoading] = useState(true);
 
 	const embedSrc = src.replace(
