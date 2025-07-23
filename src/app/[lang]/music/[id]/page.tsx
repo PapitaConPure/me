@@ -15,7 +15,11 @@ import {
 	faDownload,
 	faExternalLinkAlt,
 	faEye,
+	faFileAlt,
+	faImage,
+	faMusic,
 	faSpinner,
+	faVideo,
 } from '@fortawesome/free-solid-svg-icons';
 import { getMessages, isValidLocale, Locale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
@@ -389,20 +393,34 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 									<div className='absolute flex w-full flex-col items-center space-y-1'>
 										{download.kind === 'audio' && (
-											<i className='fa fa-solid fa-music text-7xl text-yellow-200 sm:text-9xl md:text-8xl'></i>
+											<FontAwesomeIcon
+												icon={faMusic}
+												className='text-7xl text-yellow-200 sm:text-9xl md:text-8xl'
+											/>
 										)}
 										{download.kind === 'image' && (
-											<i className='fa fa-solid fa-image text-7xl text-green-300 sm:text-9xl md:text-8xl'></i>
+											<FontAwesomeIcon
+												icon={faImage}
+												className='text-7xl text-green-300 sm:text-9xl md:text-8xl'
+											/>
 										)}
 										{download.kind === 'video' && (
-											<i className='fa fa-solid fa-video text-7xl text-purple-400 sm:text-9xl md:text-8xl'></i>
+											<FontAwesomeIcon
+												icon={faVideo}
+												className='text-7xl text-purple-400 sm:text-9xl md:text-8xl'
+											/>
 										)}
 										{download.kind === 'file' && (
-											<i className='fa fa-solid fa-file-alt text-7xl text-blue-400 sm:text-9xl md:text-8xl'></i>
+											<FontAwesomeIcon
+												icon={faFileAlt}
+												className='text-7xl text-blue-400 sm:text-9xl md:text-8xl'
+											/>
 										)}
-										<div className='text-2xl font-bold sm:text-4xl md:text-3xl'>
-											{download.format.toUpperCase()}
-										</div>
+										{download.format !== 'other' && (
+											<div className='text-2xl font-bold sm:text-4xl md:text-3xl'>
+												{download.format.toUpperCase()}
+											</div>
+										)}
 									</div>
 								</div>
 								<h2 className='mb-4 flex-grow'>
@@ -468,7 +486,11 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 												className='text-xl md:text-base'
 											/>
 											{download.external ? (
-												<i className='fa fa-external-link-alt mb-0.5 ml-2 text-xs opacity-80'></i>
+											<FontAwesomeIcon
+												icon={faExternalLinkAlt}
+												size='xs'
+												className='mb-0.5 ml-2 cursor-pointer opacity-80'
+											/>
 											) : null}
 										</Link>
 									)}
