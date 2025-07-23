@@ -3,12 +3,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import items from '@/data/music';
 import getRoot from '@/lib/getroot';
-import { FullArtistCredit, MusicItemSummary } from '@/types/music';
+import { CategoryKey, FullArtistCredit, MusicItemSummary } from '@/types/music';
 import { Metadata, Viewport } from 'next';
 import { defaultLocale, getMessages, isValidLocale, Locale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
 import Translated from '@/lib/i18n/Translated';
-import { resolveLocalizableField } from '@/lib/music';
+import { localizableCategories, resolveLocalizableField } from '@/lib/music';
 
 export const viewport: Viewport = {
 	themeColor: '#c97f72',
@@ -32,7 +32,7 @@ interface MusicCardProps {
 	imgSrc: string;
 	title: string;
 	author: React.ReactNode;
-	categories: string[];
+	categories: CategoryKey[];
 	date: Date;
 }
 
@@ -40,7 +40,7 @@ const MusicCard = ({ lang, href, imgSrc, title, author, categories, date }: Musi
 	return (
 		<Link
 			href={href}
-			className='group flex flex-col justify-between rounded-lg border border-secondary-main bg-secondary-800 transition-all hover:bg-secondary-700 sm:hover:scale-105'>
+			className='group flex flex-col justify-between rounded-lg border border-secondary-main bg-secondary-800 transition-all hover:scale-105 hover:bg-secondary-700 active:bg-secondary-900'>
 			<div className='relative aspect-video w-full overflow-hidden rounded-md bg-secondary-900'>
 				<div className='absolute h-full w-full flex-shrink-0 animate-pulse rounded-sm'>
 					<div className='flex h-full w-full items-center justify-center'>
@@ -61,7 +61,7 @@ const MusicCard = ({ lang, href, imgSrc, title, author, categories, date }: Musi
 					sizes={'(max-width: 768px) 50vw, 33vw'}
 					className='mx-auto my-auto h-full w-full object-cover blur-md transition-all md:group-hover:blur-lg'
 				/>
-				<div className='absolute inset-0 mx-auto my-auto h-full w-full transition-all duration-500 md:group-hover:scale-150 md:group-hover:blur-sm'>
+				<div className='absolute inset-0 mx-auto my-auto h-full w-full transition-all duration-500 md:group-hover:scale-150 md:group-hover:blur-sm md:group-active:scale-125 md:group-active:blur-lg md:group-active:brightness-200 md:group-active:duration-[400ms]'>
 					<Image
 						src={getRoot(imgSrc)}
 						alt='Thumbnail'
@@ -70,23 +70,27 @@ const MusicCard = ({ lang, href, imgSrc, title, author, categories, date }: Musi
 						className='object-contain'
 					/>
 				</div>
-				<div className='absolute inset-1 flex items-center justify-center rounded-md bg-black bg-opacity-60 opacity-0 transition-opacity duration-500 md:group-hover:opacity-100'>
+				<div className='absolute inset-1 flex items-center justify-center rounded-md bg-black bg-opacity-60 opacity-0 transition-opacity duration-500 md:group-hover:opacity-100 md:group-active:opacity-20'>
 					<span className='text-md font-semibold text-white'>
 						<Translated lang={lang} t='Music/musicCardCTA' />
 					</span>
 				</div>
 			</div>
 
-			<div className='m-4 mt-3 flex flex-grow flex-col justify-between'>
-				<h2 className='mb-1 flex-shrink-0 text-lg font-semibold leading-snug text-foreground'>
+			<div className='m-4 my-3.5 flex flex-grow flex-col justify-between'>
+				<h2
+					className={`mb-1.5 flex-shrink-0 text-lg ${lang === 'ja' ? 'font-bold' : 'font-semibold'} leading-snug text-foreground`}>
 					{title}
 				</h2>
-				<p className='flex-shrink-0 text-secondary-100'>{author}</p>
-				<div className='mt-4 flex flex-grow items-end justify-between space-x-4 text-secondary-300'>
+				<p className='flex-shrink-0 text-foreground'>{author}</p>
+				<div className='mt-5 flex flex-grow items-end justify-between space-x-4 text-secondary-200'>
 					<p className='flex-shrink-0 text-sm'>{date.getFullYear()}</p>
-					<div className='flex flex-grow flex-wrap-reverse items-end justify-end space-x-2 text-xs font-light'>
+					<div
+						className={`flex flex-grow flex-wrap-reverse items-end justify-end text-sm ${lang === 'ja' ? 'space-x-2.5' : 'space-x-2'} font-light`}>
 						{categories.map((category, index) => (
-							<div key={index}>{category}</div>
+							<div key={index}>
+								{resolveLocalizableField(localizableCategories[category], lang)}
+							</div>
 						))}
 					</div>
 				</div>
@@ -179,7 +183,7 @@ const MusicList = async ({ params }: MusicListProps) => {
 														lang={lang}
 													/>
 													{index < arr.length - 1 && (
-														<span className='mx-1 text-sm text-secondary-500'>
+														<span className='mx-1 text-sm text-secondary-300'>
 															&
 														</span>
 													)}

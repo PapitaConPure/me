@@ -24,7 +24,7 @@ import {
 import { getMessages, isValidLocale, Locale, locales } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
 import Tr from '@/lib/i18n/Tr';
-import { resolveLocalizableField } from '@/lib/music';
+import { localizableCategories, resolveLocalizableField } from '@/lib/music';
 import DirectDownloadButton from '@/components/DirectDownloadButton';
 
 const SmallSeparator = () => <div className='my-4 h-[1px] w-full bg-secondary-800 bg-opacity-30' />;
@@ -259,11 +259,14 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 							{resolveLocalizableField(item.title, lang)}
 						</h1>
 						<div className='mb-3 flex flex-wrap space-x-2 text-xs font-light text-foreground text-opacity-80'>
-							{item.categories.map((cat, index) => (
+							{item.categories.map((category, index) => (
 								<div
 									key={index}
 									className='mb-2 rounded-full border border-primary-500 px-2 py-0.5 text-primary-400'>
-									{cat.toUpperCase()}
+									{resolveLocalizableField(
+										localizableCategories[category],
+										lang,
+									).toUpperCase()}
 								</div>
 							))}
 						</div>
