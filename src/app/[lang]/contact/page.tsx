@@ -67,13 +67,20 @@ const Contact = async ({ params }: ContactProps) => {
 				<div className='rounded-md border border-secondary-800 px-6 py-2'>
 					<h3 className='section-h3 mb-1'>{t.businessCardTitle}</h3>
 					<p className='font-sm'>{t.businessCard}</p>
+					<p className='font-sm'>
+						<a
+							href='mailto:papitapurecontact@gmail.com'
+							className='text-accent-400 visited:text-accent-300 hover:text-accent-500 hover:underline active:text-accent-600'>
+							papitapurecontact@gmail.com
+						</a>
+					</p>
 
 					<div className='mt-4 grid w-full grid-cols-1 sm:w-max sm:grid-cols-2 sm:pr-0 md:grid-cols-4'>
 						<a
 							tabIndex={0}
 							href='mailto:papitapurecontact@gmail.com'
 							target='_blank'
-							className='social-btn flex border-transparent bg-primary-main transition-colors hover:bg-primary-700 sm:w-64 md:w-36 md:px-4 lg:mx-1 lg:w-44'
+							className='social-btn flex border-transparent bg-primary-main transition-colors hover:bg-primary-500 active:bg-primary-700 sm:w-64 md:w-36 md:px-4 lg:mx-1 lg:w-44'
 							aria-label='Enviar correo a Papita con Puré'>
 							<FontAwesomeIcon icon={faEnvelope} fontSize={24} />
 							<span className='w-full text-center'>{t.businessCardMailCTA}</span>
