@@ -91,7 +91,7 @@ const Home = async ({ params }: HomeProps) => {
 							1: (
 								<Link
 									href={`${lang}/contact`}
-									className='text-accent-400 hover:underline'
+									className='text-accent-400 visited:text-accent-300 hover:text-accent-500 hover:underline active:text-accent-600'
 									aria-label={t.welcomeMessageAriaLabel}
 								/>
 							),
@@ -166,7 +166,7 @@ const Home = async ({ params }: HomeProps) => {
 									target='_blank'
 									rel='noopener noreferrer'
 									href='https://soundcloud.com/user-158678041'
-									className='text-accent-main hover:text-accent-500 hover:underline'
+									className='text-accent-400 visited:text-accent-300 hover:text-accent-500 hover:underline active:text-accent-600'
 								/>
 							),
 						}}

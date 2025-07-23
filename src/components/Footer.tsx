@@ -39,7 +39,7 @@ export default async function Footer({ lang }: FooterProps) {
 			<a
 				href='https://github.com/PapitaConPure'
 				target='_blank'
-				className='hover:underline'
+				className='hover:underline active:text-secondary-600'
 				aria-label='Visitar el perfil de GitHub de Papita con Puré'>
 				Papita con Puré
 			</a>
