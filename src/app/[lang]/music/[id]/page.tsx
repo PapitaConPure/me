@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { YouTubeVideo } from '@/components/YouTubeVideo';
 import { OlHTMLAttributes } from 'react';
 import getRoot from '@/lib/getroot';
-import { FullArtistCredit } from '@/types/music';
+import { CreditsField, FullArtistCredit } from '@/types/music';
 import BackSection from '@/components/BackSection';
 import AudioPreview from '@/components/AudioPreview';
 import VideoPreview from '@/components/VideoPreview';
@@ -74,6 +74,47 @@ const CredittedArtist = ({ artist, lang }: CredittedArtistProps) => {
 		</a>
 	);
 };
+
+interface CreditsFieldDescriptor {
+	title: string;
+	creditsField: CreditsField;
+}
+
+interface ExtendedCreditsProps {
+	localizedCategoryTitle: string;
+	creditsFieldDescriptors: CreditsFieldDescriptor[];
+	lang: Locale;
+}
+
+function ExtendedCreditsCategory({
+	localizedCategoryTitle,
+	creditsFieldDescriptors,
+	lang,
+}: ExtendedCreditsProps) {
+	return (
+		<div>
+			<h3 className='section-h3'>{localizedCategoryTitle}</h3>
+			<div className='mt-4 grid grid-cols-1 gap-x-2 gap-y-5 lg:grid-cols-2'>
+				{creditsFieldDescriptors.map(({ title, creditsField }, i, arr) => (
+					<div
+						key={i}
+						className={
+							arr.length % 2 !== 0 && i === arr.length - 1 ? 'lg:col-span-full' : ''
+						}>
+						<h4 className='section-h4 mb-3'>{title}</h4>
+						<ul className='flex list-disc flex-col gap-y-2 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
+							{creditsField.map((artist, index) => (
+								<li key={index}>
+									{<CredittedArtist artist={artist} lang={lang} />}
+								</li>
+							))}
+						</ul>
+					</div>
+				))}
+			</div>
+		</div>
+	);
+}
 
 function formatDateUTC(date: Date, sep = '.'): string {
 	const year = `${date.getUTCFullYear()}`.padStart(4, '0');
@@ -486,11 +527,11 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 												className='text-xl md:text-base'
 											/>
 											{download.external ? (
-											<FontAwesomeIcon
-												icon={faExternalLinkAlt}
-												size='xs'
-												className='mb-0.5 ml-2 cursor-pointer opacity-80'
-											/>
+												<FontAwesomeIcon
+													icon={faExternalLinkAlt}
+													size='xs'
+													className='mb-0.5 ml-2 cursor-pointer opacity-80'
+												/>
 											) : null}
 										</Link>
 									)}
@@ -505,161 +546,56 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 					<h2 className='section-h2'>{t.detailCreditsTitle}</h2>
 					<div className='mt-4 grid grid-cols-1 gap-x-6 gap-y-8 rounded-md border border-secondary-800 px-4 pb-4 pt-3 text-left sm:grid-cols-2 sm:text-center lg:gap-x-8'>
 						{item.credits.music && (
-							<div>
-								<h3 className='section-h3'>{t.detailCreditsMusic}</h3>
-								<div className='mt-4 grid grid-cols-1 gap-x-2 gap-y-5 lg:grid-cols-2'>
-									{item.credits.music.composers && (
-										<div>
-											<h4 className='section-h4 mb-3'>
-												{t.detailCreditsMusicComposers}
-											</h4>
-											<ul className='flex list-disc flex-col gap-y-2 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
-												{item.credits.music.composers.map(
-													(artist, index) => (
-														<li key={index}>
-															{
-																<CredittedArtist
-																	artist={artist}
-																	lang={lang}
-																/>
-															}
-														</li>
-													),
-												)}
-											</ul>
-										</div>
-									)}
-									{item.credits.music.arrangers && (
-										<div>
-											<h4 className='section-h4 mb-3'>
-												{t.detailCreditsMusicArrangers}
-											</h4>
-											<ul className='flex list-disc flex-col gap-y-2 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
-												{item.credits.music.arrangers.map(
-													(artist, index) => (
-														<li key={index}>
-															{
-																<CredittedArtist
-																	artist={artist}
-																	lang={lang}
-																/>
-															}
-														</li>
-													),
-												)}
-											</ul>
-										</div>
-									)}
-									{item.credits.music.mixers && (
-										<div>
-											<h4 className='section-h4 mb-3'>
-												{t.detailCreditsMusicMixers}
-											</h4>
-											<ul className='flex list-disc flex-col gap-y-2 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
-												{item.credits.music.mixers.map((artist, index) => (
-													<li key={index}>
-														{
-															<CredittedArtist
-																artist={artist}
-																lang={lang}
-															/>
-														}
-													</li>
-												))}
-											</ul>
-										</div>
-									)}
-								</div>
-							</div>
+							<ExtendedCreditsCategory
+								localizedCategoryTitle={t.detailCreditsMusic}
+								creditsFieldDescriptors={
+									[
+										{
+											title: t.detailCreditsMusicComposers,
+											creditsField: item.credits.music.composers,
+										},
+										{
+											title: t.detailCreditsMusicArrangers,
+											creditsField: item.credits.music.arrangers,
+										},
+										{
+											title: t.detailCreditsMusicMixers,
+											creditsField: item.credits.music.mixers,
+										},
+									].filter(
+										(cfd) => cfd.creditsField != undefined,
+									) as CreditsFieldDescriptor[]
+								}
+								lang={lang}
+							/>
 						)}
 						{item.credits.visuals && (
-							<div>
-								<h3 className='section-h3'>{t.detailCreditsVisuals}</h3>
-								<div className='mt-4 grid grid-cols-1 gap-x-2 gap-y-5 lg:grid-cols-2'>
-									{item.credits.visuals.foreground && (
-										<div>
-											<h4 className='section-h4 mb-3'>
-												{t.detailCreditsVisualsForeground}
-											</h4>
-											<ul className='flex list-disc flex-col gap-y-2 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
-												{item.credits.visuals.foreground.map(
-													(artist, index) => (
-														<li key={index}>
-															{
-																<CredittedArtist
-																	artist={artist}
-																	lang={lang}
-																/>
-															}
-														</li>
-													),
-												)}
-											</ul>
-										</div>
-									)}
-									{item.credits.visuals.background && (
-										<div>
-											<h4 className='section-h4 mb-3'>
-												{t.detailCreditsVisualsBackground}
-											</h4>
-											<ul className='flex list-disc flex-col gap-y-2 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
-												{item.credits.visuals.background.map(
-													(artist, index) => (
-														<li key={index}>
-															{
-																<CredittedArtist
-																	artist={artist}
-																	lang={lang}
-																/>
-															}
-														</li>
-													),
-												)}
-											</ul>
-										</div>
-									)}
-									{item.credits.visuals.cover && (
-										<div>
-											<h4 className='section-h4 mb-3'>
-												{t.detailCreditsVisualsCover}
-											</h4>
-											<ul className='flex list-disc flex-col gap-y-2 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
-												{item.credits.visuals.cover.map((artist, index) => (
-													<li key={index}>
-														{
-															<CredittedArtist
-																artist={artist}
-																lang={lang}
-															/>
-														}
-													</li>
-												))}
-											</ul>
-										</div>
-									)}
-									{item.credits.visuals.thumbnail && (
-										<div>
-											<h4 className='section-h4 mb-3'>
-												{t.detailCreditsVisualsThumbnail}
-											</h4>
-											<ul className='flex list-disc flex-col gap-y-2 break-all pl-6 text-secondary-100 sm:mx-auto sm:w-max sm:list-none sm:pl-0 md:w-full'>
-												{item.credits.visuals.thumbnail.map(
-													(artist, index) => (
-														<li key={index}>
-															{
-																<CredittedArtist
-																	artist={artist}
-																	lang={lang}
-																/>
-															}
-														</li>
-													),
-												)}
-											</ul>
-										</div>
-									)}
-								</div>
-							</div>
+							<ExtendedCreditsCategory
+								localizedCategoryTitle={t.detailCreditsVisuals}
+								creditsFieldDescriptors={
+									[
+										{
+											title: t.detailCreditsVisualsForeground,
+											creditsField: item.credits.visuals.foreground,
+										},
+										{
+											title: t.detailCreditsVisualsBackground,
+											creditsField: item.credits.visuals.background,
+										},
+										{
+											title: t.detailCreditsVisualsCover,
+											creditsField: item.credits.visuals.cover,
+										},
+										{
+											title: t.detailCreditsVisualsThumbnail,
+											creditsField: item.credits.visuals.thumbnail,
+										},
+									].filter(
+										(cfd) => cfd.creditsField != undefined,
+									) as CreditsFieldDescriptor[]
+								}
+								lang={lang}
+							/>
 						)}
 					</div>
 				</section>
