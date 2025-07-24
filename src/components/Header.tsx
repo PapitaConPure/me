@@ -2,9 +2,16 @@ import getRoot from '@/lib/getroot';
 import { getMessages, Locale } from '@/lib/i18n';
 import Image from 'next/image';
 import Link from 'next/link';
-import { HeaderNavButton, HeaderNavMenu } from './HeaderClient';
+import { HeaderLanguagePicker, HeaderNavButton, HeaderNavMenu } from './HeaderClient';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faEnvelope, faHome, faLaptopCode, faMusic, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import {
+	faBars,
+	faEnvelope,
+	faHome,
+	faLaptopCode,
+	faMusic,
+	faQuestionCircle,
+} from '@fortawesome/free-solid-svg-icons';
 
 interface HeaderProps {
 	lang: Locale;
@@ -31,7 +38,7 @@ export default async function Header({ lang }: HeaderProps) {
 						alt='Logo'
 						width={64}
 						height={64}
-						className='h-8 my-auto w-auto text-sm font-light'
+						className='my-auto h-8 w-auto text-sm font-light'
 					/>
 					<span className='select-none'>{t.headerName}</span>
 				</Link>
@@ -72,6 +79,7 @@ export default async function Header({ lang }: HeaderProps) {
 						tabIndex={0}>
 						{t.navContact}
 					</Link>
+					<HeaderLanguagePicker />
 				</nav>
 				<div className='md:hidden'>
 					<HeaderNavButton
@@ -99,7 +107,7 @@ export default async function Header({ lang }: HeaderProps) {
 					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label={t.navHomeAria}
 					tabIndex={0}>
-					<FontAwesomeIcon icon={faHome} className='w-6 mr-2' />
+					<FontAwesomeIcon icon={faHome} className='mr-2 w-6' />
 					{t.navHome}
 				</Link>
 				<Link
@@ -107,7 +115,7 @@ export default async function Header({ lang }: HeaderProps) {
 					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label={t.navAboutAria}
 					tabIndex={0}>
-					<FontAwesomeIcon icon={faQuestionCircle} className='w-6 mr-2' />
+					<FontAwesomeIcon icon={faQuestionCircle} className='mr-2 w-6' />
 					{t.navAbout}
 				</Link>
 				<Link
@@ -115,7 +123,7 @@ export default async function Header({ lang }: HeaderProps) {
 					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label={t.navProjectsAria}
 					tabIndex={0}>
-					<FontAwesomeIcon icon={faLaptopCode} className='w-6 mr-2' />
+					<FontAwesomeIcon icon={faLaptopCode} className='mr-2 w-6' />
 					{t.navProjects}
 				</Link>
 				<Link
@@ -123,7 +131,7 @@ export default async function Header({ lang }: HeaderProps) {
 					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label={t.navMusicAria}
 					tabIndex={0}>
-					<FontAwesomeIcon icon={faMusic} className='w-6 mr-2' />
+					<FontAwesomeIcon icon={faMusic} className='mr-2 w-6' />
 					{t.navMusic}
 				</Link>
 				<Link
@@ -131,7 +139,7 @@ export default async function Header({ lang }: HeaderProps) {
 					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label={t.navContactAria}
 					tabIndex={0}>
-					<FontAwesomeIcon icon={faEnvelope} className='w-6 mr-2' />
+					<FontAwesomeIcon icon={faEnvelope} className='mr-2 w-6' />
 					{t.navContact}
 				</Link>
 			</HeaderNavMenu>

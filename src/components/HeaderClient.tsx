@@ -1,6 +1,10 @@
 'use client';
 
 import React, { ComponentProps } from 'react';
+import Select from './Select';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { redirect } from 'next/navigation';
+import { faLanguage } from '@fortawesome/free-solid-svg-icons';
 
 const toggleMenu = () => {
 	const header = document.getElementById('header');
@@ -27,4 +31,20 @@ export function HeaderNavButton(params: ComponentProps<'button'>) {
 
 export function HeaderNavMenu(params: ComponentProps<'nav'>) {
 	return <nav onClick={toggleMenu} {...params} />;
+}
+
+export function HeaderLanguagePicker() {
+	return (
+		<Select
+			icon={<FontAwesomeIcon icon={faLanguage} size='lg' />}
+			options={[
+				{ label: 'Español', value: 'es' },
+				{ label: 'English', value: 'en' },
+				{ label: '日本語', value: 'ja' },
+			]}
+			action={(value) => redirect(`/${value}`)}
+			className='hover:bg-secondary-800'
+			noPickedDisplay
+		/>
+	);
 }
