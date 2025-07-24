@@ -59,10 +59,13 @@ function Select<TValue extends OptionValue = undefined>({
 	const selectedLabel = options.find((opt) => opt.value === selected)?.label;
 
 	return (
-		<div ref={wrapperRef} className={`${className} relative inline-block w-fit`} {...props}>
+		<div
+			ref={wrapperRef}
+			className={`${className} relative inline-block w-fit rounded-md`}
+			{...props}>
 			<button
 				onClick={() => setIsOpen((prev) => !prev)}
-				className='inline-flex items-center justify-between space-x-2 rounded-md border pl-4 pr-3.5 py-2 text-sm shadow-sm focus:outline-none focus:ring-2'>
+				className='inline-flex items-center justify-between space-x-2 rounded-md py-2 pl-4 pr-3.5 text-sm shadow-sm focus:outline-none focus:ring-2'>
 				{icon}
 				{noPickedDisplay ? (
 					placeholder && <span className='opacity-50'>{placeholder}</span>
@@ -73,13 +76,13 @@ function Select<TValue extends OptionValue = undefined>({
 				)}
 				<FontAwesomeIcon
 					icon={faAngleDown}
-                    size='sm'
+					size='sm'
 					className={`aspect-square text-secondary-300 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
 				/>
 			</button>
 
 			{isOpen && (
-				<ul className='absolute right-0 z-10 mt-1 max-h-60 w-full min-w-[150px] overflow-auto rounded-md border'>
+				<ul className='absolute right-0 z-10 mt-1 max-h-60 w-full min-w-[150px] overflow-auto rounded-md border border-secondary-800 bg-background'>
 					{options.map((opt, i) => (
 						<li
 							key={i}
