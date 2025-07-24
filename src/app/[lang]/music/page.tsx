@@ -40,7 +40,7 @@ const MusicCard = ({ lang, href, imgSrc, title, author, categories, date }: Musi
 	return (
 		<Link
 			href={href}
-			className='group flex flex-col justify-between rounded-lg border border-secondary-main bg-secondary-800 transition-all hover:scale-105 hover:bg-secondary-700 active:bg-secondary-900'>
+			className='group flex flex-col justify-between rounded-lg border border-secondary-main bg-secondary-800 transition-all hover:bg-secondary-700 active:bg-secondary-900 md:hover:scale-105 md:hover:motion-reduce:scale-100'>
 			<div className='relative aspect-video w-full overflow-hidden rounded-md bg-secondary-900'>
 				<div className='absolute h-full w-full flex-shrink-0 animate-pulse rounded-sm'>
 					<div className='flex h-full w-full items-center justify-center'>
@@ -61,7 +61,7 @@ const MusicCard = ({ lang, href, imgSrc, title, author, categories, date }: Musi
 					sizes={'(max-width: 768px) 50vw, 33vw'}
 					className='mx-auto my-auto h-full w-full object-cover blur-md transition-all md:group-hover:blur-lg'
 				/>
-				<div className='absolute inset-0 mx-auto my-auto h-full w-full transition-all duration-500 md:group-hover:scale-150 md:group-hover:blur-sm md:group-active:scale-125 md:group-active:blur-lg md:group-active:brightness-200 md:group-active:duration-[400ms]'>
+				<div className='absolute inset-0 mx-auto my-auto h-full w-full transition-all duration-500 md:group-hover:scale-150 md:group-hover:blur-sm md:group-active:scale-125 md:group-active:blur-lg md:group-active:brightness-200 md:group-active:duration-[400ms] md:group-hover:motion-reduce:scale-100 md:group-active:motion-reduce:scale-100'>
 					<Image
 						src={getRoot(imgSrc)}
 						alt='Thumbnail'
@@ -72,7 +72,7 @@ const MusicCard = ({ lang, href, imgSrc, title, author, categories, date }: Musi
 				</div>
 				<div className='absolute inset-1 flex items-center justify-center rounded-md bg-black bg-opacity-60 opacity-0 transition-opacity duration-500 md:group-hover:opacity-100 md:group-active:opacity-20'>
 					<span className='text-md font-semibold text-white'>
-						<Translated lang={lang} t='Music/musicCardCTA' />
+						<Translated lang={lang} s='Music' t='musicCardCTA' />
 					</span>
 				</div>
 			</div>
