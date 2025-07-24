@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: HomeProps): Promise<Metadata>
 		openGraph: {
 			title: t.metaTitle,
 			description: t.metaDescription,
-			images: ['https://papitaconpure.github.io/me/potato.webp'],
+			images: ['https://papitaconpure.github.io/potato.webp'],
 			type: 'website',
 			siteName: messages.General.metaSiteName,
 		},
@@ -54,8 +54,8 @@ export async function generateMetadata({ params }: HomeProps): Promise<Metadata>
 			title: t.metaTitle,
 			description: t.metaDescription,
 			creator: messages.General.papitaName,
-			site: 'https://papitaconpure.github.io/me',
-			images: ['https://papitaconpure.github.io/me/potato.webp'],
+			site: 'https://papitaconpure.github.io',
+			images: ['https://papitaconpure.github.io/potato.webp'],
 		},
 	};
 }

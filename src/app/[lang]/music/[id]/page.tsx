@@ -164,11 +164,11 @@ export async function generateMetadata({ params }: MusicDetailProps): Promise<Me
 		openGraph: {
 			title: resolveLocalizableField(item.title, lang),
 			description: resolveLocalizableField(item.description, lang),
-			url: `https://papitaconpure.github.io/me/music/${item.id}`,
+			url: `https://papitaconpure.github.io/music/${item.id}`,
 			images: [
 				bigImageUrl.startsWith('http')
 					? bigImageUrl
-					: `https://papitaconpure.github.io/me/${bigImageUrl}`,
+					: `https://papitaconpure.github.io/${bigImageUrl}`,
 			],
 			type: item.kind === 'single' ? 'music.song' : 'music.album',
 			siteName: messages.General.metaSiteName,
@@ -188,11 +188,11 @@ export async function generateMetadata({ params }: MusicDetailProps): Promise<Me
 							: resolveLocalizableField(artist.name, lang),
 					)
 					.join(' & '),
-			site: 'https://papitaconpure.github.io/me',
+			site: 'https://papitaconpure.github.io',
 			images: [
 				bigImageUrl.startsWith('http')
 					? bigImageUrl
-					: `https://papitaconpure.github.io/me/${bigImageUrl}`,
+					: `https://papitaconpure.github.io/${bigImageUrl}`,
 			],
 		},
 	};

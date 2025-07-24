@@ -26,7 +26,7 @@ export function YouTubeVideo({
 
 	const appendix = embedSrc.includes('?') ? '&' : '?';
 
-	const finalSrc = `${embedSrc}${appendix}&fs=0&iv_load_policy=3&rel=0&showinfo=0${process.env.NODE_ENV === 'production' ? '&origin=https://papitaconpure.github.io/me' : ''}&rel=0`;
+	const finalSrc = `${embedSrc}${appendix}&fs=0&iv_load_policy=3&rel=0&showinfo=0${process.env.NODE_ENV === 'production' ? '&origin=https://papitaconpure.github.io' : ''}&rel=0`;
 
 	return (
 		<div className={`relative ${className}`}>

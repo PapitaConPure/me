@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: ContactProps): Promise<Metada
 		openGraph: {
 			title: t.title,
 			description: t.subtitle,
-			images: ['https://papitaconpure.github.io/me/potato.webp'],
+			images: ['https://papitaconpure.github.io/potato.webp'],
 			type: 'website',
 			siteName: messages.General.metaSiteName,
 		},
@@ -37,8 +37,8 @@ export async function generateMetadata({ params }: ContactProps): Promise<Metada
 			title: t.title,
 			description: t.subtitle,
 			creator: messages.General.papitaName,
-			site: 'https://papitaconpure.github.io/me',
-			images: ['https://papitaconpure.github.io/me/potato.webp'],
+			site: 'https://papitaconpure.github.io',
+			images: ['https://papitaconpure.github.io/potato.webp'],
 		},
 	};
 }

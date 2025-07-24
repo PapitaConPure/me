@@ -4,11 +4,11 @@
  * @returns 
  */
 function getRoot(pathOrUrl: string = ''): string {
-    if(!pathOrUrl.startsWith('/'))
+    //if(!pathOrUrl.startsWith('/'))
         return pathOrUrl;
     
-    const root = process.env.NODE_ENV === 'production' ? '/me' : '';
-    return root + pathOrUrl;
+    //const root = process.env.NODE_ENV === 'production' ? '/me' : '';
+    //return root + pathOrUrl;
 }
 
 export default getRoot;
