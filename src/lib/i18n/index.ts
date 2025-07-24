@@ -15,6 +15,10 @@ export type Section<
 export type TranslationId<TLocale extends Locale, TSection extends SectionKey<TLocale>> = string &
 	keyof Section<TLocale, TSection>;
 
+export interface LocalizedComponentProps<TLocale extends Locale = Locale> {
+	lang: TLocale;
+}
+
 export const messagesIndex = {
 	es: () => import('../../messages/es.json').then((module) => module.default),
 	en: () => import('../../messages/en.json').then((module) => module.default),

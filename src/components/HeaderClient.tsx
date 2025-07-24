@@ -33,7 +33,11 @@ export function HeaderNavMenu(params: ComponentProps<'nav'>) {
 	return <nav onClick={toggleMenu} {...params} />;
 }
 
-export function HeaderLanguagePicker() {
+interface HeaderLanguagePickerProps {
+	langPickerAria: string;
+}
+
+export function HeaderLanguagePicker({ langPickerAria }: HeaderLanguagePickerProps) {
 	return (
 		<Select
 			icon={<FontAwesomeIcon icon={faLanguage} size='lg' />}
@@ -44,6 +48,7 @@ export function HeaderLanguagePicker() {
 			]}
 			action={(value) => redirect(`/${value}`)}
 			className='hover:bg-secondary-800'
+			aria-label={langPickerAria}
 			noPickedDisplay
 		/>
 	);

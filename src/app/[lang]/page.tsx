@@ -80,7 +80,7 @@ const Home = async ({ params }: HomeProps) => {
 					<h1 className='absolute inset-x-0 mx-auto mb-2 w-max bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-center font-default-sans text-6xl font-black text-transparent transition-transform'>
 						{t.welcome}
 					</h1>
-					<h1 className='motion-reduce:opacity-0 mx-auto mb-2 w-max animate-ping bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-center font-default-sans text-6xl font-black text-transparent opacity-10 transition-transform'>
+					<h1 className='mx-auto mb-2 w-max animate-ping bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-center font-default-sans text-6xl font-black text-transparent opacity-10 transition-transform motion-reduce:opacity-0'>
 						{t.welcome}
 					</h1>
 				</div>
@@ -194,7 +194,8 @@ const Home = async ({ params }: HomeProps) => {
 						href={`${lang}/about`}
 						rel='noopener noreferrer'
 						className='btn my-4 block w-max bg-foreground font-semibold text-primary-main transition-colors duration-75 hover:bg-white active:bg-primary-100'
-						aria-label='Acerca de Papita con Puré'>
+						aria-label='Acerca de Papita con Puré'
+						tabIndex={0}>
 						<span className='w-full select-none text-center'>{t.learnMoreCTA}</span>
 					</Link>
 				</div>
@@ -210,7 +211,8 @@ const Home = async ({ params }: HomeProps) => {
 				<Link
 					href={`${lang}/projects`}
 					className='primary-btn mx-auto my-4 block w-max'
-					aria-label='Ver Proyectos'>
+					aria-label='Ver Proyectos'
+					tabIndex={0}>
 					<span className='w-full select-none text-center'>{t.myProjectsCTA}</span>
 				</Link>
 			</section>

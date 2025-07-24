@@ -79,7 +79,7 @@ export default async function Header({ lang }: HeaderProps) {
 						tabIndex={0}>
 						{t.navContact}
 					</Link>
-					<HeaderLanguagePicker />
+					<HeaderLanguagePicker langPickerAria={t.langPickerAria} />
 				</nav>
 				<div className='md:hidden'>
 					<HeaderNavButton
