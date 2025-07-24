@@ -11,6 +11,7 @@ function VideoPreview({ url, format, className }: VideoPreviewProps) {
     return (
         <video
             autoPlay
+            muted
             loop
             className={className}>
             <source
