@@ -96,7 +96,7 @@ export default async function Header({ lang }: HeaderProps) {
 				className='flex h-0 flex-col overflow-hidden rounded-b-md transition-all duration-300 ease-[cubic-bezier(0.77,0,0.175,1)] md:hidden'>
 				<Link
 					href={`/${lang}`}
-					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-4 py-4 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
+					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label={t.navHomeAria}
 					tabIndex={0}>
 					<FontAwesomeIcon icon={faHome} className='w-6 mr-2' />
@@ -104,7 +104,7 @@ export default async function Header({ lang }: HeaderProps) {
 				</Link>
 				<Link
 					href={`/${lang}/about`}
-					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-4 py-4 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
+					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label={t.navAboutAria}
 					tabIndex={0}>
 					<FontAwesomeIcon icon={faQuestionCircle} className='w-6 mr-2' />
@@ -112,7 +112,7 @@ export default async function Header({ lang }: HeaderProps) {
 				</Link>
 				<Link
 					href={`/${lang}/projects`}
-					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-4 py-4 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
+					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label={t.navProjectsAria}
 					tabIndex={0}>
 					<FontAwesomeIcon icon={faLaptopCode} className='w-6 mr-2' />
@@ -120,7 +120,7 @@ export default async function Header({ lang }: HeaderProps) {
 				</Link>
 				<Link
 					href={`/${lang}/music`}
-					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-4 py-4 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
+					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label={t.navMusicAria}
 					tabIndex={0}>
 					<FontAwesomeIcon icon={faMusic} className='w-6 mr-2' />
@@ -128,7 +128,7 @@ export default async function Header({ lang }: HeaderProps) {
 				</Link>
 				<Link
 					href={`/${lang}/contact`}
-					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-4 py-4 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
+					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
 					aria-label={t.navContactAria}
 					tabIndex={0}>
 					<FontAwesomeIcon icon={faEnvelope} className='w-6 mr-2' />
