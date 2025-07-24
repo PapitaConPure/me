@@ -76,7 +76,7 @@ const Home = async ({ params }: HomeProps) => {
 	return (
 		<main>
 			<section className='my-20'>
-				<div className='relative'>
+				<div className='relative overflow-hidden'>
 					<h1 className='absolute inset-x-0 mx-auto mb-2 w-max bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-center font-default-sans text-6xl font-black text-transparent transition-transform'>
 						{t.welcome}
 					</h1>
