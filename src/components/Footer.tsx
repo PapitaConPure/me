@@ -23,7 +23,7 @@ export default async function Footer({ lang }: FooterProps) {
 		<footer className='my-4 border-t border-b-secondary-800 border-t-secondary-800 border-opacity-60 py-4 text-center text-sm text-secondary-500'>
 			<span>
 				<a
-					href='https://github.com/PapitaConPure'
+					href='https://github.com/PapitaConPure/papitaconpure.github.io'
 					target='_blank'
 					aria-label='Visitar el repositorio de GitHub de esta página'>
 					<FontAwesomeIcon icon={faGithub} size='lg' />
