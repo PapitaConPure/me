@@ -4817,7 +4817,7 @@ const items: MusicItem[] = [
 					en: 'Animation Pack (archive.org)',
 					ja: 'アニメーションパック (archive.org)',
 				},
-				size: '2.1 GB',
+				size: '2.10 GB',
 				url: 'https://archive.org/download/th-20-title-animation-by-papita-pure/TH20%20Title%20Animation%20by%20PapitaPur%C3%A9.zip',
 				external: true,
 				direct: true,
