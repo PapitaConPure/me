@@ -80,7 +80,7 @@ const Home = async ({ params }: HomeProps) => {
 					<h1 className='absolute inset-x-0 mx-auto mb-2 w-max bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-center font-default-sans text-6xl font-black text-transparent transition-transform'>
 						{t.welcome}
 					</h1>
-					<h1 className='mx-auto mb-2 w-max animate-ping bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-center font-default-sans text-6xl font-black text-transparent opacity-10 transition-transform'>
+					<h1 className='motion-reduce:opacity-0 mx-auto mb-2 w-max animate-ping bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-center font-default-sans text-6xl font-black text-transparent opacity-10 transition-transform'>
 						{t.welcome}
 					</h1>
 				</div>
