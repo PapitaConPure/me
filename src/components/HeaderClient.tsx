@@ -1,10 +1,19 @@
 'use client';
 
-import React, { ComponentProps } from 'react';
+import React, {
+	AnchorHTMLAttributes,
+	ButtonHTMLAttributes,
+	ComponentProps,
+	MouseEventHandler,
+	useState,
+} from 'react';
 import Select from './Select';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { redirect } from 'next/navigation';
-import { faLanguage } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faLanguage, faListDots } from '@fortawesome/free-solid-svg-icons';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import Link from 'next/link';
+import { Url } from 'next/dist/shared/lib/router/router';
 
 const toggleMenu = () => {
 	const header = document.getElementById('header');
@@ -30,7 +39,78 @@ export function HeaderNavButton(params: ComponentProps<'button'>) {
 }
 
 export function HeaderNavMenu(params: ComponentProps<'nav'>) {
-	return <nav onClick={toggleMenu} {...params} />;
+	return <nav {...params} />;
+}
+
+interface BaseMenuItemProps {
+	icon?: IconProp;
+	label: string;
+}
+
+interface MenuItemProps extends BaseMenuItemProps, AnchorHTMLAttributes<HTMLAnchorElement> {}
+
+export function MenuItem({
+	icon,
+	label,
+	href,
+	onClick: clickAction = undefined,
+	...props
+}: MenuItemProps) {
+	const performLinkWithAction: MouseEventHandler<HTMLAnchorElement> = (e) => {
+		toggleMenu();
+		clickAction?.(e);
+	};
+
+	return (
+		<Link
+			href={href as Url}
+			onClick={performLinkWithAction}
+			className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-100 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-50 active:bg-opacity-20'
+			tabIndex={0}
+			{...props}>
+			<FontAwesomeIcon icon={icon ?? faListDots} className='mr-2 w-6' />
+			{label}
+		</Link>
+	);
+}
+
+interface MenuSubMenuItem extends BaseMenuItemProps, ButtonHTMLAttributes<HTMLButtonElement> {}
+
+export function MenuSubMenu({
+	icon,
+	label,
+	children,
+	onClick: clickAction = undefined,
+	...props
+}: MenuSubMenuItem) {
+	const [isOpen, setIsOpen] = useState(false);
+
+	const handleButtonClick: MouseEventHandler<HTMLButtonElement> = (e) => {
+		setIsOpen(!isOpen);
+		clickAction?.(e);
+	};
+
+	return (
+		<div>
+			<button
+				onClick={handleButtonClick}
+				className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-left text-secondary-100 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-50 active:bg-opacity-20'
+				{...props}>
+				<FontAwesomeIcon icon={icon ?? faListDots} className='mr-2 w-6' />
+				{label}
+				<FontAwesomeIcon
+					icon={faAngleDown}
+					size='sm'
+					className={`ml-2 w-6 ${isOpen ? 'rotate-180' : 'rotate-0'} text-secondary-300 transition-transform duration-300`}
+				/>
+			</button>
+			<div
+				className={`w-full ${isOpen ? 'my-1 max-h-48' : 'max-h-0'} flex items-stretch justify-start overflow-hidden px-5 transition-all duration-500 motion-reduce:transition-none`}>
+				<div className='mr-1 w-1 rounded-sm bg-foreground opacity-10'></div>
+				<ul className='flex-grow'>{children}</ul>
+			</div>
+		</div>
+	);
 }
 
 interface HeaderLanguagePickerProps {

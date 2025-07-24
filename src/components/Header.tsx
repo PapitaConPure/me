@@ -2,12 +2,19 @@ import getRoot from '@/lib/getroot';
 import { getMessages, Locale } from '@/lib/i18n';
 import Image from 'next/image';
 import Link from 'next/link';
-import { HeaderLanguagePicker, HeaderNavButton, HeaderNavMenu } from './HeaderClient';
+import {
+	HeaderLanguagePicker,
+	HeaderNavButton,
+	HeaderNavMenu,
+	MenuItem,
+	MenuSubMenu,
+} from './HeaderClient';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faBars,
 	faEnvelope,
 	faHome,
+	faLanguage,
 	faLaptopCode,
 	faMusic,
 	faQuestionCircle,
@@ -102,46 +109,68 @@ export default async function Header({ lang }: HeaderProps) {
 			<HeaderNavMenu
 				id='mobile-menu'
 				className='flex h-0 flex-col overflow-hidden rounded-b-md transition-all duration-300 ease-[cubic-bezier(0.77,0,0.175,1)] md:hidden'>
-				<Link
+				<MenuItem
 					href={`/${lang}`}
-					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
+					icon={faHome}
+					label={t.navHome}
 					aria-label={t.navHomeAria}
-					tabIndex={0}>
-					<FontAwesomeIcon icon={faHome} className='mr-2 w-6' />
-					{t.navHome}
-				</Link>
-				<Link
+					tabIndex={0}
+				/>
+				<MenuItem
 					href={`/${lang}/about`}
-					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
+					icon={faQuestionCircle}
+					label={t.navAbout}
 					aria-label={t.navAboutAria}
-					tabIndex={0}>
-					<FontAwesomeIcon icon={faQuestionCircle} className='mr-2 w-6' />
-					{t.navAbout}
-				</Link>
-				<Link
+					tabIndex={0}
+				/>
+				<MenuItem
 					href={`/${lang}/projects`}
-					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
+					icon={faLaptopCode}
+					label={t.navProjects}
 					aria-label={t.navProjectsAria}
-					tabIndex={0}>
-					<FontAwesomeIcon icon={faLaptopCode} className='mr-2 w-6' />
-					{t.navProjects}
-				</Link>
-				<Link
+					tabIndex={0}
+				/>
+				<MenuItem
 					href={`/${lang}/music`}
-					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
+					icon={faMusic}
+					label={t.navMusic}
 					aria-label={t.navMusicAria}
-					tabIndex={0}>
-					<FontAwesomeIcon icon={faMusic} className='mr-2 w-6' />
-					{t.navMusic}
-				</Link>
-				<Link
+					tabIndex={0}
+				/>
+				<MenuItem
 					href={`/${lang}/contact`}
-					className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-200 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-100 active:bg-opacity-20'
+					icon={faEnvelope}
+					label={t.navContact}
 					aria-label={t.navContactAria}
+					tabIndex={0}
+				/>
+				<MenuSubMenu
+					icon={faLanguage}
+					label={t.langPicker}
+					aria-label={t.langPickerAria}
 					tabIndex={0}>
-					<FontAwesomeIcon icon={faEnvelope} className='mr-2 w-6' />
-					{t.navContact}
-				</Link>
+					<MenuItem
+						key={0}
+						href='/es'
+						label='Español'
+						aria-label={'Navegar en español'}
+						tabIndex={0}
+					/>
+					<MenuItem
+						key={1}
+						href='/en'
+						label='English'
+						aria-label={'Navigate in English'}
+						tabIndex={0}
+					/>
+					<MenuItem
+						key={2}
+						href='/ja'
+						label='日本語'
+						aria-label={'日本語で閲覧'}
+						tabIndex={0}
+					/>
+				</MenuSubMenu>
 			</HeaderNavMenu>
 		</header>
 	);
