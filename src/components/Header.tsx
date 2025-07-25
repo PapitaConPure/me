@@ -33,7 +33,7 @@ export default async function Header({ lang }: HeaderProps) {
 	return (
 		<header
 			id='header'
-			className='fixed top-0 z-50 w-full border-b border-b-secondary-800 border-opacity-60 bg-background bg-opacity-60 backdrop-blur-md transition-all'>
+			className='fixed top-0 z-50 w-full border-b border-b-secondary-800 border-opacity-60 bg-background bg-opacity-60 backdrop-blur-md transition-all motion-reduce:backdrop-blur-lg motion-reduce:bg-opacity-80'>
 			<div className='mx-auto flex max-w-7xl items-center justify-between px-4 py-4'>
 				<Link
 					href={`/${lang}`}
@@ -108,7 +108,7 @@ export default async function Header({ lang }: HeaderProps) {
 
 			<HeaderNavMenu
 				id='mobile-menu'
-				className='flex h-0 flex-col overflow-hidden rounded-b-md transition-all duration-300 ease-[cubic-bezier(0.77,0,0.175,1)] md:hidden'>
+				className='flex h-0 flex-col overflow-hidden rounded-b-md transition-all duration-300 ease-[cubic-bezier(0.77,0,0.175,1)] motion-reduce:transition-none md:hidden'>
 				<MenuItem
 					href={`/${lang}`}
 					icon={faHome}

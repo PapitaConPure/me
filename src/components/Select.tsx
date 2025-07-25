@@ -186,7 +186,7 @@ function Select<TValue extends OptionValue = undefined>({
 				<FontAwesomeIcon
 					icon={faAngleDown}
 					size='sm'
-					className={`aspect-square text-secondary-300 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+					className={`aspect-square text-secondary-300 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'} motion-reduce:transition-none`}
 				/>
 			</button>
 

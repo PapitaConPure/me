@@ -68,7 +68,7 @@ export function MenuItem({
 			className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-100 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-50 active:bg-opacity-20'
 			tabIndex={0}
 			{...props}>
-			<FontAwesomeIcon icon={icon ?? faListDots} className='mr-2 w-6' />
+			<FontAwesomeIcon icon={icon ?? faListDots} className='mr-3 w-6' />
 			{label}
 		</Link>
 	);
@@ -96,16 +96,16 @@ export function MenuSubMenu({
 				onClick={handleButtonClick}
 				className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-left text-secondary-100 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-50 active:bg-opacity-20'
 				{...props}>
-				<FontAwesomeIcon icon={icon ?? faListDots} className='mr-2 w-6' />
+				<FontAwesomeIcon icon={icon ?? faListDots} className='mr-3 w-6' />
 				{label}
 				<FontAwesomeIcon
 					icon={faAngleDown}
-					size='sm'
-					className={`ml-2 w-6 ${isOpen ? 'rotate-180' : 'rotate-0'} text-secondary-300 transition-transform duration-300`}
+					size={'sm'}
+					className={`ml-2 w-6 ${isOpen ? 'rotate-180 scale-[0.8] text-secondary-400' : 'rotate-0 text-secondary-300'} transition-transform duration-300 motion-reduce:scale-100 motion-reduce:transition-none`}
 				/>
 			</button>
 			<div
-				className={`w-full ${isOpen ? 'my-1 max-h-48' : 'max-h-0'} flex items-stretch justify-start overflow-hidden px-5 transition-all duration-500 motion-reduce:transition-none`}>
+				className={`w-full ${isOpen ? 'my-1 max-h-48 scale-y-100 opacity-100' : 'max-h-0 scale-y-75 opacity-30'} flex items-stretch justify-start overflow-hidden px-5 transition-all duration-500 motion-reduce:transition-none`}>
 				<div className='mr-1 w-1 rounded-sm bg-foreground opacity-10'></div>
 				<ul className='flex-grow'>{children}</ul>
 			</div>
