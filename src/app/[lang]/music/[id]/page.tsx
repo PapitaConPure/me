@@ -243,7 +243,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 							className='w-full rounded-lg'></Image>
 					</div>
 					<div className='flex-grow'>
-						<h2 className='mb-1.5 mt-[0.0625rem] flex flex-wrap text-xl text-foreground text-opacity-90'>
+						<p className='mb-1.5 mt-[0.0625rem] flex flex-wrap text-xl text-foreground text-opacity-90'>
 							{item.artists.map((artist, index, arr) => (
 								<span key={index + 1} className='flex'>
 									<CredittedArtist artist={artist} lang={lang} />
@@ -254,7 +254,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 									)}
 								</span>
 							))}
-						</h2>
+						</p>
 						<h1 className='mb-2.5 font-default-sans text-3xl font-extrabold text-foreground'>
 							{resolveLocalizableField(item.title, lang)}
 						</h1>
