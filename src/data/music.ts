@@ -3768,7 +3768,7 @@ const items: MusicItem[] = [
 		date: new Date('2025-01-09'),
 		categories: ['collab', 'original'],
 		coverUrl: '/images/music/pateka-3/cover.webp',
-		thumbnailUrl: '/images/music/pateka-3/cover.webp',
+		thumbnailUrl: '/images/music/pateka-3/thumbnail.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=yjuLQ-HOpsY',
 		credits: {
 			music: {
@@ -3847,6 +3847,17 @@ const items: MusicItem[] = [
 				},
 				size: '443 KB',
 				url: '/images/music/pateka-3/cover.webp',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
+				size: '93.2 KB',
+				url: '/images/music/pateka-3/thumbnail.webp',
 			},
 		],
 		tags: ['ambiental'],
