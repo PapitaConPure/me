@@ -20,7 +20,7 @@ export default async function Footer({ lang }: FooterProps) {
 	if (!t) return <footer></footer>;
 
 	return (
-		<footer className='my-4 border-t border-b-secondary-800 border-t-secondary-800 border-opacity-60 py-4 text-center text-sm text-secondary-500'>
+		<footer className='my-4 border-t border-b-secondary-800 border-t-secondary-800 border-opacity-60 py-4 text-center text-sm text-secondary-400'>
 			<span>
 				<a
 					href='https://github.com/PapitaConPure/papitaconpure.github.io'
@@ -39,7 +39,7 @@ export default async function Footer({ lang }: FooterProps) {
 			<a
 				href='https://github.com/PapitaConPure'
 				target='_blank'
-				className='hover:underline active:text-secondary-600'
+				className='hover:underline active:text-secondary-500'
 				aria-label='Visitar el perfil de GitHub de Papita con Puré'>
 				Papita con Puré
 			</a>
