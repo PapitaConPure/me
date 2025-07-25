@@ -33,7 +33,7 @@ export default async function Header({ lang }: HeaderProps) {
 	return (
 		<header
 			id='header'
-			className='fixed top-0 z-50 w-full border-b border-b-secondary-800 border-opacity-60 bg-background bg-opacity-60 backdrop-blur-md transition-all motion-reduce:backdrop-blur-lg motion-reduce:bg-opacity-80'>
+			className='fixed top-0 z-50 w-full border-b border-b-secondary-800 border-opacity-60 bg-background bg-opacity-60 backdrop-blur-md transition-all motion-reduce:bg-opacity-80 motion-reduce:backdrop-blur-lg'>
 			<div className='mx-auto flex max-w-7xl items-center justify-between px-4 py-4'>
 				<Link
 					href={`/${lang}`}
@@ -148,29 +148,22 @@ export default async function Header({ lang }: HeaderProps) {
 					icon={faLanguage}
 					label={t.langPicker}
 					aria-label={t.langPickerAria}
-					tabIndex={0}>
-					<MenuItem
-						key={0}
-						href='/es'
-						label='Español'
-						aria-label={'Navegar en español'}
-						tabIndex={0}
-					/>
-					<MenuItem
-						key={1}
-						href='/en'
-						label='English'
-						aria-label={'Navigate in English'}
-						tabIndex={0}
-					/>
-					<MenuItem
-						key={2}
-						href='/ja'
-						label='日本語'
-						aria-label={'日本語で閲覧'}
-						tabIndex={0}
-					/>
-				</MenuSubMenu>
+					tabIndex={0}
+					/**/
+					subMenu={[
+						{ href: '/es', label: 'Español', ariaLabel: 'Navegar en español' },
+						{ href: '/en', label: 'English', ariaLabel: 'Navigate in English' },
+						{ href: '/ja', label: '日本語', ariaLabel: '日本語で閲覧' },
+					].map((item, i) => (
+						<li key={i}>
+							<MenuItem
+								href={item.href}
+								label={item.label}
+								aria-label={item.ariaLabel}
+								tabIndex={0}
+							/>
+						</li>
+					))}></MenuSubMenu>
 			</HeaderNavMenu>
 		</header>
 	);

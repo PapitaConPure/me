@@ -4,7 +4,9 @@ import React, {
 	AnchorHTMLAttributes,
 	ButtonHTMLAttributes,
 	ComponentProps,
+	HTMLAttributes,
 	MouseEventHandler,
+	ReactElement,
 	useState,
 } from 'react';
 import Select from './Select';
@@ -74,12 +76,14 @@ export function MenuItem({
 	);
 }
 
-interface MenuSubMenuItem extends BaseMenuItemProps, ButtonHTMLAttributes<HTMLButtonElement> {}
+interface MenuSubMenuItem extends BaseMenuItemProps, ButtonHTMLAttributes<HTMLButtonElement> {
+	subMenu: ReactElement<HTMLAttributes<HTMLLIElement>, 'li'>[];
+}
 
 export function MenuSubMenu({
 	icon,
 	label,
-	children,
+	subMenu,
 	onClick: clickAction = undefined,
 	...props
 }: MenuSubMenuItem) {
@@ -105,9 +109,12 @@ export function MenuSubMenu({
 				/>
 			</button>
 			<div
-				className={`w-full ${isOpen ? 'my-1 max-h-48 scale-y-100 opacity-100' : 'max-h-0 scale-y-75 opacity-30'} flex items-stretch justify-start overflow-hidden px-5 transition-all duration-500 motion-reduce:transition-none`}>
+				className={`relative ${isOpen ? 'my-1 max-h-48 scale-y-100 opacity-100' : 'max-h-0 scale-y-75 opacity-30'} flex items-stretch justify-start overflow-hidden px-5 transition-all duration-500 motion-reduce:transition-none`}>
 				<div className='mr-1 w-1 rounded-sm bg-foreground opacity-10'></div>
-				<ul className='flex-grow'>{children}</ul>
+				<ul
+					className={`${subMenu.length > 3 ? 'overflow-y-scroll' : ''} flex-grow pr-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-secondary-400 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-secondary-900 [&::-webkit-scrollbar]:w-1`}>
+					{subMenu}
+				</ul>
 			</div>
 		</div>
 	);
