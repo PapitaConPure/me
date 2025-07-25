@@ -59,15 +59,15 @@ const MusicCard = ({ lang, href, imgSrc, title, author, categories, date }: Musi
 					src={getRoot(imgSrc)}
 					alt='Thumbnail Backdrop'
 					fill
-					sizes={'(max-width: 768px) 50vw, 33vw'}
-					className='mx-auto my-auto h-full w-full object-cover blur-md transition-all md:group-hover:blur-lg'
+					sizes={'95vw, (min-width: 640px) 44.5vw, (min-width: 768px) 307px'}
+					className='mx-auto my-auto h-full w-full object-cover blur-md transition-all sm:opacity-100 md:group-hover:blur-lg'
 				/>
 				<div className='absolute inset-0 mx-auto my-auto h-full w-full transition-all duration-500 md:group-hover:scale-150 md:group-hover:blur-sm md:group-active:scale-125 md:group-active:blur-lg md:group-active:brightness-200 md:group-active:duration-[400ms] md:group-hover:motion-reduce:scale-100 md:group-active:motion-reduce:scale-100'>
 					<Image
 						src={getRoot(imgSrc)}
 						alt='Thumbnail'
 						fill
-						sizes={'(max-width: 768px) 50vw, 33vw'}
+						sizes={'95vw, (min-width: 640px) 44.5vw, (min-width: 768px) 307px'}
 						className='object-contain'
 					/>
 				</div>
