@@ -45,5 +45,5 @@
 }
 
 .text-link {
-	@apply text-accent-400 visited:text-accent-300 hover:text-accent-500 hover:underline active:text-accent-600;
+	@apply text-accent-300 hover:text-accent-400 hover:underline active:text-accent-500;
 }

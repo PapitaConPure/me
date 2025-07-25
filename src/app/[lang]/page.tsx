@@ -84,7 +84,7 @@ const Home = async ({ params }: HomeProps) => {
 						{t.welcome}
 					</h1>
 				</div>
-				<p className='my-2 text-center font-light text-secondary-100'>
+				<p className='my-2 text-center font-light'>
 					<Tr
 						t={t.welcomeMessage}
 						components={{

@@ -2,13 +2,7 @@ import getRoot from '@/lib/getroot';
 import { getMessages, Locale } from '@/lib/i18n';
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-	HeaderLanguagePicker,
-	HeaderNavButton,
-	HeaderNavMenu,
-	MenuItem,
-	MenuSubMenu,
-} from './HeaderClient';
+import { HeaderLanguagePicker, HeaderNavButton, MenuItem, MobileMenuSubMenu } from './HeaderClient';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faBars,
@@ -50,43 +44,40 @@ export default async function Header({ lang }: HeaderProps) {
 					<span className='select-none'>{t.headerName}</span>
 				</Link>
 
-				<nav className='hidden space-x-1 md:flex'>
-					<Link
-						href={`/${lang}`}
-						className='rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
-						aria-label={t.navHomeAria}
-						tabIndex={0}>
-						{t.navHome}
-					</Link>
-					<Link
-						className='rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
-						href={`/${lang}/about`}
-						aria-label={t.navAboutAria}
-						tabIndex={0}>
-						{t.navAbout}
-					</Link>
-					<Link
-						className='rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
-						href={`/${lang}/projects`}
-						aria-label={t.navProjectsAria}
-						tabIndex={0}>
-						{t.navProjects}
-					</Link>
-					<Link
-						className='rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
-						href={`/${lang}/music`}
-						aria-label={t.navMusicAria}
-						tabIndex={0}>
-						{t.navMusic}
-					</Link>
-					<Link
-						className='rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
-						href={`/${lang}/contact`}
-						aria-label={t.navContactAria}
-						tabIndex={0}>
-						{t.navContact}
-					</Link>
-					<HeaderLanguagePicker langPickerAria={t.langPickerAria} />
+				<nav className='hidden md:block'>
+					<ul role='menubar' className='flex list-none items-stretch space-x-1'>
+						<MenuItem
+							href={`/${lang}`}
+							label={t.navHome}
+							aria-label={t.navHomeAria}
+							tabIndex={0}
+						/>
+						<MenuItem
+							href={`/${lang}/about`}
+							label={t.navAbout}
+							aria-label={t.navAboutAria}
+							tabIndex={0}
+						/>
+						<MenuItem
+							href={`/${lang}/projects`}
+							label={t.navProjects}
+							aria-label={t.navProjectsAria}
+							tabIndex={0}
+						/>
+						<MenuItem
+							href={`/${lang}/music`}
+							label={t.navMusic}
+							aria-label={t.navMusicAria}
+							tabIndex={0}
+						/>
+						<MenuItem
+							href={`/${lang}/contact`}
+							label={t.navContact}
+							aria-label={t.navContactAria}
+							tabIndex={0}
+						/>
+						<HeaderLanguagePicker langPickerAria={t.langPickerAria} />
+					</ul>
 				</nav>
 				<div className='md:hidden'>
 					<HeaderNavButton
@@ -106,65 +97,73 @@ export default async function Header({ lang }: HeaderProps) {
 				</div>
 			</div>
 
-			<HeaderNavMenu
+			<nav
 				id='mobile-menu'
-				className='flex h-0 flex-col overflow-hidden rounded-b-md transition-all duration-300 ease-[cubic-bezier(0.77,0,0.175,1)] motion-reduce:transition-none md:hidden'>
-				<MenuItem
-					href={`/${lang}`}
-					icon={faHome}
-					label={t.navHome}
-					aria-label={t.navHomeAria}
-					tabIndex={0}
-				/>
-				<MenuItem
-					href={`/${lang}/about`}
-					icon={faQuestionCircle}
-					label={t.navAbout}
-					aria-label={t.navAboutAria}
-					tabIndex={0}
-				/>
-				<MenuItem
-					href={`/${lang}/projects`}
-					icon={faLaptopCode}
-					label={t.navProjects}
-					aria-label={t.navProjectsAria}
-					tabIndex={0}
-				/>
-				<MenuItem
-					href={`/${lang}/music`}
-					icon={faMusic}
-					label={t.navMusic}
-					aria-label={t.navMusicAria}
-					tabIndex={0}
-				/>
-				<MenuItem
-					href={`/${lang}/contact`}
-					icon={faEnvelope}
-					label={t.navContact}
-					aria-label={t.navContactAria}
-					tabIndex={0}
-				/>
-				<MenuSubMenu
-					icon={faLanguage}
-					label={t.langPicker}
-					aria-label={t.langPickerAria}
-					tabIndex={0}
-					/**/
-					subMenu={[
-						{ href: '/es', label: 'Español', ariaLabel: 'Navegar en español' },
-						{ href: '/en', label: 'English', ariaLabel: 'Navigate in English' },
-						{ href: '/ja', label: '日本語', ariaLabel: '日本語で閲覧' },
-					].map((item, i) => (
-						<li key={i}>
+				className='flex h-0 list-none flex-col overflow-hidden rounded-b-md transition-all duration-300 ease-[cubic-bezier(0.77,0,0.175,1)] motion-reduce:transition-none md:hidden'>
+				<ul role='menu'>
+					<MenuItem
+						mobile
+						href={`/${lang}`}
+						icon={faHome}
+						label={t.navHome}
+						aria-label={t.navHomeAria}
+						tabIndex={0}
+					/>
+					<MenuItem
+						mobile
+						href={`/${lang}/about`}
+						icon={faQuestionCircle}
+						label={t.navAbout}
+						aria-label={t.navAboutAria}
+						tabIndex={0}
+					/>
+					<MenuItem
+						mobile
+						href={`/${lang}/projects`}
+						icon={faLaptopCode}
+						label={t.navProjects}
+						aria-label={t.navProjectsAria}
+						tabIndex={0}
+					/>
+					<MenuItem
+						mobile
+						href={`/${lang}/music`}
+						icon={faMusic}
+						label={t.navMusic}
+						aria-label={t.navMusicAria}
+						tabIndex={0}
+					/>
+					<MenuItem
+						mobile
+						href={`/${lang}/contact`}
+						icon={faEnvelope}
+						label={t.navContact}
+						aria-label={t.navContactAria}
+						tabIndex={0}
+					/>
+					<MobileMenuSubMenu
+						icon={faLanguage}
+						label={t.langPicker}
+						aria-label={t.langPickerAria}
+						tabIndex={0}
+						/**/
+						subMenu={[
+							{ href: '/es', label: 'Español', ariaLabel: 'Navegar en español' },
+							{ href: '/en', label: 'English', ariaLabel: 'Navigate in English' },
+							{ href: '/ja', label: '日本語', ariaLabel: '日本語で閲覧' },
+						].map((item, i) => (
 							<MenuItem
+								mobile
+								key={i}
 								href={item.href}
 								label={item.label}
 								aria-label={item.ariaLabel}
 								tabIndex={0}
 							/>
-						</li>
-					))}></MenuSubMenu>
-			</HeaderNavMenu>
+						))}
+					/>
+				</ul>
+			</nav>
 		</header>
 	);
 }

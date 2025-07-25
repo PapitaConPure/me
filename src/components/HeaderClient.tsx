@@ -7,6 +7,7 @@ import React, {
 	HTMLAttributes,
 	MouseEventHandler,
 	ReactElement,
+	useId,
 	useState,
 } from 'react';
 import Select from './Select';
@@ -40,13 +41,10 @@ export function HeaderNavButton(params: ComponentProps<'button'>) {
 	return <button onClick={toggleMenu} {...params} />;
 }
 
-export function HeaderNavMenu(params: ComponentProps<'nav'>) {
-	return <nav {...params} />;
-}
-
 interface BaseMenuItemProps {
 	icon?: IconProp;
 	label: string;
+	mobile?: boolean;
 }
 
 interface MenuItemProps extends BaseMenuItemProps, AnchorHTMLAttributes<HTMLAnchorElement> {}
@@ -56,37 +54,57 @@ export function MenuItem({
 	label,
 	href,
 	onClick: clickAction = undefined,
+	mobile = false,
 	...props
 }: MenuItemProps) {
+	if (!mobile) {
+		return (
+			<li role='menuitem' className='flex'>
+				<Link
+					href={href as Url}
+					className='flex self-stretch rounded-md bg-secondary-400 bg-opacity-0 px-4 py-1 transition-all duration-75 hover:bg-opacity-20 hover:text-secondary-100'
+					tabIndex={0}
+					{...props}>
+					{label}
+				</Link>
+			</li>
+		);
+	}
+
 	const performLinkWithAction: MouseEventHandler<HTMLAnchorElement> = (e) => {
 		toggleMenu();
 		clickAction?.(e);
 	};
 
 	return (
-		<Link
-			href={href as Url}
-			onClick={performLinkWithAction}
-			className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-100 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-50 active:bg-opacity-20'
-			tabIndex={0}
-			{...props}>
-			<FontAwesomeIcon icon={icon ?? faListDots} className='mr-3 w-6' />
-			{label}
-		</Link>
+		<li role='menuitem'>
+			<Link
+				href={href as Url}
+				onClick={performLinkWithAction}
+				className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-secondary-100 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-50 active:bg-opacity-20'
+				tabIndex={0}
+				{...props}>
+				<FontAwesomeIcon icon={icon ?? faListDots} className='mr-3 w-6' />
+				{label}
+			</Link>
+		</li>
 	);
 }
 
-interface MenuSubMenuItem extends BaseMenuItemProps, ButtonHTMLAttributes<HTMLButtonElement> {
+interface MobileMenuSubMenuProps
+	extends BaseMenuItemProps,
+		ButtonHTMLAttributes<HTMLButtonElement> {
 	subMenu: ReactElement<HTMLAttributes<HTMLLIElement>, 'li'>[];
 }
 
-export function MenuSubMenu({
+export function MobileMenuSubMenu({
 	icon,
 	label,
 	subMenu,
 	onClick: clickAction = undefined,
 	...props
-}: MenuSubMenuItem) {
+}: MobileMenuSubMenuProps) {
+	const cid = useId();
 	const [isOpen, setIsOpen] = useState(false);
 
 	const handleButtonClick: MouseEventHandler<HTMLButtonElement> = (e) => {
@@ -94,9 +112,15 @@ export function MenuSubMenu({
 		clickAction?.(e);
 	};
 
+	const subMenuToggleId = `menu-subtoggle-${cid}`;
+	const subMenuId = `menu-submenu-${cid}`;
+
 	return (
-		<div>
+		<li role='menuitem'>
 			<button
+				id={subMenuToggleId}
+				aria-expanded={isOpen}
+				aria-controls={subMenuId}
 				onClick={handleButtonClick}
 				className='block w-full select-none rounded-md bg-secondary-400 bg-opacity-0 px-5 py-5 text-left text-secondary-100 transition-colors duration-75 hover:bg-opacity-10 hover:text-secondary-50 active:bg-opacity-20'
 				{...props}>
@@ -112,11 +136,13 @@ export function MenuSubMenu({
 				className={`relative ${isOpen ? 'my-1 max-h-48 scale-y-100 opacity-100' : 'max-h-0 scale-y-75 opacity-30'} flex items-stretch justify-start overflow-hidden px-5 transition-all duration-500 motion-reduce:transition-none`}>
 				<div className='mr-1 w-1 rounded-sm bg-foreground opacity-10'></div>
 				<ul
+					role='menu'
+					id={subMenuId}
 					className={`${subMenu.length > 3 ? 'overflow-y-scroll' : ''} flex-grow pr-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-secondary-400 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-secondary-900 [&::-webkit-scrollbar]:w-1`}>
 					{subMenu}
 				</ul>
 			</div>
-		</div>
+		</li>
 	);
 }
 
@@ -126,17 +152,19 @@ interface HeaderLanguagePickerProps {
 
 export function HeaderLanguagePicker({ langPickerAria }: HeaderLanguagePickerProps) {
 	return (
-		<Select
-			icon={<FontAwesomeIcon icon={faLanguage} size='lg' />}
-			options={[
-				{ label: 'Español', value: 'es' },
-				{ label: 'English', value: 'en' },
-				{ label: '日本語', value: 'ja' },
-			]}
-			action={(value) => redirect(`/${value}`)}
-			className='hover:bg-secondary-800'
-			aria-label={langPickerAria}
-			noPickedDisplay
-		/>
+		<li role='menuitem'>
+			<Select
+				icon={<FontAwesomeIcon icon={faLanguage} size='lg' />}
+				options={[
+					{ label: 'Español', value: 'es' },
+					{ label: 'English', value: 'en' },
+					{ label: '日本語', value: 'ja' },
+				]}
+				action={(value) => redirect(`/${value}`)}
+				className='hover:bg-secondary-800'
+				aria-label={langPickerAria}
+				noPickedDisplay
+			/>
+		</li>
 	);
 }

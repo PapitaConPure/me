@@ -67,7 +67,7 @@ const CredittedArtist = ({ artist, lang }: CredittedArtistProps) => {
 				{resolveLocalizableField(artist.name, lang)}
 			</span>
 			{artist.clarification && (
-				<span className='self-end text-xs text-accent-500 group-hover:text-accent-600'>
+				<span className='self-end text-xs text-accent-400 group-hover:text-accent-500 group-active:text-accent-600'>
 					({resolveLocalizableField(artist.clarification, lang)})
 				</span>
 			)}
@@ -274,7 +274,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 						{item.externalLinks && item.externalLinks.length > 0 && (
 							<>
 								<SmallSeparator />
-								<h3 className='section-h3 mb-2'>{t.detailLinksTitle}</h3>
+								<h2 className='section-h3 mb-2'>{t.detailLinksTitle}</h2>
 								<ul className='list-disc pl-6'>
 									{item.externalLinks.map((link, index) => (
 										<li key={index}>
@@ -294,7 +294,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 						{(item.kind === 'album' || item.kind === 'ep') && (
 							<>
 								<SmallSeparator />
-								<h3 className='section-h3 mb-2'>{t.detailTracklistTitle}</h3>
+								<h2 className='section-h3 mb-2'>{t.detailTracklistTitle}</h2>
 								<ChildrenList>
 									{item.children.map((child, index) => {
 										if (child.kind === 'name')
@@ -337,7 +337,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 						{item.kind === 'compilation' && (
 							<>
 								<SmallSeparator />
-								<h3 className='section-h3 mb-2'>{t.detailTracklistTitle}</h3>
+								<h2 className='section-h3 mb-2'>{t.detailTracklistTitle}</h2>
 								<ChildrenList>
 									{item.childrenTitles.map((childTitle, index) => {
 										return (
@@ -370,6 +370,7 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 					<h2 className='section-h2'>{t.detailVideoTitle}</h2>
 					<div className='mt-4 w-full'>
 						<YouTubeVideo
+							title={`${t.detailVideoTitle} - ${item.title} (YouTube)`}
 							src={item.videoUrl}
 							thumbnailUrl={item.thumbnailUrl || undefined}
 							className='aspect-video w-full overflow-hidden rounded-md object-cover'
