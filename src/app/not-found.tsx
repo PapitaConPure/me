@@ -1,6 +1,7 @@
 import BackSection from '@/components/BackSection';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import LanguageRedirect from '@/components/LanguageRedirect';
 import { isValidLocale } from '@/lib/i18n';
 import { M_PLUS_2, Noto_Serif_JP, Outfit, Vollkorn } from 'next/font/google';
 import { redirect } from 'next/navigation';
@@ -57,6 +58,7 @@ export default async function NotFound({ params }: NotFoundProps) {
 						</BackSection>
 					</main>
                     <Footer lang='es'/>
+					<LanguageRedirect conditional />
 				</body>
 			</html>
 		);
