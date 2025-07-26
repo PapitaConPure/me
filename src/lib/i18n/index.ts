@@ -1,3 +1,5 @@
+import { LocaleMap } from '@/types/i18n';
+
 export const locales = ['es', 'en', 'ja'] as const;
 
 export type Locale = (typeof locales)[number];
@@ -14,10 +16,6 @@ export type Section<
 > = Messages<TLocale>[TSectionKey];
 export type TranslationId<TLocale extends Locale, TSection extends SectionKey<TLocale>> = string &
 	keyof Section<TLocale, TSection>;
-
-export interface LocalizedComponentProps<TLocale extends Locale = Locale> {
-	lang: TLocale;
-}
 
 export const messagesIndex = {
 	es: () => import('../../messages/es.json').then((module) => module.default),
@@ -36,4 +34,8 @@ export async function getMessages<TLocale extends Locale>(locale: TLocale) {
 	} catch {
 		return undefined;
 	}
+}
+
+export function makeLocaleMap<TKeys extends string>(map: LocaleMap<TKeys>): LocaleMap<TKeys> {
+	return map;
 }
