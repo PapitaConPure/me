@@ -2,13 +2,12 @@ import getRoot from '@/lib/getroot';
 import { getMessages, Locale } from '@/lib/i18n';
 import Image from 'next/image';
 import Link from 'next/link';
-import { HeaderLanguagePicker, HeaderNavButton, MenuItem, MobileMenuSubMenu } from './HeaderClient';
+import { HeaderLanguagePicker, HeaderNavButton, MenuItem } from './HeaderClient';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faBars,
 	faEnvelope,
 	faHome,
-	faLanguage,
 	faLaptopCode,
 	faMusic,
 	faQuestionCircle,
@@ -141,26 +140,10 @@ export default async function Header({ lang }: HeaderProps) {
 						aria-label={t.navContactAria}
 						tabIndex={0}
 					/>
-					<MobileMenuSubMenu
-						icon={faLanguage}
+					<HeaderLanguagePicker
+						mobile
 						label={t.langPicker}
-						aria-label={t.langPickerAria}
-						tabIndex={0}
-						/**/
-						subMenu={[
-							{ href: '/es', label: 'Español', ariaLabel: 'Navegar en español' },
-							{ href: '/en', label: 'English', ariaLabel: 'Navigate in English' },
-							{ href: '/ja', label: '日本語', ariaLabel: '日本語で閲覧' },
-						].map((item, i) => (
-							<MenuItem
-								mobile
-								key={i}
-								href={item.href}
-								label={item.label}
-								aria-label={item.ariaLabel}
-								tabIndex={0}
-							/>
-						))}
+						langPickerAria={t.langPickerAria}
 					/>
 				</ul>
 			</nav>

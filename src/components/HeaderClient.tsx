@@ -12,7 +12,7 @@ import React, {
 } from 'react';
 import Select from './Select';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { redirect } from 'next/navigation';
+import { redirect, usePathname } from 'next/navigation';
 import { faAngleDown, faLanguage, faListDots } from '@fortawesome/free-solid-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import Link from 'next/link';
@@ -146,21 +146,67 @@ export function MobileMenuSubMenu({
 	);
 }
 
-interface HeaderLanguagePickerProps {
+interface BaseHeaderLanguagePickerProps {
+	mobile?: boolean;
 	langPickerAria: string;
+	label?: string;
 }
 
-export function HeaderLanguagePicker({ langPickerAria }: HeaderLanguagePickerProps) {
+interface MobileHeaderLanguagePickerProps {
+	mobile: true;
+	label: string;
+}
+
+interface DesktopHeaderLanguagePickerProps {
+	mobile?: false;
+}
+
+type AnyHeaderLanguagePickerProps =
+	| MobileHeaderLanguagePickerProps
+	| DesktopHeaderLanguagePickerProps;
+type HeaderLanguagePickerProps = BaseHeaderLanguagePickerProps & AnyHeaderLanguagePickerProps;
+
+export function HeaderLanguagePicker({ mobile, label, langPickerAria }: HeaderLanguagePickerProps) {
+	const pathName = usePathname();
+
+	const localeItems = [
+		{ locale: 'es', label: 'Español', ariaLabel: 'Navegar en español' },
+		{ locale: 'en', label: 'English', ariaLabel: 'Navigate in English' },
+		{ locale: 'ja', label: '日本語', ariaLabel: '日本語で閲覧' },
+	];
+
+	if (mobile) {
+		return (
+			<MobileMenuSubMenu
+				icon={faLanguage}
+				label={label}
+				aria-label={langPickerAria}
+				tabIndex={0}
+				subMenu={localeItems.map((item, i) => (
+					<MenuItem
+						mobile
+						key={i}
+						href={`/${item.locale}${pathName.slice(3) || ''}`}
+						label={item.label}
+						aria-label={item.ariaLabel}
+						tabIndex={0}
+					/>
+				))}
+			/>
+		);
+	}
+
 	return (
 		<li role='menuitem'>
 			<Select
 				icon={<FontAwesomeIcon icon={faLanguage} size='lg' />}
-				options={[
-					{ label: 'Español', value: 'es' },
-					{ label: 'English', value: 'en' },
-					{ label: '日本語', value: 'ja' },
-				]}
-				action={(value) => redirect(`/${value}`)}
+				placeholder={label}
+				options={localeItems.map(({ locale, label, ariaLabel }) => ({
+					value: locale,
+					label,
+					ariaLabel,
+				}))}
+				action={(locale) => redirect(`/${locale}${pathName.slice(3) || ''}`)}
 				className='hover:bg-secondary-800'
 				aria-label={langPickerAria}
 				noPickedDisplay
