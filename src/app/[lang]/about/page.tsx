@@ -1,4 +1,5 @@
 import { defaultLocale, getMessages, isValidLocale, locales } from '@/lib/i18n';
+import Tr from '@/lib/i18n/Tr';
 import { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
 
@@ -61,104 +62,90 @@ const About = async ({ params }: AboutProps) => {
 			</section>
 
 			<section>
-				<div className='flex flex-col md:flex-row'>
-					<div className='mx-1 my-1 flex-grow rounded-md bg-primary-600 px-6 py-4'>
-						<div className='flex h-full flex-col'>
-							<h2 className='flex-initial text-center font-default-sans text-2xl font-bold text-foreground'>
-								Información Básica
+				<div className='grid auto-rows-max grid-cols-1 md:grid-cols-10'>
+					<div className='col-start-1 mx-1 my-1 rounded-md bg-primary-600 px-4 py-3 md:col-end-8'>
+						<div className='flex h-full flex-col items-center'>
+							<h2 className='mb-2 text-center text-2xl font-bold text-foreground'>
+								{t.basicInfoTitle}
 							</h2>
-							<ul className='mx-auto my-auto flex max-h-fit list-inside list-disc flex-col flex-wrap text-primary-50 marker:text-white md:flex-row'>
-								<li className='my-2 w-full md:my-4 md:w-1/2 md:min-w-fit lg:my-3'>
-									<b>Iniciales</b>&nbsp;—&nbsp;<span>I. Z. A.</span>
-								</li>
-								<li className='my-2 w-full md:my-4 md:w-1/2 md:min-w-fit lg:my-3'>
-									<b>Apodo</b>&nbsp;—&nbsp;<span>Papita con Puré</span>
-								</li>
-								<li className='my-2 w-full md:my-4 md:w-1/2 md:min-w-fit lg:my-3'>
-									<b>Nació en</b>&nbsp;—&nbsp;<span>2003</span>
-								</li>
-								<li className='my-2 w-full md:my-4 md:w-1/2 md:min-w-fit lg:my-3'>
-									<b>Cumpleaños</b>&nbsp;—&nbsp;<span>2 de junio</span>
-								</li>
-								<li className='my-2 w-full md:my-4 md:w-1/2 md:min-w-fit lg:my-3'>
-									<b>País</b>&nbsp;—&nbsp;<span>Argentina</span>
-								</li>
-								<li className='my-2 w-full md:my-4 md:w-1/2 md:min-w-fit lg:my-3'>
-									<b>Habla</b>&nbsp;—&nbsp;<span>Español, Inglés</span>
-								</li>
-							</ul>
+							<div className='flex flex-grow flex-col items-center justify-center'>
+								<ul className='mb-1 grid list-disc grid-cols-1 gap-x-2 gap-y-1 text-primary-50 marker:text-white md:grid-cols-2 md:gap-x-4 md:gap-y-4 lg:gap-x-6 lg:gap-y-3'>
+									<li className='ml-6 text-wrap'>
+										<Tr components={{ 1: <b /> }} t={t.basicInfoInitials} />
+									</li>
+									<li className='ml-6 text-wrap'>
+										<Tr components={{ 1: <b /> }} t={t.basicInfoNickname} />
+									</li>
+									<li className='ml-6 text-wrap'>
+										<Tr components={{ 1: <b /> }} t={t.basicInfoBirthyear} />
+									</li>
+									<li className='ml-6 text-wrap'>
+										<Tr components={{ 1: <b /> }} t={t.basicInfoBirthday} />
+									</li>
+									<li className='ml-6 text-wrap'>
+										<Tr components={{ 1: <b /> }} t={t.basicInfoNationality} />
+									</li>
+									<li className='ml-6 text-wrap'>
+										<Tr components={{ 1: <b /> }} t={t.basicInfoLanguages} />
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
-					<div className='mx-1 my-1 rounded-md bg-secondary-900 px-5 py-4 md:w-1/4 md:min-w-[9rem] lg:w-1/2'>
-						<div className='flex h-full flex-col'>
-							<h2 className='text-center font-default-sans text-2xl font-bold text-foreground'>
-								Gustos
+					<div className='col-span-full mx-1 my-1 rounded-md bg-secondary-900 px-4 py-3 md:col-start-8'>
+						<div className='flex h-full flex-col items-center'>
+							<h2 className='mb-2 text-center text-2xl font-bold text-foreground'>
+								{t.likesTitle}
 							</h2>
-							<ul className='mx-auto my-auto flex max-h-fit list-inside list-disc flex-wrap text-secondary-100 marker:text-accent-300 sm:mx-0'>
-								<li className='my-1 w-1/2 sm:my-2 sm:w-1/3 md:w-full lg:my-3 lg:w-1/2'>
-									Café
-								</li>
-								<li className='my-1 w-1/2 sm:my-2 sm:w-1/3 md:w-full lg:my-3 lg:w-1/2'>
-									Piano
-								</li>
-								<li className='my-1 w-1/2 sm:my-2 sm:w-1/3 md:w-full lg:my-3 lg:w-1/2'>
-									Risk of Rain
-								</li>
-								<li className='my-1 w-1/2 sm:my-2 sm:w-1/3 md:w-full lg:my-3 lg:w-1/2'>
-									KonoSuba
-								</li>
-								<li className='my-1 w-1/2 sm:my-2 sm:w-1/3 md:w-full lg:my-3 lg:w-1/2'>
-									VTubers
-								</li>
-								<li className='my-1 w-1/2 sm:my-2 sm:w-1/3 md:w-full lg:my-3 lg:w-1/2'>
-									Touhou
-								</li>
-							</ul>
+							<div className='flex flex-grow flex-col items-center justify-center'>
+								<ul className='mb-1 grid list-disc grid-cols-1 gap-x-2 gap-y-1 text-secondary-100 marker:text-accent-300 md:gap-y-4 lg:grid-cols-2 lg:gap-x-4 lg:gap-y-3'>
+									<li className='ml-6 text-wrap'>{t.likesCoffee}</li>
+									<li className='ml-6 text-wrap'>{t.likesPiano}</li>
+									<li className='ml-6 text-wrap'>Risk of Rain</li>
+									<li className='ml-6 text-wrap'>{t.likesKonoSuba}</li>
+									<li className='ml-6 text-wrap'>{t.likesVTubers}</li>
+									<li className='ml-6 text-wrap'>{t.likesTouhou}</li>
+								</ul>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div className='flex flex-col md:flex-row'>
-					<div className='mx-1 my-1 flex-grow rounded-md bg-foreground px-6 py-1'>
-						<div className='flex h-full flex-col'>
-							<h2 className='flex-initial text-center font-default-sans text-2xl font-bold text-background'>
-								Hobbies
+					<div className='col-start-1 mx-1 my-1 rounded-md bg-foreground px-4 py-3 md:col-end-7'>
+						<div className='flex h-full flex-col items-center'>
+							<h2 className='mb-2 text-center text-2xl font-bold text-background'>
+								{t.hobbiesTitle}
 							</h2>
-							<ul className='mx-auto my-auto flex max-h-fit list-inside list-disc flex-wrap text-secondary-900 marker:text-accent-300 sm:mx-0'>
-								<li className='my-2 w-1/2 md:my-1 md:min-w-fit lg:w-1/3'>Jugar</li>
-								<li className='my-2 w-1/2 md:my-1 md:min-w-fit lg:w-1/3'>
-									Programar
-								</li>
-								<li className='my-2 w-1/2 md:my-1 md:min-w-fit lg:w-1/3'>
-									Producir
-								</li>
-								<li className='my-2 w-1/2 md:my-1 md:min-w-fit lg:w-1/3'>
-									Diseñar
-								</li>
-								<li className='my-2 w-1/2 md:my-1 md:min-w-fit lg:w-1/3'>
-									Modelar
-								</li>
-								<li className='my-2 w-1/2 md:my-1 md:min-w-fit lg:w-1/3'>
-									Dibujar
-								</li>
-							</ul>
+							<div className='flex flex-grow flex-col items-center justify-center'>
+								<ul className='mb-1 grid list-disc grid-cols-1 gap-x-2 gap-y-1 text-secondary-900 marker:text-accent-300 sm:grid-cols-2 md:grid-cols-3 md:gap-x-4 md:gap-y-4 lg:gap-x-6 lg:gap-y-3'>
+									<li className='ml-6 text-wrap'>{t.hobbiesGaming}</li>
+									<li className='ml-6 text-wrap'>{t.hobbiesProgramming}</li>
+									<li className='ml-6 text-wrap'>{t.hobbiesProduction}</li>
+									<li className='ml-6 text-wrap'>{t.hobbiesDesign}</li>
+									<li className='ml-6 text-wrap'>{t.hobbiesModeling}</li>
+									<li className='ml-6 text-wrap'>{t.hobbiesDrawing}</li>
+								</ul>
+							</div>
 						</div>
 					</div>
-					<div className='mx-1 my-1 rounded-md bg-accent-600 px-4 py-1 md:w-[40%] md:min-w-[17rem]'>
-						<div className='flex h-full flex-col flex-wrap'>
-							<h2 className='flex-initial text-center font-default-sans text-2xl font-bold text-foreground'>
-								Profesión
+					<div className='col-span-full mx-1 my-1 rounded-md bg-accent-600 px-4 py-3 md:col-start-7'>
+						<div className='flex h-full flex-col items-center'>
+							<h2 className='mb-2 text-center text-2xl font-bold text-foreground'>
+								{t.professionsTitle}
 							</h2>
-							<ul className='mx-auto my-auto flex max-h-fit list-inside list-disc flex-col flex-wrap text-accent-50 marker:text-white md:mx-0 md:flex-row lg:mx-auto lg:flex-col'>
-								<li className='my-1 w-max md:w-1/2 md:min-w-fit'>GameDev</li>
-								<li className='my-1 w-max md:w-1/2 md:min-w-fit'>Programador</li>
-							</ul>
+							<div className='flex flex-grow flex-col items-center justify-center'>
+								<ul className='mb-1 grid list-disc grid-cols-1 gap-x-2 gap-y-1 text-accent-50 marker:text-white md:gap-x-4 md:gap-y-4 lg:grid-cols-2 lg:gap-x-6 lg:gap-y-3'>
+									<li className='ml-6 text-wrap'>{t.professionsGameDev}</li>
+									<li className='ml-6 text-wrap'>
+										{t.professionsProgrammer}
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 
 			<section>
-				<h2 className='section-h2'>Descripción Breve</h2>
+				<h2 className='section-h2'>{t.briefDescriptionTitle}</h2>
 				<p className='mt-2'>
 					Soy un programador profesional. Por hobby, desarrollo videojuegos; hago
 					composiciones y arreglos musicales; diseño, modelo y renderizo en 3D; dibujo
@@ -167,7 +154,7 @@ const About = async ({ params }: AboutProps) => {
 			</section>
 
 			<section>
-				<h2 className='section-h2'>Historia</h2>
+				<h2 className='section-h2'>{t.storyTitle}</h2>
 				<p className='mb-8 mt-2 font-default-serif text-secondary-100 sm:text-lg'>
 					Desde muy pequeño me interesa todo el proceso creativo del desarrollo de
 					videojuegos y la producción musical. Aprendí por mi cuenta con recursos en línea
