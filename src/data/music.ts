@@ -3761,9 +3761,9 @@ const items: MusicItem[] = [
 			ja: '乙女の足音 ～ Reborn Grove',
 		},
 		description: {
-			es: 'Composición:\n• Karl Zuñiga\n• Tewi [Sax; detalles]\n• Papita con Puré\n\nMezcla: Karl Zuñiga',
-			en: 'Composition:\n• Karl Zuñiga\n• Tewi [Sax; Details]\n• Papita con Puré\n\nMix: Karl Zuñiga',
-			ja: '作曲家:\n• Karl Zuñiga\n• Tewi [サックス; 詳細]\n• Papita con Puré\n\nMix: Karl Zuñiga',
+			es: 'Composición:\n• Karl Zuñiga [Base; composición general]\n• Tewi [Sax; detalles]\n• Papita con Puré [1:07 ~ 2:14]\n\nMezcla: Karl Zuñiga',
+			en: 'Composition:\n• Karl Zuñiga [Base; general composition]\n• Tewi [Sax; Details]\n• Papita con Puré [1:07 ~ 2:14]\n\nMix: Karl Zuñiga',
+			ja: '作曲家:\n• Karl Zuñiga [財団; 作曲全般]\n• Tewi [サックス; 詳細]\n• Papita con Puré [1:07 ~ 2:14]\n\nMix: Karl Zuñiga',
 		},
 		date: new Date('2025-01-09'),
 		categories: ['collab', 'original'],
