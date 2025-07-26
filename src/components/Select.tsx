@@ -18,6 +18,7 @@ type OptionValue = string | number | readonly string[] | undefined;
 interface SelectOption<TValues extends OptionValue> {
 	label: string;
 	value: TValues;
+	ariaLabel?: string;
 }
 
 interface SelectExtraPreferences {
@@ -49,7 +50,7 @@ function Select<TValue extends OptionValue = undefined>({
 	const [isOpen, setIsOpen] = useState(false);
 	const [selected, setSelected] = useState(value);
 	const [activeIndex, setActiveIndex] = useState<number | null>(0);
-	const [, setSearchBuffer] = useState('');
+	const searchBuffer = useRef('');
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const optionRefs = useRef<(HTMLLIElement | null)[]>([]);
 	const buttonRef = useRef<HTMLButtonElement>(null);
@@ -68,8 +69,8 @@ function Select<TValue extends OptionValue = undefined>({
 	const handleSelect = (val: TValue) => {
 		setSelected(val);
 		action?.(val);
+		setActiveIndex(-1);
 		setIsOpen(false);
-		setActiveIndex(0);
 		buttonRef.current?.focus();
 	};
 
@@ -127,26 +128,28 @@ function Select<TValue extends OptionValue = undefined>({
 			case 'Enter':
 			case ' ':
 				e.preventDefault();
-				if (activeIndex !== null) {
+				if (activeIndex !== null && activeIndex >= 0) {
 					const opt = options[activeIndex];
 					handleSelect(opt.value);
-				}
+				} else setActiveIndex(null);
 				break;
 
 			default:
 				if (e.key.length === 1) {
-					setSearchBuffer((prev) => {
-						const newBuf = prev + e.key.toLowerCase();
-						const foundIndex = options.findIndex((opt) =>
-							opt.label.toLowerCase().startsWith(newBuf),
-						);
-						if (foundIndex !== -1) {
-							optionRefs.current[foundIndex]?.focus();
-							setActiveIndex(foundIndex);
-						}
-						setTimeout(() => setSearchBuffer(''), 500);
-						return newBuf;
-					});
+					const prev = searchBuffer.current ?? '';
+					const newBuffer = (searchBuffer.current = prev + e.key.toLowerCase());
+					const foundIndex = options.findIndex((opt) =>
+						opt.label.toLowerCase().startsWith(newBuffer),
+					);
+
+					if (foundIndex !== -1) {
+						optionRefs.current[foundIndex]?.focus();
+						setActiveIndex(foundIndex);
+					}
+
+					setTimeout(() => {
+						searchBuffer.current = '';
+					}, 500);
 				}
 				break;
 		}
@@ -213,6 +216,7 @@ function Select<TValue extends OptionValue = undefined>({
 							key={i}
 							id={`option-${option.value as NonNullable<TValue>}-${cid}`}
 							role='option'
+							aria-label={option.ariaLabel}
 							aria-selected={selected === option.value}
 							ref={(el) => {
 								optionRefs.current[i] = el;
