@@ -7,7 +7,7 @@ export type SectionLike<TTranslationIds extends string> = { [T in TTranslationId
 export type LocalizableField = string | StandaloneLocalization;
 
 export type AnySectionKey = SectionKey<Locale>;
-export type AnySectionWithin<TLocale extends Locale = Locale> = Messages<TLocale>[AnySectionKey];
+export type AnySectionWithin<TLocale extends Locale> = Messages<TLocale>[AnySectionKey];
 export type AnySection = AnySectionWithin<Locale>;
 export type SectionAcrossLocales<TSectionKey extends AnySectionKey> = Section<Locale, TSectionKey>;
 
