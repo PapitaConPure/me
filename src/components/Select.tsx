@@ -48,7 +48,7 @@ function Select<TValue extends OptionValue = undefined>({
 	const cid = useId();
 	const [isOpen, setIsOpen] = useState(false);
 	const [selected, setSelected] = useState(value);
-	const [activeIndex, setActiveIndex] = useState<number | null>(null);
+	const [activeIndex, setActiveIndex] = useState<number | null>(0);
 	const [, setSearchBuffer] = useState('');
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const optionRefs = useRef<(HTMLLIElement | null)[]>([]);
@@ -69,6 +69,7 @@ function Select<TValue extends OptionValue = undefined>({
 		setSelected(val);
 		action?.(val);
 		setIsOpen(false);
+		setActiveIndex(0);
 		buttonRef.current?.focus();
 	};
 
