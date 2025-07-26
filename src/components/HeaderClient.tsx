@@ -146,25 +146,11 @@ export function MobileMenuSubMenu({
 	);
 }
 
-interface BaseHeaderLanguagePickerProps {
+interface HeaderLanguagePickerProps {
 	mobile?: boolean;
 	langPickerAria: string;
 	label?: string;
 }
-
-interface MobileHeaderLanguagePickerProps {
-	mobile: true;
-	label: string;
-}
-
-interface DesktopHeaderLanguagePickerProps {
-	mobile?: false;
-}
-
-type AnyHeaderLanguagePickerProps =
-	| MobileHeaderLanguagePickerProps
-	| DesktopHeaderLanguagePickerProps;
-type HeaderLanguagePickerProps = BaseHeaderLanguagePickerProps & AnyHeaderLanguagePickerProps;
 
 export function HeaderLanguagePicker({ mobile, label, langPickerAria }: HeaderLanguagePickerProps) {
 	const pathName = usePathname();
@@ -179,7 +165,7 @@ export function HeaderLanguagePicker({ mobile, label, langPickerAria }: HeaderLa
 		return (
 			<MobileMenuSubMenu
 				icon={faLanguage}
-				label={label}
+				label={label || ''}
 				aria-label={langPickerAria}
 				tabIndex={0}
 				subMenu={localeItems.map((item, i) => (

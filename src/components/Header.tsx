@@ -12,6 +12,71 @@ import {
 	faMusic,
 	faQuestionCircle,
 } from '@fortawesome/free-solid-svg-icons';
+import { HTMLAttributes } from 'react';
+import { SectionAcrossLocales } from '@/types/i18n';
+
+interface HeaderMenuProps<TLocale extends Locale> extends HTMLAttributes<HTMLUListElement> {
+	mobile?: boolean;
+	lang: TLocale;
+	t: SectionAcrossLocales<'Layout'>;
+}
+
+function HeaderMenu<TLocale extends Locale>({
+	mobile,
+	lang,
+	t,
+	...props
+}: HeaderMenuProps<TLocale>) {
+	return (
+		<ul {...props}>
+			<MenuItem
+				mobile={mobile}
+				href={`/${lang}`}
+				icon={mobile ? faHome : undefined}
+				label={t.navHome}
+				aria-label={t.navHomeAria}
+				tabIndex={0}
+			/>
+			<MenuItem
+				mobile={mobile}
+				href={`/${lang}/about`}
+				icon={mobile ? faQuestionCircle : undefined}
+				label={t.navAbout}
+				aria-label={t.navAboutAria}
+				tabIndex={0}
+			/>
+			<MenuItem
+				mobile={mobile}
+				href={`/${lang}/projects`}
+				icon={mobile ? faLaptopCode : undefined}
+				label={t.navProjects}
+				aria-label={t.navProjectsAria}
+				tabIndex={0}
+			/>
+			<MenuItem
+				mobile={mobile}
+				href={`/${lang}/music`}
+				icon={mobile ? faMusic : undefined}
+				label={t.navMusic}
+				aria-label={t.navMusicAria}
+				tabIndex={0}
+			/>
+			<MenuItem
+				mobile={mobile}
+				href={`/${lang}/contact`}
+				icon={mobile ? faEnvelope : undefined}
+				label={t.navContact}
+				aria-label={t.navContactAria}
+				tabIndex={0}
+			/>
+			<HeaderLanguagePicker
+				mobile={mobile}
+				label={(mobile) ? t.langPicker : undefined}
+				langPickerAria={t.langPickerAria}
+			/>
+		</ul>
+	);
+}
 
 interface HeaderProps {
 	lang: Locale;
@@ -44,39 +109,12 @@ export default async function Header({ lang }: HeaderProps) {
 				</Link>
 
 				<nav className='hidden md:block'>
-					<ul role='menubar' className='flex list-none items-stretch space-x-1'>
-						<MenuItem
-							href={`/${lang}`}
-							label={t.navHome}
-							aria-label={t.navHomeAria}
-							tabIndex={0}
-						/>
-						<MenuItem
-							href={`/${lang}/about`}
-							label={t.navAbout}
-							aria-label={t.navAboutAria}
-							tabIndex={0}
-						/>
-						<MenuItem
-							href={`/${lang}/projects`}
-							label={t.navProjects}
-							aria-label={t.navProjectsAria}
-							tabIndex={0}
-						/>
-						<MenuItem
-							href={`/${lang}/music`}
-							label={t.navMusic}
-							aria-label={t.navMusicAria}
-							tabIndex={0}
-						/>
-						<MenuItem
-							href={`/${lang}/contact`}
-							label={t.navContact}
-							aria-label={t.navContactAria}
-							tabIndex={0}
-						/>
-						<HeaderLanguagePicker langPickerAria={t.langPickerAria} />
-					</ul>
+					<HeaderMenu
+						role='menubar'
+						lang={lang}
+						t={t}
+						className='flex list-none items-stretch space-x-1'
+					/>
 				</nav>
 				<div className='md:hidden'>
 					<HeaderNavButton
@@ -99,53 +137,7 @@ export default async function Header({ lang }: HeaderProps) {
 			<nav
 				id='mobile-menu'
 				className='flex h-0 list-none flex-col overflow-hidden rounded-b-md transition-all duration-300 ease-[cubic-bezier(0.77,0,0.175,1)] motion-reduce:transition-none md:hidden'>
-				<ul role='menu'>
-					<MenuItem
-						mobile
-						href={`/${lang}`}
-						icon={faHome}
-						label={t.navHome}
-						aria-label={t.navHomeAria}
-						tabIndex={0}
-					/>
-					<MenuItem
-						mobile
-						href={`/${lang}/about`}
-						icon={faQuestionCircle}
-						label={t.navAbout}
-						aria-label={t.navAboutAria}
-						tabIndex={0}
-					/>
-					<MenuItem
-						mobile
-						href={`/${lang}/projects`}
-						icon={faLaptopCode}
-						label={t.navProjects}
-						aria-label={t.navProjectsAria}
-						tabIndex={0}
-					/>
-					<MenuItem
-						mobile
-						href={`/${lang}/music`}
-						icon={faMusic}
-						label={t.navMusic}
-						aria-label={t.navMusicAria}
-						tabIndex={0}
-					/>
-					<MenuItem
-						mobile
-						href={`/${lang}/contact`}
-						icon={faEnvelope}
-						label={t.navContact}
-						aria-label={t.navContactAria}
-						tabIndex={0}
-					/>
-					<HeaderLanguagePicker
-						mobile
-						label={t.langPicker}
-						langPickerAria={t.langPickerAria}
-					/>
-				</ul>
+				<HeaderMenu mobile role='menu' lang={lang} t={t} />
 			</nav>
 		</header>
 	);
