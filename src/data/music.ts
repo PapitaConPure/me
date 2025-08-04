@@ -4870,7 +4870,7 @@ const items: MusicItem[] = [
 		categories: ['arrangement'],
 		coverUrl: '/images/music/ds2-majula/thumb.webp',
 		thumbnailUrl: '/images/music/ds2-majula/thumb.webp',
-		videoUrl: 'https://www.youtube.com/watch?v=-zVIfDTc1gQ',
+		videoUrl: 'https://www.youtube.com/watch?v=ZQd-CzroDS4',
 		credits: {
 			music: {
 				composers: [
@@ -4974,9 +4974,9 @@ const items: MusicItem[] = [
 				kind: 'file',
 				format: 'zip',
 				label: {
-					es: 'Paquete de música (archive.org) (Pendiente)',
-					en: 'Music Pack (archive.org) (Pendiente)',
-					ja: '音楽パック (archive.org) (Pendiente)',
+					es: 'Paquete de música (archive.org)',
+					en: 'Music Pack (archive.org)',
+					ja: '音楽パック (archive.org)',
 				},
 				size: '0 b',
 				url: '',
@@ -4987,9 +4987,9 @@ const items: MusicItem[] = [
 				kind: 'file',
 				format: 'zip',
 				label: {
-					es: 'Paquete de animación (archive.org) (Pendiente)',
-					en: 'Animation Pack (archive.org) (Pendiente)',
-					ja: 'アニメーションパック (archive.org) (Pendiente)',
+					es: 'Paquete de animación (archive.org)',
+					en: 'Animation Pack (archive.org)',
+					ja: 'アニメーションパック (archive.org)',
 				},
 				size: '0 b',
 				url: '',
