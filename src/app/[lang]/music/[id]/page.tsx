@@ -483,11 +483,8 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 										<button aria-disabled className='flex flex-grow cursor-not-allowed items-center justify-center rounded-md bg-secondary-main px-5 py-4 text-secondary-200 transition-colors duration-100 hover:bg-secondary-700 sm:px-4 sm:py-3 md:py-2'>
 											<FontAwesomeIcon
 												icon={faClock}
-												className='mr-2 cursor-not-allowed text-xl md:text-base'
+												className='cursor-not-allowed text-xl md:text-base'
 											/>
-											<div className='cursor-not-allowed select-none text-center font-base sm:text-lg md:text-sm'>
-												Enlace pendiente
-											</div>
 										</button>
 									)}
 									{download.url && (
