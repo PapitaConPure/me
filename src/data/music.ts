@@ -2926,7 +2926,8 @@ const items: MusicItem[] = [
 					ja: 'フルトラック (16-bit int)',
 				},
 				size: '57.6 MB',
-				url: '/audio/music/th19-piano/th19.mp3',
+				url: 'https://www.mediafire.com/file/ulc65rv1n6156lm/th19_piano.mp3/file',
+				external: true,
 			},
 			{
 				kind: 'audio',
@@ -2937,7 +2938,8 @@ const items: MusicItem[] = [
 					ja: 'フル左手 (320 Kbps)',
 				},
 				size: '57.6 MB',
-				url: '/audio/music/th19-piano/piano_low.mp3',
+				url: 'https://www.mediafire.com/file/onrbt6tuok0nxom/th19_piano_low.mp3/file',
+				external: true,
 			},
 			{
 				kind: 'audio',
@@ -2948,7 +2950,8 @@ const items: MusicItem[] = [
 					ja: 'フル右手 (320 Kbps)',
 				},
 				size: '57.6 MB',
-				url: '/audio/music/th19-piano/piano_high.mp3',
+				url: 'https://www.mediafire.com/file/vnzwro3785zujho/th19_piano_high.mp3/file',
+				external: true,
 			},
 			{
 				kind: 'file',
@@ -4742,7 +4745,7 @@ const items: MusicItem[] = [
 				format: 'mp3',
 				label: {
 					es: 'Pista completa (320 Kbps)',
-					en: 'Full Track (16-bit int)',
+					en: 'Full Track (320 Kbps)',
 					ja: 'フルトラック (320 Kbps)',
 				},
 				size: '8.95 MB',
@@ -4834,6 +4837,162 @@ const items: MusicItem[] = [
 				},
 				size: '2.10 GB',
 				url: 'https://archive.org/download/th-20-title-animation-by-papita-pure/TH20%20Title%20Animation%20by%20PapitaPur%C3%A9.zip',
+				external: true,
+				direct: true,
+			},
+		],
+		tags: ['piano arrangement'],
+	},
+
+	//DS2 Majula Theme Piano Trio Arrangement
+	{
+		id: 'ds2-majula',
+		kind: 'single',
+		artists: [
+			{
+				name: {
+					es: 'Sakuraba Motoi',
+					ja: '桜庭 統',
+				},
+				clarification: {
+					es: '桜庭 統',
+					ja: 'さくらば　もとい',
+				},
+				url: 'https://www.sakuraba-motion.com',
+			},
+			papitaCredit,
+		],
+		title: {
+			es: 'Majula Piano Trio Arrangement',
+			ja: 'マジュラピアノトリオアレンジ',
+		},
+		date: new Date('2025-08-07'),
+		categories: ['arrangement'],
+		coverUrl: '/images/music/ds2-majula/thumb.webp',
+		thumbnailUrl: '/images/music/ds2-majula/thumb.webp',
+		videoUrl: 'https://www.youtube.com/watch?v=-zVIfDTc1gQ',
+		credits: {
+			music: {
+				composers: [
+					{
+						name: {
+							es: 'Sakuraba Motoi',
+							ja: '桜庭 統',
+						},
+						clarification: {
+							es: '桜庭 統',
+							ja: 'さくらば　もとい',
+						},
+						url: 'https://www.sakuraba-motion.com',
+					},
+				],
+				arrangers: [papitaCredit],
+			},
+			visuals: {
+				background: [papitaCredit],
+			},
+		},
+		externalLinks: [
+			{
+				source: 'youtube',
+				label: 'YouTube',
+				url: 'https://www.youtube.com/watch?v=ZQd-CzroDS4',
+			},
+		],
+		downloadUrls: [
+			{
+				kind: 'audio',
+				format: 'flac',
+				label: {
+					es: 'Pista completa (16-bit int)',
+					en: 'Full Track (16-bit int)',
+					ja: 'フルトラック (16-bit int)',
+				},
+				size: '14.4 MB',
+				url: '/audio/music/ds2-majula/ds_majula.flac',
+			},
+			{
+				kind: 'audio',
+				format: 'mp3',
+				label: {
+					es: 'Pista completa (320 Kbps)',
+					en: 'Full Track (320 Kbps)',
+					ja: 'フルトラック (320 Kbps)',
+				},
+				size: '8.52 MB',
+				url: '/audio/music/ds2-majula/ds_majula.mp3',
+			},
+			{
+				kind: 'file',
+				format: 'midi',
+				label: {
+					es: 'MIDI completo (MediaFire)',
+					en: 'Full MIDI (MediaFire)',
+					ja: 'フルMIDI (MediaFire)',
+				},
+				size: '572 KB',
+				url: '/music-item-misc/ds2-majula/ds_majula_midi.mid',
+			},
+			{
+				kind: 'image',
+				format: 'png',
+				label: {
+					es: 'Miniatura (720p)',
+					en: 'Thumbnail (720p)',
+					ja: 'サムネイル (720p)',
+				},
+				size: '1.55 MB',
+				url: '/images/music/ds2-majula/thumb.png',
+			},
+			{
+				kind: 'image',
+				format: 'webp',
+				label: {
+					es: 'Miniatura (1080p)',
+					en: 'Thumbnail (1080p)',
+					ja: 'サムネイル (1080p)',
+				},
+				size: '125 KB',
+				url: '/images/music/ds2-majula/thumb.webp',
+			},
+			{
+				kind: 'video',
+				format: 'mp4',
+				label: {
+					es: 'Animación (Bucle) (h.264 / 4k@60) (MediaFire)',
+					en: 'Animation (Loop) (h.264 / 4k@60) (MediaFire)',
+					ja: 'アニメーション (ループ) (h.264 / 4k@60) (MediaFire)',
+				},
+				size: '437 MB',
+				url: 'https://www.mediafire.com/file/sf0lnt0m9c1kbfx/majula.mov/file',
+				previewUrl: '/video/music/ds2-majula/majula.webm',
+				previewFormat: 'webm',
+				external: true,
+				direct: true,
+			},
+			{
+				kind: 'file',
+				format: 'zip',
+				label: {
+					es: 'Paquete de música (archive.org) (Pendiente)',
+					en: 'Music Pack (archive.org) (Pendiente)',
+					ja: '音楽パック (archive.org) (Pendiente)',
+				},
+				size: '0 b',
+				url: '',
+				external: true,
+				direct: true,
+			},
+			{
+				kind: 'file',
+				format: 'zip',
+				label: {
+					es: 'Paquete de animación (archive.org) (Pendiente)',
+					en: 'Animation Pack (archive.org) (Pendiente)',
+					ja: 'アニメーションパック (archive.org) (Pendiente)',
+				},
+				size: '0 b',
+				url: '',
 				external: true,
 				direct: true,
 			},
