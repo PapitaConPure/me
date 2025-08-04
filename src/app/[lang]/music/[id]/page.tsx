@@ -12,6 +12,7 @@ import { Metadata, Viewport } from 'next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faCheck,
+	faClock,
 	faDownload,
 	faExternalLinkAlt,
 	faEye,
@@ -477,55 +478,48 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 										className='h-13 mb-2 w-full rounded-md bg-white sm:h-12 md:h-9'
 									/>
 								)}
-								{/*Perhaps add a download.allowsRawPreview later*/}
 								<div className='flex w-full flex-shrink-0 space-x-2'>
-									<DirectDownloadButton
-										href={getRoot(download.url)}
-										download={!download.external || download.direct}
-										target={download.external ? '_blank' : '_self'}
-										rel='noopener noreferrer'
-										className='flex flex-grow cursor-pointer items-center justify-center rounded-md bg-primary-main px-5 py-4 text-white transition-colors duration-200 hover:bg-primary-700 sm:px-4 sm:py-3 md:py-2'
-										downloadStageChildren={
-											<>
-												<FontAwesomeIcon
-													icon={faCheck}
-													className='mr-2 cursor-not-allowed text-xl md:text-base'
-												/>
-												<div className='cursor-not-allowed select-none text-center text-xl font-semibold sm:text-lg md:text-sm'>
-													{download.size}
-												</div>
-												<FontAwesomeIcon
-													icon={faSpinner}
-													size='xs'
-													className='ml-2 animate-spin opacity-80'
-												/>
-											</>
-										}>
-										<FontAwesomeIcon
-											icon={faDownload}
-											className='mr-2 cursor-pointer text-xl md:text-base'
-										/>
-										<div className='cursor-pointer select-none text-center text-xl font-semibold sm:text-lg md:text-sm'>
-											{download.size}
-										</div>
-										{download.external ? (
+									{!download.url && (
+										<button aria-disabled className='flex flex-grow cursor-not-allowed items-center justify-center rounded-md bg-secondary-main px-5 py-4 text-secondary-200 transition-colors duration-100 hover:bg-secondary-700 sm:px-4 sm:py-3 md:py-2'>
 											<FontAwesomeIcon
-												icon={faExternalLinkAlt}
-												size='xs'
-												className='mb-0.5 ml-2 cursor-pointer opacity-80'
+												icon={faClock}
+												className='mr-2 cursor-not-allowed text-xl md:text-base'
 											/>
-										) : null}
-									</DirectDownloadButton>
-									{download.kind === 'file' && download.format === 'pdf' && (
-										<Link
-											href={download.url}
+											<div className='cursor-not-allowed select-none text-center font-base sm:text-lg md:text-sm'>
+												Enlace pendiente
+											</div>
+										</button>
+									)}
+									{download.url && (
+										<DirectDownloadButton
+											href={getRoot(download.url)}
+											download={!download.external || download.direct}
+											target={download.external ? '_blank' : '_self'}
 											rel='noopener noreferrer'
-											target='_blank'
-											className='flex flex-shrink-0 items-center justify-center rounded-md bg-secondary-700 px-5 py-4 text-white transition-colors duration-100 hover:bg-secondary-600 sm:px-4 sm:py-3 md:px-3 md:py-2'>
+											className='flex flex-grow cursor-pointer items-center justify-center rounded-md bg-primary-main px-5 py-4 text-white transition-colors duration-200 hover:bg-primary-700 sm:px-4 sm:py-3 md:py-2'
+											downloadStageChildren={
+												<>
+													<FontAwesomeIcon
+														icon={faCheck}
+														className='mr-2 cursor-not-allowed text-xl md:text-base'
+													/>
+													<div className='cursor-not-allowed select-none text-center text-xl font-semibold sm:text-lg md:text-sm'>
+														{download.size}
+													</div>
+													<FontAwesomeIcon
+														icon={faSpinner}
+														size='xs'
+														className='ml-2 animate-spin opacity-80'
+													/>
+												</>
+											}>
 											<FontAwesomeIcon
-												icon={faEye}
-												className='text-xl md:text-base'
+												icon={faDownload}
+												className='mr-2 cursor-pointer text-xl md:text-base'
 											/>
+											<div className='cursor-pointer select-none text-center text-xl font-semibold sm:text-lg md:text-sm'>
+												{download.size}
+											</div>
 											{download.external ? (
 												<FontAwesomeIcon
 													icon={faExternalLinkAlt}
@@ -533,8 +527,30 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 													className='mb-0.5 ml-2 cursor-pointer opacity-80'
 												/>
 											) : null}
-										</Link>
+										</DirectDownloadButton>
 									)}
+									{download.url &&
+										download.kind === 'file' &&
+										download.format === 'pdf' && (
+											<Link
+												href={download.url}
+												rel='noopener noreferrer'
+												target='_blank'
+												tabIndex={0}
+												className='flex flex-shrink-0 items-center justify-center rounded-md bg-secondary-700 px-5 py-4 text-white transition-colors duration-100 hover:bg-secondary-600 sm:px-4 sm:py-3 md:px-3 md:py-2'>
+												<FontAwesomeIcon
+													icon={faEye}
+													className='text-xl md:text-base'
+												/>
+												{download.external ? (
+													<FontAwesomeIcon
+														icon={faExternalLinkAlt}
+														size='xs'
+														className='mb-0.5 ml-2 cursor-pointer opacity-80'
+													/>
+												) : null}
+											</Link>
+										)}
 								</div>
 							</div>
 						))}
