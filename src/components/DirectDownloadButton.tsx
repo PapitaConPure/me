@@ -21,6 +21,7 @@ function DirectDownloadButton({
 			{...props}
 			rel='noopener noreferrer'
 			className={`${className} ${downloading ? 'pointer-events-none opacity-60' : ''}`}
+			tabIndex={0}
 			onClick={() => {
 				setDownloading(true);
 				setTimeout(() => setDownloading(false), 2000);
