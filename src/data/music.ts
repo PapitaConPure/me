@@ -4866,7 +4866,7 @@ const items: MusicItem[] = [
 			es: 'Majula Piano Trio Arrangement',
 			ja: 'マジュラピアノトリオアレンジ',
 		},
-		date: new Date('2025-08-07'),
+		date: new Date('2025-08-05'),
 		categories: ['arrangement'],
 		coverUrl: '/images/music/ds2-majula/thumb.webp',
 		thumbnailUrl: '/images/music/ds2-majula/thumb.webp',
