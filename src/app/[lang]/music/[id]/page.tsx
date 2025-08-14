@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { YouTubeVideo } from '@/components/YouTubeVideo';
 import { OlHTMLAttributes } from 'react';
 import getRoot from '@/lib/getroot';
-import { CreditsField, FullArtistCredit } from '@/types/music';
+import { CreditsField, FullArtistCredit, MusicItem } from '@/types/music';
 import BackSection from '@/components/BackSection';
 import AudioPreview from '@/components/AudioPreview';
 import VideoPreview from '@/components/VideoPreview';
@@ -40,6 +40,9 @@ interface CredittedArtistProps {
 	artist: string | FullArtistCredit;
 	lang: Locale;
 }
+
+const getListedArtists = (item: MusicItem, lang: Locale) =>
+	`${item.displayArtist || item.artists.map((artist) => (typeof artist === 'string' ? artist : resolveLocalizableField(artist.name, lang))).join(' & ')}`;
 
 const CredittedArtist = ({ artist, lang }: CredittedArtistProps) => {
 	if (typeof artist === 'string') return <span>{artist}</span>;
@@ -160,8 +163,7 @@ export async function generateMetadata({ params }: MusicDetailProps): Promise<Me
 	return {
 		title: resolveLocalizableField(item.title, lang),
 		description:
-			resolveLocalizableField(item.description, lang) ||
-			`${item.displayArtist || item.artists.map((artist) => (typeof artist === 'string' ? artist : resolveLocalizableField(artist.name, lang))).join(' & ')}`,
+			resolveLocalizableField(item.description, lang) || `${getListedArtists(item, lang)}`,
 		openGraph: {
 			title: resolveLocalizableField(item.title, lang),
 			description: resolveLocalizableField(item.description, lang),
@@ -480,7 +482,9 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 								)}
 								<div className='flex w-full flex-shrink-0 space-x-2'>
 									{!download.url && (
-										<button aria-disabled className='flex flex-grow cursor-not-allowed items-center justify-center rounded-md bg-secondary-main px-5 py-4 text-secondary-200 transition-colors duration-100 hover:bg-secondary-700 sm:px-4 sm:py-3 md:py-2'>
+										<button
+											aria-disabled
+											className='flex flex-grow cursor-not-allowed items-center justify-center rounded-md bg-secondary-main px-5 py-4 text-secondary-200 transition-colors duration-100 hover:bg-secondary-700 sm:px-4 sm:py-3 md:py-2'>
 											<FontAwesomeIcon
 												icon={faClock}
 												className='cursor-not-allowed text-xl md:text-base'
@@ -611,6 +615,128 @@ const MusicDetail = async ({ params }: MusicDetailProps) => {
 							/>
 						)}
 					</div>
+				</section>
+			)}
+			{item.licensing && (
+				<section>
+					<h2 className='section-h2'>{t.detailLicensingTitle}</h2>
+					{typeof item.licensing === 'string' ? (
+						<p className='mt-2'>{item.licensing}</p>
+					) : (
+						<div className='mt-4 flex flex-col space-y-4 rounded-md'>
+							{item.licensing.map((licenseSpecification, i) => (
+								<div
+									key={i}
+									className='flex rounded-md border border-secondary-700 bg-secondary-800 p-4'>
+									<div className='flex min-h-10 flex-grow flex-col justify-center pr-4'>
+										<h3 className='section-h3'>
+											{licenseSpecification.license.label}
+										</h3>
+										<div className='mt-3 rounded-md bg-secondary-900 p-4'>
+											<h4 className='font-semibold'>{t.detailLicensingLicenseWorksListName}</h4>
+											{licenseSpecification.targets?.length ? (
+												<ul className='mt-2 flex flex-col space-y-3'>
+													{licenseSpecification.targets.map(
+														(target, j) => (
+															<li
+																key={j}
+																className='flex items-center space-x-2 font-light leading-tight'>
+																{target.kind === 'audio' && (
+																	<FontAwesomeIcon
+																		icon={faMusic}
+																		className='text-yellow-200'
+																	/>
+																)}
+																{target.kind === 'image' && (
+																	<FontAwesomeIcon
+																		icon={faImage}
+																		className='text-green-300'
+																	/>
+																)}
+																{target.kind === 'video' && (
+																	<FontAwesomeIcon
+																		icon={faVideo}
+																		className='text-purple-400'
+																	/>
+																)}
+																{target.kind === 'file' && (
+																	<FontAwesomeIcon
+																		icon={faFileAlt}
+																		className='text-blue-400'
+																	/>
+																)}
+																<div>
+																	{target.workUrl ? (
+																		<a
+																			href={target.workUrl}
+																			className='text-link'>
+																			{target.work}
+																		</a>
+																	) : (
+																		<i>{target.work}</i>
+																	)}{' '}
+																	© {target.year} by{' '}
+																	{target.creators.map(
+																		(creator, k) =>
+																			typeof creator ===
+																			'string' ? (
+																				<strong key={k}>
+																					{creator}
+																				</strong>
+																			) : creator.url ? (
+																				<a
+																					href={
+																						creator.url
+																					}
+																					className='text-link'
+																					key={k}>
+																					{creator.name}
+																				</a>
+																			) : (
+																				<strong key={k}>
+																					{creator.name}
+																				</strong>
+																			),
+																	)}
+																	.
+																</div>
+															</li>
+														),
+													)}
+												</ul>
+											) : (
+												<p className='mt-1 font-light'>
+													<i>
+														{resolveLocalizableField(item.title, lang)}
+													</i>{' '}
+													© {item.date.getUTCFullYear()} by{' '}
+													<strong>{getListedArtists(item, lang)}</strong>.
+												</p>
+											)}
+										</div>
+									</div>
+									{licenseSpecification.license.url && (
+										<Link
+											href={licenseSpecification.license.url}
+											rel='noopener noreferrer'
+											target='_blank'
+											tabIndex={0}
+											className='flex flex-shrink-0 items-center justify-center rounded-md bg-secondary-700 px-5 py-4 text-white transition-colors duration-100 hover:bg-secondary-600 md:px-4 md:py-3'>
+											<FontAwesomeIcon
+												icon={faEye}
+												className='text-xl md:text-base'
+											/>
+											<FontAwesomeIcon
+												icon={faExternalLinkAlt}
+												size='xs'
+												className='mb-0.5 ml-2 cursor-pointer opacity-80'
+											/>
+										</Link>
+									)}
+								</div>
+							))}
+						</div>
+					)}
 				</section>
 			)}
 			{item.tags && item.tags.length > 0 && (
