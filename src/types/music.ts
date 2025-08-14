@@ -13,7 +13,9 @@ export type OtherAssetFormat = 'zip' | 'rar' | 'midi' | 'pdf' | 'mscz' | 'other'
 
 export type AssetFormat = AudioAssetFormat | ImageAssetFormat | VideoAssetFormat | OtherAssetFormat;
 
-interface AssetSpecificationTemplate<TKind extends string, TFormat extends AssetFormat> {
+export type AssetKind = 'audio' | 'image' | 'video' | 'file';
+
+interface AssetSpecificationTemplate<TKind extends AssetKind, TFormat extends AssetFormat> {
 	kind: TKind;
 	format: TFormat;
 }
@@ -72,11 +74,38 @@ export interface BaseMusicItem {
 	thumbnailUrl: string;
 }
 
+export interface License {
+	label: string;
+	url?: string;
+}
+
+export interface ExtendedLicenseTargetCreator {
+	name: string;
+	url?: string;
+}
+
+export type LicenseTargetCreator = string | ExtendedLicenseTargetCreator;
+
+export interface LicenseTarget {
+	kind: AssetKind;
+	work: string;
+	year: number;
+	creators: LicenseTargetCreator[];
+	workUrl?: string;
+	creatorUrl?: string;
+}
+
+export interface LicenseSpecification {
+	license: License;
+	targets?: LicenseTarget[];
+}
+
 export interface ExtendedMusicItemMetadata {
 	description?: LocalizableField;
 	displayArtist?: string;
 	videoUrl?: string;
 	credits?: ExtendedMusicItemCredits;
+	licensing?: string | LicenseSpecification[];
 	externalLinks?: ExternalLink[];
 	downloadUrls?: DownloadUrl[];
 	tags?: string[];
