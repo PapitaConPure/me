@@ -1,4 +1,14 @@
-import { FullArtistCredit, MusicItem } from '@/types/music';
+import { FullArtistCredit, License, MusicItem } from '@/types/music';
+
+const cc0: License = {
+	label: 'CC0 1.0 Universal',
+	url: 'https://creativecommons.org/publicdomain/zero/1.0/',
+};
+
+const cc4Attrib: License = {
+	label: 'Creative Commons Attribution 4.0 International',
+	url: 'https://creativecommons.org/licenses/by/4.0/',
+};
 
 const papitaCredit: FullArtistCredit = {
 	name: {
@@ -2163,6 +2173,11 @@ const items: MusicItem[] = [
 		coverUrl: '/images/music/izanagi-bloom/cover.png',
 		thumbnailUrl: '/images/music/izanagi-bloom/thumbnail.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=_t8o-IcD_ro',
+		licensing: [
+			{
+				license: cc0,
+			},
+		],
 		externalLinks: [
 			{
 				source: 'youtube',
@@ -3880,6 +3895,11 @@ const items: MusicItem[] = [
 		coverUrl: '/images/music/blade-of-warmness/cover.png',
 		thumbnailUrl: '/images/music/blade-of-warmness/thumbnail.webp',
 		videoUrl: 'https://www.youtube.com/watch?v=G8NjlKAXBvw',
+		licensing: [
+			{
+				license: cc4Attrib,
+			},
+		],
 		externalLinks: [
 			{
 				source: 'youtube',
@@ -4215,6 +4235,25 @@ const items: MusicItem[] = [
 				],
 			},
 		},
+		licensing: [
+			{
+				license: cc4Attrib,
+				targets: [
+					{
+						kind: 'audio',
+						work: '"プレステ・ジョアンの黄金境" Piano Arrangement',
+						year: 2025,
+						creators: ['Papita con Puré'],
+					},
+					{
+						kind: 'video',
+						work: '"東方錦上京 〜 Fossilized Wonders." Stage 3 and Boss 3 Environment Animations',
+						year: 2025,
+						creators: ['Papita con Puré'],
+					},
+				],
+			},
+		],
 		externalLinks: [
 			{
 				source: 'youtube',
